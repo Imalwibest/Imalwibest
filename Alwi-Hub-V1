@@ -385,18 +385,17 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/EZrobux
     print("Clicked")
 end)
 
+Section:NewButton("The Cup Hub [Elemental]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/main/Thecupheaddd"))()
+    print("Clicked")
+end)
+
 local Tab = Window:NewTab("BloxFruit")
 local Section = Tab:NewSection("Blox Fruit")
 Section:NewButton("NukeVsCity", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
     print("Clicked")
 end)
-
-Section:NewButton("The Cup Hub [Elemental]", "?", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/main/Thecupheaddd"))()
-    print("Clicked")
-end)
-
 Section:NewButton("Mango Hub", "?", function()
   getgenv().WaterMark = true
 loadstring(game:HttpGet("https://gitlab.com/L1ZOT/mango-hub/-/raw/main/Mango-Bloxf-Fruits-Beta"))()
