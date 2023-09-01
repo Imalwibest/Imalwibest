@@ -1,0 +1,627 @@
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("ALWI HUB V.1", "BloodTheme")
+local Tab = Window:NewTab("[Credit]")
+local Section = Tab:NewSection("ALWI#3737")
+local Section = Tab:NewSection("I From Indonesia")
+local Section = Tab:NewSection("Il add new update Yeah is later or what")
+local Section = Tab:NewSection("Credit in Scripts I put Sword fight op")
+Section:NewButton("Sword fight Gui", "?", function()
+    
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local window = library.CreateLib("ALWI#3737", "BloodTheme")
+local main = window:NewTab("Main")
+local section = main:NewSection("OPP :)")
+local main1 = window:NewTab("Misc")
+local section1 = main1:NewSection("Local Player")
+local plr = game.Players.LocalPlayer
+
+local oldmt 
+oldmt = hookmetamethod(game, "__index", function(self, index)
+    if index == ("WalkSpeed" or "JumpPower") then
+        return 16
+    end 
+    return oldmt(self, index)
+end)
+
+local function getclosestplayer(range)
+    local closest = nil 
+    local maxdist = math.huge 
+    for i,v in pairs(game.Players:GetPlayers()) do 
+        if v ~= plr and v.Character and (not v.Character:FindFirstChild("ForceField")) and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid").Health > 0 then 
+            local mag = (v.Character.HumanoidRootPart.Position - plr.Character.HumanoidRootPart.Position).Magnitude
+            if mag < maxdist and mag < range then 
+                maxdist = mag 
+                closest = v 
+            end 
+        end 
+    end 
+    return closest 
+end 
+
+section:NewToggle("Kill Aura", "", function(ori)
+ora = ori 
+end)
+
+section:NewSlider("Kill Aura Range", "", 25, 1, function(qrs)
+qtr = qrs 
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+if ora and plr.Character:FindFirstChildOfClass("Tool") then
+for i,v in pairs(getclosestplayer(qtr).Character:GetChildren()) do 
+if v:IsA("BasePart") then 
+plr.Character:FindFirstChildOfClass("Tool"):Activate()
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 0)
+wait()
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 1)
+end 
+end 
+end 
+end)
+
+section:NewToggle("Reach", "", function(oo)
+oop = oo 
+while oop and task.wait() do 
+pcall(function()
+if plr.Character:FindFirstChildOfClass("Tool") then 
+for i,v in pairs(getclosestplayer(porn).Character:GetChildren()) do 
+if v:IsA("BasePart") then 
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 0)
+wait()
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 1)
+end 
+end
+end 
+end) 
+end 
+end) 
+
+section:NewSlider("Reach Range", "", 25, 1, function(qpor)
+porn = qpor 
+end)
+
+section:NewToggle("Hitbox Extender", "", function(c)
+    d = c 
+    while d and task.wait() do 
+        pcall(function()
+            for i,v in pairs(game.Players:GetPlayers()) do 
+                if v ~= plr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then 
+                v.Character.HumanoidRootPart.Size = Vector3.new(pir, pir, pir)
+                v.Character.HumanoidRootPart.Transparency = .8
+                end 
+            end
+        end) 
+    end 
+end)
+
+section:NewSlider("Hitbox Size", "", 1, 25, function(pqor)
+pir = pqor 
+end)
+
+section:NewToggle("AFK Farm Kills", "", function(a)
+    b = a 
+    while b and task.wait() do 
+        pcall(function()
+        for i,v in pairs(plr.Character:GetDescendants()) do 
+            if v:IsA("BasePart") and v.CanCollide then 
+                v.CanCollide = false 
+            end 
+        end 
+        plr.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+        plr.Character:FindFirstChildOfClass("Tool"):Activate()
+        if getclosestplayer(99e99) == nil then 
+        game:GetService("TweenService"):Create(plr.Character.HumanoidRootPart, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = CFrame.new(0, 4, -0)}):Play()
+        else 
+        game:GetService("TweenService"):Create(plr.Character.HumanoidRootPart, TweenInfo.new((getclosestplayer(99e99).Character.HumanoidRootPart.Position - plr.Character.HumanoidRootPart.Position).Magnitude / 50, Enum.EasingStyle.Linear), {CFrame = getclosestplayer(99e99).Character.HumanoidRootPart.CFrame + getclosestplayer(99e99).Character.HumanoidRootPart.CFrame.lookVector * -2}):Play()
+        end
+        end)
+    end 
+end)
+
+section:NewToggle("Auto Equip Random Sword", "", function(q)
+    r = q 
+    while r and task.wait() do 
+        for i,v in pairs(plr.Character:GetChildren()) do 
+            if v:IsA("Tool") and (not string.find(v.Name, "Sword")) then 
+                for o,k in pairs(plr.Backpack:GetChildren()) do 
+                    if string.find(k.Name, "Sword") then 
+                        plr.Character.Humanoid:EquipTool(k)
+                    end 
+                end
+            elseif (not plr.Character:FindFirstChildOfClass("Tool")) then 
+                for o,k in pairs(plr.Backpack:GetChildren()) do 
+                    if string.find(k.Name, "Sword") then 
+                        plr.Character.Humanoid:EquipTool(k)
+                    end 
+                end
+            end 
+        end 
+    end 
+end)
+
+section1:NewSlider("WalkSpeed", "", 500, 16, function(oirq)
+plr.Character.Humanoid.WalkSpeed = oirq 
+end)
+
+section1:NewSlider("JumpPower", "", 500, 50, function(roe)
+plr.Character.Humanoid.JumpPower = roe 
+end)
+    print("Clicked")
+end)
+
+Section:NewButton("Sword fight Reach", "?", function()
+    --// Setting \\--
+local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+
+    print("Clicked")
+end)
+
+
+
+
+
+
+local Tab = Window:NewTab("Universal Hub")
+local Section = Tab:NewSection("Universal Hub [Alwi]")
+local Section = Tab:NewSection("Im Year 13 Age cuz im learning lua")
+local Section = Tab:NewSection("Thx For Using My hub!!!")
+Section:NewButton("Infinite Jump", "?", function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+    if InfiniteJumpEnabled then
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end
+end)
+    print("Clicked")
+end)
+
+Section:NewSlider("Speed", "?", 1000, 0, function(speed)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+end)
+
+Section:NewTextBox("Character speed", "1000", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+
+Section:NewSlider("JumpPower [Bugs] Nott work", "?", 1000, 50, function(roe)
+plr.Character.Humanoid.JumpPower = roe 
+end)
+
+    
+
+Section:NewButton("Noclip Click E To Activate", "?", function()
+    local StealthMode = true -- If game has an anticheat that checks the logs
+
+local Indicator
+
+if not StealthMode then
+    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+    print("NOCLIP: Press E to Activate")
+    Indicator = Instance.new("TextLabel", ScreenGui)
+    Indicator.AnchorPoint = Vector2.new(0, 1)
+    Indicator.Position = UDim2.new(0, 0, 1, 0)
+    Indicator.Size = UDim2.new(0, 200, 0, 50)
+    Indicator.BackgroundTransparency = 1
+    Indicator.TextScaled = true
+    Indicator.TextStrokeTransparency = 0
+    Indicator.TextColor3 = Color3.new(0, 0, 0)
+    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Indicator.Text = "Noclip: Enabled"
+end
+
+local noclip = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "e" then
+        noclip = not noclip
+
+        if not StealthMode then
+            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+        end
+    end
+end)
+
+while true do
+    player = game.Players.LocalPlayer
+    character = player.Character
+
+    if noclip then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+    game:GetService("RunService").Stepped:wait()
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Keyboard", "Credit In Scripts", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    print("Clicked")
+end)
+
+Section:NewKeybind("Toggle ui", "Click again LoL", Enum.KeyCode.RightAlt, function()
+	Library:ToggleUI()
+end)
+
+local Tab = Window:NewTab("Admin Hub")
+local Section = Tab:NewSection("OpAdmin")
+Section:NewButton("Infinite yield", "ButtonInfo", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Fates Admin", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Double down")
+local Section = Tab:NewSection("Hub Gui double down")
+Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+    print("Clicked")
+end)
+
+Section:NewButton("GamerReady Hub [Skidded]", "?", function() 
+    loadstring(game:HttpGet("https://pastebin.com/raw/b5zkS3S0",true))()
+-- Owner of the GitHub Skidded. No Credits
+    print("Clicked")
+end)
+
+Section:NewButton("ZenXHub [Kicker] Dont Use", "Dont Use", function()
+    --- Free double down ----
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/ObsDuc/main/disagain.lua"))()
+---- Whitelist system source ----
+local whitelist = {
+    Usernames = {
+        "error_unknownYTk",
+        "EeMe6i",
+        "CuteG0D",
+        "Urmyvip",
+        "DEDSHOTlostsaccount",
+        "Ishowspeed5538",
+        "dtbwock",
+        "myboyflameboy",
+        "joel",
+        "TRUXER68",
+        "wrefwefw",
+        "0100eerff",
+        "manfaceASKER",
+        "Addz_245",
+        "Green_Playsoficial",
+        "Kwk05",
+        "davidcubreacroman",
+        "Rafelk201",
+        "team_turtle1122",
+        "markitus028",
+        "nikhilsinght",
+        "killerboy3272",
+        "Asek987",
+        "SandwitchPieMan",
+        "Twxpz",
+        "DarkSheadow3",
+        "gigabanana911",
+        "naufalafif080419",
+        "kanm0pmypnn0g2cg6f74",
+        "bugha3q",
+        "turboIine",
+        "MilanGiezen",
+        "lI92Il",
+        "crxkn",
+        "tofuu392",
+        "w7asayf",
+        "username",
+        "Crispythekim",
+        "Cheese_strings098",
+        "dav5d95",
+        "T_alq",
+        
+    },
+    UserIds = {
+        00000000,
+        11111111,
+        22222222,
+    }
+}
+
+local isPassed = false
+local player = game.Players.LocalPlayer
+
+for i,v in pairs(whitelist.Usernames) do
+    if player.Name == v then
+        isPassed = true
+    end
+end
+
+for i,v in pairs(whitelist.UserIds) do
+    if player.UserId == v then
+        isPassed = true
+    end
+end
+
+if isPassed == false then
+    player:Kick("You are not whitelisted!")
+    task.wait(3)
+    game:Shutdown()
+    task.wait(1)
+    while true do end
+end
+
+-- SCRIPT GOES HERE
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/EZrobux/main/DoubleDownPremium.lua"))()
+
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("BloxFruit")
+local Section = Tab:NewSection("Blox Fruit")
+Section:NewButton("NukeVsCity", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Mango Hub", "?", function()
+  getgenv().WaterMark = true
+loadstring(game:HttpGet("https://gitlab.com/L1ZOT/mango-hub/-/raw/main/Mango-Bloxf-Fruits-Beta"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Bean Hub", "?", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/SoyElPekka/BeanHub/main/bloxfruitsnewpc2023'),true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Raito Hub", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main/Script"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Hole Hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/HoleHub/HoleHub/main/HoleMainLoader"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Pado Hub", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/REWzaKunGz1/premium/main/PadoHub'))() 
+    print("Clicked")
+end)
+
+Section:NewButton("Adel Hub Keyless", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AdelOnTheTop/Adel-Hub/main/Main.lua"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Amine Energy Clash Simulator")
+local Section = Tab:NewSection("Auto farm [Made By ALWI HUBV.1] il add soon Auto Eggs") 
+Section:NewButton("Auto win PK", "Click E then Click charka", function()
+
+_G.Win = true
+
+while _G.Win == true do
+local args = { 
+    [1] = true
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
+wait()
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Click", "?", function()
+    _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
+
+    end
+    print("Clicked")
+end) 
+
+Section:NewButton("Turn/Off", "?", function()
+    _G.Enabled = false
+
+while _G.Enabled == false do 
+   wait()
+   -- script here
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("AutoCrarf", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Rebirth", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Spin", "?", function()
+    _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+  game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Spin"):WaitForChild("[C-S]TrySpin"):InvokeServer()
+
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 2", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld2")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 3", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld3")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 4", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld4")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("World4 [Client]", "?", function()
+    game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-3171.80615, 8.30275154, 24.0737953, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+    print("Clicked")
+end)
+
+Section:NewButton("Eggs19 use Turn/Off To stop", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg19"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+    end
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Break In [Story]")
+local Section = Tab:NewSection("Admin Break in [Story]")
+Section:NewButton("Proxima Hub", "?", function()
+    loadstring(Game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Roblox Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita365/Break-In-Story-/main/Break%20In%20Story%20Hub"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Rec hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Bedwars")
+local Section = Tab:NewSection("Hub Gui Bedwars")
+Section:NewButton("VapeV4", "?", function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Future", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Bedwars [Open source]", "?", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/blinx-co/roblox/main/BedWarsAutoQueueOpenSource.lua', true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Starving Artits")
+local Section = Tab:NewSection("Op Auto Drawing!!")
+local Section = Tab:NewSection("Well Is make You rich Btw ")
+Section:NewButton("Auto Teleport Server Rich", "Is Made by me Idk work or no", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/anisnouacer1/My-Roblox-Scripts/main/Starving%20Artist%20Rich%20Server%20Finder.lua'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Redeeem Gui", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/juNstring/LuaProjects/main/StarvingReedem.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("ElementalHub [BestHub] [Key]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Thunder Hub / Resonix Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/x4nto/Resonix-Hub/xantoscripts/dabest.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("unfair hub", "Universal hub", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
+
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("[FREE LIMITED] 1% FINISH")
+local Section = Tab:NewSection("Is scripts Nott made by me")
+Section:NewButton("ToraIsMe", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/1%25FINISH"))()
+    print("Clicked")
+end)
+
+
+
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ALWI V.1";
+    Text = "Add Featured Universal "; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Enjoy";
+    Text = "Thank You To executor my scripts"; -- what the text says (ofc)
+    Duration = 30;
+})
