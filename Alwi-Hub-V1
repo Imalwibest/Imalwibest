@@ -620,7 +620,7 @@ end)
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1";
-    Text = "Add Featured Universal "; -- what the text says (ofc)
+    Text = "Add Featured Universal Add - Featured More Double down"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(1)
