@@ -1,5 +1,5 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("ALWI HUB V.1", "DarkTheme")
+local Window = Library.CreateLib("ALWI HUB V.1", "BloodTheme")
 local Tab = Window:NewTab("ALWI HUB V.1")
 local Section = Tab:NewSection("Hello guys Thx For Executor My scripts")
 local Section = Tab:NewSection("Developer[Indonesian]")
@@ -179,4 +179,283 @@ end)
     print("Clicked")
 end)
 
+local Tab = Window:NewTab("Amine Energy Clash Simulator")
+local Section = Tab:NewSection("Auto farm [Made By ALWI HUBV.1] il add soon Auto Eggs") 
+Section:NewButton("Auto win PK", "Click E then Click charka", function()
 
+_G.Win = true
+
+while _G.Win == true do
+local args = { 
+    [1] = true
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
+wait()
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Click", "?", function()
+    _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
+
+    end
+    print("Clicked")
+end) 
+
+Section:NewButton("Turn/Off", "?", function()
+    _G.Enabled = false
+
+while _G.Enabled == false do 
+   wait()
+   -- script here
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("AutoCrarf", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Rebirth", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Spin", "?", function()
+    _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+  game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Spin"):WaitForChild("[C-S]TrySpin"):InvokeServer()
+
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 2", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld2")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 3", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld3")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 4", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld4")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("World4 [Client]", "?", function()
+    game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-3171.80615, 8.30275154, 24.0737953, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+    print("Clicked")
+end)
+
+Section:NewButton("Eggs19 use Turn/Off To stop", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg19"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+    end
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Double down")
+local Section = Tab:NewSection("Hub Gui double down")
+Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+    print("Clicked")
+end)
+
+Section:NewButton("GamerReady Hub [Skidded]", "?", function() 
+    loadstring(game:HttpGet("https://pastebin.com/raw/b5zkS3S0",true))()
+-- Owner of the GitHub Skidded. No Credits
+    print("Clicked")
+end)
+
+Section:NewButton("ZenXHub [Kicker] Dont Use", "Dont Use", function()
+    --- Free double down ----
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/ObsDuc/main/disagain.lua"))()
+---- Whitelist system source ----
+local whitelist = {
+    Usernames = {
+        "error_unknownYTk",
+        "EeMe6i",
+        "CuteG0D",
+        "Urmyvip",
+        "DEDSHOTlostsaccount",
+        "Ishowspeed5538",
+        "dtbwock",
+        "myboyflameboy",
+        "joel",
+        "TRUXER68",
+        "wrefwefw",
+        "0100eerff",
+        "manfaceASKER",
+        "Addz_245",
+        "Green_Playsoficial",
+        "Kwk05",
+        "davidcubreacroman",
+        "Rafelk201",
+        "team_turtle1122",
+        "markitus028",
+        "nikhilsinght",
+        "killerboy3272",
+        "Asek987",
+        "SandwitchPieMan",
+        "Twxpz",
+        "DarkSheadow3",
+        "gigabanana911",
+        "naufalafif080419",
+        "kanm0pmypnn0g2cg6f74",
+        "bugha3q",
+        "turboIine",
+        "MilanGiezen",
+        "lI92Il",
+        "crxkn",
+        "tofuu392",
+        "w7asayf",
+        "username",
+        "Crispythekim",
+        "Cheese_strings098",
+        "dav5d95",
+        "T_alq",
+        
+    },
+    UserIds = {
+        00000000,
+        11111111,
+        22222222,
+    }
+}
+
+local isPassed = false
+local player = game.Players.LocalPlayer
+
+for i,v in pairs(whitelist.Usernames) do
+    if player.Name == v then
+        isPassed = true
+    end
+end
+
+for i,v in pairs(whitelist.UserIds) do
+    if player.UserId == v then
+        isPassed = true
+    end
+end
+
+if isPassed == false then
+    player:Kick("You are not whitelisted!")
+    task.wait(3)
+    game:Shutdown()
+    task.wait(1)
+    while true do end
+end
+
+-- SCRIPT GOES HERE
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/EZrobux/main/DoubleDownPremium.lua"))()
+
+    print("Clicked")
+end)
+
+Section:NewButton("The Cup Hub [Elemental]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/main/Thecupheaddd"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Bedwars")
+local Section = Tab:NewSection("Hub Gui Bedwars")
+Section:NewButton("VapeV4", "?", function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Future", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Bedwars [Open source]", "?", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/blinx-co/roblox/main/BedWarsAutoQueueOpenSource.lua', true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Break In [Story]")
+local Section = Tab:NewSection("Admin Break in [Story]")
+Section:NewButton("Proxima Hub", "?", function()
+    loadstring(Game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Roblox Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita365/Break-In-Story-/main/Break%20In%20Story%20Hub"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Rec hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("[FREE LIMITED] 1% FINISH")
+local Section = Tab:NewSection("Is scripts Nott made by me")
+Section:NewButton("ToraIsMe", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/1%25FINISH"))()
+    print("Clicked")
+end)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ALWI V.1";
+    Text = "Il add again So yeah Is Beta version"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(2)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text = "Add Esp [Beta] Add New Featured Scripts Double down"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Enjoy";
+    Text = "Thank You To executor my scripts"; -- what the text says (ofc)
+    Duration = 500;
+})
