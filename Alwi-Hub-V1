@@ -220,62 +220,6 @@ end
     print("Clicked")
 end)
 
-Section:NewButton("AntiFling", "ButtonInfo", function()
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-
-local function getCharacterComponents(character)
-    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart") or character:FindFirstChild("Torso") or character:FindFirstChild("UpperTorso")
-    local humanoid = character:FindFirstChild("Humanoid")
-    return humanoidRootPart, humanoid
-end
-
-local function applyAntiFling(humanoidRootPart, lastSafePosition)
-    local antiFlingBP = Instance.new("BodyPosition", humanoidRootPart)
-    antiFlingBP.Position = lastSafePosition
-    antiFlingBP.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-    antiFlingBP.P = 10000
-
-    wait(0.1) -- Adjust the duration to control how long the character stays in place
-
-    antiFlingBP:Destroy()
-    humanoidRootPart.CFrame = CFrame.new(lastSafePosition)
-end
-
-local function antiFling()
-    local localPlayer = Players.LocalPlayer
-    local maxVelocityChange = 50 -- Set a maximum allowed change in velocity to detect flinging
-
-    local lastVelocity = Vector3.new(0, 0, 0)
-    local lastSafePosition = Vector3.new(0, 5, 0)
-
-    while true do
-        RunService.Heartbeat:Wait()
-        local character = localPlayer.Character
-        local humanoidRootPart, humanoid = getCharacterComponents(character)
-
-        if humanoidRootPart and humanoid then
-            local currentVelocity = humanoidRootPart.Velocity
-            local velocityChange = (currentVelocity - lastVelocity).Magnitude
-
-            if velocityChange > maxVelocityChange then
-                applyAntiFling(humanoidRootPart, lastSafePosition)
-            else
-                lastSafePosition = humanoidRootPart.Position
-            end
-
-            lastVelocity = currentVelocity
-        end
-    end
-end
-
-antiFling()
-    print("Clicked")
-end)
-
-Section:NewTextBox("Character speed", "Type in a number to make the speed u want", function(txt)
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
-end)
 
 Section:NewSlider("speed", "?", 1000, 0, function(speed)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
