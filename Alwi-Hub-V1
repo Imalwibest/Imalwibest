@@ -205,8 +205,8 @@ Section:NewTextBox("Character speed", "1000", function(txt)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
 end)
 
-Section1:NewSlider("JumpPower", "", 500, 50, function(roe)
-plr.Character.Humanoid.JumpPower = roe 
+Section1:NewSlider("JumpPower", "", 500, 50, function(JumpPower) 
+plr.Character.Humanoid.JumpPower = JumpPower
 end)
     print("Clicked")
 end)
