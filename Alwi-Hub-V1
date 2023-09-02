@@ -748,6 +748,23 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/mai
     print("Clicked")
 end)
 
+local Tab = Window:NewTab("Bedwars")
+local Section = Tab:NewSection("Hub Gui Bedwars")
+Section:NewButton("VapeV4", "?", function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Future", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Bedwars [Open source]", "?", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/blinx-co/roblox/main/BedWarsAutoQueueOpenSource.lua', true))()
+    print("Clicked")
+end)
+
+
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1";
     Text = "Il add again So yeah Is Beta version [Fixed Bugs]"; -- what the text says (ofc)
