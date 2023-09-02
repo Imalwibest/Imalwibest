@@ -53,6 +53,21 @@ end)
     print("Clicked")
 end)
 
+Section:NewSlider("Speed", "?", 1000, 0, function(speed)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = spee
+end)
+
+Section:NewSlider("JumpPower", "Yo", 500, 0, function(row)
+        game.Character.Humanoid.JumpPower = row
+end)
+
+Section:NewTextBox("Character Speed", "Type in a number to make the speed u want", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+
+Section:NewTextBox("Character Jump", "Type in a number to make Jump u want", function(txt)
+	plr.Character.Humanoid.JumpPower = txt
+end)
 
 local Tab = Window:NewTab("Admin Hub")
 local Section = Tab:NewSection("OpAdmin")
