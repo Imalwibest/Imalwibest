@@ -33,7 +33,7 @@ end)
 end)
 
 Section:NewButton("Sword fight Gui Universal", "?", function()
-
+loadstring(game:HttpGet("https://https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Sword_Fight-Source_Free"))()
     print("Clicked")
 end)
 
@@ -41,15 +41,57 @@ Section:NewKeybind("Toggle ui", "makes the gui invisible, press again to make it
 	Library:ToggleUI()
 end)
 
+local Tab = Window:NewTab("Universal Hub")
+local Section = Tab:NewSection("Gui Local Player")
+Section:NewButton("Infinite Jump", "?", function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+    if InfiniteJumpEnabled then
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end
+end)
+    print("Clicked")
+end)
+
+Section:NewButton("Noclip", "?", function()
+
+    print("Clicked")
+end)
+
 local Tab = Window:NewTab("Admin Hub")
 local Section = Tab:NewSection("OpAdmin")
-Section:NewButton("Infinite yield", "ButtonInfo", function()
+Section:NewButton("Infinite yield", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     print("Clicked")
 end)
 
-Section:NewButton("Fates Admin", "ButtonInfo", function()
+Section:NewButton("Fates Admin", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("NameLess Admin", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Proton", "?", function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5e6e6cc1bb32fd926764d064e2c60a3b.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("CMD-X"", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Legs Admin", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Homebrew", "?", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()
     print("Clicked")
 end)
 
