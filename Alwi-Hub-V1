@@ -769,12 +769,15 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/mai
     print("Clicked")
 end)
 
-
-
-
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1";
-    Text = "Add Featured Universal Add - Featured More Double down"; -- what the text says (ofc)
+    Text = "Il add again So yeah Is Beta version"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(2)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text = "Add Esp [Beta] Add New Featured Scripts Double down"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(1)
