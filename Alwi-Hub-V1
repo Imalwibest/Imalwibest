@@ -3,7 +3,7 @@ local Window = Library.CreateLib("ALWI HUB V.1", "BloodTheme")
 local Tab = Window:NewTab("[Credit]")
 local Section = Tab:NewSection("Im From Indonesia")
 local Section = Tab:NewSection("Thank Use my Scripts Is made By me")
-local Section = Tab:NewSection("Im just add  Other Scripts Yeah Il update later or what")
+local Section = Tab:NewSection("Im just add  Other update")
 local Section = Tab:NewSection("I add Sword fight Op!!!")
 
 
