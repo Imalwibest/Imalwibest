@@ -182,7 +182,6 @@ end)
 
 
 
-
 local Tab = Window:NewTab("Universal Hub")
 local Section = Tab:NewSection("Universal Hub [Alwi]")
 local Section = Tab:NewSection("Im Year 13 Age cuz im learning lua")
@@ -204,12 +203,6 @@ end)
 Section:NewTextBox("Character speed", "1000", function(txt)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
 end)
-
-Section:NewSlider("JumpPower", "?", 1000, 0, function(JumpPower)
-    plr.Character.Humanoid.JumpPower = JumpPower
-end)
-
-    
 
 Section:NewButton("Noclip Click E To Activate", "?", function()
     local StealthMode = true -- If game has an anticheat that checks the logs
