@@ -1,11 +1,180 @@
-game.StarterGui:SetCore("SendNotification", {
-    Title = "ALWI V.1";
-    Text = "Broken Fixing"; -- what the text says (ofc)
-    Duration = 30;
-})
-wait(1)
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Enjoy";
-    Text = "Thank You To executor my scripts"; -- what the text says (ofc)
-    Duration = 30;
-})
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("ALWI HUB V.1", "BloodTheme")
+local Tab = Window:NewTab("Admin Hub")
+local Section = Tab:NewSection("OpAdmin")
+Section:NewButton("Infinite yield", "ButtonInfo", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Fates Admin", "ButtonInfo", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Double down")
+local Section = Tab:NewSection("Hub Gui double down")
+Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("BloxFruit")
+local Section = Tab:NewSection("Blox Fruit")
+Section:NewButton("NukeVsCity", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Mango Hub", "?", function()
+  getgenv().WaterMark = true
+loadstring(game:HttpGet("https://gitlab.com/L1ZOT/mango-hub/-/raw/main/Mango-Bloxf-Fruits-Beta"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Bean Hub", "?", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/SoyElPekka/BeanHub/main/bloxfruitsnewpc2023'),true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Raito Hub", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main/Script"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Amine Energy Clash Simulator")
+local Section = Tab:NewSection("Auto farm [Made By ALWI HUBV.1] il add soon Auto Eggs") 
+Section:NewButton("Auto win PK", "Click E then Click charka", function()
+
+_G.Win = true
+
+while _G.Win == true do
+local args = { 
+    [1] = true
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
+wait()
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Click", "?", function()
+    _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
+
+    end
+    print("Clicked")
+end) 
+
+Section:NewButton("Turn/Off", "?", function()
+    _G.Enabled = false
+
+while _G.Enabled == false do 
+   wait()
+   -- script here
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("AutoCrarf", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Rebirth", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Spin", "?", function()
+    _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+  game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Spin"):WaitForChild("[C-S]TrySpin"):InvokeServer()
+
+
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 2", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld2")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 3", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld3")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 4", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld4")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("World4 [Client]", "?", function()
+    game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-3171.80615, 8.30275154, 24.0737953, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+    print("Clicked")
+end)
+
+Section:NewButton("Eggs19 use Turn/Off To stop", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg19"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+    end
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Break In [Story]")
+local Section = Tab:NewSection("Admin Break in [Story]")
+Section:NewButton("Proxima Hub", "?", function()
+    loadstring(Game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Roblox Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita365/Break-In-Story-/main/Break%20In%20Story%20Hub"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Rec hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))()
+    print("Clicked")
+end)
