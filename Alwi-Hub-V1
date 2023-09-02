@@ -63,7 +63,7 @@ loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5e6e6cc1bb32fd
     print("Clicked")
 end)
 
-Section:NewButton("CMD-X"", "?", function()
+Section:NewButton("CMD-X", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
     print("Clicked")
 end)
