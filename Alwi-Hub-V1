@@ -41,6 +41,19 @@ Section:NewKeybind("Toggle ui", "makes the gui invisible, press again to make it
 	Library:ToggleUI()
 end)
 
+local Tab = Window:NewTab("Universal Hub")
+local Section = Tab:NewSection("Local Player")
+Section:NewButton("Infinite jump", "?", function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+    if InfiniteJumpEnabled then
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end
+end)
+    print("Clicked")
+end)
+
+
 local Tab = Window:NewTab("Admin Hub")
 local Section = Tab:NewSection("OpAdmin")
 Section:NewButton("Infinite yield", "?", function()
