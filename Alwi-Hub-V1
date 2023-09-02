@@ -361,34 +361,6 @@ Section:NewButton("Bedwars [Open source]", "?", function()
     print("Clicked")
 end)
 
-local Tab = Window:NewTab("Starving Artits")
-local Section = Tab:NewSection("Op Auto Drawing!!")
-local Section = Tab:NewSection("Well Is make You rich Btw ")
-Section:NewButton("Auto Teleport Server Rich", "Is Made by me Idk work or no", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/anisnouacer1/My-Roblox-Scripts/main/Starving%20Artist%20Rich%20Server%20Finder.lua'))()
-    print("Clicked")
-end)
-
-Section:NewButton("Auto Redeeem Gui", "?", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/juNstring/LuaProjects/main/StarvingReedem.lua"))()
-    print("Clicked")
-end)
-
-Section:NewButton("ElementalHub [BestHub] [Key]", "?", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
-    print("Clicked")
-end)
-
-Section:NewButton("Thunder Hub / Resonix Hub", "?", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/x4nto/Resonix-Hub/xantoscripts/dabest.lua"))()
-    print("Clicked")
-end)
-
-Section:NewButton("unfair hub", "Universal hub", function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
-
-    print("Clicked")
-end)
 
 local Tab = Window:NewTab("[FREE LIMITED] 1% FINISH")
 local Section = Tab:NewSection("Is scripts Nott made by me")
