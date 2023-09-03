@@ -6,7 +6,7 @@ local Section = Tab:NewSection("Fixed Error Down")
 local Section = Tab:NewSection("Thank You use My Scripts")
 local Section = Tab:NewSection("Try my sword Fight New!!")
 Section:NewButton("Sword Fight Reach", "?", function()
-// Setting \\--
+// Setting \\
 local range = 15
  
 --// Variable \\--
