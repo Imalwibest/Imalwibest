@@ -63,7 +63,7 @@ Section:NewSlider("Speed", "?", 1000, 0, function(speed)
 end)
 
 Section:NewSlider("JumpPower", "?", 1000, 50, function(row)
-        game.Character.Humanoid.JumpPower = row
+        speed.Character.Humanoid.JumpPower = row
 end)
 
 Section:NewTextBox("Character Speed", "Type in a number to make the speed u want", function(txt)
