@@ -1107,13 +1107,15 @@ game.StarterGui:SetCore("SendNotification", {
     Duration = 30;
 })
 game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text =  "If you have bad devine this will make you lag"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(10) 
+game.StarterGui:SetCore("SendNotification", {
     Title = "Enjoy";
     Text = "Thank You To executor my scripts"; -- what the text says (ofc)
     Duration = 9999;
 })
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Warming!";
-    Text = "If you have bad devine this will make you lag"; -- what the text says (ofc)
-    Duration = 9999;
-})
+
 
