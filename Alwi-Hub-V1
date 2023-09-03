@@ -802,6 +802,11 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"
     print("Clicked")
 end)
 
+Section:NewButton("Go to World5 [Client]", "?", function()
+game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-4142.10303, 5.01470137, 20.179409, 0.57799983, -5.21998906e-08, 0.81603688, -3.68149244e-09, 1, 6.65751685e-08, -0.81603688, -4.14846717e-08, 0.57799983)) 
+    print("Clicked")
+end)
+
 Section:NewToggle("Eggs1", "?", function(state)
     if state then
         print("Toggle On")
