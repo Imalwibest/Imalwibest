@@ -1,7 +1,7 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("ALWI HUB V.1", "BloodTheme")
 local Tab = Window:NewTab("Credit")
-local Section = Tab:NewSection("Development")
+local Section = Tab:NewSection("Dev ALWI")
 local Section = Tab:NewSection("Fixed Bug error down")
 local Section = Tab:NewSection("Thx For executor My Scripts")
 Section:NewButton("Sword Fight Reach", "?", function()
