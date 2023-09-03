@@ -38,7 +38,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-wor
 end)
 
 Section:NewButton("Sword fight Gui Universal", "?", function()
-loadstring(game:HttpGet("https://https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Sword_Fight-Source_Free"))()
+loadstring(game:HttpGet("https://https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Sword_Fight-Source_Free"))();
     print("Clicked")
 end)
 
