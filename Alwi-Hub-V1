@@ -668,16 +668,25 @@ wait()
     print("Clicked")
 end)
 
-Section:NewButton("Auto Click", "?", function()
-    _G.Enabled = true
+Section:NewToggle("AutoClick", "?", function(state)
+    if state then
+        _G.Enabled = true
 
 while _G.Enabled == true do
    wait()
    game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
 
     end
-    print("Clicked")
-end) 
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do 
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
+
+    end
+    end
+end)
 
 Section:NewButton("Turn/Off", "?", function()
     _G.Enabled = false
