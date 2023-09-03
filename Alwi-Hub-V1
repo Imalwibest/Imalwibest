@@ -481,7 +481,7 @@ end)
 Section:NewKeybind("Toggle ui", "Click again LoL", Enum.KeyCode.RightAlt, function()
 	Library:ToggleUI()
 end)
-
+local Tab = Window:NewTab("Hub admin")
 local Section = Tab:NewSection("OpAdmin")
 Section:NewButton("Infinite yield", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
@@ -621,6 +621,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/
     print("Clicked")
 end)
 
+local Tab = Window:NewTab("Blox Fruit")
+local Section = Tab:NewSection("AutoFarm")
 Section:NewButton("Mango Hub", "?", function()
   getgenv().WaterMark = true
 loadstring(game:HttpGet("https://gitlab.com/L1ZOT/mango-hub/-/raw/main/Mango-Bloxf-Fruits-Beta"))()
@@ -652,7 +654,7 @@ Section:NewButton("Adel Hub Keyless", "?", function()
 end)
 
 local Tab = Window:NewTab("Amine Energy Clash Simulator")
-local Section = Tab:NewSection("Auto farm [Made By ALWI HUBV.1] il add soon Auto Eggs") 
+local Section = Tab:NewSection("Auto farm [Made By ALWI HUBV.1]") 
 Section:NewButton("Auto win PK", "Click E then Click charka", function()
 
 _G.Win = true
@@ -749,6 +751,7 @@ while _G.Enabled == true do
     print("Clicked")
 end)
 
+local Section = Tab:NewSection("World")
 Section:NewButton("Goto World 2", "ButtonInfo", function()
     local args = {
     [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld2")
