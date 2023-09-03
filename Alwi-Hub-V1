@@ -1,10 +1,7 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("ALWI HUB V.1", "BloodTheme")
 local Tab = Window:NewTab("Credit")
-local Section = Tab:NewSection("Developert Scripts ALWI#3737")
-local Section = Tab:NewSection("Fixed Error Down")
-local Section = Tab:NewSection("Thank You use My Scripts")
-local Section = Tab:NewSection("Try my sword Fight New!!")
+local Section = Tab:NewSection("ALWI Development")
 Section:NewButton("Sword Fight Reach", "?", function()
 // Setting \\
 local range = 15
@@ -392,11 +389,6 @@ local Tab = Window:NewTab("[FREE LIMITED] 1% FINISH")
 local Section = Tab:NewSection("Damn Crazy Scripts Toraisme")
 Section:NewButton("ToraIsMe", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/1%25FINISH"))()
-    print("Clicked")
-end)
-
-Section:NewButton("ALWI HUB [Coming soon]", "?", function()
-
     print("Clicked")
 end)
 
