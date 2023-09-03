@@ -1,14 +1,72 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("ALWI HUB V.1", "BloodTheme")
-local Tab = Window:NewTab("Admin Hub")
+local Tab = Window:NewTab("[Credit]")
+local Section = Tab:NewSection("Developert Scripts ALWI#3737")
+local Section = Tab:NewSection("Fixed Error Down")
+local Section = Tab:NewSection("Thank You use My Scripts")
+local Section = Tab:NewSection("Try my sword Fight New!!")
+Section:NewButton("Sword Fight Reach", "?", function()
+// Setting \\--
+local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+    print("Clicked")
+end)
+
+
 local Section = Tab:NewSection("OpAdmin")
-Section:NewButton("Infinite yield", "ButtonInfo", function()
+Section:NewButton("Infinite yield", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     print("Clicked")
 end)
 
-Section:NewButton("Fates Admin", "ButtonInfo", function()
+Section:NewButton("Fates Admin", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("NameLess Admin", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Proton", "?", function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5e6e6cc1bb32fd926764d064e2c60a3b.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("CMD-X", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Legs Admin", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Homebrew", "?", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()
     print("Clicked")
 end)
 
@@ -16,6 +74,102 @@ local Tab = Window:NewTab("Double down")
 local Section = Tab:NewSection("Hub Gui double down")
 Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+    print("Clicked")
+end)
+
+Section:NewButton("GamerReady Hub [Skidded]", "?", function() 
+    loadstring(game:HttpGet("https://pastebin.com/raw/b5zkS3S0",true))()
+-- Owner of the GitHub Skidded. No Credits
+    print("Clicked")
+end)
+
+Section:NewButton("ZenXHub [Kicker] Dont Use", "Dont Use", function()
+    --- Free double down ----
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/ObsDuc/main/disagain.lua"))()
+---- Whitelist system source ----
+local whitelist = {
+    Usernames = {
+        "error_unknownYTk",
+        "EeMe6i",
+        "CuteG0D",
+        "Urmyvip",
+        "DEDSHOTlostsaccount",
+        "Ishowspeed5538",
+        "dtbwock",
+        "myboyflameboy",
+        "joel",
+        "TRUXER68",
+        "wrefwefw",
+        "0100eerff",
+        "manfaceASKER",
+        "Addz_245",
+        "Green_Playsoficial",
+        "Kwk05",
+        "davidcubreacroman",
+        "Rafelk201",
+        "team_turtle1122",
+        "markitus028",
+        "nikhilsinght",
+        "killerboy3272",
+        "Asek987",
+        "SandwitchPieMan",
+        "Twxpz",
+        "DarkSheadow3",
+        "gigabanana911",
+        "naufalafif080419",
+        "kanm0pmypnn0g2cg6f74",
+        "bugha3q",
+        "turboIine",
+        "MilanGiezen",
+        "lI92Il",
+        "crxkn",
+        "tofuu392",
+        "w7asayf",
+        "username",
+        "Crispythekim",
+        "Cheese_strings098",
+        "dav5d95",
+        "T_alq",
+        
+    },
+    UserIds = {
+        00000000,
+        11111111,
+        22222222,
+    }
+}
+
+local isPassed = false
+local player = game.Players.LocalPlayer
+
+for i,v in pairs(whitelist.Usernames) do
+    if player.Name == v then
+        isPassed = true
+    end
+end
+
+for i,v in pairs(whitelist.UserIds) do
+    if player.UserId == v then
+        isPassed = true
+    end
+end
+
+if isPassed == false then
+    player:Kick("You are not whitelisted!")
+    task.wait(3)
+    game:Shutdown()
+    task.wait(1)
+    while true do end
+end
+
+-- SCRIPT GOES HERE
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/EZrobux/main/DoubleDownPremium.lua"))()
+
+    print("Clicked")
+end)
+
+Section:NewButton("The Cup Hub [Elemental]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/main/Thecupheaddd"))()
     print("Clicked")
 end)
 
@@ -39,6 +193,61 @@ end)
 
 Section:NewButton("Raito Hub", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main/Script"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Pado Hub", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/REWzaKunGz1/premium/main/PadoHub'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Hole Hub", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/HoleHub/HoleHub/main/HoleMainLoader"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Break In [Story]")
+local Section = Tab:NewSection("Admin Break in [Story]")
+Section:NewButton("Proxima Hub", "?", function()
+    loadstring(Game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Roblox Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita365/Break-In-Story-/main/Break%20In%20Story%20Hub"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Rec hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Starving Artits")
+local Section = Tab:NewSection("Op Auto Drawing!!")
+local Section = Tab:NewSection("Well Is make You rich Btw ")
+Section:NewButton("Auto Teleport Server Rich", "Is Made by me Idk work or no", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/anisnouacer1/My-Roblox-Scripts/main/Starving%20Artist%20Rich%20Server%20Finder.lua'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Redeeem Gui", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/juNstring/LuaProjects/main/StarvingReedem.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("ElementalHub [BestHub] [Key]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Thunder Hub / Resonix Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/x4nto/Resonix-Hub/xantoscripts/dabest.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("unfair hub", "Universal hub", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
+
     print("Clicked")
 end)
 
@@ -163,18 +372,60 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
     print("Clicked")
 end)
 
-local Tab = Window:NewTab("Break In [Story]")
-local Section = Tab:NewSection("Admin Break in [Story]")
-Section:NewButton("Proxima Hub", "?", function()
-    loadstring(Game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+local Tab = Window:NewTab("Bedwars")
+local Section = Tab:NewSection("Hub Gui Bedwars")
+Section:NewButton("VapeV4", "?", function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
     print("Clicked")
 end)
 
-Section:NewButton("Roblox Hub", "?", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita365/Break-In-Story-/main/Break%20In%20Story%20Hub"))()
+Section:NewButton("Future", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
     print("Clicked")
 end)
 
-Section:NewButton("Rec hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))()
+Section:NewButton("Bedwars [Open source]", "?", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/blinx-co/roblox/main/BedWarsAutoQueueOpenSource.lua', true))()
     print("Clicked")
 end)
+
+local Tab = Window:NewTab("[FREE LIMITED] 1% FINISH")
+local Section = Tab:NewSection("Damn Crazy Scripts Toraisme")
+Section:NewButton("ToraIsMe", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/1%25FINISH"))()
+    print("Clicked")
+end)
+
+Section:NewButton("ALWI HUB [Coming soon]", "?", function()
+
+    print("Clicked")
+end)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ALWI V.1";
+    Text = "Il add again So yeah Is Beta version"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(5)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text = "Add Esp [Beta] Add New Featured Scripts Double down"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(5)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text = "Update Amine Enegy clash Simulator"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(15) 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text =  "If you have bad devine this will make you lag"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(10) 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Enjoy";
+    Text = "Thank You To executor my scripts"; -- what the text says (ofc)
+    Duration = 9999;
+})
