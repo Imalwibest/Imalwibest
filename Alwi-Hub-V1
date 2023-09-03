@@ -43,7 +43,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main
 end)
 
 local Tab = Window:NewTab("Amine Energy Clash Simulator")
-local Section = Tab:NewSection("Auto farm") 
+local Section = Tab:NewSection("Auto farm [Made By ALWI HUBV.1] il add soon Auto Eggs") 
 Section:NewButton("Auto win PK", "Click E then Click charka", function()
 
 _G.Win = true
@@ -140,5 +140,41 @@ Section:NewButton("Goto World 4", "ButtonInfo", function()
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
 
+    print("Clicked")
+end)
+
+Section:NewButton("World4 [Client]", "?", function()
+    game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-3171.80615, 8.30275154, 24.0737953, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+    print("Clicked")
+end)
+
+Section:NewButton("Eggs19 use Turn/Off To stop", "?", function()
+_G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg19"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+    end
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Break In [Story]")
+local Section = Tab:NewSection("Admin Break in [Story]")
+Section:NewButton("Proxima Hub", "?", function()
+    loadstring(Game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Roblox Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita365/Break-In-Story-/main/Break%20In%20Story%20Hub"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Rec hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))()
     print("Clicked")
 end)
