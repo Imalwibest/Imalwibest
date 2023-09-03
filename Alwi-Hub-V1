@@ -698,30 +698,47 @@ while _G.Enabled == false do
     print("Clicked")
 end)
 
-Section:NewButton("AutoCrarf", "?", function()
-_G.Enabled = true
+Section:NewToggle("Auto Cratf", "?", function(state)
+    if state then
+        _G.Enabled = true
 
 while _G.Enabled == true do
    wait()
    game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
 
     end
-    print("Clicked")
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do 
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
+
+    end
+    end
 end)
 
-Section:NewButton("Auto Rebirth", "?", function()
-_G.Enabled = true
+Section:NewToggle("Auto Rebirth", "?", function(state)
+    if state then
+        _G.Enabled = true
 
 while _G.Enabled == true do
    wait()
    game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
-
     end
-    print("Clicked")
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do 
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
+    end
+    end
 end)
 
-Section:NewButton("Auto Spin", "?", function()
-    _G.Enabled = true
+Section:NewToggle("Auto Spin", "?", function(state)
+    if state then
+        _G.Enabled = true
 
 while _G.Enabled == true do
    wait()
@@ -729,7 +746,15 @@ while _G.Enabled == true do
 
 
     end
-    print("Clicked")
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do 
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Spin"):WaitForChild("[C-S]TrySpin"):InvokeServer()
+
+    end
+    end
 end)
 
 Section:NewButton("Goto World 2", "ButtonInfo", function()
@@ -764,6 +789,16 @@ end)
 
 Section:NewButton("World4 [Client]", "?", function()
     game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-3171.80615, 8.30275154, 24.0737953, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+    print("Clicked")
+end)
+
+Section:NewButton("Wolrd5", "?", function()
+local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld5")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
     print("Clicked")
 end)
 
