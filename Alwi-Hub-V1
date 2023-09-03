@@ -504,6 +504,16 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main
     print("Clicked")
 end)
 
+Section:NewButton("Pado Hub", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/REWzaKunGz1/premium/main/PadoHub'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Hole Hub", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/HoleHub/HoleHub/main/HoleMainLoader"))()
+    print("Clicked")
+end)
+
 local Tab = Window:NewTab("Amine Energy Clash Simulator")
 local Section = Tab:NewSection("Auto farm [Made By ALWI HUBV.1] il add soon Auto Eggs") 
 Section:NewButton("Auto win PK", "Click E then Click charka", function()
