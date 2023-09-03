@@ -482,15 +482,39 @@ Section:NewKeybind("Toggle ui", "Click again LoL", Enum.KeyCode.RightAlt, functi
 	Library:ToggleUI()
 end)
 
-local Tab = Window:NewTab("Admin Hub")
 local Section = Tab:NewSection("OpAdmin")
-Section:NewButton("Infinite yield", "ButtonInfo", function()
+Section:NewButton("Infinite yield", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     print("Clicked")
 end)
 
 Section:NewButton("Fates Admin", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("NameLess Admin", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Proton", "?", function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5e6e6cc1bb32fd926764d064e2c60a3b.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("CMD-X", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Legs Admin", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Homebrew", "?", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()
     print("Clicked")
 end)
 
@@ -579,7 +603,7 @@ for i,v in pairs(whitelist.UserIds) do
 end
 
 if isPassed == false then
-    player:Kick("You are not whitelisted!")
+    player:Kick("I said Dont executor dude B0ZO")
     task.wait(3)
     game:Shutdown()
     task.wait(1)
@@ -592,10 +616,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/EZrobux
     print("Clicked")
 end)
 
-local Tab = Window:NewTab("BloxFruit")
-local Section = Tab:NewSection("Blox Fruit")
-Section:NewButton("NukeVsCity", "?", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+Section:NewButton("The Cup Hub [Elemental]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/main/Thecupheaddd"))()
     print("Clicked")
 end)
 
@@ -645,16 +667,25 @@ wait()
     print("Clicked")
 end)
 
-Section:NewButton("Auto Click", "?", function()
-    _G.Enabled = true
+Section:NewToggle("Auto Click", "?", function(state)
+    if state then
+        _G.Enabled = true
 
 while _G.Enabled == true do
    wait()
    game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
 
     end
-    print("Clicked")
-end) 
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
+
+    end
+    end
+end)
 
 Section:NewButton("Turn/Off", "?", function()
     _G.Enabled = false
@@ -666,26 +697,44 @@ while _G.Enabled == false do
     print("Clicked")
 end)
 
-Section:NewButton("AutoCrarf", "?", function()
-_G.Enabled = true
+Section:NewToggle("Auto Cratf Pet", "?", function(state)
+    if state then
+        _G.Enabled = true
 
 while _G.Enabled == true do
    wait()
    game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
 
     end
-    print("Clicked")
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
+
+    end
+    end
 end)
 
-Section:NewButton("Auto Rebirth", "?", function()
-_G.Enabled = true
+Section:NewToggle("Auto Rebirth", "?", function(state)
+    if state then
+        _G.Enabled = true
 
 while _G.Enabled == true do
    wait()
    game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
 
     end
-    print("Clicked")
+    else
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
+
+    end
+    end
 end)
 
 Section:NewButton("Auto Spin", "?", function()
@@ -735,18 +784,8 @@ Section:NewButton("World4 [Client]", "?", function()
     print("Clicked")
 end)
 
-Section:NewButton("Eggs19 use Turn/Off To stop", "?", function()
-_G.Enabled = true
-
-while _G.Enabled == true do
-   wait()
-   local args = {
-    [1] = "Egg19"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
-
-    end
+Section:NewButton("World5 [Client]", "?", function()
+game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-4142.64111, 5.01470137, 24.3235798, -0.33583346, -6.80950478e-08, 0.941921353, -3.22545084e-08, 1, 6.07937167e-08, -0.941921353, -9.96464511e-09, -0.33583346))
     print("Clicked")
 end)
 
@@ -812,39 +851,43 @@ loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfai
 end)
 
 local Tab = Window:NewTab("[FREE LIMITED] 1% FINISH")
-local Section = Tab:NewSection("Is scripts Nott made by me")
+local Section = Tab:NewSection("Damn Crazy Scripts Toraisme")
 Section:NewButton("ToraIsMe", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/1%25FINISH"))()
     print("Clicked")
 end)
 
-Section:NewToggle("ToggleText", "ToggleInfo", function(state)
-    if state then
-        local args = {
-    [1] = "Egg19"
-}
+Section:NewButton("ALWI HUB [Coming soon]", "?", function()
 
-game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
-
-    else
-        local args = {
-    [1] = "Egg19"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
-
-    end
+    print("Clicked")
 end)
-
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1";
-    Text = "Add Featured Universal "; -- what the text says (ofc)
+    Text = "Il add again So yeah Is Beta version"; -- what the text says (ofc)
     Duration = 30;
 })
-wait(1)
+wait(5)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text = "Add Esp [Beta] Add New Featured Scripts Double down"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(5)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text = "Update Amine Enegy clash Simulator"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(15) 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text =  "If you have bad devine this will make you lag"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(10) 
 game.StarterGui:SetCore("SendNotification", {
     Title = "Enjoy";
     Text = "Thank You To executor my scripts"; -- what the text says (ofc)
-    Duration = 30;
+    Duration = 9999;
 })
