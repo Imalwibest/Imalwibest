@@ -909,7 +909,7 @@ end
     end
 end)
 
-Section:NewToggle("EggsNewTab", function(state)
+Section:NewToggle("Eggs5", function(state)
     if state then
         _G.Enabled = true
 
