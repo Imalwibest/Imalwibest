@@ -797,7 +797,6 @@ game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-4142.64111, 5.01470137, 2
     print("Clicked")
 end)
 local Section = Tab:NewSection("Auto Eggs")
-local Tab = Window:NewTab("World1 Egg")
 Section:NewToggle("Eggs1", "?", function(state)
     if state then
         _G.Enabled = true
