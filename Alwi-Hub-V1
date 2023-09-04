@@ -909,7 +909,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
-local Section = Tab:NewSection("World2 Egg")
+local Tab = Window:NewTab("World1 Egg")
 Section:NewToggle("Eggs5", "?", function(state)
     if state then
         _G.Enabled = true
@@ -1049,7 +1049,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
-local Tab = Window:NewTab("World3 Egg")
+local Section = Tab:NewSection("World2")
 Section:NewToggle("Eggs10", "?", function(state)
     if state then
         _G.Enabled = true
@@ -1413,7 +1413,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
-local Section = Tab:NewSection("World5 Egg")
+local Section = Tab:NewSection("AutoEgg 4")
 Section:NewToggle("Eggs23", "?", function(state)
     if state then
         _G.Enabled = true
