@@ -885,7 +885,7 @@ game.StarterGui:SetCore("SendNotification", {
 wait(5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "[Beta]";
-    Text = "Update Amine Enegy clash Simulator"; -- what the text says (ofc)
+    Text = "Update Amine Enegy clash Simulator [Auto Eggs]"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(15) 
@@ -900,3 +900,10 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "Thank You To executor my scripts"; -- what the text says (ofc)
     Duration = 9999;
 })
+
+_G.Enabled = true
+
+while _G.Enabled == true do 
+   wait()
+   print("ALWI DA BEST nigga")
+    end
