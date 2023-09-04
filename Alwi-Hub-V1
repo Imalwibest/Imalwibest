@@ -629,6 +629,11 @@ loadstring(game:HttpGet("https://gitlab.com/L1ZOT/mango-hub/-/raw/main/Mango-Blo
     print("Clicked")
 end)
 
+Section:NewButton("NukeVscity Universal", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+    print("Clicked")
+end)
+
 Section:NewButton("Bean Hub", "?", function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/SoyElPekka/BeanHub/main/bloxfruitsnewpc2023'),true))()
     print("Clicked")
@@ -791,6 +796,7 @@ Section:NewButton("World5 [Client]", "?", function()
 game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-4142.64111, 5.01470137, 24.3235798, -0.33583346, -6.80950478e-08, 0.941921353, -3.22545084e-08, 1, 6.07937167e-08, -0.941921353, -9.96464511e-09, -0.33583346))
     print("Clicked")
 end)
+local Section = Tab:NewSection("Auto Eggs [Coming Soon]")
 
 local Tab = Window:NewTab("Break In [Story]")
 local Section = Tab:NewSection("Admin Break in [Story]")
