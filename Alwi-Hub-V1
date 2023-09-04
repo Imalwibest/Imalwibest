@@ -1048,7 +1048,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
-local Section = Tab:NewSection("World2")
+
 Section:NewToggle("Eggs10", "?", function(state)
     if state then
         _G.Enabled = true
