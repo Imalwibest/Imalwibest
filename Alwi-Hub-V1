@@ -525,7 +525,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHu
     print("Clicked")
 end)
 
-Section:NewButton("GamerReady Hub [Skidded]", "?", function() 
+Section:NewButton("GamerReady Hub", "?", function() 
     loadstring(game:HttpGet("https://pastebin.com/raw/b5zkS3S0",true))()
 -- Owner of the GitHub Skidded. No Credits
     print("Clicked")
@@ -618,6 +618,11 @@ end)
 
 Section:NewButton("The Cup Hub [Elemental]", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/main/Thecupheaddd"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Nogger Hub [Free] Cracked by GamerReady", "?", function()
+loadstring(game:HttpGet(("https://pastebin.com/raw/fGNn9QF7"),true))()
     print("Clicked")
 end)
 
