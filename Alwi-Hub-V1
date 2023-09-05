@@ -1641,7 +1641,7 @@ game.StarterGui:SetCore("SendNotification", {
 wait(5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "[Beta]";
-    Text = "Add Esp [Beta] Add New Featured Scripts Double down"; -- what the text says (ofc)
+    Text = "New Featured Scripts Double down Amine Enegry Clasg Simulator update"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(5)
