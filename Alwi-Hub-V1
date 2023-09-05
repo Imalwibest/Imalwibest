@@ -1250,7 +1250,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
-
+local Section = Tab:NewSection("World 4 Eggs")
 Section:NewToggle("Eggs16", "?", function(state)
     if state then
         _G.Enabled = true
@@ -1278,6 +1278,287 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
+
+Section:NewToggle("Eggs17", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg17"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg17"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs18", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg18"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg18"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs19", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg19"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg19"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs20", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg20"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg20"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs21", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg21"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg21"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+local Section = Tab:NewSection("World 5 Eggs")
+Section:NewToggle("Eggs22", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg22"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg22"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs1", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg23"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg23"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs24", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg24"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg24"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs25", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg25"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg25"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs27", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg27"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg27"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+local Section = Tab:NewSection("Is Beta If Bugs Click Turn/Off button")
 
 local Tab = Window:NewTab("Break In [Story]")
 local Section = Tab:NewSection("Admin Break in [Story]")
@@ -1365,8 +1646,8 @@ game.StarterGui:SetCore("SendNotification", {
 })
 wait(5)
 game.StarterGui:SetCore("SendNotification", {
-    Title = "[Beta] Im sorry Auto eggs is update tommorow";
-    Text = "Update Amine Enegy clash Simulator [Bugs Auto Eggs]"; -- what the text says (ofc)
+    Title = "[Beta]";
+    Text = "Update Amine Enegy clash Simulator [Bugs Auto Eggs]"; --what the text says (ofc)
     Duration = 30;
 })
 wait(15) 
