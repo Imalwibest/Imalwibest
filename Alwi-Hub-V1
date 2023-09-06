@@ -616,6 +616,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/EZrobux
     print("Clicked")
 end)
 
+Section:NewButton("Nogger Hub Credit GamerReady Hub [Pacthed]", "?", function()
+loadstring(game:HttpGet(("https://pastebin.com/raw/fGNn9QF7"),true))()
+    print("Clicked")
+end)
+
 Section:NewButton("The Cup Hub [Elemental]", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/main/Thecupheaddd"))()
     print("Clicked")
