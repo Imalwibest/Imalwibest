@@ -621,11 +621,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/
     print("Clicked")
 end)
 
-Section:NewButton("Nogger Hub [Free] Cracked by GamerReady", "?", function()
-loadstring(game:HttpGet(("https://pastebin.com/raw/fGNn9QF7"),true))()
-    print("Clicked")
-end)
-
 local Tab = Window:NewTab("Blox Fruit")
 local Section = Tab:NewSection("AutoFarm")
 Section:NewButton("Mango Hub", "?", function()
