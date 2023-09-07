@@ -1699,7 +1699,7 @@ game.StarterGui:SetCore("SendNotification", {
 wait(5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "[Beta]";
-    Text = "Update Amine Enegy clash Simulator [Bugs Auto Eggs]"; --what the text says (ofc)
+    Text = "Update [FREE LIMITED] 1% FINISH"; --what the text says (ofc)
     Duration = 30;
 })
 wait(15) 
