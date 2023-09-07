@@ -1626,10 +1626,62 @@ local Section = Tab:NewSection("Damn Crazy Scripts Toraisme")
 Section:NewButton("ToraIsMe", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/1%25FINISH"))()
     print("Clicked")
+end) 
+
+Section:NewButton("Instant Win", "?", function()
+game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-34.3754959, 735.631897, 11, 0, 0, 1, 0, 1, 0, -1, 0, 0))
+    print("Clicked")
 end)
 
-Section:NewButton("ALWI HUB [Coming soon]", "?", function()
+Section:NewToggle("Auto win", "?", function(state)
+    if state then
+        _G.Enabled = true
 
+while _G.Enabled == true do
+   wait()
+   game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-34.3754959, 735.631897, 11, 0, 0, 1, 0, 1, 0, -1, 0, 0))
+    
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   -- script here
+end
+    end
+end)
+
+Section:NewButton("Antiafk", "?", function()
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
+    print("Clicked")
+end)
+
+Section:NewButton("Kill Aura Kill Sword", "?", function()
+--// Setting \\--
+local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
     print("Clicked")
 end)
 
