@@ -1569,7 +1569,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-65.8537
     print("Clicked")
 end)
 
-Section:NewToggle("Auto Eggs Gems farm", "?", function(state)
+Section:NewToggle("?", "?", function(state)
     if state then
         _G.Enabled = true
 
@@ -1600,7 +1600,6 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end)
     end
 end)
-
 local Section = Tab:NewSection("Is Beta If Bugs Click Turn/Off button")
 
 local Tab = Window:NewTab("Break In [Story]")
