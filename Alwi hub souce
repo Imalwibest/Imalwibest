@@ -177,7 +177,17 @@ end)
 
     print("Clicked")
 end)
+local Section = Tab:NewSection("My discord")
+Section:NewButton("discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 9999;
+})
 
+setclipboard(tostring("https://discord.gg/KbeAPYQu"))
+    print("Clicked")
+end)
 
 
 
@@ -1571,6 +1581,36 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
+local Section = Tab:NewSection("eggs event gems")
+Section:NewToggle("Auto Eggs gems", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Gem1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+  end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Gem1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+  end
+    end
+end)
+
+
 local Section = Tab:NewSection("Is Beta If Bugs Click Turn/Off button")
 
 local Tab = Window:NewTab("Break In [Story]")
@@ -1727,5 +1767,4 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "Thank You To executor my scripts"; -- what the text says (ofc)
     Duration = 9999;
 })
-
 
