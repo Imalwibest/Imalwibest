@@ -1563,8 +1563,8 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
-local Section = Tab:NewSection("Auto eggs Gems1")
-Section:NewToggle("ToggleText", "ToggleInfo", function(state)
+
+Section:NewToggle("Auto Eggs event", "ToggleInfo", function(state)
     if state then
         _G.Enabled = true
 
@@ -1600,7 +1600,6 @@ Section:NewButton("Teleport eggs gems1", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-65.8537827, 2.99999928, 24.1162529, -0.979547679, -1.94230854e-08, 0.201212212, -1.17651915e-08, 1, 3.92546724e-08, -0.201212212, 3.60845256e-08, -0.979547679)) 
     print("Clicked")
 end)
-local Section = Tab:NewSection("Is Beta If Bugs Click Turn/Off button") 
 
 local Tab = Window:NewTab("Break In [Story]")
 local Section = Tab:NewSection("Admin Break in [Story]")
