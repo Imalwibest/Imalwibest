@@ -4,9 +4,16 @@ local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("ALWI#3737")
 local Section = Tab:NewSection("My discord")
 Section:NewButton("Discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 30;
+})
 
+setclipboard(tostring("https://discord.gg/f5d6PRyD"))
     print("Clicked")
 end)
+
 local Tab = Window:NewTab("World1")
 local Section = Tab:NewSection("ALWI#3737")
 local Section = Tab:NewSection("World 1")
@@ -50,3 +57,9 @@ end)
 
 local Tab = Window:NewTab("World2")
 local Section = Tab:NewSection("ALWI#3737")
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Enjoy";
+    Text = "Update soon world2¢"; -- what the text says (ofc)
+    Duration = 50;
+})
