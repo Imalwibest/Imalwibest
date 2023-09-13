@@ -14,6 +14,17 @@ setclipboard(tostring("https://discord.gg/f5d6PRyD"))
     print("Clicked")
 end)
 
+Section:NewButton("Youtube Tutorial!", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Okay";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 30;
+})
+
+setclipboard(tostring("https://youtu.be/I_K2mjui0hI?si=-dmyp1PzXGI9f8FT"))
+    print("Clicked")
+end)
+
 local Tab = Window:NewTab("World1")
 local Section = Tab:NewSection("ALWI#3737")
 local Section = Tab:NewSection("World 1")
