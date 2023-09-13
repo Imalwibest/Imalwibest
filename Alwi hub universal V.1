@@ -1,1 +1,1769 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("ALWI HUB V.1", "BloodTheme")
+local Tab = Window:NewTab("[Credit]")
+local Section = Tab:NewSection("ALWI#3737")
+local Section = Tab:NewSection("I From Indonesia")
+local Section = Tab:NewSection("Il add new update Yeah is later or what")
+local Section = Tab:NewSection("Credit in Scripts I put Sword fight op")
+Section:NewButton("Sword fight Gui", "?", function()
+    
+local library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local window = library.CreateLib("ALWI#3737", "BloodTheme")
+local main = window:NewTab("Main")
+local section = main:NewSection("OPP :)")
+local main1 = window:NewTab("Misc")
+local section1 = main1:NewSection("Local Player")
+local plr = game.Players.LocalPlayer
 
+local oldmt 
+oldmt = hookmetamethod(game, "__index", function(self, index)
+    if index == ("WalkSpeed" or "JumpPower") then
+        return 16
+    end 
+    return oldmt(self, index)
+end)
+
+local function getclosestplayer(range)
+    local closest = nil 
+    local maxdist = math.huge 
+    for i,v in pairs(game.Players:GetPlayers()) do 
+        if v ~= plr and v.Character and (not v.Character:FindFirstChild("ForceField")) and v.Character:FindFirstChild("HumanoidRootPart") and v.Character:FindFirstChild("Humanoid").Health > 0 then 
+            local mag = (v.Character.HumanoidRootPart.Position - plr.Character.HumanoidRootPart.Position).Magnitude
+            if mag < maxdist and mag < range then 
+                maxdist = mag 
+                closest = v 
+            end 
+        end 
+    end 
+    return closest 
+end 
+
+section:NewToggle("Kill Aura", "", function(ori)
+ora = ori 
+end)
+
+section:NewSlider("Kill Aura Range", "", 25, 1, function(qrs)
+qtr = qrs 
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+if ora and plr.Character:FindFirstChildOfClass("Tool") then
+for i,v in pairs(getclosestplayer(qtr).Character:GetChildren()) do 
+if v:IsA("BasePart") then 
+plr.Character:FindFirstChildOfClass("Tool"):Activate()
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 0)
+wait()
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 1)
+end 
+end 
+end 
+end)
+
+section:NewToggle("Reach", "", function(oo)
+oop = oo 
+while oop and task.wait() do 
+pcall(function()
+if plr.Character:FindFirstChildOfClass("Tool") then 
+for i,v in pairs(getclosestplayer(porn).Character:GetChildren()) do 
+if v:IsA("BasePart") then 
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 0)
+wait()
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 1)
+end 
+end
+end 
+end) 
+end 
+end) 
+
+section:NewSlider("Reach Range", "", 25, 1, function(qpor)
+porn = qpor 
+end)
+
+section:NewToggle("Hitbox Extender", "", function(c)
+    d = c 
+    while d and task.wait() do 
+        pcall(function()
+            for i,v in pairs(game.Players:GetPlayers()) do 
+                if v ~= plr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then 
+                v.Character.HumanoidRootPart.Size = Vector3.new(pir, pir, pir)
+                v.Character.HumanoidRootPart.Transparency = .8
+                end 
+            end
+        end) 
+    end 
+end)
+
+section:NewSlider("Hitbox Size", "", 1, 25, function(pqor)
+pir = pqor 
+end)
+
+section:NewToggle("AFK Farm Kills", "", function(a)
+    b = a 
+    while b and task.wait() do 
+        pcall(function()
+        for i,v in pairs(plr.Character:GetDescendants()) do 
+            if v:IsA("BasePart") and v.CanCollide then 
+                v.CanCollide = false 
+            end 
+        end 
+        plr.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+        plr.Character:FindFirstChildOfClass("Tool"):Activate()
+        if getclosestplayer(99e99) == nil then 
+        game:GetService("TweenService"):Create(plr.Character.HumanoidRootPart, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = CFrame.new(0, 4, -0)}):Play()
+        else 
+        game:GetService("TweenService"):Create(plr.Character.HumanoidRootPart, TweenInfo.new((getclosestplayer(99e99).Character.HumanoidRootPart.Position - plr.Character.HumanoidRootPart.Position).Magnitude / 50, Enum.EasingStyle.Linear), {CFrame = getclosestplayer(99e99).Character.HumanoidRootPart.CFrame + getclosestplayer(99e99).Character.HumanoidRootPart.CFrame.lookVector * -2}):Play()
+        end
+        end)
+    end 
+end)
+
+section:NewToggle("Auto Equip Random Sword", "", function(q)
+    r = q 
+    while r and task.wait() do 
+        for i,v in pairs(plr.Character:GetChildren()) do 
+            if v:IsA("Tool") and (not string.find(v.Name, "Sword")) then 
+                for o,k in pairs(plr.Backpack:GetChildren()) do 
+                    if string.find(k.Name, "Sword") then 
+                        plr.Character.Humanoid:EquipTool(k)
+                    end 
+                end
+            elseif (not plr.Character:FindFirstChildOfClass("Tool")) then 
+                for o,k in pairs(plr.Backpack:GetChildren()) do 
+                    if string.find(k.Name, "Sword") then 
+                        plr.Character.Humanoid:EquipTool(k)
+                    end 
+                end
+            end 
+        end 
+    end 
+end)
+
+section1:NewSlider("WalkSpeed", "", 500, 16, function(oirq)
+plr.Character.Humanoid.WalkSpeed = oirq 
+end)
+
+section1:NewSlider("JumpPower", "", 500, 50, function(roe)
+plr.Character.Humanoid.JumpPower = roe 
+end)
+    print("Clicked")
+end)
+
+Section:NewButton("Sword fight Reach", "?", function()
+    --// Setting \\--
+local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+
+    print("Clicked")
+end)
+local Section = Tab:NewSection("My discord")
+Section:NewButton("discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 9999;
+})
+
+setclipboard(tostring("https://discord.gg/f5d6PRyD"))
+    print("Clicked")
+end)
+
+
+
+
+
+local Tab = Window:NewTab("Universal Hub")
+local Section = Tab:NewSection("Universal Hub [Alwi]")
+local Section = Tab:NewSection("Im Year 13 Age cuz im learning lua")
+local Section = Tab:NewSection("Thx For Using My hub!!!")
+Section:NewButton("Infinite Jump", "?", function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+    if InfiniteJumpEnabled then
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end
+end)
+    print("Clicked")
+end)
+
+Section:NewSlider("Speed", "?", 1000, 0, function(speed)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+end)
+
+Section:NewTextBox("Character speed", "1000", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+
+Section:NewSlider("JumpPower ", "?", 1000, 50, function(roe)
+plr.Character.Humanoid.JumpPower = roe 
+end)
+
+    
+
+Section:NewButton("Noclip Click E To Activate", "?", function()
+    local StealthMode = true -- If game has an anticheat that checks the logs
+
+local Indicator
+
+if not StealthMode then
+    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+    print("NOCLIP: Press E to Activate")
+    Indicator = Instance.new("TextLabel", ScreenGui)
+    Indicator.AnchorPoint = Vector2.new(0, 1)
+    Indicator.Position = UDim2.new(0, 0, 1, 0)
+    Indicator.Size = UDim2.new(0, 200, 0, 50)
+    Indicator.BackgroundTransparency = 1
+    Indicator.TextScaled = true
+    Indicator.TextStrokeTransparency = 0
+    Indicator.TextColor3 = Color3.new(0, 0, 0)
+    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Indicator.Text = "Noclip: Enabled"
+end
+
+local noclip = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "e" then
+        noclip = not noclip
+
+        if not StealthMode then
+            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+        end
+    end
+end)
+
+while true do
+    player = game.Players.LocalPlayer
+    character = player.Character
+
+    if noclip then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+    game:GetService("RunService").Stepped:wait()
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Esp[Beta]", "?", function()
+    _G.FriendColor = Color3.fromRGB(0, 0, 255)
+_G.EnemyCBeta = Color3.fromRGB(255, 0, 0)
+_G.UseTeamColor = true
+
+--------------------------------------------------------------------
+local Holder = Instance.new("Folder", game.CoreGui)
+Holder.Name = "ESP"
+
+local Box = Instance.new("BoxHandleAdornment")
+Box.Name = "nilBox"
+Box.Size = Vector3.new(1, 2, 1)
+Box.Color3 = Color3.new(100 / 255, 100 / 255, 100 / 255)
+Box.Transparency = 0.7
+Box.ZIndex = 0
+Box.AlwaysOnTop = false
+Box.Visible = false
+
+local NameTag = Instance.new("BillboardGui")
+NameTag.Name = "nilNameTag"
+NameTag.Enabled = false
+NameTag.Size = UDim2.new(0, 200, 0, 50)
+NameTag.AlwaysOnTop = true
+NameTag.StudsOffset = Vector3.new(0, 1.8, 0)
+local Tag = Instance.new("TextLabel", NameTag)
+Tag.Name = "Tag"
+Tag.BackgroundTransparency = 1
+Tag.Position = UDim2.new(0, -50, 0, 0)
+Tag.Size = UDim2.new(0, 300, 0, 20)
+Tag.TextSize = 15
+Tag.TextColor3 = Color3.new(100 / 255, 100 / 255, 100 / 255)
+Tag.TextStrokeColor3 = Color3.new(0 / 255, 0 / 255, 0 / 255)
+Tag.TextStrokeTransparency = 0.4
+Tag.Text = "nil"
+Tag.Font = Enum.Font.SourceSansBold
+Tag.TextScaled = false
+
+local LoadCharacter = function(v)
+	repeat wait() until v.Character ~= nil
+	v.Character:WaitForChild("Humanoid")
+	local vHolder = Holder:FindFirstChild(v.Name)
+	vHolder:ClearAllChildren()
+	local b = Box:Clone()
+	b.Name = v.Name .. "Box"
+	b.Adornee = v.Character
+	b.Parent = vHolder
+	local t = NameTag:Clone()
+	t.Name = v.Name .. "NameTag"
+	t.Enabled = true
+	t.Parent = vHolder
+	t.Adornee = v.Character:WaitForChild("Head", 5)
+	if not t.Adornee then
+		return UnloadCharacter(v)
+	end
+	t.Tag.Text = v.Name
+	b.Color3 = Color3.new(v.TeamColor.r, v.TeamColor.g, v.TeamColor.b)
+	t.Tag.TextColor3 = Color3.new(v.TeamColor.r, v.TeamColor.g, v.TeamColor.b)
+	local Update
+	local UpdateNameTag = function()
+		if not pcall(function()
+			v.Character.Humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
+			local maxh = math.floor(v.Character.Humanoid.MaxHealth)
+			local h = math.floor(v.Character.Humanoid.Health)
+		end) then
+			Update:Disconnect()
+		end
+	end
+	UpdateNameTag()
+	Update = v.Character.Humanoid.Changed:Connect(UpdateNameTag)
+end
+
+local UnloadCharacter = function(v)
+	local vHolder = Holder:FindFirstChild(v.Name)
+	if vHolder and (vHolder:FindFirstChild(v.Name .. "Box") ~= nil or vHolder:FindFirstChild(v.Name .. "NameTag") ~= nil) then
+		vHolder:ClearAllChildren()
+	end
+end
+
+local LoadPlayer = function(v)
+	local vHolder = Instance.new("Folder", Holder)
+	vHolder.Name = v.Name
+	v.CharacterAdded:Connect(function()
+		pcall(LoadCharacter, v)
+	end)
+	v.CharacterRemoving:Connect(function()
+		pcall(UnloadCharacter, v)
+	end)
+	v.Changed:Connect(function(prop)
+		if prop == "TeamColor" then
+			UnloadCharacter(v)
+			wait()
+			LoadCharacter(v)
+		end
+	end)
+	LoadCharacter(v)
+end
+
+local UnloadPlayer = function(v)
+	UnloadCharacter(v)
+	local vHolder = Holder:FindFirstChild(v.Name)
+	if vHolder then
+		vHolder:Destroy()
+	end
+end
+
+for i,v in pairs(game:GetService("Players"):GetPlayers()) do
+	spawn(function() pcall(LoadPlayer, v) end)
+end
+
+game:GetService("Players").PlayerAdded:Connect(function(v)
+	pcall(LoadPlayer, v)
+end)
+
+game:GetService("Players").PlayerRemoving:Connect(function(v)
+	pcall(UnloadPlayer, v)
+end)
+
+game:GetService("Players").LocalPlayer.NameDisplayDistance = 0
+
+if _G.Reantheajfdfjdgs then
+    return
+end
+
+_G.Reantheajfdfjdgs = ":suifayhgvsdghfsfkajewfrhk321rk213kjrgkhj432rj34f67df"
+
+local players = game:GetService("Players")
+local plr = players.LocalPlayer
+
+function esp(target, color)
+    if target.Character then
+        if not target.Character:FindFirstChild("GetReal") then
+            local highlight = Instance.new("Highlight")
+            highlight.RobloxLocked = true
+            highlight.Name = "GetReal"
+            highlight.Adornee = target.Character
+            highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+            highlight.FillColor = color
+            highlight.Parent = target.Character
+        else
+            target.Character.GetReal.FillColor = color
+        end
+    end
+end
+
+while task.wait() do
+    for i, v in pairs(players:GetPlayers()) do
+        if v ~= plr then
+            esp(v, _G.UseTeamColor and v.TeamColor.Color or ((plr.TeamColor == v.TeamColor) and _G.FriendColor or _G.EnemyColor))
+        end
+    end
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Antifling", "?", function()
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+local function getCharacterComponents(character)
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart") or character:FindFirstChild("Torso") or character:FindFirstChild("UpperTorso")
+    local humanoid = character:FindFirstChild("Humanoid")
+    return humanoidRootPart, humanoid
+end
+
+local function applyAntiFling(humanoidRootPart, lastSafePosition)
+    local antiFlingBP = Instance.new("BodyPosition", humanoidRootPart)
+    antiFlingBP.Position = lastSafePosition
+    antiFlingBP.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+    antiFlingBP.P = 10000
+
+    wait(0.1) -- Adjust the duration to control how long the character stays in place
+
+    antiFlingBP:Destroy()
+    humanoidRootPart.CFrame = CFrame.new(lastSafePosition)
+end
+
+local function antiFling()
+    local localPlayer = Players.LocalPlayer
+    local maxVelocityChange = 50 -- Set a maximum allowed change in velocity to detect flinging
+
+    local lastVelocity = Vector3.new(0, 0, 0)
+    local lastSafePosition = Vector3.new(0, 5, 0)
+
+    while true do
+        RunService.Heartbeat:Wait()
+        local character = localPlayer.Character
+        local humanoidRootPart, humanoid = getCharacterComponents(character)
+
+        if humanoidRootPart and humanoid then
+            local currentVelocity = humanoidRootPart.Velocity
+            local velocityChange = (currentVelocity - lastVelocity).Magnitude
+
+            if velocityChange > maxVelocityChange then
+                applyAntiFling(humanoidRootPart, lastSafePosition)
+            else
+                lastSafePosition = humanoidRootPart.Position
+            end
+
+            lastVelocity = currentVelocity
+        end
+    end
+end
+
+antiFling()
+    print("Clicked")
+end)
+
+Section:NewButton("Keyboard", "Credit In Scripts", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    print("Clicked")
+end)
+local Section = Tab:NewSection("Script Other...")
+Section:NewButton("RemoteSpy", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
+    print("Clicked")
+end)
+Section:NewButton("Chat bypasser click F to Run", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/betterbypasser", true))({
+    Method = 1, -- Method 1 is the main method. Method two is emojis. Method 3 is full transparency, no special symbols. Method 3 has been improved!
+    Keybind = "F", -- Usually defaulted to F. You can change this keybind by replacing the string with a letter. Works for uppercase and lowercase.
+    ShowMethodDictionary = true -- Shows you the full list of words that you can say with the method. Press FN + F9 to see this dictionary.
+}) 
+    print("Clicked")
+end)
+
+Section:NewKeybind("Toggle ui", "Click again LoL", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+local Tab = Window:NewTab("Hub admin")
+local Section = Tab:NewSection("OpAdmin")
+Section:NewButton("Infinite yield", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Fates Admin", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("NameLess Admin", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Proton", "?", function()
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/5e6e6cc1bb32fd926764d064e2c60a3b.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("CMD-X", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Legs Admin", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/leg1337/legadmv2/main/legadminv2.lua'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Homebrew", "?", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Syntaxx64/HomebrewAdmin/master/Main"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Double down")
+local Section = Tab:NewSection("Hub Gui double down")
+Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+    print("Clicked")
+end)
+
+Section:NewButton("GamerReady Hub", "?", function() 
+    loadstring(game:HttpGet("https://pastebin.com/raw/b5zkS3S0",true))()
+-- Owner of the GitHub Skidded. No Credits
+    print("Clicked")
+end)
+
+Section:NewButton("ZenXHub [Kicker] Dont Use", "Dont Use", function()
+    --- Free double down ----
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/ObsDuc/main/disagain.lua"))()
+---- Whitelist system source ----
+local whitelist = {
+    Usernames = {
+        "error_unknownYTk",
+        "EeMe6i",
+        "CuteG0D",
+        "Urmyvip",
+        "DEDSHOTlostsaccount",
+        "Ishowspeed5538",
+        "dtbwock",
+        "myboyflameboy",
+        "joel",
+        "TRUXER68",
+        "wrefwefw",
+        "0100eerff",
+        "manfaceASKER",
+        "Addz_245",
+        "Green_Playsoficial",
+        "Kwk05",
+        "davidcubreacroman",
+        "Rafelk201",
+        "team_turtle1122",
+        "markitus028",
+        "nikhilsinght",
+        "killerboy3272",
+        "Asek987",
+        "SandwitchPieMan",
+        "Twxpz",
+        "DarkSheadow3",
+        "gigabanana911",
+        "naufalafif080419",
+        "kanm0pmypnn0g2cg6f74",
+        "bugha3q",
+        "turboIine",
+        "MilanGiezen",
+        "lI92Il",
+        "crxkn",
+        "tofuu392",
+        "w7asayf",
+        "username",
+        "Crispythekim",
+        "Cheese_strings098",
+        "dav5d95",
+        "T_alq",
+        
+    },
+    UserIds = {
+        00000000,
+        11111111,
+        22222222,
+    }
+}
+
+local isPassed = false
+local player = game.Players.LocalPlayer
+
+for i,v in pairs(whitelist.Usernames) do
+    if player.Name == v then
+        isPassed = true
+    end
+end
+
+for i,v in pairs(whitelist.UserIds) do
+    if player.UserId == v then
+        isPassed = true
+    end
+end
+
+if isPassed == false then
+    player:Kick("I said Dont executor dude B0ZO")
+    task.wait(3)
+    game:Shutdown()
+    task.wait(1)
+    while true do end
+end
+
+-- SCRIPT GOES HERE
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/EZrobux/main/DoubleDownPremium.lua"))()
+
+    print("Clicked")
+end)
+
+Section:NewButton("Nogger Hub Credit GamerReady Hub [Pacthed]", "?", function()
+loadstring(game:HttpGet(("https://pastebin.com/raw/fGNn9QF7"),true))()
+    print("Clicked")
+end)
+
+Section:NewButton("The Cup Hub [Elemental]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Louimegz39/Thecupsyh/main/Thecupheaddd"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Blox Fruit")
+local Section = Tab:NewSection("AutoFarm")
+Section:NewButton("Mango Hub", "?", function()
+  getgenv().WaterMark = true
+loadstring(game:HttpGet("https://gitlab.com/L1ZOT/mango-hub/-/raw/main/Mango-Bloxf-Fruits-Beta"))()
+    print("Clicked")
+end)
+
+Section:NewButton("NukeVscity Universal", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NukeVsCity/TheALLHACKLoader/main/NukeLoader"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Bean Hub", "?", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/SoyElPekka/BeanHub/main/bloxfruitsnewpc2023'),true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Raito Hub", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Efe0626/RaitoHub/main/Script"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Hole Hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/HoleHub/HoleHub/main/HoleMainLoader"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Pado Hub", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/REWzaKunGz1/premium/main/PadoHub'))() 
+    print("Clicked")
+end)
+
+Section:NewButton("Adel Hub Keyless", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/AdelOnTheTop/Adel-Hub/main/Main.lua"))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Amine Energy Clash Simulator")
+local Section = Tab:NewSection("Auto farm [Made By ALWI HUBV.1]") 
+Section:NewButton("Auto win PK", "Click E then Click charka", function()
+
+_G.Win = true
+
+while _G.Win == true do
+local args = { 
+    [1] = true
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerPKEnd"):FireServer(unpack(args))
+wait()
+    end
+    print("Clicked")
+end)
+
+Section:NewToggle("Auto Click", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
+
+    end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerClick"):FireServer()
+
+    end
+    end
+end)
+
+Section:NewButton("Turn/Off", "?", function()
+    _G.Enabled = false
+
+while _G.Enabled == false do 
+   wait()
+   -- script here
+    end
+    print("Clicked")
+end)
+
+Section:NewToggle("Auto Cratf Pet", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
+
+    end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Pet"):WaitForChild("[C-S]TryCraftAll"):FireServer()
+
+    end
+    end
+end)
+
+Section:NewToggle("Auto Rebirth", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
+
+    end
+    else
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Rebirth"):WaitForChild("[C-S]TryBuyRebirth"):FireServer()
+
+    end
+    end
+end)
+
+Section:NewButton("Auto Spin", "?", function()
+    _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+  game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Spin"):WaitForChild("[C-S]TrySpin"):InvokeServer()
+
+
+    end
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("World")
+Section:NewButton("Goto World 2", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld2")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 3", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld3")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("Goto World 4", "ButtonInfo", function()
+    local args = {
+    [1] = workspace:WaitForChild("Check"):WaitForChild("ToWorld4")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Event"):WaitForChild("Game"):WaitForChild("[C-S]PlayerTP"):FireServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("World4 [Client]", "?", function()
+    game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-3171.80615, 8.30275154, 24.0737953, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+    print("Clicked")
+end)
+
+Section:NewButton("World5 [Client]", "?", function()
+game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-4142.64111, 5.01470137, 24.3235798, -0.33583346, -6.80950478e-08, 0.941921353, -3.22545084e-08, 1, 6.07937167e-08, -0.941921353, -9.96464511e-09, -0.33583346))
+    print("Clicked")
+end)
+local Section = Tab:NewSection("Auto Eggs")
+local Section = Tab:NewSection("World 1 Eggs")
+Section:NewToggle("Eggs1", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs2", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg2"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg2"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs3", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg3"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg3"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs4", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg4"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg4"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+local Section = Tab:NewSection("World 2 Eggs")
+Section:NewToggle("Eggs5", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg5"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg5"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs6", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg6"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg6"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs7", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg7"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg7"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs8", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg8"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg8"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs9", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg9"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg9"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs10", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg10"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg10"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+local Section = Tab:NewSection("World 3 Eggs") 
+Section:NewToggle("Eggs11", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg11"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg11"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs12", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg12"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg12"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs13", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg13"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg13"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs14", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg14"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg14"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs14", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg14"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg14"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs15", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg15"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg15"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+local Section = Tab:NewSection("World 4 Eggs")
+Section:NewToggle("Eggs16", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg16"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg16"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs17", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg17"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg17"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs18", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg18"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg18"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs19", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg19"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg19"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs20", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg20"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg20"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs21", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg21"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg21"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+local Section = Tab:NewSection("World 5 Eggs")
+Section:NewToggle("Eggs22", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg22"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg22"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs23", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg23"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg23"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs24", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg24"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg24"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs25", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg25"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg25"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs27", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg27"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Egg27"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+local Section = Tab:NewSection("eggs event gems")
+Section:NewToggle("Auto Eggs gems", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Gem1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+  end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   local args = {
+    [1] = "Gem1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+  end
+    end
+end)
+
+
+local Section = Tab:NewSection("Is Beta If Bugs Click Turn/Off button")
+
+local Tab = Window:NewTab("Break In [Story]")
+local Section = Tab:NewSection("Admin Break in [Story]")
+Section:NewButton("Proxima Hub", "?", function()
+    loadstring(Game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Roblox Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Nikita365/Break-In-Story-/main/Break%20In%20Story%20Hub"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Rec hub", "?", function()  loadstring(game:HttpGet("https://raw.githubusercontent.com/megamoeus/HHubmega/master/BreakIn", true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Bedwars")
+local Section = Tab:NewSection("Hub Gui Bedwars")
+Section:NewButton("VapeV4", "?", function()   loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Future", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/joeengo/Future/main/loadstring.lua', true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Bedwars [Open source]", "?", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/blinx-co/roblox/main/BedWarsAutoQueueOpenSource.lua', true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Starving Artits")
+local Section = Tab:NewSection("Op Auto Drawing!!")
+local Section = Tab:NewSection("Well Is make You rich Btw ")
+Section:NewButton("Auto Teleport Server Rich", "Idk work or no", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/anisnouacer1/My-Roblox-Scripts/main/Starving%20Artist%20Rich%20Server%20Finder.lua'))()
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Redeeem Gui", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/juNstring/LuaProjects/main/StarvingReedem.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("ElementalHub [BestHub] [Key]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+    print("Clicked")
+end)
+
+Section:NewButton("Thunder Hub / Resonix Hub", "?", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/x4nto/Resonix-Hub/xantoscripts/dabest.lua"))()
+    print("Clicked")
+end)
+
+Section:NewButton("unfair hub", "Universal hub", function()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
+
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("[FREE LIMITED] 1% FINISH")
+local Section = Tab:NewSection("Damn Crazy Scripts Toraisme")
+Section:NewButton("ToraIsMe", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraIsMe/ToraIsMe/main/1%25FINISH"))()
+    print("Clicked")
+end) 
+
+Section:NewButton("Instant Win", "?", function()
+game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-34.3754959, 735.631897, 11, 0, 0, 1, 0, 1, 0, -1, 0, 0))
+    print("Clicked")
+end)
+
+Section:NewToggle("Auto win", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-34.3754959, 735.631897, 11, 0, 0, 1, 0, 1, 0, -1, 0, 0))
+    
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   -- script here
+end
+    end
+end)
+
+Section:NewButton("Antiafk", "?", function()
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
+    print("Clicked")
+end)
+
+Section:NewButton("Kill Aura Kill Sword", "?", function()
+--// Setting \\--
+local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+    print("Clicked")
+end)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ALWI V.1";
+    Text = "Il add again So yeah Is Beta version"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(5)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text = "New Featured [Bypass Chat] [Remote Spy] [Amine Enegry Clash Simulator update]"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(5)
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text = "New Update Auto eggs [Event]"; --what the text says (ofc)
+    Duration = 30;
+})
+wait(15) 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "[Beta]";
+    Text =  "If you have bad devine this will make you lag"; -- what the text says (ofc)
+    Duration = 30;
+})
+wait(10) 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Enjoy";
+    Text = "Thank You To executor my scripts"; -- what the text says (ofc)
+    Duration = 9999;
+})
