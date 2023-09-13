@@ -100,6 +100,11 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2701.87
     print("Clicked")
 end)
 
+Section:NewButton("Goto Items ugc", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3282.42847, 81.4873657, 4101.97803, -0.0549099185, -3.80122245e-08, 0.998491287, -2.24944898e-08, 1, 3.68326241e-08, -0.998491287, -2.04380761e-08, -0.0549099185)
+    print("Clicked")
+end)
+
 game.StarterGui:SetCore("SendNotification", {
     Title = "Enjoy";
     Text = "Update island2"; -- what the text says (ofc)
