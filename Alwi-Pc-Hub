@@ -1,4 +1,4 @@
-local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("BeatLand [FREE UGC ITEMS]", "BloodTheme")
 local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("ALWI#3737")
