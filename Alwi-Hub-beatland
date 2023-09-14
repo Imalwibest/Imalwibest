@@ -257,7 +257,22 @@ end)
 
 local Section = Tab:NewSection("Local Player")
 Section:NewButton("infnite jump", "?", function()
+local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+    if InfiniteJumpEnabled then
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end
     print("Clicked")
+end)
+
+Section:NewSlider("JumpPower ", "?", 1000, 50, function(roe)
+plr.Character.Humanoid.JumpPower = roe 
+end)
+
+Section:NewTextBox("Character speed", "1000", function(txt)
+
+Section:NewSlider("Speed", "?", 1000, 0, function(speed)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
 end)
 
 local Section = Tab:NewSection("Teleport Other")
