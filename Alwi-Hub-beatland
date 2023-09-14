@@ -13,7 +13,7 @@ game.StarterGui:SetCore("SendNotification", {
 setclipboard(tostring("https://discord.gg/f5d6PRyD"))
     print("Clicked")
 end)
-
+local Section = Tab:NewSection("If u not understand wacth this")
 Section:NewButton("Youtube Tutorial!", "?", function()
 game.StarterGui:SetCore("SendNotification", {
     Title = "Okay";
@@ -106,6 +106,8 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3301.64
     print("Clicked")
 end)
 
+
+
 Section:NewButton("Go chest collect", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2701.87305, 48.1533241, 3451.98438, -0.635300994, -5.85871796e-08, 0.7722646, -6.93429811e-08, 1, 1.88193461e-08, -0.7722646, -4.15951824e-08, -0.635300994)
     print("Clicked")
@@ -116,8 +118,10 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3282.42
     print("Clicked")
 end)
 
+local Tab = Window:NewTab("")
 game.StarterGui:SetCore("SendNotification", {
     Title = "Enjoy";
     Text = "Update island2"; -- what the text says (ofc)
     Duration = 50;
 })
+
