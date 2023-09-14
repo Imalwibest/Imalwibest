@@ -175,8 +175,6 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2581.30
 wait(0) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2567.79199, 95.0305328, 4174.08105, -0.564324141, 0.102559045, 0.819158018, -0.0200332552, 0.990259945, -0.137782156, -0.82531023, -0.0941642001, -0.556773007)
 wait(0) 
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2568.6106, 95.2962036, 4181.66553, -0.306060642, 0.41190967, 0.858287454, -0.0100057488, 0.90010947, -0.435548902, -0.951959431, -0.141892195, -0.271366626)
-wait(0) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2568.61597, 95.2875061, 4181.66211, -0.307180434, 0.412029862, 0.857829571, -0.00983295869, 0.899989367, -0.435800999, -0.951600492, -0.14230454, -0.272407651)
 wait(0) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2568.61597, 95.2875061, 4181.66211, -0.307180434, 0.412029862, 0.857829571, -0.00983295869, 0.899989367, -0.435800999, -0.951600492, -0.14230454, -0.272407651)
@@ -255,26 +253,6 @@ wait(0)
     print("Clicked")
 end)
 
-local Section = Tab:NewSection("Local Player")
-Section:NewButton("infnite jump", "?", function()
-local InfiniteJumpEnabled = true
-game:GetService("UserInputService").JumpRequest:connect(function()
-    if InfiniteJumpEnabled then
-        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-    end
-    print("Clicked")
-end)
-
-Section:NewSlider("JumpPower ", "?", 1000, 50, function(roe)
-plr.Character.Humanoid.JumpPower = roe 
-end)
-
-Section:NewTextBox("Character speed", "1000", function(txt)
-
-Section:NewSlider("Speed", "?", 1000, 0, function(speed)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
-end)
-
 local Section = Tab:NewSection("Teleport Other")
 Section:NewButton("Secret Rooms", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(54.3567619, -344.565338, -6643.41504, 0.999730229, 1.07137392e-08, -0.0232263431, -9.0459773e-09, 1, 7.19098381e-08, 0.0232263431, -7.16803328e-08, 0.999730229)
@@ -342,7 +320,6 @@ wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5128.24121, 439.460693, -953.603149, 0.141022339, 7.34888559e-08, 0.990006387, 2.40843057e-09, 1, -7.45737552e-08, -0.990006387, 1.29009274e-08, 0.141022339)
     print("Clicked") 
 end) 
-
 Section:NewButton("Auto win Tower 2", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5214.43213, 438.782562, -936.783569, -0.0268366057, 4.35191865e-08, -0.999639809, -3.49802534e-08, 1, 4.4473957e-08, 0.999639809, 3.61611825e-08, -0.0268366057)
 wait(1) 
