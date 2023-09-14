@@ -362,9 +362,6 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5286.682
     print("Clicked")
 end)
 
-
-
-
 game.StarterGui:SetCore("SendNotification", {
     Title = "Update!";
     Text = "[Obby Tower] [Secret Rooms] [Teleport Shop] Fully Update Autocoin Farm!"; -- what the text says (ofc)
