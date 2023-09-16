@@ -112,6 +112,11 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifv
     print("Clicked")
 end)
 
+Section:NewButton("Antiafk", "?", function()
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
+    print("Clicked")
+end)
+
 local Tab = Window:NewTab("Auto Open Create")
 local Section = Tab:NewSection("Is Beta LoL")
 Section:NewButton("Auto Open Create Sword 1x", "?", function()
@@ -165,3 +170,13 @@ end)
 
 local Tab = Window:NewTab("Misc")
 local Section = Tab:NewSection("Local Player")
+Section:NewSlider("SliderText", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
+
+Section:NewButton("Universal ALWI V.1", "?", function()
+
+    print("Clicked")
+end)
