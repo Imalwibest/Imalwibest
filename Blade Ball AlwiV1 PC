@@ -240,6 +240,6 @@ while true do
 end)
 
 Section:NewButton("Alwi Universal hub V.1", "?", function()
-
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Devine%20Work%20Alwi%20Hub'))();
     print("Clicked")
 end)
