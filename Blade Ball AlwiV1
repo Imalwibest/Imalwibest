@@ -1,4 +1,26 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("Blade Ball", "Midnight")
+local Tab = Window:NewTab("Credit")
+local Section = Tab:NewSection("Development Alwi")
+Section:NewButton("Discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 30;
+})
+
+setclipboard(tostring("https://discord.gg/f5d6PRyD"))
+    print("")
+end)
+
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Impossible How")
+Section:NewButton("Auto Swing", "?", function()
+
+    print("Clicked")
+end)
+
