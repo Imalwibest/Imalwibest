@@ -107,26 +107,27 @@ end)
     print("")
 end)
 
+Section:NewButton("Auto Swing Cicrle Credit Jn HH gaming", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/AutoBlock"))()
+    print("Clicked")
+end)
+
 Section:NewButton("Keyboard", "Credit In Scripts", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
     print("Clicked")
 end)
 
-Section:NewButton("Antiafk", "?", function()
-game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
-    print("Clicked")
-end)
-
 local Tab = Window:NewTab("Auto Open Create")
 local Section = Tab:NewSection("Is Beta LoL")
-Section:NewButton("Auto Open Create Sword 1x", "?", function()
+Section:NewButton("Auto Open Create Sword", "?", function()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Store"):WaitForChild("RequestOpenSwordBox"):InvokeServer()
     print("Clicked")
 end)
 
-Section:NewButton("Auto Open Explosion Chest 1x", "?", function()
+Section:NewButton("Auto Open Explosion Chest", "?", function()
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Store"):WaitForChild("RequestOpenExplosionBox"):InvokeServer()
-    print("Clicked") 
+    print("Clicked")
+end)
 
 Section:NewToggle("Auto Open Chest Explosion", "?", function(state)
     if state then
@@ -170,13 +171,11 @@ end)
 
 local Tab = Window:NewTab("Misc")
 local Section = Tab:NewSection("Local Player")
-Section:NewSlider("SliderText", "SliderInfo", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
-end)
-
-
-
-Section:NewButton("Universal ALWI V.1", "?", function()
-
+Section:NewButton("Antiafk", "?", function()
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
     print("Clicked")
+end) 
+
+Section:NewSlider("Speed", "?", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
 end)
