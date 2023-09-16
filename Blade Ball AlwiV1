@@ -20,7 +20,15 @@ end)
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Impossible How")
 Section:NewButton("Auto Swing", "?", function()
-
     print("Clicked")
 end)
 
+Section:NewButton("Auto Swing Cicrle [Dont Use]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/AutoBlock"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Keyboard", "Credit In Scripts", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    print("Clicked")
+end)
