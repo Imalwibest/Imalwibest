@@ -824,6 +824,11 @@ Section:NewButton("World5 [Client]", "?", function()
 game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-4142.64111, 5.01470137, 24.3235798, -0.33583346, -6.80950478e-08, 0.941921353, -3.22545084e-08, 1, 6.07937167e-08, -0.941921353, -9.96464511e-09, -0.33583346))
     print("Clicked")
 end)
+
+Section:NewButton("World6 [client]", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4951.75244, 7.01470041, 23.8593769, -0.882635772, 2.29265007e-09, -0.470057547, -3.86643106e-10, 1, 5.60338842e-09, 0.470057547, 5.12749576e-09, -0.882635772)
+    print("Clicked")
+end)
 local Section = Tab:NewSection("Auto Eggs")
 local Section = Tab:NewSection("World 1 Eggs")
 Section:NewToggle("Eggs1", "?", function(state)
@@ -1752,7 +1757,7 @@ game.StarterGui:SetCore("SendNotification", {
 wait(5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "[Beta]";
-    Text = "New Update Auto eggs [Event]"; --what the text says (ofc)
+    Text = "New Update Island 6 Amine clash simulator"; --what the text says (ofc)
     Duration = 30;
 })
 wait(15) 
