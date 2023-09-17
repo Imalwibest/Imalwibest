@@ -2,10 +2,11 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("Devine Local", "DarkTheme")
 local Tab = Window:NewTab("Nuh Uh")
 Section:NewButton("PC", "?", function()
-
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Blade%20Ball%20AlwiV1%20PC'))()
     print("Clicked")
 end)
 
 Section:NewButton("Mobile", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Blade%20hub%20mobile'))()
     print("Clicked")
 end)
