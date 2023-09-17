@@ -1,0 +1,245 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Blade Ball", "Midnight")
+local Tab = Window:NewTab("Credit")
+local Section = Tab:NewSection("Development Alwi")
+Section:NewButton("Discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 30;
+})
+
+setclipboard(tostring("https://discord.gg/f5d6PRyD"))
+    print("")
+end)
+
+Section:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Impossible How")
+Section:NewButton("Auto Swing", "?", function()
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local runService = game:GetService("RunService")
+local parryButtonPress = replicatedStorage.Remotes.ParryButtonPress
+local ballsFolder = workspace:WaitForChild("Balls")
+
+print("Script successfully ran.")
+
+local function onCharacterAdded(newCharacter)
+    character = newCharacter
+end
+
+player.CharacterAdded:Connect(onCharacterAdded)
+
+local focusedBall = nil  
+
+local function chooseNewFocusedBall()
+    local balls = ballsFolder:GetChildren()
+    focusedBall = nil
+    for _, ball in ipairs(balls) do
+        if ball:GetAttribute("realBall") == true then
+            focusedBall = ball
+            break
+        end
+    end
+end
+
+chooseNewFocusedBall()
+
+local function timeUntilImpact(ballVelocity, distanceToPlayer, playerVelocity)
+    local directionToPlayer = (character.HumanoidRootPart.Position - focusedBall.Position).Unit
+    local velocityTowardsPlayer = ballVelocity:Dot(directionToPlayer) - playerVelocity:Dot(directionToPlayer)
+    
+    if velocityTowardsPlayer <= 0 then
+        return math.huge
+    end
+    
+    local distanceToBeCovered = distanceToPlayer - 30
+    return distanceToBeCovered / velocityTowardsPlayer
+end
+
+local BASE_THRESHOLD = 0.15
+local VELOCITY_SCALING_FACTOR = 0.002
+
+local function getDynamicThreshold(ballVelocityMagnitude)
+    local adjustedThreshold = BASE_THRESHOLD - (ballVelocityMagnitude * VELOCITY_SCALING_FACTOR)
+    return math.max(0.12, adjustedThreshold)
+end
+
+local function checkBallDistance()
+    if not character:FindFirstChild("Highlight") then return end
+    local charPos = character.PrimaryPart.Position
+    local charVel = character.PrimaryPart.Velocity
+
+    if focusedBall and not focusedBall.Parent then
+        chooseNewFocusedBall()
+    end
+
+    if not focusedBall then return end
+
+    local ball = focusedBall
+    local distanceToPlayer = (ball.Position - charPos).Magnitude
+
+    if distanceToPlayer < 10 then
+        parryButtonPress:Fire()
+        return
+    end
+
+    local timeToImpact = timeUntilImpact(ball.Velocity, distanceToPlayer, charVel)
+    local dynamicThreshold = getDynamicThreshold(ball.Velocity.Magnitude)
+
+    if timeToImpact < dynamicThreshold then
+        parryButtonPress:Fire()
+    end
+end
+
+
+
+runService.Heartbeat:Connect(function()
+    checkBallDistance()
+end)
+
+    print("")
+end)
+
+Section:NewButton("Auto Swing Cicrle Credit Jn HH gaming", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/AutoBlock"))()
+    print("Clicked")
+end)
+
+Section:NewButton("Keyboard", "Credit In Scripts", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+    print("Clicked")
+end)
+
+local Tab = Window:NewTab("Auto Open Create")
+local Section = Tab:NewSection("Is Beta LoL")
+Section:NewButton("Auto Open Create Sword", "?", function()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Store"):WaitForChild("RequestOpenSwordBox"):InvokeServer()
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Open Explosion Chest", "?", function()
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Store"):WaitForChild("RequestOpenExplosionBox"):InvokeServer()
+    print("Clicked")
+end)
+
+Section:NewToggle("Auto Open Chest Explosion", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Store"):WaitForChild("RequestOpenExplosionBox"):InvokeServer()
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Store"):WaitForChild("RequestOpenExplosionBox"):InvokeServer()
+
+end
+    end
+end)
+
+Section:NewToggle("Auto Open Chest Sword", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Store"):WaitForChild("RequestOpenSwordBox"):InvokeServer()
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Store"):WaitForChild("RequestOpenSwordBox"):InvokeServer()
+
+end
+    end
+end) 
+
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Local Player")
+Section:NewButton("Antiafk", "?", function()
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
+    print("Clicked")
+end) 
+
+Section:NewSlider("Speed", "?", 1000, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+Section:NewTextBox("Character speed", "1000", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+
+Section:NewButton("Noclip Click E To Activate", "?", function()
+    local StealthMode = true -- If game has an anticheat that checks the logs
+
+local Indicator
+
+if not StealthMode then
+    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
+    print("NOCLIP: Press E to Activate")
+    Indicator = Instance.new("TextLabel", ScreenGui)
+    Indicator.AnchorPoint = Vector2.new(0, 1)
+    Indicator.Position = UDim2.new(0, 0, 1, 0)
+    Indicator.Size = UDim2.new(0, 200, 0, 50)
+    Indicator.BackgroundTransparency = 1
+    Indicator.TextScaled = true
+    Indicator.TextStrokeTransparency = 0
+    Indicator.TextColor3 = Color3.new(0, 0, 0)
+    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
+    Indicator.Text = "Noclip: Enabled"
+end
+
+local noclip = false
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local mouse = player:GetMouse()
+
+mouse.KeyDown:Connect(function(key)
+    if key == "e" then
+        noclip = not noclip
+
+        if not StealthMode then
+            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
+        end
+    end
+end)
+
+while true do
+    player = game.Players.LocalPlayer
+    character = player.Character
+
+    if noclip then
+        for _, v in pairs(character:GetDescendants()) do
+            pcall(function()
+                if v:IsA("BasePart") then
+                    v.CanCollide = false
+                end
+            end)
+        end
+    end
+
+    game:GetService("RunService").Stepped:wait()
+    end
+    print("Clicked")
+end)
+
+Section:NewButton("Alwi Universal hub V.1", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Devine%20Work%20Alwi%20Hub'))();
+    print("Clicked")
+end)
