@@ -147,12 +147,12 @@ wait(0)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3578.78003, 235.372803, 3275.07837, -0.979887426, -0.183630526, 0.078105174, -0.117094368, 0.846050024, 0.520084858, -0.161584347, 0.500478923, -0.850535929)
 end)
 
-Section:NewButton("Goto Items Ugc [After All mission done]", "?", function()
+Section:NewButton("Go chest Ugc Collected]", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2688.34473, 48.4447784, 3413.11157, 0.505631626, 0.0328625105, 0.86212337, -9.74651925e-07, 0.999274313, -0.0380898789, -0.862749457, 0.019258609, 0.505264759)
     print("Clicked")
 end)
 
-Section:NewButton("Go Chest Ugc collected", "", function()
+Section:NewButton("Goto Items Ugc [After All mission done]", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3453.57812, 58.4836044, 3149.70483, -0.158949122, -0.1760149, 0.971469998, -0.0310216937, 0.98438406, 0.173279047, -0.9867993, -0.00259409216, -0.161927268)
     print("Clicked")
 end)
@@ -393,7 +393,7 @@ end)
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "Update!";
-    Text = "[Obby Tower] [Secret Rooms] [Teleport Shop] Fully Update Autocoin Farm!"; -- what the text says (ofc)
+    Text = "Island 3"; -- what the text says (ofc)
     Duration = 50;
 })
 
