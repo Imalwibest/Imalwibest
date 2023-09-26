@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "BaconBoss Hub | Haunted Halloween Obby!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Alwi hub| Haunted Halloween Obby!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
     _G.win = true
 
