@@ -1,2 +1,69 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("", "DarkTheme")
+local Window = Library.CreateLib("SHEIN x Klarna Wonderland [UGC NEW!]", "DarkTheme")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto farm")
+Section:NewButton("Teleport NPC Quest", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-503.675568, 40.2356606, -1081.24341, 0.806665838, 2.59887276e-08, -0.591007769, -1.23085169e-08, 1, 2.71736997e-08, 0.591007769, -1.46456669e-08, 0.806665838)
+    print("Clicked")
+end)
+
+Section:NewButton("Auto Complete the chest 1x Click", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-359.111053, 133.447388, -899.178406, 0.752735913, 2.18658442e-08, 0.658322573, -4.11193675e-08, 1, 1.38020191e-08, -0.658322573, -3.74590847e-08, 0.752735913)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-259.647675, 145.329529, -816.911255, -0.929987013, 0.0296694599, -0.366393059, 0.00577977858, 0.99779439, 0.066128172, 0.367546916, 0.0593806691, -0.928107321)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-709.629028, 36.9516945, -1108.75366, 0.259164006, 6.67649047e-08, 0.965833306, 4.36119549e-08, 1, -8.08292242e-08, -0.965833306, 6.30699049e-08, 0.259164006)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-723.566101, 43.7011032, -1008.6275, 0.970793068, 1.18231247e-08, -0.239918351, 1.79907522e-09, 1, 5.65594682e-08, 0.239918351, -5.53391715e-08, 0.970793068)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(48.9485168, 39.1763573, -899.699341, 0.898684025, 2.56660915e-08, 0.438596666, -6.57218102e-09, 1, -4.50522748e-08, -0.438596666, 3.7605222e-08, 0.898684025)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(161.926163, 39.3431625, -921.00769, 0.585493326, 4.34422418e-08, -0.81067723, -8.16702297e-08, 1, -5.39688649e-09, 0.81067723, 6.93680349e-08, 0.585493326)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-243.411819, 37.3622971, -1080.19458, -0.40508464, 9.45236867e-09, -0.914279163, -2.23123102e-08, 1, 2.02243946e-08, 0.914279163, 2.85922734e-08, -0.40508464)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-284.108093, 155.619263, -1342.15491, 0.798728883, -4.81002616e-09, 0.601691127, 2.7476994e-09, 1, 4.34668035e-09, -0.601691127, -1.81855286e-09, 0.798728883)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-260.855957, 131.423294, -1343.22534, 0.922274768, -1.54444457e-08, -0.386534959, -7.48091011e-09, 1, -5.78056429e-08, 0.386534959, 5.62043176e-08, 0.922274768)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-475.806366, 40.1572037, -1015.06085, -0.725282252, 2.1644869e-08, -0.688451648, -1.26807507e-08, 1, 4.47990693e-08, 0.688451648, 4.12220515e-08, -0.725282252)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-292.961121, 123.86718, -821.326111, -0.981463253, 1.06349972e-07, -0.191650465, 1.18567016e-07, 1, -5.22784696e-08, 0.191650465, -7.4032819e-08, -0.981463253)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-292.267059, 123.867157, -895.420044, 0.740268826, 3.05054435e-08, -0.672311008, 1.22031159e-08, 1, 5.88106239e-08, 0.672311008, -5.17399599e-08, 0.740268826)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-621.269714, 42.6711464, -1008.74164, 0.189807072, 4.20140935e-08, 0.981821418, -2.43419613e-08, 1, -3.80861707e-08, -0.981821418, -1.66704339e-08, 0.189807072)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-48.3548088, 34.3021698, -1252.71411, 0.164402142, -9.17789862e-08, -0.986393392, 2.45010519e-08, 1, -8.89614213e-08, 0.986393392, -9.54222656e-09, 0.164402142)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(157.776718, 38.1937637, -838.802612, -0.985245049, -7.27089411e-09, 0.171149775, -2.58022386e-08, 1, -1.06051168e-07, -0.171149775, -1.08902434e-07, -0.985245049)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-692.131653, 42.6706848, -1063.30054, 0.997247398, 1.88266136e-09, 0.0741456673, -3.23895022e-09, 1, 1.81719759e-08, -0.0741456673, -1.83621101e-08, 0.997247398)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-480.786682, 40.1756325, -1009.09088, -0.914997637, -8.91231355e-09, -0.403459251, 3.09453831e-08, 1, -9.22701986e-08, 0.403459251, -9.69122169e-08, -0.914997637)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-290.141541, 173.073944, -1327.90088, 0.0792761371, 8.60437481e-08, 0.996852696, 7.50237419e-08, 1, -9.22817804e-08, -0.996852696, 8.21033623e-08, 0.0792761371)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-292.267059, 123.867157, -895.420044, 0.740268826, 3.05054435e-08, -0.672311008, 1.22031159e-08, 1, 5.88106239e-08, 0.672311008, -5.17399599e-08, 0.740268826) 
+wait(0) 
+
+end)
+
+Section:NewToggle("AutoSpim", "OwO", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("SpinWheelFunc"):InvokeServer()
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   -- script here
+end
+    end
+end)
