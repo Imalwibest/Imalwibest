@@ -52,6 +52,15 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-669.190
 wait(0) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-484.566895, 40.1515465, -1017.93213, 0.406243712, 2.45533993e-08, -0.913764775, -2.20056848e-10, 1, 2.67727565e-08, 0.913764775, -1.06751843e-08, 0.406243712)
 wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-253.272781, 65.1437149, -996.724426, 0.117442466, -4.29155946e-08, -0.993079662, 1.18474635e-08, 1, -4.18135642e-08, 0.993079662, -6.8547874e-09, 0.117442466)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-247.208435, 143.426437, -837.169739, 0.138212055, 6.5430747e-08, -0.990402639, 2.34071642e-08, 1, 6.93312927e-08, 0.990402639, -3.27649374e-08, 0.138212055)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(180.109039, 42.5860252, -800.343384, -0.999994218, 2.62944333e-09, -0.00340406178, 2.55232169e-09, 1, 2.26601156e-08, 0.00340406178, 2.2651296e-08, -0.999994218)
+wait(0) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-665.20813, 42.6711082, -1080.62585, 0.0417178422, -7.63719896e-08, 0.999129415, 1.038463e-08, 1, 7.60049303e-08, -0.999129415, 7.20482785e-09, 0.0417178422)
+wait(0) 
+
 end)
 
 Section:NewToggle("AutoSpin", "OwO", function(state)
