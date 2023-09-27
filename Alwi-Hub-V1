@@ -1827,6 +1827,18 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest
     print("Clicked")
 end)
 
+local Tab = Window:NewTab("SHEIN x Klarna Wonderland [UGC MEW!]")
+local Section = Tab:NewSection("main Devine")
+Section:NewButton("Mobile", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20free%20ugc%20mobile"))()
+    print("Clicked")
+end)
+
+Section:NewButton("PC", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20free%20ugc%20mobile'))() 
+    print("Clicked")
+end)
+
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1";
     Text = "Update Add Blade ball and beat land"; -- what the text says (ofc)
@@ -1835,7 +1847,7 @@ game.StarterGui:SetCore("SendNotification", {
 wait(5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "[Alpha]";
-    Text = "New Featured [Bypass Chat] [Remote Spy] [Amine Enegry Clash Simulator update]"; -- what the text says (ofc)
+    Text = "New Featured [New Ugc]"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(5)
