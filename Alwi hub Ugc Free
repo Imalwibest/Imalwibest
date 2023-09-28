@@ -356,7 +356,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServe
     print("Clicked")
 end)
 
-Section:NewToggle("AutoSpin", "OwO", function(state)
+Section:NewToggle("AutoSpin bugs", "OwO", function(state)
     if state then
         _G.Enabled = true
 
