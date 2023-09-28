@@ -248,7 +248,7 @@ end)
 local Section = Tab:NewSection("Instan clain")
 Section:NewButton("1", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation1"
+    [1] = "C3_TreasureHuntItemLocation1"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
@@ -278,7 +278,7 @@ end)
 
 Section:NewButton("4", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation4"
+    [1] = "C3_TreasureHuntItemLocation4"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
@@ -288,7 +288,7 @@ end)
 
 Section:NewButton("5", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation5"
+    [1] = "C3_TreasureHuntItemLocation5"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
@@ -298,7 +298,7 @@ end)
 
 Section:NewButton("6", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation6"
+    [1] = "C3_TreasureHuntItemLocation6"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
@@ -308,17 +308,16 @@ end)
 
 Section:NewButton("7", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation7"
+    [1] = "C3_TreasureHuntItemLocation7"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
 
-    print("Clicked")
 end)
 
 Section:NewButton("8", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation8"
+    [1] = "C3_TreasureHuntItemLocation8"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
@@ -328,7 +327,7 @@ end)
 
 Section:NewButton("9", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation9"
+    [1] = "C3_TreasureHuntItemLocation9"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
@@ -338,7 +337,7 @@ end)
 
 Section:NewButton("10", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation10"
+    [1] = "C3_TreasureHuntItemLocation10"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
@@ -348,7 +347,7 @@ end)
 
 Section:NewButton("11", "ButtonInfo", function()
 local args = {
-    [1] = "C2_TreasureHuntItemLocation11"
+    [1] = "C3_TreasureHuntItemLocation11"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
