@@ -245,6 +245,116 @@ wait(0)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-205.244492, 65.5386887, -1010.6087, 0.740172088, -5.05377074e-08, -0.672417521, -4.44566126e-08, 1, -1.24094413e-07, 0.672417521, 1.2174462e-07, 0.740172088)
 wait(0) 
 end)
+local Section = Tab:NewSection("Instan clain")
+Section:NewButton("1", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation1"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("2", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation2"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("3", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation3"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("4", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation4"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("5", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation5"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("6", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation6"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("7", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation7"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("8", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation8"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("9", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation9"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("10", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation10"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
+
+Section:NewButton("11", "ButtonInfo", function()
+local args = {
+    [1] = "C2_TreasureHuntItemLocation11"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("CollectItemFunc"):InvokeServer(unpack(args))
+
+    print("Clicked")
+end)
 
 Section:NewToggle("AutoSpin", "OwO", function(state)
     if state then
