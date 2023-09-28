@@ -1,6 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("ALWI HUB", "DarkTheme")
-local Window = Library.CreateLib("Please Choose You devine", "DarkTheme")
 local Tab = Window:NewTab("Devine")
 local Section = Tab:NewSection("lovato")
 Section:NewButton("PC", "?", function()
