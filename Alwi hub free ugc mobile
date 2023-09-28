@@ -1,5 +1,5 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("SHEIN x Klarna Wonderland [UGC NEW!]", "DarkTheme")
+local Window = Library.CreateLib("SHEIN x Klarna Wonderland [CAREBEAR UGC!]", "DarkTheme")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto farm")
 Section:NewButton("Teleport NPC Quest", "?", function()
