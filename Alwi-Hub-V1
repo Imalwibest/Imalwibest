@@ -1827,7 +1827,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest
     print("Clicked")
 end)
 
-local Tab = Window:NewTab("SHEIN x Klarna Wonderland [UGC MEW!]")
+local Tab = Window:NewTab("SHEIN x Klarna Wonderland [CAREBEAR UGC!]")
 local Section = Tab:NewSection("main Devine")
 Section:NewButton("Mobile", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20free%20ugc%20mobile"))()
@@ -1835,7 +1835,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest
 end)
 
 Section:NewButton("PC", "?", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20free%20ugc%20mobile'))() 
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20Ugc%20Free'))()
     print("Clicked")
 end)
 
