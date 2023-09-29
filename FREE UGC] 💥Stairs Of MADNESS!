@@ -46,7 +46,6 @@ local vu = game:GetService("VirtualUser")
             wait(1)
             vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
         end) 
-    print("Clicked")
 end)
 
 Section:NewButton("Antiafk", "?", function()
@@ -57,13 +56,5 @@ end)
 Section:NewButton("Infinite yield", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     print("Clicked")
-end)
-
-Section:NewTextBox("Character speed", "Type in a number to make the speed u want", function(txt)
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
-end)
-
-Section:NewSlider("Speed", "Yo", 500, 0, function(speed)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
 end)
 
