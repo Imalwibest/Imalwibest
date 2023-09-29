@@ -67,10 +67,3 @@ Section:NewSlider("Speed", "Yo", 500, 0, function(speed)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
 end)
 
-Section:NewTextBox("Character speed", "Type in a number to make the speed u want", function(Value)
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-end)
-
-Section:NewSlider("Jump", "Yo", 500, 0, function(Value)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
-end)
