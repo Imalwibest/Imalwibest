@@ -1,0 +1,249 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Alwi hub | Hack Simulator", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+getgenv().tpPlace = "string"
+
+function Teleport(teleportPlace)
+    local player = game.Players.LocalPlayer
+    player.Character.HumanoidRootPart.CFrame = teleportPlace
+end
+
+local TpTab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tp2Tab = Window:MakeTab({
+	Name = "Fight",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tp5Tab = Window:MakeTab({
+	Name = "Egg",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tp3Tab = Window:MakeTab({
+	Name = "Tp",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local Tp4Tab = Window:MakeTab({
+	Name = "Others",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+_G.click = true
+function click()
+     while _G.click == true do
+        local args = {
+            [1] = game:GetService("Players").LocalPlayer
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Click"):FireServer(unpack(args))
+       wait(0)
+    end
+end
+
+TpTab:AddToggle({
+	Name = "Auto Book",
+	Default = false,
+	Callback = function(Value)
+		_G.click = Value
+        click()
+	end    
+})
+
+_G.scom = "Computer1"
+_G.com = true
+function com()
+     while _G.com == true do
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Type"):FireServer(_G.scom)      
+     wait()
+    end
+end        
+
+TpTab:AddToggle({
+	Name = "Auto Hack",
+	Default = false,
+	Callback = function(Value)
+		_G.com = Value
+        com()
+	end    
+})
+
+TpTab:AddDropdown({
+	Name = "Select",
+	Default = "Computer1",
+	Options = {"Computer1", "Computer2", "Computer3", "Computer4", "Computer5", "Computer6", "Computer7", "Computer8", "Computer9", "Computer10", "Computer11", "Computer12", "Computer13", "Computer14", "Computer15"},
+	Callback = function(Value)
+	    _G.scom = Value  
+	end    
+})
+
+_G.swin = "Bacon Hair"
+_G.win = true
+function win()
+     while _G.win == true do
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("FinishBossFight"):FireServer(_G.swin,1)
+     wait(0)
+    end
+end        
+
+Tp2Tab:AddToggle({
+	Name = "Auto Win",
+	Default = false,
+	Callback = function(Value)
+		_G.win = Value
+        win()
+	end    
+})
+
+Tp2Tab:AddDropdown({
+	Name = "Select",
+	Default = "Bacon Hair",
+	Options = {"Bacon Hair", "Nerd", "Teacher", "Mafia Member", "Gigachad Hacker", "Gamer", "Sk8ter", "Rich Man", "Ninja", "God Hacker", "DIY Robot", "Wise Man", "Evil Noob", "Cyborg", "Evil Mech"},
+	Callback = function(Value)
+	    _G.swin = Value  
+	end    
+})
+
+Tp3Tab:AddButton({
+	Name = "Zone 1",
+	Callback = function()
+     Teleport(game:GetService("Workspace").ZoneParts.Zone1.CFrame)
+    end
+}) 
+
+Tp3Tab:AddButton({
+	Name = "Zone 2",
+	Callback = function()
+     Teleport(game:GetService("Workspace").ZoneParts.Zone2.CFrame)
+    end
+}) 
+
+Tp3Tab:AddButton({
+	Name = "Zone 3",
+	Callback = function()
+     Teleport(game:GetService("Workspace").ZoneParts.Zone3.CFrame)
+    end
+}) 
+
+_G.segg = "Crass Egg"
+_G.egg = true
+function egg()
+      while _G.egg == true do
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("EggHatchingRemotes"):WaitForChild("HatchingEgg"):FireServer(workspace:WaitForChild("Eggs"):WaitForChild(_G.segg), 1)
+        wait(0)
+    end
+end
+
+Tp5Tab:AddToggle({
+	Name = "Auto Hatch",
+	Default = false,
+	Callback = function(Value)
+		_G.egg = Value
+        egg()
+	end    
+})
+
+Tp5Tab:AddDropdown({
+	Name = "Select",
+	Default = "Crass Egg",
+	Options = {"Crass Egg", "Vault Egg", "Gem Egg", "Error Egg", "Hack Egg", "Evil Egg", "Flying Egg"},
+    Callback = function(Value)
+	    _G.segg = Value  
+	end    
+})
+
+Tp4Tab:AddButton({
+    Name = "Anti AFK",
+    Callback = function()
+        local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+        end)
+    end
+})
+
+Tp4Tab:AddButton({
+    Name = "Delete Time Hold Button E",
+    Callback = function()
+        while true do
+            for _, v in next, workspace:GetDescendants() do
+                if v:IsA("ProximityPrompt") then
+                    v.HoldDuration = 0
+                end
+            end
+            wait(1) 
+        end
+    end
+})
+
+Tp4Tab:AddButton({
+    Name = "Server Less People",
+    Callback = function()
+        local Http = game:GetService("HttpService")
+        local TPS = game:GetService("TeleportService")
+        local Api = "https://games.roblox.com/v1/games/"
+
+        local _place = game.PlaceId
+        local _servers = Api.._place.."/servers/Public?sortOrder=Asc&limit=100"
+
+        local function ListServers(cursor)
+            local Raw = game:HttpGet(_servers .. ((cursor and "&cursor="..cursor) or ""))
+            return Http:JSONDecode(Raw)
+        end
+
+        local Server, Next
+        repeat
+            local Servers = ListServers(Next)
+            Server = Servers.data[1]
+            Next = Servers.nextPageCursor
+        until Server
+
+        TPS:TeleportToPlaceInstance(_place, Server.id, game.Players.LocalPlayer)
+    end
+})
+
+Tp4Tab:AddButton({
+    Name = "Server Hop",
+    Callback = function()
+        local module = loadstring(game:HttpGet("https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua"))()
+        module:Teleport(game.PlaceId)
+    end
+})
+
+Tp4Tab:AddSlider({
+	Name = "Change Speed Power",
+	Min = 16,
+	Max = 1000,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Speed",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+Tp4Tab:AddSlider({
+	Name = "Change Jump Power",
+	Min = 16,
+	Max = 1000,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "Jump",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end    
+})
