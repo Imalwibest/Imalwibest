@@ -1,5 +1,5 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local = Library.CreateLib("[FREE UGC] 💥Stairs Of MADNESS!", "Sentinel")
+local Window = Library.CreateLib("[FREE UGC] 💥Stairs Of MADNESS!", "Sentinel")
 local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("Credit Alwi Hub")
 local Section = Tab:NewSection("My discord")
@@ -19,7 +19,7 @@ Section:NewKeybind("Closed/Open", "KeybindInfo", Enum.KeyCode.F, function()
 	Library:ToggleUI()
 end)
 
-Section:NewToggle("ToggleText", "ToggleInfo", function(state)
+Section:NewToggle("AutoWin", "ToggleInfo", function(state)
     if state then
         _G.Enabled = true
 
@@ -46,7 +46,6 @@ local vu = game:GetService("VirtualUser")
             wait(1)
             vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
         end) 
-    print("Clicked")
 end)
 
 Section:NewButton("Antiafk", "?", function()
@@ -67,5 +66,31 @@ Section:NewSlider("Speed", "Yo", 500, 0, function(speed)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
 end)
 
+Section:NewButton("Sword fight Reach", "?", function()
+    --// Setting \\--
+local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
 
-
+    print("Clicked")
+end)
