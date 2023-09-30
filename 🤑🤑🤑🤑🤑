@@ -1,5 +1,18 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("iHeartLand: Simulator Star Radio ft. (G)I-DLE", "Sentinel")
+local Tab = Window:NewTab("Credit")
+local Section = Tab:NewSection("Credit Alwi Hub")
+local Section = Tab:NewSection("My discord")
+Section:NewButton("Discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 9999;
+})
+
+setclipboard(tostring("https://discord.gg/HZBAZaJuEX"))
+end)
+
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto farm")
 Section:NewButton("Auto teleport", "ButtonInfo", function()
