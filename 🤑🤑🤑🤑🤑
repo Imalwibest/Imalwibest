@@ -1,21 +1,15 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("", "DarkTheme")
+local Window = Library.CreateLib("iHeartLand: Simulator Star Radio ft. (G)I-DLE", "Sentinel")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto farm")
-Section:NewToggle("Auto Teleport", "?", function(state)
-    if state then
-        while true do wait(1)
+Section:NewButton("Auto teleport", "ButtonInfo", function()
+while true do wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15.6179953, 146.133743, -2280.62988, 0.00580210425, 4.93889232e-08, -0.999983191, -2.26864305e-08, 1, 4.92581229e-08, 0.999983191, 2.2400247e-08, 0.00580210425) 
 wait(9)       
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-136.952072, 153.37265, -2397.82568, 0.693829536, 5.98010246e-08, 0.720139265, 7.10306369e-10, 1, -8.37252685e-08, -0.720139265, 5.86025841e-08, 0.693829536)
 wait(8) 
-    else
-        while false do wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15.6179953, 146.133743, -2280.62988, 0.00580210425, 4.93889232e-08, -0.999983191, -2.26864305e-08, 1, 4.92581229e-08, 0.999983191, 2.2400247e-08, 0.00580210425) 
-wait(9)       
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-136.952072, 153.37265, -2397.82568, 0.693829536, 5.98010246e-08, 0.720139265, 7.10306369e-10, 1, -8.37252685e-08, -0.720139265, 5.86025841e-08, 0.693829536)
-wait(8) 
-    end
+end
+    print("Clicked")
 end)
 
 Section:NewButton("Claim Spawn Sell", "?", function()
