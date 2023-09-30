@@ -1,1 +1,71 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("iHeartLand: Simulator Star Radio ft. (G)I-DLE", "Sentinel")
+local Tab = Window:NewTab("Credit")
+local Section = Tab:NewSection("Credit Alwi Hub")
+local Section = Tab:NewSection("My discord")
+Section:NewButton("Discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 9999;
+})
+
+setclipboard(tostring("https://discord.gg/HZBAZaJuEX"))
+end)
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto farm")
+Section:NewButton("Auto teleport", "ButtonInfo", function()
+while true do wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15.6179953, 146.133743, -2280.62988, 0.00580210425, 4.93889232e-08, -0.999983191, -2.26864305e-08, 1, 4.92581229e-08, 0.999983191, 2.2400247e-08, 0.00580210425) 
+wait(9)       
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-136.952072, 153.37265, -2397.82568, 0.693829536, 5.98010246e-08, 0.720139265, 7.10306369e-10, 1, -8.37252685e-08, -0.720139265, 5.86025841e-08, 0.693829536)
+wait(8) 
+end
+    print("Clicked")
+end)
+
+Section:NewButton("Claim Spawn Sell", "?", function()
+local args = {
+    [1] = workspace:WaitForChild("Plots"):WaitForChild("Plot8")
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("PlayerPlotsClaim"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("Auto Swing", "?", function()
+while true do wait(1)
+game:GetService("ReplicatedStorage").BeatAbsorberController_OnPlayerFire:FireServer()
+end
+end)
+
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Local Player")
+Section:NewButton("AntiAfkV2", "?", function()
+local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+        end) 
+end)
+
+Section:NewButton("Antiafk", "?", function()
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
+    print("Clicked")
+end)
+
+Section:NewButton("Infinite yield", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+    print("Clicked")
+end)
+
+Section:NewTextBox("Character speed", "Type in a number to make the speed u want", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+
+Section:NewSlider("Speed", "Yo", 500, 0, function(speed)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+end)
 
