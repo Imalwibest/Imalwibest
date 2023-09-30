@@ -15,19 +15,39 @@ end)
 
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto farm")
-Section:NewButton("Auto teleport", "ButtonInfo", function()
-while true do wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-15.6179953, 146.133743, -2280.62988, 0.00580210425, 4.93889232e-08, -0.999983191, -2.26864305e-08, 1, 4.92581229e-08, 0.999983191, 2.2400247e-08, 0.00580210425) 
+
+Section:NewToggle("Auto Teleport Farm", "?", function(state)
+    if state then
+        _G.Enabled = true
+
+while _G.Enabled == true do
+   wait()
+  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-254.443314, 146.133743, -2172.25146, -0.994020224, 5.10954585e-08, -0.109196164, 4.66661056e-08, 1, 4.31187885e-08, 0.109196164, 3.77651901e-08, -0.994020224) 
 wait(9)       
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-136.952072, 153.37265, -2397.82568, 0.693829536, 5.98010246e-08, 0.720139265, 7.10306369e-10, 1, -8.37252685e-08, -0.720139265, 5.86025841e-08, 0.693829536)
-wait(8) 
+wait(8)  
 end
-    print("Clicked")
+    else
+        _G.Enabled = false
+
+while _G.Enabled == false do
+   wait()
+   -- script here
+end
+    end
+end)
+
+Section:NewButton("Buy items teleport shop", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(85.6935806, 176.962219, -2186.08252, -0.0967604369, 0.0629297271, -0.993316293, 3.36333739e-10, 0.997999191, 0.0632264018, 0.995307684, 0.00611781422, -0.096566841) 
+end)
+
+Section:NewButton("Teleport DJ rooms", "", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-87.410202, 100.598091, -2351.95117, 0.991624534, -0.00541097019, 0.129040524, -1.90261629e-09, 0.999122024, 0.0418955311, -0.129153922, -0.0415446386, 0.990753889) 
 end)
 
 Section:NewButton("Claim Spawn Sell", "?", function()
 local args = {
-    [1] = workspace:WaitForChild("Plots"):WaitForChild("Plot8")
+    [1] = workspace:WaitForChild("Plots"):WaitForChild("Plot5")
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("PlayerPlotsClaim"):InvokeServer(unpack(args))
@@ -39,6 +59,7 @@ while true do wait(1)
 game:GetService("ReplicatedStorage").BeatAbsorberController_OnPlayerFire:FireServer()
 end
 end)
+
 
 local Tab = Window:NewTab("Misc")
 local Section = Tab:NewSection("Local Player")
@@ -68,3 +89,4 @@ end)
 Section:NewSlider("Speed", "Yo", 500, 0, function(speed)
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
 end)
+
