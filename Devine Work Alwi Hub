@@ -1,13 +1,26 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 local Window = Library.CreateLib("ALWI HUB", "DarkTheme")
 local Tab = Window:NewTab("Devine")
-local Section = Tab:NewSection("lovato")
+
+local Section = Tab:NewSection("My discord")
+Section:NewButton("discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 9999;
+})
+
+setclipboard(tostring("https://discord.gg/FkBXD2p2w4"))
+    print("Clicked")
+end)
+
+local Section = Tab:NewSection("Main devine")
 Section:NewButton("PC", "?", function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-hub-universal-V.1'))()
+loadstring(game:HttpGet('https://dpaste.com/CDURMPZPN.txt'))()
     print("Clicked")
 end)
 Section:NewButton("Mobile", "?", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-Hub-V1"))();
+loadstring(game:HttpGet('https://dpaste.com/GWGC4R6N7.txt'))()
     print("Clicked")
 end)
 
