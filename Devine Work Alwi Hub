@@ -17,11 +17,9 @@ end)
 local Section = Tab:NewSection("Main devine")
 Section:NewButton("PC", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-hub-universal-V.1'))()
-    print("Clicked")
 end)
 
 Section:NewButton("Mobile", "?", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-Hub-V1"))()
-    print("Clicked")
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-Hub-V1'))()
 end)
 
