@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Alwi hub| Haunted Halloween Obby!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Haunted Halloween Obby!", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
     _G.win = true
 
@@ -96,6 +96,14 @@ Tp4Tab:AddButton({
     Name = "Server Hop",
     Callback = function()
         local module = loadstring(game:HttpGet("https://raw.githubusercontent.com/LeoKholYt/roblox/main/lk_serverhop.lua"))()
+        module:Teleport(game.PlaceId)
+    end
+})
+
+Tp4Tab:AddButton({
+    Name = "Alwi hub Universal",
+    Callback = function()
+        local module = loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Devine%20Work%20Alwi%20Hub'))()
         module:Teleport(game.PlaceId)
     end
 })
