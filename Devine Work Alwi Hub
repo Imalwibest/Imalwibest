@@ -10,7 +10,7 @@ game.StarterGui:SetCore("SendNotification", {
     Duration = 9999;
 })
 
-setclipboard(tostring("https://discord.gg/z7Ujd7DhjX"))
+setclipboard(tostring("https://discord.gg/hGzpXPG4"))
     print("Clicked")
 end)
 
