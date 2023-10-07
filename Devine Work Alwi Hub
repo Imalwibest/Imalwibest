@@ -23,3 +23,7 @@ Section:NewButton("Mobile", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-Hub-V1'))()
 end)
 
+while true do
+print("https://raw.githubusercontent/Nigger") 
+wait() 
+end
