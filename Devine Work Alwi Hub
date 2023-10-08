@@ -25,5 +25,5 @@ end)
 
 while true do
 print("AntiCracked!!!!cachdedapda") 
-wait() 
+wait(1) 
 end
