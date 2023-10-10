@@ -7,7 +7,7 @@ Section:NewButton("discord", "?", function()
 game.StarterGui:SetCore("SendNotification", {
     Title = "Thx For join";
     Text = "In your Clipboard!"; -- what the text says (ofc)
-    Duration = 9999;
+    Duration = 1;
 })
 
 setclipboard(tostring("https://discord.com/invite/xsFvUR7TFA"))
@@ -22,8 +22,3 @@ end)
 Section:NewButton("Mobile", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-Hub-V1'))()
 end)
-
-while true do
-print("AntiCracked!!!!cachdedapda") 
-wait(1) 
-end
