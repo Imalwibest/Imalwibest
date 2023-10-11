@@ -2092,19 +2092,10 @@ local Section = Tab:NewSection("SHEIN x Klarna Wonderland [CAREBEAR UGC!]")
 local Section = Tab:NewSection("main Devine")
 Section:NewButton("Mobile", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20free%20ugc%20mobile"))()
-Title = "Bugs";
-    Text = "Is bugs Something"; -- what the text says (ofc)
-    Duration = 10;
-})
-
 end)
 
 Section:NewButton("PC", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20Ugc%20Free'))()
-Title = "Bugs";
-    Text = "Is bugs Something"; -- what the text says (ofc)
-    Duration = 10;
-})
 end)
 
 local Section = Tab:NewSection("FREE LIMITED] 1% FINISH")
