@@ -2065,6 +2065,17 @@ local Section = Tab:NewSection("Is Beta If Bugs Click Turn/Off button")
 
 
 local Tab = Window:NewTab("UGC ITEMS")
+local Section = Tab:NewSection("Roblox Innovation Awards Voting Hub") 
+local Section = Tab:NewSection("main Devine")
+local Section = Tab:NewSection("You Need Rejoin after you get all")
+Section:NewButton("Mobile", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/2022%20Roblox%20Innovation%20Awards%20Voting%20Hub%20Mobile'))()
+end)
+
+Section:NewButton("PC", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/2022%20Roblox%20Innovation%20Awards%20Voting%20Hub'))()
+end)
+
 local Section = Tab:NewSection("Beatland [Free UGC]") 
 local Section = Tab:NewSection("Choose You Devine After Executor") 
 Section:NewButton("Mobile", "?", function()
@@ -2081,12 +2092,19 @@ local Section = Tab:NewSection("SHEIN x Klarna Wonderland [CAREBEAR UGC!]")
 local Section = Tab:NewSection("main Devine")
 Section:NewButton("Mobile", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20free%20ugc%20mobile"))()
-    print("Clicked")
+Title = "Bugs";
+    Text = "Is bugs Something"; -- what the text says (ofc)
+    Duration = 10;
+})
+
 end)
 
 Section:NewButton("PC", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20Ugc%20Free'))()
-    print("Clicked")
+Title = "Bugs";
+    Text = "Is bugs Something"; -- what the text says (ofc)
+    Duration = 10;
+})
 end)
 
 local Section = Tab:NewSection("FREE LIMITED] 1% FINISH")
@@ -2142,7 +2160,7 @@ end)
     print("Clicked")
 end)
 
-local Section = Tab:NewSection("Lifting Simulator") 
+local Section = Tab:NewSection("Strong Lifting Simulator") 
 local Section = Tab:NewSection("main Devine")
 Section:NewButton("PC", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Strong%20lifting%20Simulator'))()
