@@ -137,6 +137,4 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
  section1:NewSlider("JumpPower", "", 500, 50, function(roe) 
  plr.Character.Humanoid.JumpPower = roe  
  end) 
-     print("Clicked") 
- end) 
- 
+     
