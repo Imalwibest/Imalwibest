@@ -2036,11 +2036,11 @@ end)
 end)
 local Section = Tab:NewSection("Local DEVINE")
 Section:NewButton("Mobile", "?", function()
-loadstring(game:HttpGet(''))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Mobile%20sword'))()
 end)
 
 Section:NewButton("PC", "?", function()
-loadstring(game:HttpGet(''))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/PC%20sword'))()
 end)
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1.4";
