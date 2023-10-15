@@ -11,7 +11,7 @@ local Window = OrionLib:MakeWindow({Name = "Haunted Halloween Obby!", HidePremiu
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
                     game.workspace.Checkpoints:FindFirstChild(tostring(checkpoint)).CFrame
             end
-        wait(15)
+        wait(100)
        end
    end
 
