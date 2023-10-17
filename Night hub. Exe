@@ -4,8 +4,16 @@ local Window = Library.CreateLib("Amine enery clash simulator", "Ocean")
 local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("Development Alwi#3737")
 local Section = Tab:NewSection("This Hub Version 1.4")
+local Section = Tab:NewSection("Join for more update!")
 Section:NewButton("My discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 1;
+})
 
+setclipboard(tostring("https://discord.com/invite/VJCFpKnBzp"))
+    print("Clicked")
 end)
 
 local Tab = Window:NewTab("Main") 
