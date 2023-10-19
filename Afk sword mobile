@@ -1,10 +1,62 @@
-- 👋 Hi, I’m @Imalwibest
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("⚔️Sword Fight for Free Limiteds [Fixed!]", "Midnight")
+local Tab = Window:NewTab("Credit")
+local Section = Tab:NewSection("Development ALWI#3737")
+local Section = Tab:NewSection("Join my discord for nore update!")
+Section:NewButton("discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 9999;
+})
 
-<!---
-Imalwibest/Imalwibest is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+setclipboard(tostring("https://discord.com/invite/VJCFpKnBzp"))
+    print("Clicked")
+end)
+
+
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Farm POINT")
+local Section = Tab:NewSection("Click This Step1")
+Section:NewButton("AntiKill Brick Blox invis", "?", function()
+local Players = game.Players
+local LocalPlayer = Players.LocalPlayer
+local Humanoid = LocalPlayer.Character.Humanoid
+
+while true do
+  wait(0.000001)
+
+  if Humanoid.Health <= 99 then
+    game:GetService("Players").LocalPlayer:Kick("Kill All Player Detected")
+  end
+end
+end)
+local Section = Tab:NewSection("Use inf yield to say fly")
+local Section = Tab:NewSection("click Step 3 teleport")
+Section:NewButton("Afk Void", "?", function()
+local ts = game:GetService("TweenService")
+local Char = game.Players.LocalPlayer.Character
+local part = Char.HumanoidRootPart
+local ti = TweenInfo.new(1,Enum.EasingStyle.Linear) -- change sec and the ratio every meter 1 sec = 49m
+local tp = {CFrame = CFrame.new(10,100000000,10)}
+ts:Create(part,ti,tp):Play()
+end)
+local Section = Tab:NewSection("Use fly")
+Section:NewButton("Infinite yield", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section:NewButton("Antiafk", "?", function()
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
+    print("Clicked")
+end)
+
+Section:NewButton("AntiAfkV2", "?", function()
+local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+        end) 
+end)
