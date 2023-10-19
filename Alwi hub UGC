@@ -1,31 +1,18 @@
-local tweenspeed = 2000 -- change tweenspeed
-local Players = game:GetService("Players")
-        local TweenService = game:GetService("TweenService")
-        local Workspace = game:GetService("Workspace")
-        local LocalPlayer = Players.LocalPlayer
-local function TweenTo(cf, dur)
-            local Character = LocalPlayer.Character
-            if not Character or not Character:FindFirstChild("HumanoidRootPart") then
-                return
-            end
+local Players = game.Players
+local LocalPlayer = Players.LocalPlayer
+local Humanoid = LocalPlayer.Character.Humanoid
 
-            local rootPart = Character:WaitForChild("HumanoidRootPart")
-            local direction = (cf.p - rootPart.Position).unit
-            local targetCFrame = CFrame.new(cf.p)
-            local distance = (targetCFrame.p - rootPart.CFrame.p).Magnitude
-            local tweenInfo = TweenInfo.new(distance / tweenspeed, Enum.EasingStyle.Linear)
-            local tween = TweenService:Create(rootPart, tweenInfo, {
-                CFrame = targetCFrame
-            })
-            tween:Play()
-            tween.Completed:Wait() 
-            return tween
-        end
-local BV = Instance.new('BodyVelocity', game.Workspace)
-                BV.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
-                BV.velocity = Vector3.new(0, 0, 0)
-                BV.maxForce = Vector3.new(9e9, 9e9, 9e9)
-                BV.Name = "/ugcleaks"
-TweenTo(CFrame.new(19261.8848, 9246.07227, -7635.28271, 0.993432045, 0.102754854, -0.0503415018, -7.22385041e-09, 0.439956278, 0.898019195, 0.114423893, -0.892121017, 0.437066644))
-task.wait(1)
-game.Players.LocalPlayer.Character.HumanoidRootPart["/ugcleaks"]:Destroy()
+while true do
+  wait(0.000001)
+
+  if Humanoid.Health <= 99 then
+    game:GetService("Players").LocalPlayer:Kick("Kill All Player Detected")
+  end
+end
+wait() 
+local ts = game:GetService("TweenService")
+local Char = game.Players.LocalPlayer.Character
+local part = Char.HumanoidRootPart
+local ti = TweenInfo.new(1,Enum.EasingStyle.Linear) -- change sec and the ratio every meter 1 sec = 49m
+local tp = {CFrame = CFrame.new(10,100000000,10)}
+ts:Create(part,ti,tp):Play()
