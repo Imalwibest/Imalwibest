@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("⚔️Sword Fight for Free Limiteds [Fixed!]", "Midnight")
 local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("Development ALWI#3737")
