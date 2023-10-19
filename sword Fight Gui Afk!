@@ -2,7 +2,17 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("⚔️Sword Fight for Free Limiteds [Fixed!]", "Midnight")
 local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("Development ALWI#3737")
+local Section = Tab:NewSection("Join my discord for nore update!")
+Section:NewButton("discord", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 9999;
+})
 
+setclipboard(tostring("https://discord.com/invite/VJCFpKnBzp"))
+    print("Clicked")
+end)
 
 
 
@@ -38,5 +48,15 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/
 end)
 
 Section:NewButton("Antiafk", "?", function()
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
+    print("Clicked")
+end)
 
+Section:NewButton("AntiAfkV2", "?", function()
+local vu = game:GetService("VirtualUser")
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+            vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+            wait(1)
+            vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
+        end) 
 end)
