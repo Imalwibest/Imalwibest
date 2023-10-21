@@ -21,7 +21,14 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").UpdateCoins:FireServer(unpack(args))
-
+wait()
+while wait(1) do
+for _, v in next, workspace:GetDescendants() do
+if v:IsA("ProximityPrompt") then
+v.HoldDuration = 0
+end
+end
+end
 end) 
 local Section = Tab:NewSection("Inf token?")
 Section:NewButton("Goto Portal 1", "idk", function()
