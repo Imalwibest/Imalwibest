@@ -1,0 +1,72 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("LensCrafters Eye Odyssey", "Synapse")
+local Tab = Window:NewTab("Credit")
+local Section = Tab:NewSection("DEVELOPMENT ALWI#3737")
+local Section = Tab:NewSection("Join My Discord For more update!")
+Section:NewButton("My discord!", "?", function()
+    print("Clicked")
+end)
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Get ugc")
+Section:NewButton("Inf Token", "?", function()
+local args = {
+    [1] = math.huge
+}
+
+game:GetService("ReplicatedStorage").UpdateCoins:FireServer(unpack(args))
+
+end) 
+local Section = Tab:NewSection("Inf token?")
+Section:NewButton("Goto Portal 1", "idk", function()
+    print("Clicked")
+end)
+
+Section:NewButton("Goto portal 2", "p4", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-345.667206, 26.5440483, 96.889801, 0.225663185, -0.0800333992, 0.970912337, -1.77795589e-09, 0.996619761, 0.0821524933, -0.974205375, -0.0185387954, 0.224900395)
+    print("Clicked")
+end)
+
+Section:NewButton("Goto portal 3", "p3", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-150.823532, 24.5186291, 50.6774406, -0.0134227648, 0.188038409, -0.982069969, -1.96264796e-10, 0.982158422, 0.188055351, 0.999909937, 0.00252422295, -0.0131832818)
+    print("Clicked")
+end)
+
+Section:NewButton("Goto portal 4", "p4", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-26.3975143, 26.5254288, 16.9474792, 0.148354232, 0.345641613, -0.926565111, -3.45574391e-09, 0.936932921, 0.34950918, 0.988934278, -0.0518511645, 0.138997972)
+    print("Clicked")
+end)
+
+Section:NewButton("Goto portal 5", "p5", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(49.6246071, 24.5490685, 15.5028009, 0.0457538478, 0.257296324, -0.965248764, 2.70456102e-09, 0.966260672, 0.257566065, 0.998952746, -0.0117846411, 0.0442101434)
+    print("Clicked")
+end)
+
+Section:NewButton("Goto portal 6", "P6", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-14.8307333, 52.886898, 14.7894096, 0.0295911133, -0.0148058319, 0.999452412, -1.77475688e-12, 0.999890268, 0.0148123186, -0.999562085, -0.000438313, 0.0295878667)
+    print("Clicked")
+end)
+
+Section:NewButton("Goto Portal 7", "p7", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-108.603149, 26.3815937, -7.55535507, 0.00188987225, -0.285625905, 0.958339334, 3.07804962e-11, 0.958341062, 0.285626411, -0.999998212, -0.000539797416, 0.0018111422)
+    print("Clicked")
+end)
+
+Section:NewButton("Goto portal 8", "p8", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-244.56665, 16.8049889, -9.71328449, -0.0377678722, -0.557527125, 0.829299152, -4.21730917e-09, 0.829891264, 0.557925165, -0.999286532, 0.0210716426, -0.0313432291)
+    print("Clicked")
+end)
+
+Section:NewButton("Goto Portal 9", "p9", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-381.198975, 18.147583, 18.1401272, -0.650276721, 0.293615431, -0.700664103, -8.35565306e-09, 0.922293603, 0.386489958, 0.759697437, 0.251325428, -0.599746048)
+    print("Clicked")
+end)
+
+Section:NewButton("Goto portal 10", "p10", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-388.619446, 66.790863, 48.3672333, -0.064346835, -0.528354108, 0.846582174, -3.53187302e-09, 0.848340273, 0.52945137, -0.997927606, 0.0340685174, -0.0545880161)
+    print("Clicked")
+end)
+local Section = Tab:NewSection("Goto UGC!")
+local Section = Tab:NewSection("Note You need Unlock Portal")
+Section:NewButton("ButtonText", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-408.810974, 55.07724, 62.5536346, -0.356689453, -0.0801557824, 0.930778027, 4.41383419e-09, 0.996312439, 0.0857994109, -0.934222996, 0.0306037478, -0.355374128)
+end)
