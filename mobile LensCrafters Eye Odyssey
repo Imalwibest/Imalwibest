@@ -4,6 +4,13 @@ local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("DEVELOPMENT ALWI#3737")
 local Section = Tab:NewSection("Join My Discord For more update!")
 Section:NewButton("My discord!", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thx For join";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 9999;
+})
+
+setclipboard(tostring("https://discord.com/invite/VJCFpKnBzp"))
     print("Clicked")
 end)
 local Tab = Window:NewTab("Main")
