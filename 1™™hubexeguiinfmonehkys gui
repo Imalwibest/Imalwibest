@@ -3,3 +3,10 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Honeypot.Internal.RemoteStorage:FindFirstChild("AwardCash - RemoteEvent"):FireServer(un
+
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ALWI HUB";
+    Text = "Infinite money modern you need rejoin"; -- what the text says (ofc)
+    Duration = 30;
+})
