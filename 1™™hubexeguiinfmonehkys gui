@@ -7,6 +7,6 @@ game:GetService("ReplicatedStorage").Honeypot.Internal.RemoteStorage:FindFirstCh
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI HUB";
-    Text = "Infinite money modern you need rejoin"; -- what the text says (ofc)
+    Text = "inf money by Alwi hub"; -- what the text says (ofc)
     Duration = 30;
 })
