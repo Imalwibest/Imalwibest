@@ -1,12 +1,23 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ALWI HUB";
+    Text = "inf money by alwi huh server! "; -- what the text says (ofc)
+    Duration = 30;
+})
+
+
+
+while true do
 local args = {
     [1] = math.huge
 }
 
-game:GetService("ReplicatedStorage").Honeypot.Internal.RemoteStorage:FindFirstChild("AwardCash - RemoteEvent"):FireServer(un
+game:GetService("ReplicatedStorage").Honeypot.Internal.RemoteStorage:FindFirstChild("AwardCash - RemoteEvent"):FireServer(unpack(args))
+wait()
+end
 
 
-game.StarterGui:SetCore("SendNotification", {
-    Title = "ALWI HUB";
-    Text = "inf money by Alwi hub"; -- what the text says (ofc)
-    Duration = 30;
-})
+
+
+
+
+
