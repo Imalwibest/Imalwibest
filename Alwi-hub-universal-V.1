@@ -1,5 +1,5 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("ALWI HUB V.1.4", "Sentinel")
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("ALWI HUB V.1.5", "Sentinel")
 local Tab = Window:NewTab("[Credit]")
 local plr = game.Players.LocalPlayer
 local Section = Tab:NewSection("ALWI#3737")
@@ -982,6 +982,11 @@ Section:NewButton("World6 [client]", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-4951.75244, 7.01470041, 23.8593769, -0.882635772, 2.29265007e-09, -0.470057547, -3.86643106e-10, 1, 5.60338842e-09, 0.470057547, 5.12749576e-09, -0.882635772)
     print("Clicked")
 end)
+
+Section:NewButton("world7 [Client]", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5828.82861, 35.1969452, -17.4206696, 0.672393978, 5.36669091e-08, 0.740193427, -2.19736318e-08, 1, -5.25429797e-08, -0.740193427, 1.90648457e-08, 0.672393978)
+end)
+
 local Section = Tab:NewSection("Auto Eggs")
 local Section = Tab:NewSection("World 1 Eggs")
 Section:NewToggle("Eggs1", "?", function(state)
@@ -1823,6 +1828,119 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Functi
 end
     end
 end)
+local Section = Tab:NewSection("Eggs island 7")
+Section:NewToggle("Eggs31", "?", function(state)
+    if state then
+        _G.Eggs = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg31"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Eggs31 = false
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg31"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end) 
+
+Section:NewToggle("Eggs32", "?", function(state)
+    if state then
+        _G.Eggs32 = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg32"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Enabled = false
+
+while _G.Eggs32 == true do
+   wait()
+   local args = {
+    [1] = "Egg32"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs33", "?", function(state)
+    if state then
+        _G.Eggs33 = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg33"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Eggs33 = false
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg33"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
+Section:NewToggle("Eggs34", "?", function(state)
+    if state then
+        _G.Eggs34 = true
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg34"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    else
+        _G.Eggs34 = false
+
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "Egg34"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remote"):WaitForChild("Function"):WaitForChild("Luck"):WaitForChild("[C-S]DoLuck"):InvokeServer(unpack(args))
+
+end
+    end
+end)
+
 local Section = Tab:NewSection("eggs event gems")
 Section:NewToggle("Auto Eggs gems", "?", function(state)
     if state then
@@ -1917,7 +2035,7 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest
 end)
 
 local Section = Tab:NewSection("SHEIN x Klarna Wonderland [CAREBEAR UGC!]") 
-local Section = Tab:NewSection("main Devine")
+local Section = Tab:NewSection("main Devine [bugs]")
 Section:NewButton("Mobile", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi%20hub%20free%20ugc%20mobile"))()
 end)
@@ -1954,6 +2072,34 @@ end)
 Section:NewButton("Kill Aura Kill Sword", "?", function()
 --// Setting \\--
 local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+    print("Clicked")
+end)
+
+Section:NewButton("Kill Aura Kill Sword v2", "?", function()
+--// Setting \\--
+local range = 30
  
 --// Variable \\--
 local player = game:GetService("Players").LocalPlayer
@@ -2034,6 +2180,35 @@ end)
 
     print("Clicked")
 end)
+
+Section:NewButton("Kill Aura Kill Sword v2", "?", function()
+--// Setting \\--
+local range = 30
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+    print("Clicked")
+end)
+
 local Section = Tab:NewSection("Local DEVINE")
 Section:NewButton("Mobile", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Mobile%20sword'))()
@@ -2043,20 +2218,20 @@ Section:NewButton("PC", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/PC%20sword'))()
 end)
 game.StarterGui:SetCore("SendNotification", {
-    Title = "ALWI V.1.4";
-    Text = "Update New Add PVP sword is [Beta]"; -- what the text says (ofc)
+    Title = "ALWI V.1.5";
+    Text = "Update New Add PVP sword v2 reach"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "[Alpha]";
-    Text = "New Featured Game Add Lifting simulator and more"; -- what the text says (ofc)
+    Text = "discord hass update!"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(10)
 game.StarterGui:SetCore("SendNotification", {
     Title = "Update";
-    Text = "New Update Amine clash simulator Fixed Turn Off!"; --what the text says (ofc)
+    Text = "New Update Amine clash simulator add island 7"; --what the text says (ofc)
     Duration = 30;
 })
 wait(20) 
