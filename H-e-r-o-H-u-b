@@ -1,0 +1,119 @@
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 2
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 3
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 4
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 5
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 6
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 7
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 8
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 9
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 10
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+
+for i = 1,5000 do
+local args = {
+    [1] = "online_claim",
+    [2] = 12
+}
+
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(unpack(args))
+end
+
+while true do
+local args = {
+    [1] = "go_rebirth"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+wait() 
+end
+
