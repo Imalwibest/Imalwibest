@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("ALWI HUB V.1.5", "Sentinel")
 local Tab = Window:NewTab("[Credit]")
 local plr = game.Players.LocalPlayer
@@ -606,15 +606,178 @@ Section:NewButton("nicuse Universal Blade ball", "?", function()
 loadstring(game:HttpGet("https://www.nicuse.xyz/BladeBall.lua"))()
 end)
 local Section = Tab:NewSection("Double down")
-Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
-    print("Clicked")
+local Section = Tab:NewSection("Main")
+Section:NewButton("Sword Fight Bot", "ButtonInfo", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Sword Bot";
+    Text = "Turn X to Off/On"; -- what the text says (ofc)
+    Duration = 10;
+})
+
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/yeerma/1/main/bot'))()
 end)
 
-Section:NewButton("GamerReady Hub", "?", function() 
-    loadstring(game:HttpGet("https://pastebin.com/raw/b5zkS3S0",true))()
--- Owner of the GitHub Skidded. No Credits
-    print("Clicked")
+Section:NewButton("Keyboard Mobile", "m", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end)
+
+Section:NewButton("Sword Fight Kill aura", "?", function()
+--// Setting \\--
+local range = 15
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+end)
+
+Section:NewToggle("Block Drop Auto win [Beta]", "?", function(state)
+    if state then
+        _G.Blockdrop = true;
+
+spawn(function()
+wait(0.5)
+local plr = game.Players.LocalPlayer
+local vim = game:GetService("VirtualInputManager")
+while _G.Blockdrop == true do
+wait(0.5)
+  function clickButton(a)
+      vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2, a.AbsolutePosition.Y + 50, 0, true, a, 1)
+      vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2 ,a.AbsolutePosition.Y + 50, 0, false, a, 1)
+  end
+   
+  function getArena()
+      return plr.DataSave.DontSave.MostRecentArena.Value
+  end
+   
+  function getTeam(arena)
+      if arena.ArenaTemplate.Red.Character.Nametag.Frame.Username.Front.Text:match(plr.Name) then
+          return "Red"
+      else
+          return "Blue"
+      end
+  end
+   
+  function dropBlock()
+      clickButton(plr.PlayerGui.BlockDrop["Bottom Middle Template"].Buttons["Drop_Off"].Background)
+  end
+   
+  local arena = getArena()
+  local team = getTeam(arena)
+  local board = arena.ArenaTemplate[team].Board
+   
+  local num
+   
+  local connections = {}
+  for _, tile in pairs(board:GetDescendants()) do
+      if tile:IsA("MeshPart") then
+          local con = tile:GetPropertyChangedSignal("Color"):Connect(function()
+              local color = tile.Color
+              if color == Color3.fromRGB(164, 164, 164) then
+                  if tile.Parent.Name == '1' and tile.Name == "3" then
+                      dropBlock()
+                      num = tile.Name
+                  else
+                      if tile.Name == "3" and tile.Color == Color3.fromRGB(164, 164, 164) then
+                          dropBlock()
+                      end
+                  end
+              end
+          end)
+          table.insert(connections, con)
+      end
+  end
+  end
+end)
+    else
+        _G.Blockdrop = false;
+
+spawn(function()
+wait(0.5)
+local plr = game.Players.LocalPlayer
+local vim = game:GetService("VirtualInputManager")
+while _G.Blockdrop == true do
+wait(0.5)
+  function clickButton(a)
+      vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2, a.AbsolutePosition.Y + 50, 0, true, a, 1)
+      vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2 ,a.AbsolutePosition.Y + 50, 0, false, a, 1)
+  end
+   
+  function getArena()
+      return plr.DataSave.DontSave.MostRecentArena.Value
+  end
+   
+  function getTeam(arena)
+      if arena.ArenaTemplate.Red.Character.Nametag.Frame.Username.Front.Text:match(plr.Name) then
+          return "Red"
+      else
+          return "Blue"
+      end
+  end
+   
+  function dropBlock()
+      clickButton(plr.PlayerGui.BlockDrop["Bottom Middle Template"].Buttons["Drop_Off"].Background)
+  end
+   
+  local arena = getArena()
+  local team = getTeam(arena)
+  local board = arena.ArenaTemplate[team].Board
+   
+  local num
+   
+  local connections = {}
+  for _, tile in pairs(board:GetDescendants()) do
+      if tile:IsA("MeshPart") then
+          local con = tile:GetPropertyChangedSignal("Color"):Connect(function()
+              local color = tile.Color
+              if color == Color3.fromRGB(164, 164, 164) then
+                  if tile.Parent.Name == '1' and tile.Name == "3" then
+                      dropBlock()
+                      num = tile.Name
+                  else
+                      if tile.Name == "3" and tile.Color == Color3.fromRGB(164, 164, 164) then
+                          dropBlock()
+                      end
+                  end
+              end
+          end)
+          table.insert(connections, con)
+      end
+  end
+  end
+end)
+    end
+end)
+
+local Section = Tab:NewSection("Other hub Double down")
+Section:NewButton("Land hub", "Credit Sponso And by Hydra", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponsoparnordvpn/LandHub/main/LandHubV1.txt"))() 
+end)
+
+Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+end)
+
+Section:NewButton("GamerReady Hub [fixed by Alwi hub]", "?", function() 
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/GamerReady-Hub-Fixed'))();
 end)
 
 Section:NewButton("ZenXHub [Kicker] Dont Use", "Dont Use", function()
@@ -702,7 +865,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CorruptedClan/EZrobux
     print("Clicked")
 end)
 
-Section:NewButton("Nogger Hub Credit GamerReady Hub [Pacthed]", "?", function()
+Section:NewButton("Nogger Hub Credit GamerReady Hub", "?", function()
 loadstring(game:HttpGet(("https://pastebin.com/raw/fGNn9QF7"),true))()
     print("Clicked")
 end)
@@ -2152,7 +2315,7 @@ end)
 
 local Tab = Window:NewTab("PVP [Beta]")
 local Section = Tab:NewSection("Sword Reach") 
-Section:NewButton("Sword fight Reach", "?", function()
+Section:NewButton("kill aura", "?", function()
     --// Setting \\--
 local range = 15
  
@@ -2181,9 +2344,37 @@ end)
     print("Clicked")
 end)
 
-Section:NewButton("Kill Aura Kill Sword v2", "?", function()
+Section:NewButton("Kill Aura v2", "?", function()
 --// Setting \\--
 local range = 30
+ 
+--// Variable \\--
+local player = game:GetService("Players").LocalPlayer
+ 
+--// Script \\--
+game:GetService("RunService").RenderStepped:Connect(function()
+    local p = game.Players:GetPlayers()
+    for i = 2, #p do local v = p[i].Character
+        if v and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 and v:FindFirstChild("HumanoidRootPart") and player:DistanceFromCharacter(v.HumanoidRootPart.Position) <= range then
+            local tool = player.Character and player.Character:FindFirstChildOfClass("Tool")
+            if tool and tool:FindFirstChild("Handle") then
+                tool:Activate()
+                for i,v in next, v:GetChildren() do
+                    if v:IsA("BasePart") then
+                        firetouchinterest(tool.Handle,v,0)
+                        firetouchinterest(tool.Handle,v,1)
+                    end
+                end
+            end
+        end
+    end
+end)
+    print("Clicked")
+end)
+
+Section:NewButton("Kill Aura [Make you get kick] v3", "?", function()
+--// Setting \\--
+local range = 1000000
  
 --// Variable \\--
 local player = game:GetService("Players").LocalPlayer
@@ -2219,13 +2410,13 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest
 end)
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1.5";
-    Text = "Update New Add PVP sword v2 reach"; -- what the text says (ofc)
+    Text = "Update New Add PVP sword v3 reach more Featured Double down"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(5)
 game.StarterGui:SetCore("SendNotification", {
-    Title = "[Alpha]";
-    Text = "discord hass update!"; -- what the text says (ofc)
+    Title = "join my discord";
+    Text = "for more update and free ugc"; -- what the text says (ofc)
     Duration = 30;
 })
 wait(10)
