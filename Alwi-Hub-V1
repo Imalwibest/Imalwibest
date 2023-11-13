@@ -606,15 +606,17 @@ Section:NewButton("nicuse Universal Blade ball", "?", function()
 loadstring(game:HttpGet("https://www.nicuse.xyz/BladeBall.lua"))()
 end)
 local Section = Tab:NewSection("Double down")
-Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
-    print("Clicked")
+
+Section:NewButton("Land hub", "Credit Sponso And by Hydra", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponsoparnordvpn/LandHub/main/LandHubV1.txt")
 end)
 
-Section:NewButton("GamerReady Hub", "?", function() 
-    loadstring(game:HttpGet("https://pastebin.com/raw/b5zkS3S0",true))()
--- Owner of the GitHub Skidded. No Credits
-    print("Clicked")
+Section:NewButton("Elemental hub", "Credit Sponso Ploit And by Hydra", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
+end)
+
+Section:NewButton("GamerReady Hub [fixed by Alwi hub]", "?", function() 
+
 end)
 
 Section:NewButton("ZenXHub [Kicker] Dont Use", "Dont Use", function()
@@ -2152,7 +2154,7 @@ end)
 
 local Tab = Window:NewTab("PVP [Beta]")
 local Section = Tab:NewSection("Sword Reach") 
-Section:NewButton("kill aua v3", "?", function()
+Section:NewButton("kill aura", "?", function()
     --// Setting \\--
 local range = 15
  
@@ -2209,7 +2211,7 @@ end)
     print("Clicked")
 end)
 
-Section:NewButton("Kill Aura [Make you get kick]v3", "?", function()
+Section:NewButton("Kill Aura [Make you get kick] v3", "?", function()
 --// Setting \\--
 local range = 1000000
  
