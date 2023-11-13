@@ -1,0 +1,467 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "GamerReady Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", IntroText = "GamerReadyHub"})
+
+local Tab = Window:MakeTab({
+	Name = "Doble Down",
+	Icon = "rbxassetid://13608923354",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Double Down"
+})
+
+
+OrionLib:MakeNotification({
+    Name = "GamerReady Hub",
+    Content = "Thank you for use Hub [Fixed By Alwi hub]",
+    Image = "rbxassetid://13501460507",
+    Time = 5
+})
+
+local item = game.Players.LocalPlayer.Character:FindFirstChild("FJsMovementAnticheat")
+ if item then
+item:Destroy()
+end
+
+Tab:AddButton({
+	Name = "Block Drop",
+	Callback = function()
+local plr = game.Players.LocalPlayer
+local vim = game:GetService("VirtualInputManager")
+ 
+function clickButton(a)
+    vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2, a.AbsolutePosition.Y + 50, 0, true, a, 1)
+    vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2 ,a.AbsolutePosition.Y + 50, 0, false, a, 1)
+end
+ 
+function getArena()
+    return plr.DataSave.DontSave.MostRecentArena.Value
+end
+ 
+function getTeam(arena)
+    if arena.ArenaTemplate.Red.Character.Nametag.Frame.Username.Front.Text:match(plr.Name) then
+        return "Red"
+    else
+        return "Blue"
+    end
+end
+ 
+function dropBlock()
+    clickButton(plr.PlayerGui.BlockDrop["Bottom Middle Template"].Buttons["Drop_Off"].Background)
+end
+ 
+local arena = getArena()
+local team = getTeam(arena)
+local board = arena.ArenaTemplate[team].Board
+ 
+local num
+ 
+local connections = {}
+for _, tile in pairs(board:GetDescendants()) do
+    if tile:IsA("MeshPart") then
+        local con = tile:GetPropertyChangedSignal("Color"):Connect(function()
+            local color = tile.Color
+            if color == Color3.fromRGB(164, 164, 164) then
+                if tile.Parent.Name == '1' and tile.Name == "3" then
+                    dropBlock()
+                    num = tile.Name
+                else
+                    if tile.Name == "3" and tile.Color == Color3.fromRGB(164, 164, 164) then
+                        dropBlock()
+                    end
+                end
+            end
+        end)
+        table.insert(connections, con)
+    end
+end
+ 
+-- maybe works?
+while task.wait() do
+    if plr.PlayerGui.BlockDrop["End Game Template"].Visible then
+        for _, con in pairs(connections) do
+            con:Disconnect()
+        end
+        break
+    end
+end
+      		print("button pressed")
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Sword fight (press x on the keyboard)",
+	Callback = function()
+	-- press x to turn on
+loadstring(game:HttpGet('https://raw.githubusercontent.com/yeerma/1/main/bot'))()
+--credits: https://v3rmillion.net/showthread.php?tid=1197208
+      		print("button pressed")
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Keyboard",
+	Callback = function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+      		print("button pressed")
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Cups",
+	Callback = function()
+	local Descendants = workspace:GetDescendants()
+ 
+for i, value in pairs(Descendants) do
+    if value.Name == "Important" then
+        local cups = value:GetDescendants()
+        for i, e in pairs (cups) do
+            if e.Name == "Detail" then
+            local v = e.Parent.Parent
+                v["1"].Detail.BrickColor = BrickColor.new("Bright red") 
+                v["2"].Detail.BrickColor = BrickColor.new("Bright blue") 
+                v["3"].Detail.BrickColor = BrickColor.new("Bright yellow") 
+                v["4"].Detail.BrickColor = BrickColor.new("Bright green") 
+                v["5"].Detail.BrickColor = BrickColor.new("Bright orange") 
+                v["1"].Primary.BrickColor = BrickColor.new("Bright red") 
+                v["2"].Primary.BrickColor = BrickColor.new("Bright blue") 
+                v["3"].Primary.BrickColor = BrickColor.new("Bright yellow") 
+                v["4"].Primary.BrickColor = BrickColor.new("Bright green") 
+                v["5"].Primary.BrickColor = BrickColor.new("Bright orange") 
+            end
+        end
+     end  
+end
+      		print("button pressed")
+  	end    
+})
+
+
+Tab:AddButton({
+	Name = "Plinko (coming soon)",
+	Callback = function()
+	
+      		print("button pressed")
+  	end    
+})
+
+
+local Tab = Window:MakeTab({
+	Name = "Player",
+	Icon = "rbxassetid://13608948757",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "modification of your player"
+})
+
+
+Tab:AddSlider({
+	Name = "Walkspeed",
+	Min = 0,
+	Max = 500,
+	Default = 20,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "WS",
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "AFK",
+	Icon = "rbxassetid://13608919764",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "AFK is to earn robux AFK"
+})
+
+Tab:AddButton({
+	Name = "Anti Afk",
+	Callback = function()
+      		wait(0.5)local ba=Instance.new("ScreenGui")
+local ca=Instance.new("TextLabel")local da=Instance.new("Frame")
+local _b=Instance.new("TextLabel")local ab=Instance.new("TextLabel")ba.Parent=game.CoreGui
+ba.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;ca.Parent=ba;ca.Active=true
+ca.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ca.Draggable=true
+ca.Position=UDim2.new(0.698610067,0,0.098096624,0)ca.Size=UDim2.new(0,304,0,52)
+ca.Font=Enum.Font.SourceSansSemibold;ca.Text="Anti Afk Kick Script"ca.TextColor3=Color3.new(0,1,1)
+ca.TextSize=22;da.Parent=ca
+da.BackgroundColor3=Color3.new(0.196078,0.196078,0.196078)da.Position=UDim2.new(0,0,1.0192306,0)
+da.Size=UDim2.new(0,304,0,107)_b.Parent=da
+_b.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)_b.Position=UDim2.new(0,0,0.800455689,0)
+_b.Size=UDim2.new(0,304,0,21)_b.Font=Enum.Font.Arial;_b.Text="Made By GamerReady#5944"
+_b.TextColor3=Color3.new(1,1,1)_b.TextSize=20;ab.Parent=da
+ab.BackgroundColor3=Color3.new(0.176471,0.176471,0.176471)ab.Position=UDim2.new(0,0,0.158377379,0)
+ab.Size=UDim2.new(0,304,0,44)ab.Font=Enum.Font.ArialBold;ab.Text="Status: Script Started"
+ab.TextColor3=Color3.new(1,1,1)ab.TextSize=20;local bb=game:service'VirtualUser'
+game:service'Players'.LocalPlayer.Idled:connect(function()
+bb:CaptureController()bb:ClickButton2(Vector2.new())
+ab.Text="You went idle and ROBLOX tried to kick you but we reflected it!"wait(2)ab.Text="Script Re-Enabled"end)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "sword fight afk (RShift on keyboard)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://scriptblox.com/raw/steal-time-from-others-and-be-the-best-Teleport-aura-7902", true))()
+  	end    
+})
+
+--Values
+_G.AutoRoom = true
+_G.AutoText = true
+_G.AutoClaimSpin = true
+_G.AutoWalk = true
+
+
+--functions
+
+function AutoWalk()
+while _G.AutoWalk == true do
+
+local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+local targetPlayer = nil
+
+-- FunciÃ³n para seleccionar un jugador aleatorio en el servidor
+local function selectRandomPlayer()
+    local players = game.Players:GetPlayers()
+    local randomIndex = math.random(1, #players)
+    return players[randomIndex]
+end
+
+-- FunciÃ³n para hacer que el personaje camine hacia un jugador
+local function walkToPlayer(player)
+    local targetCharacter = player.Character
+    if targetCharacter then
+        humanoid:MoveTo(targetCharacter.HumanoidRootPart.Position)
+    end
+end
+
+-- FunciÃ³n para hacer que el personaje salte
+local function jump()
+    humanoid.Jump = true
+end
+
+-- Detectar cuando el jugador se sienta
+humanoid.Seated:Connect(function(isSeated)
+    if isSeated then
+        jump()
+    end
+end)
+
+-- Seleccionar un jugador aleatorio
+targetPlayer = selectRandomPlayer()
+walkToPlayer(targetPlayer)
+   wait(5)
+   wait(.0001)
+ end
+end
+
+function AutoRoom()
+while _G.AutoRoom == true do
+   game:GetService("ReplicatedStorage").RemoteCalls.GameSpecific.Tickets.CreateRoom:InvokeServer(GameMode,Pricehot,{["assetType"] = "GamePass",["assetId"] = Room})
+   wait(.0001)
+ end
+end
+
+function AutoText()
+while _G.AutoText == true do
+   game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(CustomHot,"All")
+   wait(15)
+   wait(.0001)
+ end
+end
+
+function AutoClaimSpin()
+while _G.AutoClaimSpin == true do
+   wait(10)
+   game:GetService("ReplicatedStorage").RemoteCalls.GameSpecific.Tickets.DestroyRoom:InvokeServer()
+   game:GetService("ReplicatedStorage").RemoteCalls.GameSpecific.DailySpinner.ClaimDailySpinner:InvokeServer()
+   wait(.0001)
+ end
+end
+
+Tab:AddToggle({
+	Name = "Auto Room",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoRoom = Value
+		AutoRoom()
+	end    
+})
+
+Tab:AddDropdown({
+	Name = "select game mode",
+	Default = "SwordFight",
+	Options = {"SwordFight", "BlockDrop", "Cups", "PriceIsRight", "Plinko", "StaringContest", "BalloonPop", "RockPaperScissors"},
+	Callback = function(GameModeHot)
+		GameMode = GameModeHot
+	end    
+})
+
+Tab:AddTextbox({
+	Name = "Gamepass ID",
+	Default = "Enter ID here",
+	TextDisappear = false,
+	Callback = function(Create)
+		Room = Create
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Price of the product (if it is free put 0)",
+	Default = "Enter price here",
+	TextDisappear = false,
+	Callback = function(Price)
+		Pricehot = Price
+	end	  
+})
+
+Tab:AddToggle({
+	Name = "spawn custom text",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoText = Value
+		AutoText()
+	end    
+})
+
+Tab:AddTextbox({
+	Name = "Custom Text",
+	Default = "put the text here",
+	TextDisappear = false,
+	Callback = function(CustomText)
+		CustomHot = CustomText
+	end	  
+})
+
+Tab:AddToggle({
+	Name = "Auto Spin",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoClaimSpin = Value
+		AutoClaimSpin()
+	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Misc",
+	Icon = "rbxassetid://13612726581",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "some optional things"
+})
+
+Tab:AddToggle({
+	Name = "walk up to a random person",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoWalk = Value
+		AutoWalk()
+	end    
+})
+
+Tab:AddButton({
+	Name = "Server Hop (high amount of players)",
+	Callback = function()
+      		   --Server Hop Script by GamerReady
+          local PlaceID = game.PlaceId
+          local AllIDs = {}
+          local foundAnything = ""
+          local actualHour = os.date("!*t").hour
+          local Deleted = false
+          --[[
+          local File = pcall(function()
+              AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+          end)
+          if not File then
+              table.insert(AllIDs, actualHour)
+              writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+          end
+          ]]
+          function TPReturner()
+              local Site;
+              if foundAnything == "" then
+                  Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Dsc&limit=100'))
+              else
+                  Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Dsc&limit=100&cursor=' .. foundAnything))
+              end
+              local ID = ""
+              if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+                  foundAnything = Site.nextPageCursor
+              end
+              local num = 0;
+              for i,v in pairs(Site.data) do
+                  local Possible = true
+                  ID = tostring(v.id)
+                  if tonumber(v.maxPlayers) > tonumber(v.playing) then
+                      for _,Existing in pairs(AllIDs) do
+                          if num ~= 0 then
+                              if ID == tostring(Existing) then
+                                  Possible = false
+                              end
+                          else
+                              if tonumber(actualHour) ~= tonumber(Existing) then
+                                  local delFile = pcall(function()
+                                      -- delfile("NotSameServers.json")
+                                      AllIDs = {}
+                                      table.insert(AllIDs, actualHour)
+                                  end)
+                              end
+                          end
+                          num = num + 1
+                      end
+                      if Possible == true then
+                          table.insert(AllIDs, ID)
+                          wait()
+                          pcall(function()
+                              -- writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                              wait()
+                              game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                          end)
+                          wait(4)
+                      end
+                  end
+              end
+          end
+ 
+          function Teleport()
+              while wait() do
+                  pcall(function()
+                      TPReturner()
+                      if foundAnything ~= "" then
+                          TPReturner()
+                      end
+                  end)
+              end
+          end
+ 
+          Teleport()
+          
+  	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://13663588146",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "credits doing the script"
+})
+
+Tab:AddLabel("development: GamerReady#5944    Library: OrionLib")
+
+Tab:AddButton({
+	Name = "Destroy Gui",
+	Callback = function()
+      		OrionLib:Destroy()
+  	end    
+})
