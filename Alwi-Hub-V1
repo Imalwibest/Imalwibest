@@ -658,7 +658,7 @@ wait(0.5)
 local plr = game.Players.LocalPlayer
 local vim = game:GetService("VirtualInputManager")
 while _G.Blockdrop == true do
-wait(0.5)
+wait(2)
   function clickButton(a)
       vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2, a.AbsolutePosition.Y + 50, 0, true, a, 1)
       vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2 ,a.AbsolutePosition.Y + 50, 0, false, a, 1)
@@ -711,11 +711,11 @@ end)
         _G.Blockdrop = false;
 
 spawn(function()
-wait(0.5)
+wait(0.7)
 local plr = game.Players.LocalPlayer
 local vim = game:GetService("VirtualInputManager")
 while _G.Blockdrop == true do
-wait(0.5)
+wait(2)
   function clickButton(a)
       vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2, a.AbsolutePosition.Y + 50, 0, true, a, 1)
       vim:SendMouseButtonEvent(a.AbsolutePosition.X + a.AbsoluteSize.X/2 ,a.AbsolutePosition.Y + 50, 0, false, a, 1)
