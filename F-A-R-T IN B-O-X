@@ -1,0 +1,36 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Super fast Poop farm";
+    Text = "This script By made alwi hub"; -- what the text says (ofc)
+    Duration = 99999999;
+})
+
+while true do
+wait()
+local args = {
+    [1] = "Poop",
+    [2] = "Spawn",
+    [3] = "Poop",  
+[4] = "Spawn"
+
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+end
+
+
+
+
+while true do
+wait()
+local args = {
+    [1] = "Poop",
+    [2] = "Spawn",
+    [3] = "Poop",  
+[4] = "Spawn"
+
+}
+
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+
+end
