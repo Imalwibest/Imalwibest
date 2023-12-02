@@ -1,3 +1,9 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Kill aura";
+    Text = "Re join back if u get kick"; -- what the text says (ofc)
+    Duration = 9999;
+})
+
 --// Setting \\--
 local range = 1000000
  
