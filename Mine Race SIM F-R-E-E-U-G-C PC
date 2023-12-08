@@ -98,20 +98,34 @@ end)
 Section:NewButton("World 7", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-266.640503, 11.1279573, -75.5903854, 0.798591971, 0.135103196, -0.5865134, -1.93894483e-08, 0.974480689, 0.224471316, 0.601872802, -0.179260984, 0.778212488)
 end)
-local Section = Tab:NewSection("Other script....")
+local Tab = Window:NewTab("Other script....")
 local Section = Tab:NewSection("BaconBoss")
 Section:NewButton("BaconBoss Script", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconScript/MineRace/main/MineRace"))()
 end)
 
 
-local Section = Tab:NewSection("Credit")
+local Tab = Window:NewTab("info/Credit")
 local Section = Tab:NewSection("Developer:ALWI#3737") 
 local Section = Tab:NewSection("Join My Discord For update!")
 Section:NewButton("Discord!", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thank You For support!";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 10;
+})
+
 loadstring(game:HttpGet(("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum")))()
 end)
 local Section = Tab:NewSection("enjoy Who use my script!")
+
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Alwi hub | Mine Race Sim 💎 [FREE UGC] V.1";
+    Text = "Thank You for executor My script"; -- what the text says (ofc)
+    Duration = 20;
+})
+
 
 
 
