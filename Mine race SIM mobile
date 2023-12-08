@@ -1,0 +1,131 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Mine Race Sim 💎 [FREE UGC]", "GrapeTheme")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Farm")
+local Section = Tab:NewSection("You need mine First to work inf gems") 
+Section:NewToggle("Infinite Gems", "?", function(state)
+    if state then
+        _G.Mine = true
+
+while _G.Mine == true do
+   wait()
+   local args = {
+    [1] = "Quarry.ReachedSection",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+end
+
+    else
+        _G.Mine = false
+
+while _G.Mine == true do
+   wait()
+   local args = {
+    [1] = "Quarry.ReachedSection",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+end
+
+    end
+end)
+
+Section:NewButton("Delete Gems Pop", "?", function()
+local path = game:GetService("Players").LocalPlayer.PlayerGui.Effects
+if path then path:Destroy() end
+end)
+
+local Section = Tab:NewSection("Spammer Inf gems")
+Section:NewButton("inf gems spammer", "?", function()
+_G.spammer = true
+
+while _G.spammer == true do
+   wait()
+   local args = {
+    [1] = "Quarry.ReachedSection",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+end
+
+end) 
+
+Section:NewButton("turn off spammer", "?", function()
+_G.spammer = false
+
+while _G.spammer == true do
+   wait()
+   local args = {
+    [1] = "Quarry.ReachedSection",
+    [2] = 1
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+
+end
+end)
+local Tab = Window:NewTab("Teleport")
+local Section = Tab:NewSection("Buy World")
+local Section = Tab:NewSection("Warning You need Gems for but the World")
+local Section = Tab:NewSection("Need to work")
+Section:NewButton("World 2", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(127.379501, 20.3213367, 173.227768, 0.877974212, -3.02595531e-08, -0.478707939, 3.53993634e-08, 1, 1.71331427e-09, 0.478707939, -1.84502031e-08, 0.877974212)
+end)
+
+Section:NewButton("World 3", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(299.3255, 19.2410488, 56.464241, -0.155082434, -2.39877558e-08, -0.987901509, -3.31593668e-08, 1, -1.90761114e-08, 0.987901509, 2.97998195e-08, -0.155082434)
+end) 
+
+Section:NewButton("World 4", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(136.41246, 18.4624977, -242.676102, 0.879781663, -2.83151969e-09, 0.475378007, -1.02773856e-09, 1, 7.85838861e-09, -0.475378007, -7.40223038e-09, 0.879781663)
+end)
+
+Section:NewButton("World 5", "?", function() 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8.40800667, 16.2501469, -33.9341393, -0.806985676, 1.07968248e-07, -0.590571046, 5.14486018e-08, 1, 1.12518158e-07, 0.590571046, 6.04164896e-08, -0.806985676)
+end)
+                  
+Section:NewButton("World 6", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8.40800667, 16.2501469, -33.9341393, -0.806985676, 1.07968248e-07, -0.590571046, 5.14486018e-08, 1, 1.12518158e-07, 0.590571046, 6.04164896e-08, -0.806985676)
+end) 
+
+Section:NewButton("World 7", "?", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-266.640503, 11.1279573, -75.5903854, 0.798591971, 0.135103196, -0.5865134, -1.93894483e-08, 0.974480689, 0.224471316, 0.601872802, -0.179260984, 0.778212488)
+end)
+local Tab = Window:NewTab("Other script....")
+local Section = Tab:NewSection("BaconBoss")
+Section:NewButton("BaconBoss Script", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconScript/MineRace/main/MineRace"))()
+end)
+
+
+local Tab = Window:NewTab("info/Credit")
+local Section = Tab:NewSection("Developer:ALWI#3737") 
+local Section = Tab:NewSection("Join My Discord For update!")
+Section:NewButton("Discord!", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thank You For support!";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 10;
+})
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum")))()
+end)
+local Section = Tab:NewSection("enjoy Who use my script!")
+
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Alwi hub | Mine Race Sim 💎 [FREE UGC] V.1";
+    Text = "Thank You for executor My script"; -- what the text says (ofc)
+    Duration = 20;
+})
+
+
+
+
