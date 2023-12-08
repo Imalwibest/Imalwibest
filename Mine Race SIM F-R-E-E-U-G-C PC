@@ -108,7 +108,9 @@ end)
 local Section = Tab:NewSection("Credit")
 local Section = Tab:NewSection("Developer:ALWI#3737") 
 local Section = Tab:NewSection("Join My Discord For update!")
-
+Section:NewButton("Discord!", "?", function()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum")))()
+end)
 local Section = Tab:NewSection("enjoy Who use my script!")
 
 
