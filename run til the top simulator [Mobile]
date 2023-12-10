@@ -26,7 +26,7 @@ end)
 Section:NewButton("Teleport Up", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(23.6257114, 308.031403, 2.29282665, 0.984379172, -8.62622471e-08, 0.176061615, 8.38648617e-08, 1, 2.10575504e-08, -0.176061615, -5.96322991e-09, 0.984379172)
 end)
-
+local Section = Tab:NewSection("Kill aura")
 Section:NewButton("Kill aura sword", "?", function()
 --// Setting \\--
 local range = 32
@@ -54,21 +54,5 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 end)
 
-section:NewToggle("Hitbox Extender", "", function()
-    d = c 
-    while d and task.wait() do 
-        pcall(function()
-            for i,v in pairs(game.Players:GetPlayers()) do 
-                if v ~= plr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then 
-                v.Character.HumanoidRootPart.Size = Vector3.new(pir, pir, pir)
-                v.Character.HumanoidRootPart.Transparency = .8
-                end 
-            end
-        end) 
-
-
-section:NewSlider("Hitbox Size", "", 1, 25, function(pqor)
-pir = pqor 
-end)
-
-
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Local Player")
