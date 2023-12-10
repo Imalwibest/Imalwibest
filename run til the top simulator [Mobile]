@@ -2,6 +2,26 @@ local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("run til the top sim", "GrapeTheme")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Kill aura/Teleport")
+oldmt = hookmetamethod(game, "__index", function(self, index)
+    if index == ("WalkSpeed" or "JumpPower") then
+        return 16
+    end 
+    return oldmt(self, index)
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+if ora and plr.Character:FindFirstChildOfClass("Tool") then
+for i,v in pairs(getclosestplayer(qtr).Character:GetChildren()) do 
+if v:IsA("BasePart") then 
+plr.Character:FindFirstChildOfClass("Tool"):Activate()
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 0)
+wait()
+firetouchinterest(plr.Character:FindFirstChildOfClass("Tool").Handle, v, 1)
+end 
+end 
+end 
+end)
+
 
 Section:NewButton("Teleport Up", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(23.6257114, 308.031403, 2.29282665, 0.984379172, -8.62622471e-08, 0.176061615, 8.38648617e-08, 1, 2.10575504e-08, -0.176061615, -5.96322991e-09, 0.984379172)
@@ -32,6 +52,23 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end
 end)
+end)
+
+section:NewToggle("Hitbox Extender", "", function()
+    d = c 
+    while d and task.wait() do 
+        pcall(function()
+            for i,v in pairs(game.Players:GetPlayers()) do 
+                if v ~= plr and v.Character and v.Character:FindFirstChild("HumanoidRootPart") then 
+                v.Character.HumanoidRootPart.Size = Vector3.new(pir, pir, pir)
+                v.Character.HumanoidRootPart.Transparency = .8
+                end 
+            end
+        end) 
+
+
+section:NewSlider("Hitbox Size", "", 1, 25, function(pqor)
+pir = pqor 
 end)
 
 
