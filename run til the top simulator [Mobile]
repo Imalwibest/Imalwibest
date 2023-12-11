@@ -112,8 +112,52 @@ Section:NewToggle("Hitbox Extender", "", function(c)
     end 
 end)
 
-Section:NewSlider("Hitbox Size", "", 30, 1, function(pqor)
+Section:NewSlider("Hitbox Size", "", 35, 1, function(pqor)
 pir = pqor 
+end)
+
+
+local Tab = Window:NewTab("Blantant Modes")
+local Section = Tab:NewSection("Local Player")
+Section:NewToggle("AFK Farm Kills", "", function(a)
+    b = a 
+    while b and task.wait() do 
+        pcall(function()
+        for i,v in pairs(plr.Character:GetDescendants()) do 
+            if v:IsA("BasePart") and v.CanCollide then 
+                v.CanCollide = false 
+            end 
+        end 
+        plr.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+        plr.Character:FindFirstChildOfClass("Tool"):Activate()
+        if getclosestplayer(99e99) == nil then 
+        game:GetService("TweenService"):Create(plr.Character.HumanoidRootPart, TweenInfo.new(1, Enum.EasingStyle.Linear), {CFrame = CFrame.new(0, 4, -0)}):Play()
+        else 
+        game:GetService("TweenService"):Create(plr.Character.HumanoidRootPart, TweenInfo.new((getclosestplayer(99e99).Character.HumanoidRootPart.Position - plr.Character.HumanoidRootPart.Position).Magnitude / 50, Enum.EasingStyle.Linear), {CFrame = getclosestplayer(99e99).Character.HumanoidRootPart.CFrame + getclosestplayer(99e99).Character.HumanoidRootPart.CFrame.lookVector * -2}):Play()
+        end
+        end)
+    end 
+end)
+
+Section:NewToggle("Auto Equip Random Sword", "", function(q)
+    r = q 
+    while r and task.wait() do 
+        for i,v in pairs(plr.Character:GetChildren()) do 
+            if v:IsA("Tool") and (not string.find(v.Name, "Sword")) then 
+                for o,k in pairs(plr.Backpack:GetChildren()) do 
+                    if string.find(k.Name, "Sword") then 
+                        plr.Character.Humanoid:EquipTool(k)
+                    end 
+                end
+            elseif (not plr.Character:FindFirstChildOfClass("Tool")) then 
+                for o,k in pairs(plr.Backpack:GetChildren()) do 
+                    if string.find(k.Name, "Sword") then 
+                        plr.Character.Humanoid:EquipTool(k)
+                    end 
+                end
+            end 
+        end 
+    end 
 end)
 
 local Tab = Window:NewTab("Misc")
@@ -125,3 +169,38 @@ Section:NewSlider("WalkSpeed", "", 500, 50, function(oirq)
  Section:NewSlider("JumpPower", "", 500, 50, function(roe) 
  plr.Character.Humanoid.JumpPower = roe  
  end) 
+
+Section:NewButton("Console", "Credit In Scripts", function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+
+
+
+local Tab = Window:NewTab("info/Credit")
+local Section = Tab:NewSection("Developer:ALWI#3737") 
+local Section = Tab:NewSection("Kill aura is still Beta")
+local Section = Tab:NewSection("Join My Discord For update!")
+Section:NewButton("Discord!", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Thank You For support!";
+    Text = "In your Clipboard!"; -- what the text says (ofc)
+    Duration = 10;
+})
+
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum")))()
+end)
+local Section = Tab:NewSection("enjoy Who use my script!")
+
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Alwi hub|run til the top sim V.1";
+    Text = "Thank You for executor My script"; -- what the text says (ofc)
+    Duration = 20;
+})
+
+
+local H = Instance.new("Hint", game.Workspace)
+H.Parent = game.Workspace
+H.Text = ("Is script Made by Alwi Hub")
+wait(15)
+H:Destroy(50)
