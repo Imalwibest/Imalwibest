@@ -193,14 +193,14 @@ local Section = Tab:NewSection("enjoy Who use my script!")
 
 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Alwi hub|run til the top sim V.1";
+    Title = "Alwi hub | run til the top sim ";
     Text = "Thank You for executor My script"; -- what the text says (ofc)
     Duration = 20;
 })
 
 
-local H = Instance.new("Hint", game.Workspace)
+local Path = Instance.new("Hint", game.Workspace)
 H.Parent = game.Workspace
-H.Text = ("Is script Made by Alwi Hub")
+H.Text = ("Is script Made by Alwi Hub v.1")
 wait(15)
-H:Destroy(50)
+Path:Destroy(50)
