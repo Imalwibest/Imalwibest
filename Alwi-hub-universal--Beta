@@ -44,11 +44,7 @@ Section:NewTextBox("Set FOV", "?", function(fov)
         game.workspace.CurrentCamera.FieldOfView = fov
 end) 
 
-local Tab = Window:NewTab("Tools")
-local Section = Tab:NewSection("Tools Items NO FE")
-Section:NewButton("Keyboard", "Credit In Scripts", function()
-game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
-end)
+local Section = Tab:NewSection("Tools")
 
 Section:NewButton("Tptool", "?", function()
 local mouse = game.Players.LocalPlayer:GetMouse()
@@ -140,7 +136,7 @@ c.BinType = Enum.BinType.Grab
     btools.TextColor3 = Color3.fromRGB(0, 0, 0)
     btools.Text = "BTools"
 end) 
-
+local Section = Tab:NewSection("Visual/SideClient")
 
 Section:NewButton("Esp [Beta]", "?", function()
     _G.FriendColor = Color3.fromRGB(0, 0, 255)
@@ -376,11 +372,52 @@ w.DescendantAdded:Connect(function(v)
 end)
 end)
 
+
+Section:NewTextBox("Set Proximity Prompt Cooldown", "?", function(UwU) 
+    for _, v in next, workspace:GetDescendants() do
+        if v:IsA("ProximityPrompt") then
+            v.HoldDuration = UwU
+        end
+    end
+end)  
+
+
+Section:NewToggle("Hide Player", "?", function(state)
+    if state then
+        _G.Fu = true
+while _G.Fu and  task.wait() do
+
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character then
+v.Character:Destroy()
+end
+end
+end
+    else
+        _G.Fu = false
+while _G.Fu and  task.wait() do
+
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character then
+v.Character:Destroy()
+end
+end
+end
+    end
+end)
+
+Section:NewButton("Console", "?", function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+
+
+
+
+local Section = Tab:NewSection("Script Other...") 
 Section:NewButton("Keyboard", "Credit In Scripts", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
 
-local Section = Tab:NewSection("Script Other...")
 Section:NewButton("RemoteSpy", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
 end)
@@ -397,9 +434,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/addit
 }) 
 end) 
 
-Section:NewKeybind("Closed/Open", "Click again LoL", Enum.KeyCode.E, function()
-	Library:ToggleUI()
-end)
+
+
 
 local Tab = Window:NewTab("Admin Hub")
 local Section = Tab:NewSection("OpAdmin")
@@ -704,14 +740,9 @@ end)
 end)
 
 local Section = Tab:NewSection("Other hub Double down")
-Section:NewButton("Land hub", "Credit Sponso And by Hydra", function()
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Check Clipboard";
-    Text = "Issue Anti Cracked You need re join And executor this again"; -- what the text says (ofc)
-    Duration = 30;
-})
-setclipboard(tostring("loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponsoparnordvpn/LandHub/main/LandHubV1.txt"))()"))
-end) 
+Section:NewButton("Land hub", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponsoparnordvpn/LandHub/main/LandHubV1.txt"))() 
+end)
 
 Section:NewButton("Elemental hub [Pachted]", "Credit Sponso Ploit And by Hydra", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LRHUBEDIT/ElementalHubScripts/main/ElementalHubV1.txt",true))()
@@ -2354,17 +2385,18 @@ local Tab = Window:NewTab("Info/Credit")
 local Section = Tab:NewSection("Develepor Alwi Hub V.1.6")
 local Section = Tab:NewSection("Discord user : alwi3726")
 local Section = Tab:NewSection("Join my discord for more update and ugc!")
-game.StarterGui:SetCore("SendNotification", {
-    Title = "ALWI V.1.6";
-    Text = "Fixed Another Error"; -- what the text says (ofc)
-    Duration = 30;
-}) 
 
 Section:NewButton("Discord Link", "?", function()
 
 end) 
 
+Section:NewButton("Console", "?", function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
 
+Section:NewKeybind("Closed/Open", "Click again LoL", Enum.KeyCode.E, function()
+	Library:ToggleUI()
+end)
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1.6";
     Text = "Fixed Another Error"; -- what the text says (ofc)
