@@ -44,6 +44,103 @@ Section:NewTextBox("Set FOV", "?", function(fov)
         game.workspace.CurrentCamera.FieldOfView = fov
 end) 
 
+local Tab = Window:NewTab("Tools")
+local Section = Tab:NewSection("Tools Items NO FE")
+Section:NewButton("Keyboard", "Credit In Scripts", function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+
+Section:NewButton("Tptool", "?", function()
+local mouse = game.Players.LocalPlayer:GetMouse()
+				local tool = Instance.new("Tool")
+				tool.RequiresHandle = false
+				tool.Name = "TpTools"
+				tool.Activated:connect(function()
+					local pos = mouse.Hit+Vector3.new(0,2.5,0)
+					pos = CFrame.new(pos.X,pos.Y,pos.Z)
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+				end)
+				tool.Parent = game.Players.LocalPlayer.Backpack
+		
+end)
+
+Section:NewButton("F3x", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "F3x";
+    Text = "Wait second for loaded Tools!"; -- what the text says (ofc)
+    Duration = 10;
+}) 
+wait(10) 
+loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+end)
+
+Section:NewButton("Btools", "?", function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+for index, child in pairs(game:GetService("Workspace"):GetChildren()) do
+   if child.ClassName == "Part" then
+       child.Locked = false
+   end
+   if child.ClassName == "MeshPart" then
+       child.Locked = false
+   end
+   if child.ClassName == "UnionOperation" then
+       child.Locked = false
+   end
+   if child.ClassName == "Model" then
+       for index, chil in pairs(child:GetChildren()) do
+           if chil.ClassName == "Part" then
+               chil.Locked = false
+           end
+           if chil.ClassName == "MeshPart" then
+               chil.Locked = false
+           end
+           if chil.ClassName == "UnionOperation" then
+               chil.Locked = false
+           end
+           if chil.ClassName == "Model" then
+               for index, childe in pairs(chil:GetChildren()) do
+                   if childe.ClassName == "Part" then
+                       childe.Locked = false
+                   end
+                   if childe.ClassName == "MeshPart" then
+                       childe.Locked = false
+                   end
+                   if childe.ClassName == "UnionOperation" then
+                       childe.Locked = false
+                   end
+                   if childe.ClassName == "Model" then
+                       for index, childeo in pairs(childe:GetChildren()) do
+                           if childeo.ClassName == "Part" then
+                               childeo.Locked = false
+                           end
+                           if childeo.ClassName == "MeshPart" then
+                               childeo.Locked = false
+                           end
+                           if childeo.ClassName == "UnionOperation" then
+                               childeo.Locked = false
+                           end
+                           if childeo.ClassName == "Model" then
+                           end
+                       end
+                   end
+               end
+           end
+       end
+   end
+end
+c = Instance.new("HopperBin", game:GetService("Players").LocalPlayer.Backpack)
+c.BinType = Enum.BinType.Hammer
+c = Instance.new("HopperBin", game:GetService("Players").LocalPlayer.Backpack)
+c.BinType = Enum.BinType.Clone
+c = Instance.new("HopperBin", game:GetService("Players").LocalPlayer.Backpack)
+c.BinType = Enum.BinType.Grab
+    btools.Text = "Loaded!"
+    btools.TextColor3 = Color3.fromRGB(0, 255, 50)
+    wait(2)
+    btools.TextColor3 = Color3.fromRGB(0, 0, 0)
+    btools.Text = "BTools"
+end) 
+
 
 Section:NewButton("Esp [Beta]", "?", function()
     _G.FriendColor = Color3.fromRGB(0, 0, 255)
@@ -202,6 +299,7 @@ end)
 Section:NewButton("Reset", "Reser ur character", function()
     game.Players.LocalPlayer.Character.Head:Destroy()
 end)
+
 
 Section:NewButton("AntiLags", "?", function()
 local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
@@ -2251,6 +2349,22 @@ end)
 Section:NewButton("PC", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/PC%20sword'))()
 end)
+
+local Tab = Window:NewTab("Info/Credit")
+local Section = Tab:NewSection("Develepor Alwi Hub V.1.6")
+local Section = Tab:NewSection("Discord user : alwi3726")
+local Section = Tab:NewSection("Join my discord for more update and ugc!")
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ALWI V.1.6";
+    Text = "Fixed Another Error"; -- what the text says (ofc)
+    Duration = 30;
+}) 
+
+Section:NewButton("Discord Link", "?", function()
+
+end) 
+
+
 game.StarterGui:SetCore("SendNotification", {
     Title = "ALWI V.1.6";
     Text = "Fixed Another Error"; -- what the text says (ofc)
