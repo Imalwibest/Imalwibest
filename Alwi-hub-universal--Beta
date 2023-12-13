@@ -1,25 +1,7 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("ALWI HUB V.1.5", "Sentinel")
-local Tab = Window:NewTab("[Credit]")
-local plr = game.Players.LocalPlayer
-local Section = Tab:NewSection("ALWI#3737")
-local Section = Tab:NewSection("I From Indonesia")
-local Section = Tab:NewSection("My discord")
-Section:NewButton("discord", "?", function()
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Thx For join";
-    Text = "In your Clipboard!"; -- what the text says (ofc)
-    Duration = 9999;
-})
-
-setclipboard(tostring("https://discord.com/invite/mZbDEqfrvk"))
-    print("Clicked")
-end)
-
-local Tab = Window:NewTab("Universal Hub")
-local Section = Tab:NewSection("Universal Hub [Alwi]")
-local Section = Tab:NewSection("Im Year 13 Age cuz im learning lua")
-local Section = Tab:NewSection("Thx For Using My hub!!!")
+local Window = Library.CreateLib("ALWI HUB V.1.6", "Sentinel")
+local Tab = Window:NewTab("Universal Script")
+local Section = Tab:NewSection("Local Player")
 Section:NewButton("Infinite Jump", "?", function()
 local InfiniteJumpEnabled = true
 game:GetService("UserInputService").JumpRequest:connect(function()
@@ -27,79 +9,43 @@ game:GetService("UserInputService").JumpRequest:connect(function()
         game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
     end
 end)
-    print("Clicked")
 end)
 
-Section:NewSlider("Speed", "?", 1000, 0, function(speed)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+Section:NewSlider("SliderJumpPower ", "?", 1000, 50, function(roe)
+     game.Players.LocalPlayer.Character.Humanoid.JumpPower = roe
+end) 
+
+Section:NewSlider("SliderSpeed", "?", 500, 0, function(txt) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
 end)
 
-Section:NewTextBox("Character speed", "1000", function(txt)
+Section:NewSlider("Slider Gravity", "?", 500, 0, function(a) 
+    game.Workspace.Gravity = a
+end)
+
+Section:NewTextBox("Set Speed", "?", function(txt)
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
 end)
 
-Section:NewSlider("JumpPower ", "?", 1000, 50, function(roe)
-plr.Character.Humanoid.JumpPower = roe 
+Section:NewTextBox("Set Jumpower", "?", function(su)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = su
 end)
 
-    
+Section:NewTextBox("Set Gravity", "?", function(a)
+	game.Workspace.Gravity = a
+end)  
 
-Section:NewButton("Noclip Click E To Activate", "?", function()
-    local StealthMode = true -- If game has an anticheat that checks the logs
 
-local Indicator
+Section:NewTextBox("Set Clock Time", "?", function(b)
+	game.Lighting.ClockTime = b
+end)  
 
-if not StealthMode then
-    local ScreenGui = Instance.new("ScreenGui", game.CoreGui)
-    print("NOCLIP: Press E to Activate")
-    Indicator = Instance.new("TextLabel", ScreenGui)
-    Indicator.AnchorPoint = Vector2.new(0, 1)
-    Indicator.Position = UDim2.new(0, 0, 1, 0)
-    Indicator.Size = UDim2.new(0, 200, 0, 50)
-    Indicator.BackgroundTransparency = 1
-    Indicator.TextScaled = true
-    Indicator.TextStrokeTransparency = 0
-    Indicator.TextColor3 = Color3.new(0, 0, 0)
-    Indicator.TextStrokeColor3 = Color3.new(1, 1, 1)
-    Indicator.Text = "Noclip: Enabled"
-end
+Section:NewTextBox("Set FOV", "?", function(fov) 
+        game.workspace.CurrentCamera.FieldOfView = fov
+end) 
 
-local noclip = false
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
 
-local mouse = player:GetMouse()
-
-mouse.KeyDown:Connect(function(key)
-    if key == "e" then
-        noclip = not noclip
-
-        if not StealthMode then
-            Indicator.Text = "Noclip: " .. (noclip and "Enabled" or "Disabled")
-        end
-    end
-end)
-
-while true do
-    player = game.Players.LocalPlayer
-    character = player.Character
-
-    if noclip then
-        for _, v in pairs(character:GetDescendants()) do
-            pcall(function()
-                if v:IsA("BasePart") then
-                    v.CanCollide = false
-                end
-            end)
-        end
-    end
-
-    game:GetService("RunService").Stepped:wait()
-    end
-    print("Clicked")
-end)
-
-Section:NewButton("Esp[Beta]", "?", function()
+Section:NewButton("Esp [Beta]", "?", function()
     _G.FriendColor = Color3.fromRGB(0, 0, 255)
 _G.EnemyCBeta = Color3.fromRGB(255, 0, 0)
 _G.UseTeamColor = true
@@ -253,81 +199,6 @@ while task.wait() do
     print("Clicked")
 end)
 
-Section:NewButton("Antifling", "?", function()
-local Players = game:GetService("Players")
-local RunService = game:GetService("RunService")
-
-local function getCharacterComponents(character)
-    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart") or character:FindFirstChild("Torso") or character:FindFirstChild("UpperTorso")
-    local humanoid = character:FindFirstChild("Humanoid")
-    return humanoidRootPart, humanoid
-end
-
-local function applyAntiFling(humanoidRootPart, lastSafePosition)
-    local antiFlingBP = Instance.new("BodyPosition", humanoidRootPart)
-    antiFlingBP.Position = lastSafePosition
-    antiFlingBP.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-    antiFlingBP.P = 10000
-
-    wait(0.1) -- Adjust the duration to control how long the character stays in place
-
-    antiFlingBP:Destroy()
-    humanoidRootPart.CFrame = CFrame.new(lastSafePosition)
-end
-
-local function antiFling()
-    local localPlayer = Players.LocalPlayer
-    local maxVelocityChange = 50 -- Set a maximum allowed change in velocity to detect flinging
-
-    local lastVelocity = Vector3.new(0, 0, 0)
-    local lastSafePosition = Vector3.new(0, 5, 0)
-
-    while true do
-        RunService.Heartbeat:Wait()
-        local character = localPlayer.Character
-        local humanoidRootPart, humanoid = getCharacterComponents(character)
-
-        if humanoidRootPart and humanoid then
-            local currentVelocity = humanoidRootPart.Velocity
-            local velocityChange = (currentVelocity - lastVelocity).Magnitude
-
-            if velocityChange > maxVelocityChange then
-                applyAntiFling(humanoidRootPart, lastSafePosition)
-            else
-                lastSafePosition = humanoidRootPart.Position
-            end
-
-            lastVelocity = currentVelocity
-        end
-    end
-end
-
-antiFling()
-    print("Clicked")
-end)
-
-Section:NewButton("AntiAfkV2", "?", function()
-local vu = game:GetService("VirtualUser")
-        game:GetService("Players").LocalPlayer.Idled:connect(function()
-            vu:Button2Down(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-            wait(1)
-            vu:Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame)
-        end) 
-end)
-
-Section:NewButton("Antiafk", "?", function()
-game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame) wait(1) game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame) end)
-    print("Clicked")
-end)
-
-Section:NewToggle("Disable Gravity", "ToggleInfo", function(state)
-    if state then
-        worksapce.Gravity = 0
-    else
-        worksapce.Gravity = 196.2
-    end
-end)
-
 Section:NewButton("Reset", "Reser ur character", function()
     game.Players.LocalPlayer.Character.Head:Destroy()
 end)
@@ -407,39 +278,6 @@ w.DescendantAdded:Connect(function(v)
 end)
 end)
 
-Section:NewButton("Camera Firts", "?", function()
-repeat
-	wait()
-until game:IsLoaded()
-
-local player = game.Players.LocalPlayer
-local character = player.Character
-
-local part = Instance.new("Part", character)
-part.Transparency = 1
-part.Anchored = true
-part.CanCollide = false
-
-local tweenService = game:GetService("TweenService")
-local runService = game:GetService("RunService")
-local camera = workspace.CurrentCamera
-
-camera.CameraSubject = part -- allows for the camera to turn with mouse rather than being stuck, and does not have to be ran multiple times within RenderStepped
-
-runService.RenderStepped:Connect(function()
-	local tween = tweenService:Create(part, TweenInfo.new(2, Enum.EasingStyle.Back), {CFrame = character.HumanoidRootPart.CFrame * CFrame.new(0, 2, 0)}) -- offset is changed
-	tween:Play()
-	-- line from here moved out of renderstepped as it's unnecessary
-end)
-
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Warning";
-    Text = "Fix You camera Use infinite yield!"; -- what the text says (ofc)
-    Duration = 10;
-})
-
-end)
-
 Section:NewButton("Keyboard", "Credit In Scripts", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end)
@@ -459,12 +297,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/addit
     Keybind = "F", -- Usually defaulted to F. You can change this keybind by replacing the string with a letter. Works for uppercase and lowercase.
     ShowMethodDictionary = true -- Shows you the full list of words that you can say with the method. Press FN + F9 to see this dictionary.
 }) 
-    print("Clicked")
-end)
+end) 
 
-Section:NewKeybind("Toggle ui", "Click again LoL", Enum.KeyCode.F, function()
+Section:NewKeybind("Closed/Open", "Click again LoL", Enum.KeyCode.E, function()
 	Library:ToggleUI()
 end)
+
 local Tab = Window:NewTab("Admin Hub")
 local Section = Tab:NewSection("OpAdmin")
 Section:NewButton("Infinite yield", "?", function()
@@ -2409,31 +2247,7 @@ Section:NewButton("PC", "?", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/PC%20sword'))()
 end)
 game.StarterGui:SetCore("SendNotification", {
-    Title = "ALWI V.1.5";
-    Text = "Update New Add PVP sword v3 reach more Featured Double down"; -- what the text says (ofc)
+    Title = "ALWI V.1.6";
+    Text = "Fixed Another Error"; -- what the text says (ofc)
     Duration = 30;
-})
-wait(5)
-game.StarterGui:SetCore("SendNotification", {
-    Title = "join my discord";
-    Text = "for more update and free ugc"; -- what the text says (ofc)
-    Duration = 30;
-})
-wait(10)
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Update";
-    Text = "New Update Amine clash simulator add island 7"; --what the text says (ofc)
-    Duration = 30;
-})
-wait(20) 
-game.StarterGui:SetCore("SendNotification", {
-    Title = "[Alpha]";
-    Text =  "If you have bad devine this will make you lag"; -- what the text says (ofc)
-    Duration = 30;
-})
-wait(10) 
-game.StarterGui:SetCore("SendNotification", {
-    Title = "Enjoy";
-    Text = "Thank You To executor my scripts"; -- what the text says (ofc)
-    Duration = 99999;
 })
