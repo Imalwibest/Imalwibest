@@ -1,15 +1,35 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("Testing Unversal", "Sentinel")
 local Tab = Window:NewTab("TabName")
-Section:NewButton("ButtonText", "ButtonInfo", function()
-  
-end)
+local Section = Tab:NewSection("Section Name")
                   
-Section:NewSlider("Speed Slider", "?", 500, 0, function(s) 
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+Section:NewSlider("Speed Slider", "?", 500, 0, function(txt) 
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
 end)
 
-                  
-Section:NewSlider("Speed Slider", "?", 500, 0, function(s) 
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+
+Section:NewTextBox("Character speed", "?", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
 end)
+
+Section:NewSlider("JumpPower ", "?", 1000, 50, function(roe)
+     game.Players.LocalPlayer.Character.Humanoid.JumpPower = roe
+end) 
+
+Section:NewTextBox("Character Jumpower", "?", function(su)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = su
+end)
+
+Section:NewSlider("Gravity", "?", 500, 0, function(a) 
+    game.Workspace.Gravity = a
+end)
+
+Section:NewTextBox("Character Gravity", "?", function(a)
+	game.Workspace.Gravity = a
+end)  
+
+
+Section:NewTextBox("Clock Time", "?", function(b)
+	game.Lighting.ClockTime = b
+end)  
+
