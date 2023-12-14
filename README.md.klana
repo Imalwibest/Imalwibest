@@ -1,1 +1,74 @@
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("ALWI HUB V.1.6", "Sentinel")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Inf😎")
+Section:NewButton("inf ticket", "?", function()
+local args = {
+    [1] = math.huge,
+    [2] = "Ticket_80"
+}
 
+game:GetService("ReplicatedStorage"):WaitForChild("onClaimTicketFunc"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewToggle("Quest 2", "ToggleInfo", function(state)
+    if state then
+        _G.Win = true
+
+while _G.Win == true do
+   wait()
+   local args = {
+    [1] = "UnpackingStation_Christmas",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("UnpackingStationRoll"):InvokeServer(unpack(args))
+
+    end
+    else
+        _G.Win = false
+
+while _G.Win == true do
+   wait()
+   local args = {
+    [1] = "UnpackingStation_Christmas",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("UnpackingStationRoll"):InvokeServer(unpack(args))
+
+    end
+    end
+end)
+
+Section:NewToggle("Quest 1", "ToggleInfo", function(state)
+    if state then
+        _G.Xd = true
+
+while _G.xd == true do
+    wait() 
+local args = {
+    [1] = "UnpackingStationBase",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("UnpackingStationRoll"):InvokeServer(unpack(args))
+
+end
+end
+    else
+        _G.Xd = true
+
+while _G.xd == true do
+    wait() 
+local args = {
+    [1] = "UnpackingStationBase",
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("UnpackingStationRoll"):InvokeServer(unpack(args))
+
+end
+    end
+end)
