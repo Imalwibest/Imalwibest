@@ -44,6 +44,13 @@ Section:NewTextBox("Set FOV", "?", function(fov)
         game.workspace.CurrentCamera.FieldOfView = fov
 end) 
 
+Section:NewButton("Fling Gui [Beta]", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Fling%20Gui%20B-e-t-x"))()
+end)
+Section:NewButton("Fly V3", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end) 
+
 local Section = Tab:NewSection("Tools")
 
 Section:NewButton("Tptool", "?", function()
@@ -425,6 +432,11 @@ end)
 Section:NewButton("RemoteSpy Mobile", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
 end)
+
+Section:NewButton("Dark Dex Mobile/PC", "?", function()
+getgenv().Key = "Bash"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/MC%3AIY%20Dex",true))()
+end) 
 
 Section:NewButton("Chat bypasser click F to Run", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/synnyyy/synergy/additional/betterbypasser", true))({
@@ -2387,7 +2399,7 @@ local Section = Tab:NewSection("Discord user : alwi3726")
 local Section = Tab:NewSection("Join my discord for more update and ugc!")
 
 Section:NewButton("Discord Link", "?", function()
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
 end) 
 
 Section:NewButton("Console", "?", function()
