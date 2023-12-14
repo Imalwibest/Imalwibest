@@ -12,63 +12,67 @@ game:GetService("ReplicatedStorage"):WaitForChild("onClaimTicketFunc"):InvokeSer
 
 end)
 
-Section:NewToggle("Quest 2", "ToggleInfo", function(state)
+
+Section:NewToggle("2 queyst", "ToggleInfo", function(state)
     if state then
-        _G.Win = true
+        _G.Enable = true
 
-while _G.Win == true do
+while _G.Enable == true do
    wait()
    local args = {
-    [1] = "UnpackingStation_Christmas",
+    [1] = "UnpackingStation1",
     [3] = false
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("UnpackingStationRoll"):InvokeServer(unpack(args))
 
-    end
+end
     else
-        _G.Win = false
+        _G.Enable = false
 
-while _G.Win == true do
+while _G.Enable == true do
    wait()
    local args = {
-    [1] = "UnpackingStation_Christmas",
+    [1] = "UnpackingStation1",
     [3] = false
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("UnpackingStationRoll"):InvokeServer(unpack(args))
 
+end
     end
-    end
-end)
+end) 
 
 Section:NewToggle("Quest 1", "ToggleInfo", function(state)
     if state then
-        _G.Xd = true
+        _G.Enabled = true
 
-while _G.xd == true do
-    wait() 
-local args = {
-    [1] = "UnpackingStationBase",
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "UnpackingStation_Christmas",
     [3] = false
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("UnpackingStationRoll"):InvokeServer(unpack(args))
 
-end
 end
     else
-        _G.Xd = true
+        _G.Enabled = false
 
-while _G.xd == true do
-    wait() 
-local args = {
-    [1] = "UnpackingStationBase",
+while _G.Enabled == true do
+   wait()
+   local args = {
+    [1] = "UnpackingStation_Christmas",
     [3] = false
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("UnpackingStationRoll"):InvokeServer(unpack(args))
 
 end
+
     end
 end)
+
+
+
