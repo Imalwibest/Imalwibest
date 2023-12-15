@@ -380,7 +380,7 @@ end)
 end)
 
 
-Section:NewTextBox("Set Proximity Prompt Cooldown", "?", function(UwU) 
+Section:NewTextBox("Set Proximity Prompt CD", "?", function(UwU) 
     for _, v in next, workspace:GetDescendants() do
         if v:IsA("ProximityPrompt") then
             v.HoldDuration = UwU
