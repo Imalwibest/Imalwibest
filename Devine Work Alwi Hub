@@ -2,7 +2,7 @@ local player = game.Players.LocalPlayer
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Alwi HuB", HidePremium = false,IntroEnabled = false, SaveConfig = true, ConfigFolder = "OrionTest"})
-   
+
   local Tab = Window:MakeTab({
     Name = "Scripts",
     Icon = "rbxassetid://4483345998",
@@ -17,13 +17,14 @@ local Window = OrionLib:MakeWindow({Name = "Alwi HuB", HidePremium = false,Intro
     Name = "Alwi hub",
     Content = "Hello Thank You use my script",
     Image = "rbxassetid://4483345998",
-    Time = 10
+    Time = 5
+})
 
 Tab:AddButton({
-	Name = "Mobile",
-	Callback = function()
-      		loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-hub-universal--Beta'))()
-  	end    
+        Name = "Mobile",
+        Callback = function()
+                      loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-hub-universal--Beta'))()
+          end    
 })
 
 Tab:AddButton({
