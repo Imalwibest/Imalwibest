@@ -25,6 +25,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9156.977
 wait(2) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9196.29102, 323.458557, -96.9799271, 0.836057663, -0.144533172, 0.52926147, 8.22196888e-09, 0.964676261, 0.263438255, -0.548641562, -0.220249563, 0.806524992)
 wait(2) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9186.07422, 323.695007, -98.8233337, -0.947959006, 1.44158543e-08, 0.318392396, 2.06637232e-08, 1, 1.62456999e-08, -0.318392396, 2.19794298e-08, -0.947959006)
 end) 
 
 local Section = Tab:NewSection("You Need wait 20 mins")
