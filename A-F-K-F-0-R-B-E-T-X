@@ -1,0 +1,98 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Alwi Hub | Afk for UGC", "Synapse")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Farm")
+Section:NewButton("AntiAfk", "?", function()
+
+end)
+
+
+Section:NewToggle("Auto Collect Token", "?", function(state)
+    if state then
+        _G.Fire = true
+
+spawn(function()
+    while _G.Fire do
+        for _, descendant in ipairs(workspace:GetDescendants()) do
+            if descendant:IsA("TouchTransmitter") and
+                game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.PrimaryPart then
+                task.spawn(function()
+                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
+                        game.Players.LocalPlayer.Character.PrimaryPart, 1)
+                    task.wait()
+                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
+                        game.Players.LocalPlayer.Character.PrimaryPart, 0)
+                end)
+            end
+        end
+        task.wait(0.1) 
+    end
+end)
+    else
+        _G.Fire = false
+
+spawn(function()
+    while _G.Fire do
+        for _, descendant in ipairs(workspace:GetDescendants()) do
+            if descendant:IsA("TouchTransmitter") and
+                game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.PrimaryPart then
+                task.spawn(function()
+                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
+                        game.Players.LocalPlayer.Character.PrimaryPart, 1)
+                    task.wait()
+                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
+                        game.Players.LocalPlayer.Character.PrimaryPart, 0)
+                end)
+            end
+        end
+        task.wait(0.1) 
+    end
+end)
+    end
+end)
+
+
+
+
+Section:NewToggle("Auto Click", "?", function(state)
+    if state then
+_G.AutoClick = true
+
+while _G.AutoClick == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
+
+end
+    else
+        _G.AutoClick= false
+
+while _G.AutoClick == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
+
+end
+    end
+end)
+
+
+
+
+Section:NewToggle("Auto Spin", "?", function(state)
+    if state then
+        _G.SpinL = true
+
+while _G.SpinL == true do
+   wait(6.5)
+   game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
+
+end
+    else
+        _G.SpinL = false
+
+while _G.SpinL == true do
+   wait(6.5)
+   game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
+
+end
+    end
+end)
