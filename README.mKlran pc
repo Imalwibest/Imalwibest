@@ -13,7 +13,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("onClaimTicketFunc"):InvokeSer
 end)
 
 
-Section:NewToggle("2 queyst", "ToggleInfo", function(state)
+Section:NewToggle("2 Quest", "ToggleInfo", function(state)
     if state then
         _G.Enable = true
 
