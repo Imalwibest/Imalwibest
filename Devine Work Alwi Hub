@@ -1,7 +1,7 @@
 local player = game.Players.LocalPlayer
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Alwi Hub [Local Devine]", HidePremium = false,IntroEnabled = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Alwi HuB", HidePremium = false,IntroEnabled = false, SaveConfig = true, ConfigFolder = "OrionTest"})
    
   local Tab = Window:MakeTab({
     Name = "Scripts",
@@ -21,16 +21,16 @@ local Window = OrionLib:MakeWindow({Name = "Alwi Hub [Local Devine]", HidePremiu
 })
 
 Tab:AddButton({
-	Name = "Player Hub",
+	Name = "Mobile",
 	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/JustAP1ayer/PlayerHubOther/main/PlayerHubIngameUgcLimiteds.lua"))()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-hub-universal--Beta'))()
   	end    
 })
 
 Tab:AddButton({
-    Name = "",
+    Name = "PC",
     Callback = function()
-              loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/RS/main/SimpleSpyMobile"))()
+              loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Alwi-Hub-V1'))()
       end    
 })
 
