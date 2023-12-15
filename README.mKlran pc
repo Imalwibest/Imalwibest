@@ -20,7 +20,7 @@ Section:NewToggle("2 Quest", "ToggleInfo", function(state)
 while _G.Enable == true do
    wait()
    local args = {
-    [1] = "UnpackingStation1",
+    [1] = "UnpackingStation",
     [3] = false
 }
 
