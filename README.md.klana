@@ -33,7 +33,7 @@ end
 while _G.Enable == true do
    wait()
    local args = {
-    [1] = "UnpackingStation1",
+    [1] = "UnpackingStation",
     [3] = false
 }
 
