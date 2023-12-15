@@ -20,6 +20,8 @@ local Window = OrionLib:MakeWindow({Name = "Alwi HuB", HidePremium = false,Intro
     Time = 5
 })
 
+Tab:AddLabel("Local Devine")
+
 Tab:AddButton({
 	Name = "Mobile",
 	Callback = function()
@@ -34,7 +36,9 @@ Tab:AddButton({
       end    
 })
 
-Tab:AddButton({
+Tab2:AddLabel("Join My discord For more update and Ugcesssss")
+
+Tab2:AddButton({
     Name = "Discord",
     Callback = function()
               loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
