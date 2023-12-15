@@ -29,3 +29,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9186.074
 end) 
 
 local Section = Tab:NewSection("You Need wait 20 mins")
+
+
+
+-hello skidder wanna skid my script?? 
