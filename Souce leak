@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Alwi hub|❄️ Singapore Wanderland [UGC UGC]️", "DarkTheme")
+local Window = Library.CreateLib("Alwi hub |❄️ Singapore Wanderland [UGC UGC]️", "DarkTheme")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("You need Talking Firts")
 local Section = Tab:NewSection("spam jump :/")
