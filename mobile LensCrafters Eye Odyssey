@@ -2,6 +2,7 @@ local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("❄️ Singapore Wanderland [UGC UGC]️", "DarkTheme")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("You need Talking Firts")
+local Section = Tab:NewSection("spam jump :/")
 Section:NewButton("Go Talking Merli🔥", "🤓", function()
 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7821.51221, 148.439224, -1.48575795, -0.112077318, -2.59256723e-08, -0.993699491, 3.47887097e-09, 1, -2.64824287e-08, 0.993699491, -6.42503206e-09, -0.112077318)
@@ -25,3 +26,5 @@ wait(2)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9196.29102, 323.458557, -96.9799271, 0.836057663, -0.144533172, 0.52926147, 8.22196888e-09, 0.964676261, 0.263438255, -0.548641562, -0.220249563, 0.806524992)
 wait(2) 
 end) 
+
+local Section = Tab:NewSection("You Need wait 20 mins")
