@@ -3,7 +3,11 @@ local Window = Library.CreateLib("Alwi Hub | Afk for UGC", "Synapse")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto Farm")
 Section:NewButton("AntiAfk", "?", function()
-
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
 end)
 
 
