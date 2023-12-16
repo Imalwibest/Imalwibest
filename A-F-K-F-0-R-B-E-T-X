@@ -1,1 +1,275 @@
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("Alwi Hub | Afk for UGC", "Synapse")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Farm")
+Section:NewButton("AntiAfk", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk [Beta]";
+    Text = "Turn On"; -- what the text says (ofc)
+    Duration = 30;
+})
+
+
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+end)
+
+
+Section:NewToggle("Auto Collect Token", "?", function(state)
+    if state then
+        _G.Fire = true
+
+spawn(function()
+    while _G.Fire do
+        for _, descendant in ipairs(workspace:GetDescendants()) do
+            if descendant:IsA("TouchTransmitter") and
+                game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.PrimaryPart then
+                task.spawn(function()
+                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
+                        game.Players.LocalPlayer.Character.PrimaryPart, 1)
+                    task.wait()
+                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
+                        game.Players.LocalPlayer.Character.PrimaryPart, 0)
+                end)
+            end
+        end
+        task.wait(.1) 
+    end
+end)
+    else
+        _G.Fire = false
+
+spawn(function()
+    while _G.Fire do
+        for _, descendant in ipairs(workspace:GetDescendants()) do
+            if descendant:IsA("TouchTransmitter") and
+                game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.PrimaryPart then
+                task.spawn(function()
+                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
+                        game.Players.LocalPlayer.Character.PrimaryPart, 1)
+                    task.wait()
+                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
+                        game.Players.LocalPlayer.Character.PrimaryPart, 0)
+                end)
+            end
+        end
+        task.wait(.1) 
+    end
+end)
+    end
+end)
+
+
+
+
+Section:NewToggle("Auto Click", "?", function(state)
+    if state then
+_G.AutoClick = true
+
+while _G.AutoClick == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
+
+end
+    else
+        _G.AutoClick= false
+
+while _G.AutoClick == true do
+   wait()
+   game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
+
+end
+    end
+end)
+
+
+
+
+Section:NewToggle("Auto Spin", "?", function(state)
+    if state then
+        _G.SpinL = true
+
+while _G.SpinL == true do
+   wait(6.5)
+   local args = {
+    [1] = "Normal"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("WheelSpin"):FireServer(unpack(args))
+
+
+end
+    else
+        _G.SpinL = false
+
+while _G.SpinL == true do
+   wait(6.5)
+   local args = {
+    [1] = "Normal"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("WheelSpin"):FireServer(unpack(args))
+
+
+end
+    end
+end)
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Local Player")
+Section:NewButton("Infinite yield", "?", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Section:NewButton("Fly V3", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+end) 
+
+Section:NewTextBox("Set Speed", "?", function(txt)
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = txt
+end)
+
+Section:NewTextBox("Set Jumpower", "?", function(su)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = su
+end)
+
+Section:NewTextBox("Set Gravity", "?", function(a)
+	game.Workspace.Gravity = a
+end)  
+
+
+Section:NewTextBox("Set Clock Time", "?", function(b)
+	game.Lighting.ClockTime = b
+end)  
+
+Section:NewTextBox("Set FOV", "?", function(fov) 
+        game.workspace.CurrentCamera.FieldOfView = fov
+end) 
+
+local Section = Tab:NewSection("Client sided")
+Section:NewButton("AntiLags", "?", function()
+local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+sethiddenproperty(l,"Technology",2)
+sethiddenproperty(t,"Decoration",false)
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = 0
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(w:GetDescendants()) do
+    if v:IsA("BasePart") and not v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif (v:IsA("Decal") or v:IsA("Texture")) and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") and decalsyeeted then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    elseif v:IsA("SpecialMesh") and decalsyeeted  then
+        v.TextureId=0
+    elseif v:IsA("ShirtGraphic") and decalsyeeted then
+        v.Graphic=0
+    elseif (v:IsA("Shirt") or v:IsA("Pants")) and decalsyeeted then
+        v[v.ClassName.."Template"]=0
+    end
+end
+for i = 1,#l:GetChildren() do
+    e=l:GetChildren()[i]
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+w.DescendantAdded:Connect(function(v)
+    wait()--prevent errors and shit
+   if v:IsA("BasePart") and not v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") and decalsyeeted then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    elseif v:IsA("SpecialMesh") and decalsyeeted then
+        v.TextureId=0
+    elseif v:IsA("ShirtGraphic") and decalsyeeted then
+        v.ShirtGraphic=0
+    elseif (v:IsA("Shirt") or v:IsA("Pants")) and decalsyeeted then
+        v[v.ClassName.."Template"]=0
+    end
+end)
+end)
+
+
+Section:NewToggle("Hide Player", "?", function(state)
+    if state then
+        _G.Fu = true
+while _G.Fu and  task.wait() do
+
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character then
+v.Character:Destroy()
+end
+end
+end
+    else
+        _G.Fu = false
+while _G.Fu and  task.wait() do
+
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character then
+v.Character:Destroy()
+end
+end
+end
+    end
+end)
+
+Section:NewButton("Console", "?", function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+
+
+
+local Tab = Window:NewTab("Info/Credit")
+local Section = Tab:NewSection("Develepor Alwi hub")
+local Section = Tab:NewSection("Discord user : alwi3726")
+local Section = Tab:NewSection("Join my discord for more update and ugc!")
+
+Section:NewButton("Discord Link", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
+end) 
+
+Section:NewButton("Console", "?", function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+
+Section:NewKeybind("Closed/Open", "Click again LoL", Enum.KeyCode.E, function()
+	Library:ToggleUI()
+end)
+
 
