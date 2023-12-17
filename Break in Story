@@ -1,0 +1,172 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+    local Window = Library.CreateLib("Breaking Story", "Serpent")
+
+
+    -- GIVE ITEM
+    local GiveItem  = Window:NewTab("Give Item")
+    local GiveItemSection = GiveItem:NewSection("Give Item")
+    GiveItemSection:NewButton("Chips", "Gives You Chips", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Chips")
+    end)    
+    GiveItemSection:NewButton("Lollipop", "Gives You Lollipop", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Lollipop")
+    end)
+    GiveItemSection:NewButton("Cola", "Gives You Cola", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("BloxyCola")
+    end)
+    GiveItemSection:NewButton("Apple", "Gives You Apple", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Apple")
+    end)
+    GiveItemSection:NewButton("Bat", "Gives You Bat", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Bat")
+    end)
+    GiveItemSection:NewButton("MedKit", "Gives you MedKit", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("MedKit")
+    end)
+    GiveItemSection:NewButton("PosionPizza", "Gives You a Bad pizza 'PosionPizza", function()
+        print("Clicked")
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("EpicPizza")
+    end)
+    GiveItemSection:NewButton("Cookie", "Gives You Cookie", function()
+        print("Clicked")
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Cookie")
+    end)
+    GiveItemSection:NewButton("Pizza", "Gives You Pizza", function()
+        print("Clicked")
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Pizza2")
+    end)
+    GiveItemSection:NewButton("Key", "Gives You Key For Baseplate", function()
+        print("Clicked")
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Key")
+    end)
+    GiveItemSection:NewButton("Plank", " Gives You Plank", function()
+        print("Clicked")
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Plank")
+    end)
+    GiveItemSection:NewButton("Cure", "Gives You Cure", function()
+        print("Clicked")
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("Cure")
+    end)
+    GiveItemSection:NewButton("Hammer", "Gives You Hammer", function()
+        print("Clicked")
+        local A_1 = true
+	    local A_2 = "Hammer"
+	    local Event = game:GetService("ReplicatedStorage").RemoteEvents.BasementWeapon
+	    Event:FireServer(A_1, A_2)
+    end)
+    GiveItemSection:NewButton("Teddy", "Gives You Teddy", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("TeddyBloxpin")
+    end)
+    GiveItemSection:NewButton("Sword", "Gives You Sword", function()
+        game.ReplicatedStorage.RemoteEvents.GiveTool:FireServer("LinkedSword")
+    end)
+ 
+    -- Teleport
+    local Teleport  = Window:NewTab("Teleport")
+    local TeleportSection = Teleport:NewSection("Teleport")
+    TeleportSection:NewButton("Sewer", "Teleport You to Sewer", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(129, 3, -125)
+    end)
+    TeleportSection:NewButton("Store", "Teleport You To Store", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-422, 3, -121)
+    end)
+    TeleportSection:NewButton("Basement", "Teleport You To Basement", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71, -15, -163)
+    end)
+    TeleportSection:NewButton("Attic", "Teleport You to Attic", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-16, 35, -220)
+    end)
+    TeleportSection:NewButton("House", "Teleport You To House", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-36, 3, -200)
+    end)
+    TeleportSection:NewButton("BossRoom", "Teleport You To BossRoom", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-39, -287, -1480)
+    end)
+                     
+    -- Roles
+    local Roles  = Window:NewTab("Roles")
+    local RolesSection = Roles:NewSection("Roles")
+    RolesSection:NewButton("Police", "Become A Police Without Robux", function()
+        local A_1 = "Gun"
+	    local A_2 = true
+	    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+	    Event:FireServer(A_1, A_2)
+    end)
+    RolesSection:NewButton("Swat", "Become A Swat Without Robux", function()
+        local A_1 = "SwatGun"
+	    local A_2 = true
+	    local Event = game:GetService("ReplicatedStorage").RemoteEvents.OutsideRole
+	    Event:FireServer(A_1, A_2)
+    end)
+    
+    -- Remotes
+    local Remotes  = Window:NewTab("Remotes")
+    local RemotesSection = Remotes:NewSection("Remotes")
+    RemotesSection:NewButton("Cat", "Cat Be Your Friends", function()
+        local Target = game:GetService("ReplicatedStorage").RemoteEvents.Cattery;
+	    Target:FireServer();
+    end)
+    RemotesSection:NewButton("Get Money", "Gives You Money'", function()
+        local A_1 = game:GetService("Workspace").Money
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.FoundMoney
+        Event:FireServer(A_1)
+    end)
+    RemotesSection:NewButton("KillEnemies", "Kills The Bad Guy", function()
+        for i,v in pairs(game.Workspace.BadGuys:GetChildren()) do
+            for i = 1, 50 do
+                game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,10)
+                game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,996)
+                game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,9)
+                game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,8)
+                game:GetService("ReplicatedStorage").RemoteEvents.HitBadguy:FireServer(v,996)
+            end
+        end
+    end)
+    RemotesSection:NewButton("Heal", "Heals You 'Required Cat'", function()
+        local Target = game:GetService("ReplicatedStorage").RemoteEvents.Cattery;
+	    Target:FireServer();
+        wait(0.0001)
+        for i = 1, 200 do
+            wait(0.0001)
+            local A_1 = "Cat"
+            local Event = game:GetService("ReplicatedStorage").RemoteEvents.Energy
+            Event:FireServer(A_1)
+        end
+    end)
+    RemotesSection:NewButton("RemoveTools", "Remove Tools on your inventory", function()
+        for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+            if v:IsA("Tool") then
+                v:Destroy()
+            end
+        end
+    end)
+    RemotesSection:NewButton("ToolDrop", "ToolDrop", function()
+        while wait(1) do
+            for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                if v:IsA("Tool") then
+                    v.CanBeDropped = true
+                end
+            end
+        end
+    end)
+    RemotesSection:NewButton("OpenSafe", "Opens The Safe Without Code", function()
+        game.ReplicatedStorage.RemoteEvents.Safe:FireServer(game:GetService("Workspace").CodeNote.SurfaceGui.TextLabel.Text)
+    end)
+    RemotesSection:NewToggle("Auto Spam Door", "Auto Spam Door", function(v)
+        getgenv().door = v
+        while true do
+            if not getgenv().door then return end
+                local A_1 = "Front"
+                local Event = game:GetService("ReplicatedStorage").RemoteEvents.Door
+                Event:FireServer(A_1)
+                wait(0.1)
+        end
+    end)
+    RemotesSection:NewButton("Unlock Baseplate Door", "Unlocks The Baseplate Door", function()
+        local Event = game:GetService("ReplicatedStorage").RemoteEvents.UnlockDoor
+        Event:FireServer()
+    end)
+    RemotesSection:NewButton("FullBright", "FullBright So You Can see", function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/06iG6YkU", true))()
+    end)
+               
