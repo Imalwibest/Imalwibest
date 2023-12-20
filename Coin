@@ -1,10 +1,3 @@
-local args = {
-    [2] = game:GetService("Players"):WaitForChild("LARRY_ALWI")
-    [3] = 10000
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Tip"):WaitForChild("RemoteFunctions"):InvokeServer(DonateCoins)
-
 
 while true do
 wait() 
