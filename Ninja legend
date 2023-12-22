@@ -1,8 +1,10 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("TITLE", "Serpent")
+local Window = Library.CreateLib("Ninja Legend", "Serpent")
 local Main = Window:NewTab("Main")
-    local MainSection = Main:NewSection("Main")
-    MainSection:NewToggle("Auto Swing", "Make your player autoswing", function(v)
+local MainSection = Main:NewSection("farm")
+local Misc = Window:NewTab("Misc") 
+local MiscSection = Main:NewSection("Just Nah") 
+MainSection:NewToggle("Auto Swing", "Make your player autoswing", function(v)
         getgenv().autoswing = v
         while true do
             if not getgenv().autoswing then return end
@@ -17,9 +19,9 @@ local Main = Window:NewTab("Main")
                 Event:FireServer(A_1)
                 wait(0.1)
         end
-    end)
+    end)    
 
-    MainSection:NewToggle("Auto Sell", "Make your player autosell", function(v)
+MainSection:NewToggle("Auto Sell", "Make your player autosell", function(v)
         getgenv().autosell = v
         while true do
             if not getgenv().autosell then return end
@@ -30,7 +32,7 @@ local Main = Window:NewTab("Main")
         end
     end)
 
-    MainSection:NewButton("Unlock all islands", "Unlocks all islands", function()
+MainSection:NewButton("Unlock all islands", "Unlocks all islands", function()
         local oldcframe = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         for _,v in pairs(game:GetService("Workspace").islandUnlockParts:GetChildren()) do
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
@@ -40,7 +42,7 @@ local Main = Window:NewTab("Main")
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldcframe
     end)
 
-    MainSection:NewToggle("Auto Buy all sword", "Auto Buys all sword", function(v)
+MainSection:NewToggle("Auto Buy all sword", "Auto Buys all sword", function(v)
         getgenv().buyswords = v
         while true do
             if not getgenv().buyswords then return end
@@ -63,3 +65,17 @@ local Main = Window:NewTab("Main")
             wait(0.5)
         end
     end)
+
+local Elements = {}
+    for i,v in pairs(game:GetService("ReplicatedStorage").Elements:GetChildren()) do
+       table.insert(Elements,v.Name)
+    end
+
+
+MainSection:NewButton("Unlock All Elements", "?", function()
+for i,v in pairs(Elements) do
+        game.ReplicatedStorage.rEvents.elementMasteryEvent:FireServer(v)
+        print(v)
+        end
+    end)
+
