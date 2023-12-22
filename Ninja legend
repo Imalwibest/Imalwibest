@@ -54,18 +54,6 @@ MainSection:NewToggle("Auto Buy all sword", "Auto Buys all sword", function(v)
         end
     end)
 
-    MainSection:NewToggle("Auto Buy all belts", "Auto Buys all Belts", function(v)
-        getgenv().buybelts = v
-        while true do
-            if not getgenv().buybelts then return end
-            local A_1 = "buyAllBelts"
-            local A_2 = "Blazing Vortex Island"
-            local Event = game:GetService("Players").LocalPlayer.ninjaEvent
-            Event:FireServer(A_1, A_2)
-            wait(0.5)
-        end
-    end)
-
 local Elements = {}
     for i,v in pairs(game:GetService("ReplicatedStorage").Elements:GetChildren()) do
        table.insert(Elements,v.Name)
@@ -78,4 +66,28 @@ for i,v in pairs(Elements) do
         print(v)
         end
     end)
+
+MainSection:NewToggle("Auto Buy all belts", "Auto Buys all Belts", function(v)
+        getgenv().buybelts = v
+        while true do
+            if not getgenv().buybelts then return end
+            local A_1 = "buyAllBelts"
+            local A_2 = "Blazing Vortex Island"
+            local Event = game:GetService("Players").LocalPlayer.ninjaEvent
+            Event:FireServer(A_1, A_2)
+            wait(0.5)
+        end
+    end)
+
+MainSection:NewButton("Infinite Double Jumps", "?", function()
+        game.Players.LocalPlayer.multiJumpCount.Value = math.huge
+    end)
+
+MainSection:NewButton("Open Shop", "?", function()
+        game:GetService("Workspace").shopAreaCircles.shopAreaCircle19.circleInner.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        wait(0.4)
+        game:GetService("Workspace").shopAreaCircles.shopAreaCircle19.circleInner.CFrame = CFrame.new(0,0,0)
+    end)
+
+
 
