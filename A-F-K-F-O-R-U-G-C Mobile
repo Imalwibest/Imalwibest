@@ -130,7 +130,22 @@ end
 end)
 
 Section:NewButton("Music [I think Dont use]", "?", function()
+Notification = Instance.new("BindableFunction")
 
+function Notification.OnInvoke(response)
+    if response == "Execute" then     loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/music.exe.lua'))()
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Alwi Hub Music"; 
+    Duration = 5;  
+    Button1 = "Execute"; 
+    Callback = Notification,
+    Text = "Are u sure executor this? "
+})
+
+task.wait(0.0777)
 end)
 
 local Tab = Window:NewTab("Misc")
