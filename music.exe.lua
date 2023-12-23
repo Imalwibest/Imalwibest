@@ -1,10 +1,15 @@
-- 👋 Hi, I’m @Imalwibest
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+local musicId = "rbxassetid://1837403780"
+local volume = math.huge
 
-<!---
-Imalwibest/Imalwibest is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+function playMusic()
+    local music = Instance.new("Sound", game)
+    music.SoundId = musicId
+    music.Volume = volume
+    music:Play()
+
+    music.Ended:Connect(function()
+        wait(math.huge) 
+    end)
+end
+
+playMusic()
