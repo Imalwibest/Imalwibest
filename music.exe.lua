@@ -1,5 +1,6 @@
+
 local musicId = "rbxassetid://1837403780"
-local volume = math.huge
+local volume =  100
 
 function playMusic()
     local music = Instance.new("Sound", game)
@@ -8,7 +9,7 @@ function playMusic()
     music:Play()
 
     music.Ended:Connect(function()
-        wait(math.huge) 
+        wait(200) 
     end)
 end
 
