@@ -29,9 +29,8 @@ end)
 end)
 
 
-Section:NewToggle("Auto Collect Token", "?", function(state)
-    if state then
-        _G.Fire = true
+Section:NewToggle("Auto Collect Token", "?", function(x)
+_G.Fire = x
 
 spawn(function()
     while _G.Fire do
@@ -50,58 +49,20 @@ spawn(function()
         task.wait(.1) 
     end
 end)
-    else
-        _G.Fire = false
+    end)
 
-spawn(function()
-    while _G.Fire do
-        for _, descendant in ipairs(workspace:GetDescendants()) do
-            if descendant:IsA("TouchTransmitter") and
-                game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.PrimaryPart then
-                task.spawn(function()
-                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
-                        game.Players.LocalPlayer.Character.PrimaryPart, 1)
-                    task.wait(0.1)
-                    firetouchinterest(descendant:FindFirstAncestorWhichIsA("Part"),
-                        game.Players.LocalPlayer.Character.PrimaryPart, 0)
-                end)
-            end
-        end
-        task.wait(2) 
-    end
-end)
-    end
-end)
-
-
-
-
-Section:NewToggle("Auto Click", "?", function(state)
-    if state then
-_G.AutoClick = true
+Section:NewToggle("Auto Sell", "Make your player autosell", function(L)
+_G.AutoClick = L
 
 while _G.AutoClick == true do
    wait()
    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
 
 end
-    else
-        _G.AutoClick= false
+    end)
 
-while _G.AutoClick == true do
-   wait()
-   game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Click"):FireServer()
-
-end
-    end
-end)
-
-
-
-
-Section:NewToggle("Auto Spin", "?", function(state)
-    if state then
-        _G.SpinL = true
+Section:NewToggle("Spin", "?", function(v)
+_G.SpinL = v
 
 while _G.SpinL == true do
    wait(6.5)
@@ -113,21 +74,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("WheelS
 
 
 end
-    else
-        _G.SpinL = false
-
-while _G.SpinL == true do
-   wait(6.5)
-   local args = {
-    [1] = "Normal"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("WheelSpin"):FireServer(unpack(args))
-
-
-end
-    end
-end)
+    end)
 
 Section:NewButton("Music [I think Dont use]", "?", function()
 Notification = Instance.new("BindableFunction")
