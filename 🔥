@@ -2,33 +2,93 @@ local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("play for ugc", "Serpent")
 local Main = Window:NewTab("Main")
 local Section = Main:NewSection("farm")
+Section:NewButton("Music [I think Dont use]", "?", function()
+Notification = Instance.new("BindableFunction")
+
+function Notification.OnInvoke(response)
+    if response == "Execute" then     
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/music.exe.lua'))()
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Alwi Hub Music"; 
+    Duration = 5;  
+    Button1 = "Execute"; 
+    Callback = Notification,
+    Text = "Are u sure executor this? "
+})
+
+task.wait(0.0777)
+end)
+
+Section:NewButton("AntiafkV2", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk V2";
+    Text = "Turn On"; 
+    Duration = 30;
+})
+
+for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+    v:Disable()
+end 
+end)
+Section:NewButton("AntiAfkV1", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk [Beta]";
+    Text = "Turn On"; 
+    Duration = 30;
+})
+
+
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+end)
+
 Section:NewButton("Auto Jump", "?", function()
 loadstring(game:HttpGet('https://pastebin.com/raw/vViq08jX'))()
 end)
 
-Section:NewButton("Dont move", "?", function()
+
+Section:NewToggle("Walk", "?", function(L)
+_G.Spi = L
+
+while _G.Spi == true do
+   wait()
+   local args = {
+    [1] = 10000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("UpdQuest4"):FireServer(unpack(args))
+    end)
+
+
+Section:NewToggle("Dont Move", "?", function(s)
+_G.wall = s
+
+while _G.Wall == true do
+   wait() 
 local args = {
     [1] = "Freeze",
     [2] = 99999
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("TaskProgress"):FireServer(unpack(args))
-end)
+    end)
 
-Section:NewButton("Auto Walk", "?", function()
-local args = {
-    [1] = 10000
-}
 
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("UpdQuest4"):FireServer(unpack(args))
-end)
+Section:NewToggle("AutoClick", "?", function(v)
+_G.Spin = v
 
-Section:NewButton("Auto Click", "?", function()
-for i = 1,100000 do
-local args = {
+while _G.Spin == true do
+   wait()
+   local args = {
     [1] = "Click"
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("TaskProgress"):FireServer(unpack(args))
 end
-end)
+    end)
