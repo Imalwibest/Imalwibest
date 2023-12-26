@@ -1,3 +1,14 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "ALWI HUB";
+    Text = "Yes dont get ugc you need wait30 mins claim ur ugc or ban"; -- what the text says (ofc)
+    Duration = 30;
+})
+
+
+
+
+
+
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-39.2574158, 5.4392662, -118.897095, 0.997163594, -3.12665449e-08, -0.0752649903, 2.90207911e-08, 1, -3.09316341e-08, 0.0752649903, 2.86596489e-08, 0.997163594)
 wait(3.9)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(534.700012, -24.4607315, -227.899994, 1, 1.48356092e-08, -1.88104144e-13, -1.48356092e-08, 1, -2.73833614e-08, 1.87697893e-13, 2.73833614e-08, 1)
