@@ -60,7 +60,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "500ccu",
     [2] = 2
@@ -95,7 +95,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "ineedthatnewsword",
     [2] = 2
@@ -109,7 +109,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "sumex",
     [2] = 2
