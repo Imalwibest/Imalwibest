@@ -4,7 +4,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "free",
     [2] = 2
@@ -18,14 +18,14 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "2point5kfav",
     [2] = 2
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "spacewace",
     [2] = 2
@@ -46,14 +46,14 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "like15",
     [2] = 2
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "n1troboost4",
     [2] = 2
@@ -67,28 +67,28 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+ 
 local args = {
     [1] = "84ctive",
     [2] = 2
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "2kf4v",
     [2] = 2
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "like18",
     [2] = 2
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "4activ3",
     [2] = 2
@@ -102,7 +102,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = "2point5kfav",
     [2] = 2
@@ -116,14 +116,14 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args)) 
-wait() 
+ 
 local args = {
     [1] = "christmas",
     [2] = 2
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ForServer"):WaitForChild("AttemptCode"):FireServer(unpack(args))
-wait() 
+
 local args = {
     [1] = newugc",
     [2] = 2
