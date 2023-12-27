@@ -15,3 +15,8 @@ game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedStorage_Source"):Wa
 wait()
 end
 end)
+
+
+Section:NewButton("Claim UGC [8.5k request]", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(783.739502, 15.1505308, 122.476433, -0.947230339, 1.137007e-07, 0.32055378, 1.03002797e-07, 1, -5.03295503e-08, -0.32055378, -1.46557424e-08, -0.947230339)
+end)
