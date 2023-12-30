@@ -1,5 +1,5 @@
 game.StarterGui:SetCore("SendNotification", {
-    Title = "AntiAfk [Beta]";
+    Title = "Flag War";
     Text = "Auto Farn UGC FLAG WAR! AND ANTIAFK! "; 
     Duration = 30;
 })
