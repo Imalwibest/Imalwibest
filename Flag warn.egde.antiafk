@@ -1,3 +1,16 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk [Beta]";
+    Text = "Auto Farn UGC FLAG WAR! AND ANTIAFK! "; 
+    Duration = 30;
+})
+
+
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+
 
 local d = game.Workspace.Core.Drops
 local p = game.Players.LocalPlayer
