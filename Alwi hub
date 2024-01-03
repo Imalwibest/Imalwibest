@@ -1,0 +1,6 @@
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local playerId = 15796538471
+
+if replicatedStorage:FindFirstChild("PT-ReplicatedStorage") then
+    replicatedStorage["PT-ReplicatedStorage"].Remotes.darUGC:FireServer(playerId)
+end
