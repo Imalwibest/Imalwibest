@@ -1,5 +1,5 @@
 local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("❄️ Singapore Wanderland [UGC UGC]️", "DarkTheme")
+local Window = Library.CreateLib("Alwi hub |❄️ Singapore Wanderland [UGC UGC]️", "DarkTheme")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("You need Talking Firts")
 local Section = Tab:NewSection("spam jump :/")
@@ -10,18 +10,24 @@ end)
 
 Section:NewButton("Auto Get UGC", "?", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(7817.99609, 144.231552, -397.322937, 0.998569727, -5.25337924e-08, 0.053464774, 5.17999048e-08, 1, 1.51122848e-08, -0.053464774, -1.23211992e-08, 0.998569727)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8391.55762, 133.738556, 655.135193, -0.988843024, -4.23584545e-08, -0.14896144, -3.01326466e-08, 1, -8.43305372e-08, 0.14896144, -7.89010599e-08, -0.988843024)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8414.04883, 205.107788, -204.585022, 0.99096632, 0.0305700731, -0.130580515, -4.95890218e-09, 0.97367382, 0.22794576, 0.134111151, -0.225886568, 0.964877963)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8235.68555, 196.710068, -224.457596, -0.205079362, -0.210219383, 0.955902874, 1.90648386e-09, 0.976661444, 0.214784563, -0.978745341, 0.0440478809, -0.200293109)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(8235.68555, 196.710068, -224.457596, -0.205079362, -0.210219383, 0.955902874, 1.90648386e-09, 0.976661444, 0.214784563, -0.978745341, 0.0440478809, -0.200293109)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9156.97754, 133.987137, -542.446594, 0.999312401, 0.00895212591, -0.0359804966, -1.51581347e-09, 0.970414758, 0.241443947, 0.0370774418, -0.241277933, 0.969747484)
 wait(2) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9156.97754, 133.987137, -542.446594, 0.999312401, 0.00895212591, -0.0359804966, -1.51581347e-09, 0.970414758, 0.241443947, 0.0370774418, -0.241277933, 0.969747484)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9196.29102, 323.458557, -96.9799271, 0.836057663, -0.144533172, 0.52926147, 8.22196888e-09, 0.964676261, 0.263438255, -0.548641562, -0.220249563, 0.806524992)
 wait(2) 
@@ -31,33 +37,50 @@ end)
 Section:NewButton("auto get ugc 2 obby", "?", function()
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame =
 CFrame.new(7269.17626953125, 154.46249389648438, -66.98968505859375)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(3) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(7719.68603515625, 149.166015625, 7.128841400146484)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(3) 
-game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(7776.21923828125, 137.07215881347656, -379.748291015625)wait() 
+game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(7776.21923828125, 137.07215881347656, -379.748291015625)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(3) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(7886.47900390625, 130.78240966796875, 291.523681640625)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(8361.15234375, 136.27085876464844, 650.1640014648438)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(3) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(8354.1318359375, 135.47218322753906, 197.47100830078125)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(3) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(8555.9892578125, 142.9112091064453, -87.81398010253906)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(8213.4560546875, 142.44532775878906, -125.32215881347656)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(8996.6865234375, 142.32168579101562, -574.9161987304688)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(9111.65234375, 150.74781799316406, -203.5033721923828)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(9260.28125, 202.45423889160156, -549.5665893554688)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(9378.427734375, 455.8476867675781, -402.909423828125)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(9426.7705078125, 579.0170288085938, -330.0422668457031)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(9182.40625, 332.6389465332031, -121.29484558105469)
+game.Players.LocalPlayer.Character.Humanoid.Jump = true
 wait(2) 
 end) 
 
 local Section = Tab:NewSection("You Need wait 20 mins")
+
+
+
