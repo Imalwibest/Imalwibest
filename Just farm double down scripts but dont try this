@@ -1,0 +1,26 @@
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponsoparnordvpn/LandHub/main/LandHubV1.txt"))()
+
+_G.AutoMakeRoom = true
+_G.GamePassPrice = 10
+_G.GamepassID = ""
+  while _G.AutoMakeRoom == true do
+          local args = {
+              [1] = "Cups",
+              [2] = _G.GamePassPrice,
+              [3] = {
+                  ["assetType"] = "Asset",
+                  ["assetId"] = "14741371168"
+              },
+              [4] = false
+          }
+          
+          game:GetService("ReplicatedStorage"):WaitForChild("RemoteCalls"):WaitForChild("GameSpecific"):WaitForChild("Tickets"):WaitForChild("CreateRoom"):InvokeServer(unpack(args))
+end
+
+
+local args = {
+    [1] = "Join My cups for 10 robux"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("RemoteCalls"):WaitForChild("GameSpecific"):WaitForChild("Sign"):WaitForChild("ChangeSignText"):InvokeServer(unpack(args))
