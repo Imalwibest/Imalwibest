@@ -1,6 +1,4 @@
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponsoparnordvpn/LandHub/main/LandHubV1.txt"))()
-
 _G.AutoMakeRoom = true
 _G.GamePassPrice = 10
 _G.GamepassID = ""
@@ -24,3 +22,7 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage"):WaitForChild("RemoteCalls"):WaitForChild("GameSpecific"):WaitForChild("Sign"):WaitForChild("ChangeSignText"):InvokeServer(unpack(args))
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/batusz/main/roblox/__Anti__Afk__Script__", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Sponsoparnordvpn/LandHub/main/LandHubV1.txt"))()
