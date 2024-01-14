@@ -3,8 +3,8 @@ local Window = Library.CreateLib("Alwi hub | TeamworkObby2PlayerPuzzles", "Serpe
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto win")
 Section:NewButton("Tutorial Portal", "ButtonInfo", function() 
-game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.888496, 53.9998817, 5633.26465, 0.66971451, -0.386902153, 0.633868456, 1.73369497e-08, 0.853558481, 0.520997047, -0.74261868, -0.348919272, 0.571640491)
-end)
+game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(174.100906, 13.2849264, 9898.73438, -0.982446671, 0.0955106691, -0.160238057, -8.72762307e-09, 0.858984351, 0.512001812, 0.186543614, 0.503014505, -0.843906343)
+end) 
 
 Section:NewButton("Earth portal", "ButtonInfo", function()
 game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-122.888496, 53.9998817, 5633.26465, 0.66971451, -0.386902153, 0.633868456, 1.73369497e-08, 0.853558481, 0.520997047, -0.74261868, -0.348919272, 0.571640491) 
