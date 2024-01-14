@@ -1,5 +1,5 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Teamwork-Obby-2-Player-Puzzles", "DarkTheme")
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("Alwi hub | TeamworkObby2PlayerPuzzles", "Serpent")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto win")
 Section:NewButton("Tutorial Portal", "ButtonInfo", function() 
@@ -14,10 +14,39 @@ Section:NewButton("Beach Portal", "ButtonInfo", function()
 game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1771.9541, 146.293854, 11385.2012, 0.99999994, 9.96116432e-05, -0.000263672118, -4.09424274e-12, 0.935469568, 0.353407323, 0.000281860732, -0.353407294, 0.935469508)
 end) 
 
-Section:NewButton("AntiAFK", "?", function()
-    print("Clicked")
+Section:NewButton("AntiAfk", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk V1";
+    Text = "Turn On"; 
+    Duration = 30;
+})
+
+
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
 end)
 
+local Section = Tab:NewSection("You need wait for 15 mins!")
 
+
+local Tab = Window:NewTab("Info/Credit")
+local Section = Tab:NewSection("Develepor Alwi hub")
+local Section = Tab:NewSection("Discord user : alwi3726")
+local Section = Tab:NewSection("Join my discord for more update and ugc!")
+
+Section:NewButton("Discord Link", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
+end) 
+
+Section:NewButton("Console", "?", function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+
+Section:NewKeybind("Closed/Open", "Click again LoL", Enum.KeyCode.E, function()
+	Library:ToggleUI()
+end)
 
 
