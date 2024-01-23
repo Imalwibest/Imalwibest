@@ -1,0 +1,40 @@
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("Alwi hub | AO Adventure", "Serpent")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto win")
+Section:NewToggle("Auto Hit", "?", function(Hit)
+ _G.Hit = Hit
+while _G.Hit == true do
+    wait(.1) 
+game:GetService("ReplicatedStorage").Court_ClientHitBall:InvokeServer("PlayerName",false)
+end
+    end) 
+
+Section:NewButton("Place Play", "?", function()
+ game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(197.070999, 5.50526714, -162.69014, 0.997219384, 6.82843293e-09, 0.0745215118, -6.70009204e-09, 1, -1.97219507e-09, -0.0745215118, 1.46741019e-09, 0.997219384)
+end)
+
+Section:NewButton("Claim UGC", "?", function()
+game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(131.384903, 5.94784689, -170.982239, -0.134702474, -2.21654695e-08, 0.990886092, -4.4716991e-08, 1, 1.62904499e-08, -0.990886092, -4.2115083e-08, -0.134702474)
+end) 
+
+
+local Tab = Window:NewTab("Info/Credit")
+local Section = Tab:NewSection("Develepor Alwi hub")
+local Section = Tab:NewSection("Discord user : alwi3726")
+local Section = Tab:NewSection("Thank you for gray for help me")
+local Section = Tab:NewSection("Join my discord for more update and ugc!")
+
+Section:NewButton("Discord Link", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
+end) 
+
+Section:NewButton("Console", "?", function()
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+
+Section:NewKeybind("Closed/Open", "Click again LoL", Enum.KeyCode.E, function()
+	Library:ToggleUI()
+end)
+
+
