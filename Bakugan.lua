@@ -34,13 +34,14 @@ game:GetService("ReplicatedStorage").F.RF:InvokeServer(unpack(args))
 end
     end)
 
-Section:NewToggle("Auto Win Tower Easy", "?", function(suu)
-    _G.Win = suu
-while _G.win == true do
-       wait() 
+Section:NewToggle("Auto Auto Give pet OP", "?", function(Win)
+ _G.yes = Win
+while _G.yes == true do
+    wait(0.3) 
 game:GetService("ReplicatedStorage").F.RF:InvokeServer("TowerFloorCompleted")
-    end
-  end) 
+end
+    end)
+
 
 Section:NewButton("Antiafk", "ButtonInfo", function() 
 game.StarterGui:SetCore("SendNotification", {
