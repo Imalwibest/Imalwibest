@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Library =loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
 local Window = Library.CreateLib("Alwi hub | Bakugon Brawl", "Serpent")
 local Tab = Window:NewTab("Main")
 local Section = Tab:NewSection("Auto win")
@@ -34,7 +34,7 @@ game:GetService("ReplicatedStorage").F.RF:InvokeServer(unpack(args))
 end
     end)
 
-Section:NewToggle("Auto Auto Give pet OP", "?", function(Win)
+Section:NewToggle("Auto Towers wins", "?", function(Win)
  _G.yes = Win
 while _G.yes == true do
     wait(0.3) 
@@ -42,6 +42,13 @@ game:GetService("ReplicatedStorage").F.RF:InvokeServer("TowerFloorCompleted")
 end
     end)
 
+Section:NewToggle("inf gems 1 floor", "?", function(Win2)
+ _G.yes2 = Win2
+while _G.yes3 == true do
+    wait(0.3) 
+game:GetService("ReplicatedStorage").F.RE:FireServer("CheckAchievements")
+end
+    end)
 
 Section:NewButton("Antiafk", "ButtonInfo", function() 
 game.StarterGui:SetCore("SendNotification", {
