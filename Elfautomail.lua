@@ -30,3 +30,21 @@ end)
 
 local HRP = game.Players.LocalPlayer.Character:WaitForChild("HumanoidRootPart")
 HRP.CFrame = CFrame.new(813, 48, -1391)
+
+Notification = Instance.new("BindableFunction")
+function Notification.OnInvoke(response)
+    if response == "Execute" then     
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Elfautomail.lua'))()
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Alwi Hub"; 
+    Duration = math.huge;  
+    Button1 = "Yes"; 
+    Callback = Notification,
+    Text = "Hey This scripts work one place! if no work serverhop"
+})
+
+task.wait(0.0777)
+
