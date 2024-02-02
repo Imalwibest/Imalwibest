@@ -1,0 +1,23 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Jump Clicker 2 FREE UGC!", "Serpent")
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Farm")
+Section:NewToggle("Auto win", "?", function(L)
+_G.Win = L
+while _G.Win== true do
+     wait(0.3) 
+game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(54891.6484, 1356776.88, -5229.27588, -0.560881853, 3.08729291e-08, -0.82789588, 5.42154979e-08, 1, 5.60987923e-10, 0.82789588, -4.45701396e-08, -0.560881853)
+end
+    end) 
+
+Section:NewToggle("Auto Hacth Egg first World", "?", function()
+_G.Egg = UwU
+while _G.Egg == true do
+    wait() 
+local args = {
+    [1] = workspace.ScriptableObjects.Eggs.SunEgg.Component
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.4.7").knit.Services.PetService.RF.UnboxEgg:InvokeServer(unpack(args))
+end
+    end)
