@@ -1,0 +1,5 @@
+_G.Fuck = true
+while _G.Fuck == true do
+    wait() 
+workspace:WaitForChild("MainEvent"):WaitForChild("AddMilk"):FireServer()
+end
