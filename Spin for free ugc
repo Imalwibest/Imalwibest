@@ -1,0 +1,27 @@
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
+local window = Lib:CreateWindow("Alwi Hub | Spin for UGC!")
+local tab = window:CreateTab("Main") 
+tab:CreateButton("AntiAFK", function ()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk V1";
+    Text = "Turn On"; 
+    Duration = 30;
+})
+
+
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+end)
+
+tab:CreateToggle("Toggle/Checkbox",true,function(skid)
+_G.Spin = skid
+while _G.Spin == true do
+game:GetService("ReplicatedStorage"):WaitForChild("SharedModule"):WaitForChild("Remotes"):WaitForChild("Spin"):FireServer()
+wait(0) 
+end
+end) 
+
+
