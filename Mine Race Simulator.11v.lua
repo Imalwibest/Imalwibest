@@ -1,5 +1,5 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
-local window = Lib:CreateWindow("Alwi Hub | Mine Race simulator")
+local window = Lib:CreateWindow("Alwi Hub | Mine Race simulator V.1.1")
 local tab = window:CreateTab("Main") 
 local tabs = window:CreateTab("Teleport") 
 local w = window:CreateTab("Teleport") 
@@ -97,13 +97,13 @@ game.Players.LocalPlayer.Character.HumanoidRootPargame.Players.LocalPlayer.Chara
 end)
 
 w:CreateButton("Join My discord", function()
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
 end) 
 
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "Alwi hub | Mine Race Sim 💎 [FREE UGC] V.1.1";
-    Text = "Thank You for executor My script"; -- what the text says (ofc)
+    Text = "Thank You for executor My script"; 
     Duration = 20;
 })
 
