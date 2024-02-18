@@ -3,17 +3,20 @@ local window = Lib:CreateWindow("Alwi Hub | Smallest Store")
 local tab = window:CreateTab("Main") 
 local tabs = window:CreateTab("Teleport") 
 local w = window:CreateTab("Others") 
+tab:CreateToggle("Farm coin",false,function(free) 
+_G.Coin = free
+while _G.Coin == true do
+     wait() 
+game:GetService("ReplicatedStorage").Packages._Index["sleitnick_knit@1.7.0"].knit.Services.LogRideService.RF.RequestRideStart:InvokeServer()
+end
+end) 
+
+
 tab:CreateButton("Goto Map5", function()
 game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(6104.82764, 274.268341, -1202.30713, 0.994328022, -2.24032402e-08, -0.106357045, 2.06277768e-08, 1, -1.77934982e-08, 0.106357045, 1.54986637e-08, 0.994328022)
 end)
 
-tab:CreateToggle("Farm Coin",false,function(FarmCoin) 
-_G.FarmCoin == true do
-while _G.FarmCoin == true do
-  wait() 
-   game:GetService("ReplicatedStorage").Packages._Index["sleitnick_knit@1.7.0"].knit.Services.LogRideService.RF.RequestRideStart:InvokeServer()
-end
-                 
+
 tab:CreateButton("AntiAFK", function()
 game.StarterGui:SetCore("SendNotification", {
     Title = "AntiAfk";
@@ -27,6 +30,8 @@ game:GetService("Players").LocalPlayer.Idled:Connect(function()
     VirtualUser:ClickButton2(Vector2.new())
 end)
 end)
+
+
 
 tabs:CreateButton("Console", function() 
 game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
@@ -108,7 +113,7 @@ end)
 end)
 
 
-tabs:CreateToggle("Hide Player", function(Fu) 
+tabs:CreateToggle("Hide Player",false,function(Fu) 
         _G.Fu = Fu
 while _G.Fu and  task.wait() do
 
