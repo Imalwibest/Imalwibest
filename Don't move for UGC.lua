@@ -5,7 +5,7 @@ local tabs = window:CreateTab("Misc")
 local w = window:CreateTab("Others") 
 tab:CreateToggle("Auto Claim Quest",false,function(E) 
 _G.ClaimQuest = E
-while _G.ClaimQuest = true do
+while _G.ClaimQuest == true do
       wait(2) 
 game:GetService("ReplicatedStorage"):WaitForChild("Packages"):WaitForChild("_Index"):WaitForChild("sleitnick_knit@1.5.1"):WaitForChild("knit"):WaitForChild("Services"):WaitForChild("QuestService"):WaitForChild("RE"):WaitForChild("ClaimQuest"):FireServer()
 end
