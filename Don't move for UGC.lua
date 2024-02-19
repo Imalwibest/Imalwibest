@@ -34,10 +34,12 @@ game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_k
 end
 end) 
 
-tab:CreateToggle("Freeze",false,function() 
+tab:CreateToggle("Freeze",false,function(S) 
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local HumanoidRootPart = Character:FindFirstChild("HumanoidRootPart")
 
- 
-  
+HumanoidRootPart.Anchored = S
 end) 
 tab:CreateButton("AntiAFK", function()
 game.StarterGui:SetCore("SendNotification", {
