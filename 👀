@@ -1,8 +1,4 @@
 
---- open this file if u stolen hass been skid
-
-
-
 _G.firetouchinterests = HA
 spawn(function()
     while _G.firetouchinterests do
