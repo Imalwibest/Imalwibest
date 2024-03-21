@@ -1,0 +1,24 @@
+_G.Speed = true
+while _G.Speed == true do
+wait() 
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 26
+end
+
+infiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+    if InfiniteJumpEnabled then
+        game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+    end
+end)
+
+_G.Firepp = true
+    spawn(function()
+while _G.Firepp == true do
+      wait() 
+        for i , descendant in ipairs(workspace:GetDescendants()) do
+            if descendant:IsA("ProximityPrompt") then
+                fireproximityprompt(descendant)
+            end
+        end
+    end)
+end
