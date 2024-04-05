@@ -1,4 +1,5 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
+local window = Lib:CreateWindow("                           ALWI HUB | Evade [Beta]")
 local IloveAlwi = window:CreateTab("Main")
 local Rylu = window:CreateTab("Misc")
 local w = window:CreateTab("Info")
@@ -25,50 +26,11 @@ IloveAlwi:CreateButton("Full bright", function()
 end)
 
 IloveAlwi:CreateToggle("Toggle Character Movement",false,function(state)
-    if state then
-        isRunning = true
-        pcall(function()
-            moveCharacter()
-        end)
-    else
-        isRunning = false
-    end
-end)
-
-
-local player = game.Players.LocalPlayer
-local character = player.Character or player.CharacterAdded:Wait()
-local humanoid = character:WaitForChild("Humanoid")
-
-local isRunning = true
-
-local function moveCharacter()
-    while isRunning do
-        if humanoid.MoveDirection.Magnitude > 0 then
-            pcall(function()
-                character.HumanoidRootPart.CFrame = character.HumanoidRootPart.CFrame + character.HumanoidRootPart.CFrame.LookVector
-            end)
-        else
-            break
-        end
+_G.Speed = state
+while _G.Speed == true do
         task.wait()
-    end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame +
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 5
 end
+end) 
 
-local connection
-character.ChildAdded:Connect(function(child)
-    if child:IsA("Humanoid") then
-        humanoid = child
-        connection = humanoid.MoveDirectionChanged:Connect(moveCharacter)
-    end
-end)
-
-character.ChildRemoved:Connect(function(child)
-    if child:IsA("Humanoid") then
-        connection:Disconnect()
-    end
-end)
-
-pcall(function()
-    moveCharacter()
-end)
