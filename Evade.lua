@@ -31,3 +31,19 @@ Lighting.FogEnd = 100000
 		end
     end
  end) 
+
+
+IloveAlwi:CreateSlider("Speed", 0, 1000, function(Vall) 
+pcall(function()
+    local Character = Player.Character;
+    Character.Humanoid.WalkSpeed = Vall
+   end)
+end) 
+
+IloveAlwi:CreateSlider("JumpPower", 0, 1000, function(Val) 
+pcall(function()
+    local Character = Player.Character;
+    Character.Humanoid.JumpHeight = Val;
+   end)
+end)
+  
