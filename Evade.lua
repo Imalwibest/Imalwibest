@@ -17,33 +17,58 @@ end
 end) 
 
 IloveAlwi:CreateButton("Full bright", function() 
-Game.Lighting.Brightness = 4
+    Game.Lighting.Brightness = 4
     Game.Lighting.FogEnd = 100000
     Game.Lighting.GlobalShadows = false
     Game.Lighting.ClockTime = 12
-end) 
-
-IloveAlwi:CreateButton("Full bright", function() 
-Lighting.FogEnd = 100000
-	for i,v in pairs(Lighting:GetDescendants()) do
-		if v:IsA("Atmosphere") then
-			v:Destroy()
-		end
-    end
- end) 
-
-
-IloveAlwi:CreateSlider("Speed", 0, 1000, function(Vall) 
-pcall(function()
-    local Character = Player.Character;
-    Character.Humanoid.WalkSpeed = Vall
-   end)
-end) 
-
-IloveAlwi:CreateSlider("JumpPower", 0, 1000, function(Val) 
-pcall(function()
-    local Character = Player.Character;
-    Character.Humanoid.JumpHeight = Val;
-   end)
+    Lighting.FogColor = Color3.fromRGB(255,255,255)
 end)
-  
+
+IloveAlwi:CreateToggle("Toggle Character Movement",false,function(state)
+    if state then
+        isRunning = true
+        pcall(function()
+            moveCharacter()
+        end)
+    else
+        isRunning = false
+    end
+end)
+
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local isRunning = true
+
+local function moveCharacter()
+    while isRunning do
+        if humanoid.MoveDirection.Magnitude > 0 then
+            pcall(function()
+                character.HumanoidRootPart.CFrame = character.HumanoidRootPart.CFrame + character.HumanoidRootPart.CFrame.LookVector
+            end)
+        else
+            break
+        end
+        task.wait()
+    end
+end
+
+local connection
+character.ChildAdded:Connect(function(child)
+    if child:IsA("Humanoid") then
+        humanoid = child
+        connection = humanoid.MoveDirectionChanged:Connect(moveCharacter)
+    end
+end)
+
+character.ChildRemoved:Connect(function(child)
+    if child:IsA("Humanoid") then
+        connection:Disconnect()
+    end
+end)
+
+pcall(function()
+    moveCharacter()
+end)
