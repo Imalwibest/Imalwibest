@@ -1,3 +1,4 @@
+--- UI libary
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
 local window = Lib:CreateWindow("Alwi Hub | MusicTestV2")
 local tab = window:CreateTab("Main")
@@ -22,7 +23,6 @@ local musicIds = {
 local volume = 100 -- Set initial volume to 100
 local musicPlaying = false
 local currentMusic = nil
-local playbackSpeed = 1 -- Set initial playback speed to 1
 
 -- select music
 local musicDropdown = tab:CreateDropdown("Select Music", musicIds, function(option)
@@ -33,7 +33,6 @@ local musicDropdown = tab:CreateDropdown("Select Music", musicIds, function(opti
     currentMusic.SoundId = option
     currentMusic.Volume = volume / 100 -- Set volume based on 100 scale
     currentMusic.Looped = true
-    currentMusic.PlaybackSpeed = playbackSpeed -- Set initial playback speed
     currentMusic.Parent = game.Workspace
 end)
 
@@ -52,22 +51,6 @@ local stopButton = tab:CreateButton("Stop Music", function()
     if currentMusic then
         currentMusic:Stop()
         musicPlaying = false
-    end
-end)
-
--- change into volume
-local volumeSlider = tab:CreateSlider("Volume", 0, 100, volume, function(value)
-    volume = value
-    if currentMusic then
-        currentMusic.Volume = volume / 100 -- Set volume based on 100 scale
-    end
-end)
-
--- change playback speed
-local speedSlider = tab:CreateSlider("Playback Speed", 0.5, 2, playbackSpeed, function(value)
-    playbackSpeed = value
-    if currentMusic then
-        currentMusic.PlaybackSpeed = playbackSpeed
     end
 end)
 
@@ -100,9 +83,22 @@ local muteUnmuteButton = tab:CreateButton("Mute/Unmute", function()
     end
 end)
 
+
+-- change into volume
+local volumeSlider = tab:CreateSlider("Volume", 0, 100, volume, function(value)
+    volume = value
+    if currentMusic then
+        currentMusic.Volume = volume / 100 -- Set volume based on 100 scale
+    end
+end)
+
+
 -- Notification
 game.StarterGui:SetCore("SendNotification", {
     Title = "MusicV2[Beta]";
     Text = "Script Wass Open source You Can modify yourself!"; 
     Duration = 5;
 })
+
+
+Pada kode di atas, saya telah menghapus bagian yang terkait dengan playback speed, sehingga hanya tersisa volume slider yang berfungsi.
