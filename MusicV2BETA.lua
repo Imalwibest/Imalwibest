@@ -101,4 +101,3 @@ game.StarterGui:SetCore("SendNotification", {
 })
 
 
-Pada kode di atas, saya telah menghapus bagian yang terkait dengan playback speed, sehingga hanya tersisa volume slider yang berfungsi.
