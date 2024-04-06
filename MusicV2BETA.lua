@@ -1,4 +1,3 @@
---- UI libary
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
 local window = Lib:CreateWindow("Alwi Hub | MusicTestV2")
 local tab = window:CreateTab("Main")
@@ -54,15 +53,6 @@ local stopButton = tab:CreateButton("Stop Music", function()
     end
 end)
 
--- stop the music
-if currentMusic then
-    currentMusic.Ended:Connect(function()
-        if musicPlaying then
-            currentMusic:Play()
-        end
-    end)
-end
-
 -- Pause/Resume button
 local pauseResumeButton = tab:CreateButton("Pause/Resume", function()
     if currentMusic then
@@ -83,7 +73,6 @@ local muteUnmuteButton = tab:CreateButton("Mute/Unmute", function()
     end
 end)
 
-
 -- change into volume
 local volumeSlider = tab:CreateSlider("Volume", 0, 100, volume, function(value)
     volume = value
@@ -92,12 +81,9 @@ local volumeSlider = tab:CreateSlider("Volume", 0, 100, volume, function(value)
     end
 end)
 
-
 -- Notification
 game.StarterGui:SetCore("SendNotification", {
     Title = "MusicV2[Beta]";
     Text = "Script Wass Open source You Can modify yourself!"; 
     Duration = 5;
 })
-
-
