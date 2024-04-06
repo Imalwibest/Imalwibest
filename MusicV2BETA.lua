@@ -1,3 +1,4 @@
+
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
 local window = Lib:CreateWindow("Alwi Hub | MusicTestV2")
 local tab = window:CreateTab("Main")
@@ -25,13 +26,15 @@ local currentMusic = nil
 
 -- select music
 tab:CreateDropdown("Select Music", musicIds, function(option)
+    if currentMusic then
+        currentMusic:Destroy()
+    end
     currentMusic = Instance.new("Sound")
     currentMusic.SoundId = option
     currentMusic.Volume = volume / 100
     currentMusic.Looped = true
     currentMusic.Parent = game.Workspace
 end)
-
 
 -- Button Playing Music To playing
 tab:CreateButton("Play Music", function()
@@ -60,15 +63,16 @@ tab:CreateSlider("Volume", 0, 100, volume, function(value)
 end)
 
 -- stop the music
-currentMusic.Ended:Connect(function()
-    if musicPlaying then
-        currentMusic:Play()
-    end
-end)
+if currentMusic then
+    currentMusic.Ended:Connect(function()
+        if musicPlaying then
+            currentMusic:Play()
+        end
+    end)
+end
 
 game.StarterGui:SetCore("SendNotification", {
     Title = "MusicV2[Beta]";
     Text = "Script Wass Open source You Can modify yourself!"; 
     Duration = 5;
 })
- 
