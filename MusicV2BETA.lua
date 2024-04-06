@@ -1,4 +1,3 @@
-
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
 local window = Lib:CreateWindow("Alwi Hub | MusicTestV2")
 local tab = window:CreateTab("Main")
@@ -20,24 +19,26 @@ local musicIds = {
     "rbxassetid://1838028467",
     "rbxassetid://1839920066"
 }
-local volume = 100
+local volume = 100 -- Set initial volume to 100
 local musicPlaying = false
 local currentMusic = nil
+local playbackSpeed = 1 -- Set initial playback speed to 1
 
 -- select music
-tab:CreateDropdown("Select Music", musicIds, function(option)
+local musicDropdown = tab:CreateDropdown("Select Music", musicIds, function(option)
     if currentMusic then
         currentMusic:Destroy()
     end
     currentMusic = Instance.new("Sound")
     currentMusic.SoundId = option
-    currentMusic.Volume = volume / 100
+    currentMusic.Volume = volume / 100 -- Set volume based on 100 scale
     currentMusic.Looped = true
+    currentMusic.PlaybackSpeed = playbackSpeed -- Set initial playback speed
     currentMusic.Parent = game.Workspace
 end)
 
 -- Button Playing Music To playing
-tab:CreateButton("Play Music", function()
+local playButton = tab:CreateButton("Play Music", function()
     if currentMusic then
         currentMusic:Play()
         musicPlaying = true
@@ -47,7 +48,7 @@ tab:CreateButton("Play Music", function()
 end)
 
 -- Button To Stop Playing music
-tab:CreateButton("Stop Music", function()
+local stopButton = tab:CreateButton("Stop Music", function()
     if currentMusic then
         currentMusic:Stop()
         musicPlaying = false
@@ -55,10 +56,18 @@ tab:CreateButton("Stop Music", function()
 end)
 
 -- change into volume
-tab:CreateSlider("Volume", 0, 100, volume, function(value)
+local volumeSlider = tab:CreateSlider("Volume", 0, 100, volume, function(value)
     volume = value
     if currentMusic then
-        currentMusic.Volume = volume / 100
+        currentMusic.Volume = volume / 100 -- Set volume based on 100 scale
+    end
+end)
+
+-- change playback speed
+local speedSlider = tab:CreateSlider("Playback Speed", 0.5, 2, playbackSpeed, function(value)
+    playbackSpeed = value
+    if currentMusic then
+        currentMusic.PlaybackSpeed = playbackSpeed
     end
 end)
 
@@ -71,6 +80,27 @@ if currentMusic then
     end)
 end
 
+-- Pause/Resume button
+local pauseResumeButton = tab:CreateButton("Pause/Resume", function()
+    if currentMusic then
+        if musicPlaying then
+            currentMusic:Pause()
+            musicPlaying = false
+        else
+            currentMusic:Resume()
+            musicPlaying = true
+        end
+    end
+end)
+
+-- Mute/Unmute button
+local muteUnmuteButton = tab:CreateButton("Mute/Unmute", function()
+    if currentMusic then
+        currentMusic.Volume = currentMusic.Volume == 0 and volume / 100 or 0
+    end
+end)
+
+-- Notification
 game.StarterGui:SetCore("SendNotification", {
     Title = "MusicV2[Beta]";
     Text = "Script Wass Open source You Can modify yourself!"; 
