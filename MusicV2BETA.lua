@@ -536,6 +536,8 @@ local musicToggle = tabs:CreateToggle("HR - EEYUH", false, function(state)
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -557,6 +559,8 @@ local musicToggle = tabs:CreateToggle("kirkiimad - i love (tiktok version)", fal
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -578,6 +582,8 @@ local musicToggle = tabs:CreateToggle("FNAF 2 Song", false, function(state)
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -599,6 +605,8 @@ local musicToggle = tabs:CreateToggle("A Heart Worth Saving", false, function(st
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -620,6 +628,8 @@ local musicToggle = tabs:CreateToggle("We Could Be Kings (a)", false, function(s
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -641,6 +651,8 @@ local musicToggle = tabs:CreateToggle("Parry Gripp - Taco Bot 3000", false, func
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -662,6 +674,8 @@ local musicToggle = tabs:CreateToggle("WRLD - Hang Up (feat. Savoi)", false, fun
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -683,6 +697,8 @@ local musicToggle = tabs:CreateToggle("Night Out", false, function(state)
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -704,6 +720,8 @@ local musicToggle = tabs:CreateToggle("VIP Me (a)", false, function(state)
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -725,6 +743,8 @@ local musicToggle = tabs:CreateToggle("Tranical Endl", false, function(state)
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -746,6 +766,8 @@ local musicToggle = tabs:CreateToggle("Wherever You Are (a)", false, function(st
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
@@ -767,6 +789,8 @@ local musicToggle = tabs:CreateToggle("LaserGun_10", false, function(state)
             currentMusic = Instance.new("Sound", game)
             currentMusic.SoundId = musicId
             currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
             currentMusic:Play()
         end
         musicPlaying = true
