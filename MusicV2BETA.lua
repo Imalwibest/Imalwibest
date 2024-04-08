@@ -3,6 +3,7 @@ local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/R
 local window = Lib:CreateWindow("Alwi Hub | MusicTestV2")
 local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Button Play") 
+local info = window:CreateTab("Update And info") 
 tab:Search()
 
 -- music id you can add id from here
@@ -802,6 +803,21 @@ local musicToggle = tabs:CreateToggle("LaserGun_10", false, function(state)
         musicPlaying = false
     end
 end)
+
+-- just info
+info:CreateButton("Credit", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Credit To Alwi";
+    Text = "Join for more update on discord and more ugc"; 
+    Duration = 15;
+})
+end) 
+
+--- my discord
+info:CreateButton("Join My discord", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
+end) 
+
 
 -- Notification
 game:FindService('StarterGui'):SetCore('SendNotification', {
