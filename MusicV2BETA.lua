@@ -783,6 +783,6 @@ end)
 game:FindService('StarterGui'):SetCore('SendNotification', {
 			Title = 'MusicV2[Beta]',
 			Text = 'This script wass open sources you can modify for youself',
-			Icon = 'http://www.roblox.com/asset/?id=176572847',
+			Icon = 'http://www.roblox.com/asset/?id=13398032599',
 			Duration = 5,
 		})
