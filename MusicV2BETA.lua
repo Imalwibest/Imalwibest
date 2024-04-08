@@ -1,6 +1,10 @@
 -- ui libary 
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
+
+-- create window
 local window = Lib:CreateWindow("Alwi Hub | MusicTestV2")
+
+-- tab
 local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Button Play") 
 local info = window:CreateTab("Update And info") 
