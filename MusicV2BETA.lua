@@ -24,7 +24,8 @@ local musicIds = {
     "rbxassetid://6872126938",
     "rbxassetid://1837984979",
     "rbxassetid://1838028467",
-    "rbxassetid://1839920066"
+    "rbxassetid://1839920066", 
+    "rbxassetid://6783714255" 
 }
 local volume = 100 -- Set initial volume to 100
 local musicPlaying = false
@@ -808,6 +809,29 @@ local musicToggle = tabs:CreateToggle("LaserGun_10", false, function(state)
     end
 end)
 
+local musicToggle = tabs:CreateToggle("BROOKLYN BLOOD POP!", false, function(state)
+    local musicId = "rbxassetid://6783714255"
+    local volume = 100
+
+    if state then
+        if not currentMusic then
+            currentMusic = Instance.new("Sound", game)
+            currentMusic.SoundId = musicId
+            currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
+            currentMusic:Play()
+        end
+        musicPlaying = true
+    else
+        if currentMusic then
+            currentMusic:Stop()
+            currentMusic = nil
+        end
+        musicPlaying = false
+    end
+end)
+
 -- just info
 info:CreateButton("Credit", function()
 game.StarterGui:SetCore("SendNotification", {
@@ -821,7 +845,6 @@ end)
 info:CreateButton("Join My discord", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
 end) 
-
 
 -- Notification
 game:FindService('StarterGui'):SetCore('SendNotification', {
