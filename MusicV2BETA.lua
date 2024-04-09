@@ -25,8 +25,17 @@ local musicIds = {
     "rbxassetid://1837984979",
     "rbxassetid://1838028467",
     "rbxassetid://1839920066", 
-    "rbxassetid://6783714255" 
+    "rbxassetid://6783714255", 
+    "rbxassetid://15689442874", 
+    "rbxassetid://1846458016", 
+    "rbxassetid://16190782786", 
+    "rbxassetid://6911766512", 
+    "rbxassetid://1839246774", 
+    "rbxassetid://14145626744", 
+    "rbxassetid://16190783444"	
 }
+
+
 local volume = 100 -- Set initial volume to 100
 local musicPlaying = false
 local currentMusic = nil
@@ -809,8 +818,169 @@ local musicToggle = tabs:CreateToggle("LaserGun_10", false, function(state)
     end
 end)
 
+local musicToggle = tabs:CreateToggle("jugsta - ouuu", false, function(state)
+    local musicId = "rbxassetid://15689442874"
+    local volume = 100
+
+    if state then
+        if not currentMusic then
+            currentMusic = Instance.new("Sound", game)
+            currentMusic.SoundId = musicId
+            currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
+            currentMusic:Play()
+        end
+        musicPlaying = true
+    else
+        if currentMusic then
+            currentMusic:Stop()
+            currentMusic = nil
+        end
+        musicPlaying = false
+    end
+end)
+
 local musicToggle = tabs:CreateToggle("BROOKLYN BLOOD POP!", false, function(state)
     local musicId = "rbxassetid://6783714255"
+    local volume = 100
+
+    if state then
+        if not currentMusic then
+            currentMusic = Instance.new("Sound", game)
+            currentMusic.SoundId = musicId
+            currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
+            currentMusic:Play()
+        end
+        musicPlaying = true
+    else
+        if currentMusic then
+            currentMusic:Stop()
+            currentMusic = nil
+        end
+        musicPlaying = false
+    end
+end)
+
+local musicToggle = tabs:CreateToggle("no more", false, function(state)
+    local musicId = "rbxassetid://1846458016"
+    local volume = 100
+
+    if state then
+        if not currentMusic then
+            currentMusic = Instance.new("Sound", game)
+            currentMusic.SoundId = musicId
+            currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
+            currentMusic:Play()
+        end
+        musicPlaying = true
+    else
+        if currentMusic then
+            currentMusic:Stop()
+            currentMusic = nil
+        end
+        musicPlaying = false
+    end
+end)
+
+local musicToggle = tabs:CreateToggle("Cyber chainsaw", false, function(state)
+    local musicId = "rbxassetid://6911766512"
+    local volume = 100
+
+    if state then
+        if not currentMusic then
+            currentMusic = Instance.new("Sound", game)
+            currentMusic.SoundId = musicId
+            currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
+            currentMusic:Play()
+        end
+        musicPlaying = true
+    else
+        if currentMusic then
+            currentMusic:Stop()
+            currentMusic = nil
+        end
+        musicPlaying = false
+    end
+end)
+
+local musicToggle = tabs:CreateToggle("hardstyle", false, function(state)
+    local musicId = "rbxassetid://1839246774"
+    local volume = 100
+
+    if state then
+        if not currentMusic then
+            currentMusic = Instance.new("Sound", game)
+            currentMusic.SoundId = musicId
+            currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
+            currentMusic:Play()
+        end
+        musicPlaying = true
+    else
+        if currentMusic then
+            currentMusic:Stop()
+            currentMusic = nil
+        end
+        musicPlaying = false
+    end
+end)
+
+local musicToggle = tabs:CreateToggle("phonk music vol2", false, function(state)
+    local musicId = "rbxassetid://14145626744"
+    local volume = 100
+
+    if state then
+        if not currentMusic then
+            currentMusic = Instance.new("Sound", game)
+            currentMusic.SoundId = musicId
+            currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
+            currentMusic:Play()
+        end
+        musicPlaying = true
+    else
+        if currentMusic then
+            currentMusic:Stop()
+            currentMusic = nil
+        end
+        musicPlaying = false
+    end
+end)
+
+local musicToggle = tabs:CreateToggle("chipi chipi capa capa dubi daba daba (remix)", false, function(state)
+    local musicId = "rbxassetid://16190783444"
+    local volume = 100
+
+    if state then
+        if not currentMusic then
+            currentMusic = Instance.new("Sound", game)
+            currentMusic.SoundId = musicId
+            currentMusic.Volume = volume
+            currentMusic.Looped = true
+            currentMusic.Parent = game.Workspace
+            currentMusic:Play()
+        end
+        musicPlaying = true
+    else
+        if currentMusic then
+            currentMusic:Stop()
+            currentMusic = nil
+        end
+        musicPlaying = false
+    end
+end)
+
+local musicToggle = tabs:CreateToggle("lil kuudere x sukoyomi", false, function(state)
+    local musicId = "rbxassetid://16190782786"
     local volume = 100
 
     if state then
