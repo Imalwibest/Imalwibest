@@ -1,6 +1,6 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
 
-local window = Lib:CreateWindow("                           ALWI HUB | Evade [Beta]")
+local window = Lib:CreateWindow("ALWI HUB | Evade [Beta]")
 local IloveAlwi = window:CreateTab("Main")
 local Rylu = window:CreateTab("Misc")
 local w = window:CreateTab("Info")
@@ -10,7 +10,7 @@ IloveAlwi:CreateButton("Respawn", function()
     game:GetService("ReplicatedStorage").Events.Respawn:FireServer()
 end) 
 
-IloveAlwi:CreateToggle("Auto Respawn",false,function(RE) 
+IloveAlwi:CreateToggle("Auto Respawn", false, function(RE) 
     _G.Spawn = RE 
     while _G.Spawn == true do
         task.wait() 
@@ -23,7 +23,7 @@ IloveAlwi:CreateButton("Full bright", function()
     game.Lighting.FogEnd = 100000
     game.Lighting.GlobalShadows = false
     game.Lighting.ClockTime = 12
-    game.Lighting.FogColor = Color3.fromRGB(255,255,255)
+    game.Lighting.FogColor = Color3.fromRGB(255, 255, 255)
 end)
 
 local RunService = game:GetService("RunService")
@@ -62,7 +62,7 @@ IloveAlwi:CreateToggle("TP Walking", false, function(value)
     end
 end)
 
-IloveAlwi:CreateSlider("Speed",1, 100, function(value)
+IloveAlwi:CreateSlider("Speed", 1, 100, function(value)
     tpSpeed = value
 end)
 
@@ -74,6 +74,7 @@ IloveAlwi:CreateToggle("Adjust Jump Power", false, function(value)
     else
         if hum then
             hum.JumpPower = 50
+        end
     end
 end)
 
