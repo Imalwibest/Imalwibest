@@ -532,6 +532,8 @@ end)
 end
 drag(aa.PopupFrame)
 end) 
+
+
 -- change into volume
 local volumeSlider = tab:CreateSlider("Volume", 0, 100, volume, function(value)
     volume = value
@@ -539,6 +541,10 @@ local volumeSlider = tab:CreateSlider("Volume", 0, 100, volume, function(value)
         currentMusic.Volume = volume / 100 -- Set volume based on 100 scale
     end
 end)
+-- no
+tab:CreateButton("Syanpse X executor", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/Chillz-s-scripts/main/Synapse-X-Remake.lua"))()
+end) 
 
 -- toggle main play and stop 
 tabs:Search()
