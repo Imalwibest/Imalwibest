@@ -51,3 +51,33 @@ game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_k
 end
 end
 end) 
+tab:CreateButton("spammer gold",function() 
+while task.wait() do
+for i = 1,100 do
+local args = {
+    [1] = 14472256544
+}
+
+local args = {
+    [1] = 14472256544
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.7.0").knit.Services.WeeklyRewards.RF.RedeemTodays:InvokeServer(unpack(args))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+end
+end
+end) 
