@@ -1,0 +1,53 @@
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
+local window = Lib:CreateWindow("                             ALWI HUB | Stay For UGC")
+local tab = window:CreateTab("Main")
+local tabs = window:CreateTab("Others") 
+tab:CreateToggle("inf gold",false,function(RE) 
+while task.wait() do
+for i = 1,100 do
+local args = {
+    [1] = 17084282952
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.7.0").knit.Services.WeeklyRewards.RF.RefreshCycle:InvokeServer(unpack(args))
+
+
+
+
+
+
+
+
+
+
+
+
+
+end
+end
+end) 
+
+tab:CreateButton("spammer gold",function() 
+while task.wait() do
+for i = 1,100 do
+local args = {
+    [1] = 17084282952
+}
+
+game:GetService("ReplicatedStorage").Packages._Index:FindFirstChild("sleitnick_knit@1.7.0").knit.Services.WeeklyRewards.RF.RefreshCycle:InvokeServer(unpack(args))
+
+
+
+
+
+
+
+
+
+
+
+
+
+end
+end
+end) 
