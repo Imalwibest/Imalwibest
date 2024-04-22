@@ -67,6 +67,19 @@ game:GetService("ReplicatedStorage"):WaitForChild("World1"):WaitForChild("Remote
 end  
 end) 
 
+tab:CreateButton("AntiAFK", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk V1";
+    Text = "Turn On"; 
+    Duration = 30;
+})
+
+
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()VirtualUser:ClickButton2(Vector2.new())
+end)
+end)
 
 -- just for auto claim for ugc
 tabs:CreateToggle("Auto But UGC when compelete",false,function(value)
