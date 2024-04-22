@@ -88,6 +88,7 @@ _G.Getalife = true
 while _G.Getalife == true do
     task.wait(2) 
 game:GetService("ReplicatedStorage"):WaitForChild("World1"):WaitForChild("Remotes"):WaitForChild("ClaimUGC"):FireServer()
+end
 end) 
     
 -- credit by ikura thanks you arigato
