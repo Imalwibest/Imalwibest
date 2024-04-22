@@ -67,6 +67,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("World1"):WaitForChild("Remote
 end  
 end) 
 
+
 tab:CreateButton("AntiAFK", function()
 game.StarterGui:SetCore("SendNotification", {
     Title = "AntiAfk V1";
