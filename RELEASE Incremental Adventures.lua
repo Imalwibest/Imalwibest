@@ -3,14 +3,69 @@ local window = Lib:CreateWindow("ALWI HUB | RELEASE Incremental Adventures")
 local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Others")
 
-tabs:CreateToggle("Auto Get smile",false,function(kys) 
-_G.Stfu = true
+tab:CreateToggle("Auto Get smile",false,function(kys) 
+_G.Stfu = kys
 while _G.Stfu == true do
     wait() 
+local args = {
+    [1] = "Slime"
+}
 
+game:GetService("ReplicatedStorage").World1.Remotes.SlimeInteracted:FireServer(unpack(args))
+end
+end) 
 
+tab:CreateButton("spammer smile",function() 
+for sex = 1,100 do
+_G.fuck = true
+while _G.fuck == true do
+     wait() 
+local args = {
+    [1] = "Slime"
+}
 
+game:GetService("ReplicatedStorage").World1.Remotes.SlimeInteracted:FireServer(unpack(args))
+end
+end
+end) 
+        
+tab:CreateButton("Stop spammer smile",function() 
+for sex = 1,100 do
+_G.fuck = false
+while _G.fuck == true do
+     wait() 
+local args = {
+    [1] = "Slime"
+}
 
+game:GetService("ReplicatedStorage").World1.Remotes.SlimeInteracted:FireServer(unpack(args))
+end
+end
+end) 
+
+tab:CreateToggle("Auto Upgrade Smile",false,function(nega) 
+_G.Skid = nega
+while _G.Skid == true do
+     wait() 
+local args = {
+    [1] = "MaxBuy"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("World1"):WaitForChild("Remotes"):WaitForChild("SlimeUpgradeEvent"):FireServer(unpack(args))            
+end  
+end) 
+
+tab:CreateToggle("Auto Upgrade Exp",false,function(getalife) 
+_G.Skid2 = getalife
+while _G.Skid2 == true do
+     wait() 
+local args = {
+    [1] = "MaxBuy"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("World1"):WaitForChild("Remotes"):WaitForChild("XpUpgradeEvent"):FireServer(unpack(args))
+end  
+end) 
 
 
 -- just for auto claim for ugc
