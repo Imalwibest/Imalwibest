@@ -3,21 +3,33 @@ local window = Lib:CreateWindow("ALWI HUB | RELEASE Incremental Adventures")
 local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Others")
 
+tabs:CreateToggle("Auto Get smile",false,function(kys) 
+_G.Stfu = true
+while _G.Stfu == true do
+    wait() 
 
 
 
 
 
 
+-- just for auto claim for ugc
+tabs:CreateToggle("Auto But UGC when compelete",false,function(value)
+_G.Getalife = true
+while _G.Getalife == true do
+    task.wait(2) 
+game:GetService("ReplicatedStorage"):WaitForChild("World1"):WaitForChild("Remotes"):WaitForChild("ClaimUGC"):FireServer()
+end) 
+    
+-- credit by ikura thanks you arigato
+-- Define variables with default values
+local ClickingSpeed = 0
+local x, y, m = 55, 65.5, 1
+local loopActive = false
 
-
-
-
-
-
--- made by ikura thanks! 
-tabs:CreateToggle("Auto Close Error",false,function(immaskidass)
-    loopActive = immaskidass
+-- Auto-close error function
+tabs:CreateToggle("Auto Close Error",false,function(value)
+    loopActive = value
     spawn(function()
         while loopActive do
             local pp = game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator:FindFirstChild("Prompt")
@@ -34,9 +46,9 @@ tabs:CreateToggle("Auto Close Error",false,function(immaskidass)
     end)
 end)
 
--- made by ikura thanks! 
-tabs:CreateToggle("Auto Buy",false,function(immaskidass)
-    loopActive = immaskidass
+-- Auto-buy function
+tabs:CreateToggle("Auto Buy",false,function(value)
+    loopActive = value
     spawn(function()
         while loopActive do 
             if game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator:FindFirstChild("Prompt") and
