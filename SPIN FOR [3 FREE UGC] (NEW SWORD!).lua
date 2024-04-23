@@ -1,5 +1,5 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
-local window = Lib:CreateWindow("                ALWI HUB | SPIN FOR [3 FREE UGC] (NEW SWORD!)")
+local window = Lib:CreateWindow("                                         ALWI HUB | SPIN FOR [3 FREE UGC] (NEW SWORD!)")
 local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Misc")
 local w = window:CreateTab("info/credit")
@@ -21,6 +21,16 @@ end)
 
 tab:CreateButton("stop spammer spin", function()
 _G.H = false
+end) 
+
+tab:CreateButton("Redeem Code", function()
+local codes = {"SPINS10", "SPINS20"}  
+
+local remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Code_Check")
+
+for _, code in ipairs(codes) do
+    remotes:FireServer(code)
+end
 end) 
 
 tab:CreateButton("AntiAFK", function()
@@ -134,3 +144,15 @@ end)
 w:CreateButton("Join My discord", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
 end) 
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Alwi Hub | SPIN FOR UGC";
+    Text = "Click the ugc before spin"; 
+    Duration = 30;
+})
+wait() 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "You nedd Join Group why? ";
+    Text = "for works duped click redeem code first"; 
+    Duration = 30;
+})
