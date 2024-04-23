@@ -42,7 +42,7 @@ end)
 end)
 
 
-tabs:CreateToggle("Auto Claim Black Crown",false,function(claim) 
+tabs:CreateToggle("[If you win the spin] Auto Claim Black Crown",false,function(claim) 
 _G.Getalife = claim
 while _G.Getalife == true do
     task.wait(2) 
@@ -55,7 +55,7 @@ end
 end) 
     
 
-tabs:CreateToggle("Auto Claim Blue Crown",false,function(skidtokys) 
+tabs:CreateToggle("[If you win the spin] Auto Claim Blue Crown",false,function(skidtokys) 
 _G.wannaskid = skidtokys
 while _G.wannaskid == true do
     task.wait(2) 
