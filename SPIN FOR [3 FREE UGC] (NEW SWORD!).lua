@@ -4,23 +4,17 @@ local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Misc")
 local w = window:CreateTab("info/credit")
 
-tab:CreateToggle("Auto spin",false,function(furryILoveYouRylu) 
-_G.HiMyRylu = furryILoveYouRylu
+tab:CreateToggle("Auto spin",false,function(hi) 
+_G.HiMyRylu = hi
 while _G.HiMyRyku == true do
     wait() 
 game:GetService("ReplicatedStorage"):WaitForChild("SpinnerContents"):WaitForChild("RemoteFunction"):InvokeServer()
 end
 end)
 tab:CreateButton("spammer spin [duped]", function()
-_G.H = true
-while _G.h == true do
-    wait() 
+while wait() do
 game:GetService("ReplicatedStorage"):WaitForChild("SpinnerContents"):WaitForChild("RemoteFunction"):InvokeServer()
 end
-end) 
-
-tab:CreateButton("stop spammer spin", function()
-_G.H = false
 end) 
 
 tab:CreateButton("Redeem Code", function()
