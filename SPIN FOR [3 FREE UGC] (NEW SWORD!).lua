@@ -4,7 +4,7 @@ local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Misc")
 local w = window:CreateTab("info/credit")
 
-tabs:CreateToggle("Auto spin",false,function(furryILoveYouRylu) 
+tab:CreateToggle("Auto spin",false,function(furryILoveYouRylu) 
 _G.HiMyRylu = furryILoveYouRylu
 while _G.HiMyRyku == true do
     wait() 
