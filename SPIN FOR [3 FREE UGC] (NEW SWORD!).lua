@@ -152,7 +152,7 @@ game.StarterGui:SetCore("SendNotification", {
 })
 wait() 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "This script open source";
+    Title = "Credit To Alwi and rylu";
     Text = "script by made byeveryone [Alwi]"; 
     Duration = 8;
 })
