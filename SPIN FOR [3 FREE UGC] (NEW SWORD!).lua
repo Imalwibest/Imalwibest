@@ -148,11 +148,11 @@ wait()
 game.StarterGui:SetCore("SendNotification", {
     Title = "You need Join Group why? ";
     Text = "for works duped click redeem code first"; 
-    Duration = 15;
+    Duration = 6;
 })
 wait() 
 game.StarterGui:SetCore("SendNotification", {
     Title = "This script open source";
     Text = "script by made byeveryone [Alwi]"; 
-    Duration = 16;
+    Duration = 8;
 })
