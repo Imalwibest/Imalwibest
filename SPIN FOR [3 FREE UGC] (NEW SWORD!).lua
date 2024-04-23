@@ -6,7 +6,7 @@ local w = window:CreateTab("info/credit")
 
 tab:CreateToggle("Auto spin",false,function(hi) 
 _G.HiMyRylu = hi
-while _G.HiMyRyku == true do
+while _G.HiMyRylu == true do
     wait() 
 game:GetService("ReplicatedStorage"):WaitForChild("SpinnerContents"):WaitForChild("RemoteFunction"):InvokeServer()
 end
