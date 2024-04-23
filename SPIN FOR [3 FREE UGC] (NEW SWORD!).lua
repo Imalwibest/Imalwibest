@@ -12,7 +12,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("SpinnerContents"):WaitForChil
 end
 end)
 tab:CreateButton("spammer spin [duped]", function()
-while wait() do
+while wait(0.1) do
 game:GetService("ReplicatedStorage"):WaitForChild("SpinnerContents"):WaitForChild("RemoteFunction"):InvokeServer()
 end
 end) 
