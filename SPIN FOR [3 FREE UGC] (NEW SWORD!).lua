@@ -1,5 +1,5 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
-local window = Lib:CreateWindow("                                                          ALWI HUB | SPIN FOR [3 FREE UGC] (NEW SWORD!)")
+local window = Lib:CreateWindow("                                                                   ALWI HUB | SPIN FOR [3 FREE UGC] (NEW SWORD!)")
 local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Misc")
 local w = window:CreateTab("info/credit")
