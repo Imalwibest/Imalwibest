@@ -148,11 +148,17 @@ end)
 game.StarterGui:SetCore("SendNotification", {
     Title = "Alwi Hub | SPIN FOR UGC";
     Text = "Click the ugc before spin"; 
-    Duration = 30;
+    Duration = 5;
 })
 wait() 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "You nedd Join Group why? ";
+    Title = "You need Join Group why? ";
     Text = "for works duped click redeem code first"; 
-    Duration = 30;
+    Duration = 15;
+})
+wait() 
+game.StarterGui:SetCore("SendNotification", {
+    Title = "This script open source";
+    Text = "script by made byeveryone [Alwi]"; 
+    Duration = 16;
 })
