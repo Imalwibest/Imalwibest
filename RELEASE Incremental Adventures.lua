@@ -15,11 +15,9 @@ local args = {
     }
 }
 
-        
+game:GetService("ReplicatedStorage").World1.Remotes.Event:FireServer(unpack(args))
 end) 
 
-
-game:GetService("ReplicatedStorage").World1.Remotes.Event:FireServer(unpack(args))
 tab:CreateToggle("Auto Get smile",false,function(kys) 
 _G.Stfu = kys
 while _G.Stfu == true do
