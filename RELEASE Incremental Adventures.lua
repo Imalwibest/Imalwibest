@@ -4,7 +4,7 @@ local tab = window:CreateTab("Main")
 local x = window:CreateTab("Auto Upgrade") 
 local skid = window:CreateTab("Auto Levels Upgrade") 
 local tabs = window:CreateTab("Others")
-local no = window:CreateTab("Credit/info") 
+local w = window:CreateTab("Credit/info") 
 tab:CreateButton("INF REWARN OMG ONGGGGG OMG", function()
 local args = {
     [1] = {
