@@ -310,3 +310,37 @@ tabs:CreateSlider("Jump Power", 50, 200, function(value)
         hum.JumpPower = jumpPower
     end
 end)
+
+w:CreateToggle("Hide Player",false,function(Fu) 
+        _G.Fu = Fu
+while _G.Fu and  task.wait() do
+
+for i,v in pairs(game.Players:GetPlayers()) do
+if v.Name ~= game.Players.LocalPlayer.Name and v.Character then
+v.Character:Destroy()
+end
+end
+end
+end) 
+
+w:CreateButton("Console", function() 
+game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+w:CreateButton("Join My discord", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
+end) 
+
+w:CreateButton("Click For credit", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Credit To Alwi and rylu";
+    Text = "Enjoy Script?"; 
+    Duration = 5;
+})
+
+end) 
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "♥️♥️♥️♥️";
+    Text = "Thanks You for executor my script"; 
+    Duration = 5;
+})
