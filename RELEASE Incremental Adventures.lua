@@ -1,9 +1,10 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
-local window = Lib:CreateWindow("                                         ALWI HUB | RELEASE Incremental Adventures")
+local window = Lib:CreateWindow("                                                    ALWI HUB | RELEASE Incremental Adventures")
 local tab = window:CreateTab("Main")
 local x = window:CreateTab("Auto Upgrade") 
 local skid = window:CreateTab("Auto Levels Upgrade") 
 local tabs = window:CreateTab("Others")
+local no = window:CreateTab("Credit/info") 
 tab:CreateButton("INF REWARN OMG ONGGGGG OMG", function()
 local args = {
     [1] = {
