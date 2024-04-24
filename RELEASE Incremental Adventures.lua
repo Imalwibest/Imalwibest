@@ -248,3 +248,51 @@ tabs:CreateToggle("Auto Buy",false,function(value)
         end
     end)
 end)
+
+local RunService = game:GetService("RunService")
+local hb = RunService.Heartbeat
+
+local tpwalking = false
+local tpSpeed = 1
+local jumpPower = 50
+local player = game.Players.LocalPlayer
+local chr = player.Character
+local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
+
+tabs:CreateToggle("TP Walking", false, function(value)
+    tpwalking = value
+    while tpwalking and chr and hum and hum.Parent do
+        local success, err = pcall(function()
+            local delta = hb:Wait()
+            if hum.MoveDirection.Magnitude > 0 then
+                chr:TranslateBy(hum.MoveDirection * tpSpeed * delta)
+            end
+        end)
+        if not success then
+            warn("Error in TP Walking: " .. err)
+        end
+    end
+end)
+
+tabs:CreateSlider("Speed", 1, 100, function(value)
+    tpSpeed = value
+end)
+
+tabs:CreateToggle("Adjust Jump Power", false, function(value)
+    if value then
+        if hum then
+            hum.JumpPower = jumpPower
+        end
+    else
+        if hum then
+            hum.JumpPower = 50
+        end
+    end
+end)
+
+tabs:CreateSlider("Jump Power", 50, 200, function(value)
+    jumpPower = value
+    if hum then
+        hum.JumpPower = jumpPower
+    end
+end)
