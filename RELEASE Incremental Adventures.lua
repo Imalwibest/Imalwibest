@@ -31,7 +31,7 @@ end
 end
 end) 
         
-x:CreateButton("Stop spammer smile",function() 
+tab:CreateButton("Stop spammer smile",function() 
 for sex = 1,100 do
 _G.fuck = false
 while _G.fuck == true do
