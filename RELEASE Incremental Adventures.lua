@@ -4,7 +4,22 @@ local tab = window:CreateTab("Main")
 local x = window:CreateTab("Auto Upgrade") 
 local skid = window:CreateTab("Auto Levels Upgrade") 
 local tabs = window:CreateTab("Others")
+tab:CreateButton("INF REWARN OMG ONGGGGG OMG", function()
+local args = {
+    [1] = {
+        ["RewardType"] = "Voidite",
+        ["Name"] = "Gain Tier",
+        ["StatName"] = "Tier",
+        ["Target"] = 1,
+        ["RewardValue"] = 100000000000000000000000000000000000000000000000000000000000000000000000000000
+    }
+}
 
+        
+end) 
+
+
+game:GetService("ReplicatedStorage").World1.Remotes.Event:FireServer(unpack(args))
 tab:CreateToggle("Auto Get smile",false,function(kys) 
 _G.Stfu = kys
 while _G.Stfu == true do
