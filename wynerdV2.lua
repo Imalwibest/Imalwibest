@@ -111,8 +111,8 @@ for i, v in pairs(game.RobloxReplicatedStorage:GetDescendants()) do
 end
 
 task.spawn(function()
-    local discord = loadstring(game:HttpGet("https://boykisser.army/p/raw/tf61mc8d21"))()
-    local win = discord:Window("Wyvern 1.269.3 - redblues edition [GokuSSJ5FreakyButtSex]")
+    local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/RELEASE%20Incremental%20Adventures.lua"))()
+    local win = discord:Window("Wyvern 1.269.3 - Redblue skided by Alwi hub")
     local serv = win:Server("Wyvern", "http://www.roblox.com/asset/?id=6031075938")
     local main = serv:Channel("Home")
     main:Label("\nThank you for using Wyvern!\nThe #2 UGC Games Penetration Testing Tool! (mine is still better)")
