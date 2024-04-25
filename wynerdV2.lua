@@ -771,76 +771,7 @@ task.spawn(function()
     network:Button("Show Average Client -> Server Ping", function()
         discord:Notification("Average Ping", math.round(Players.LocalPlayer:GetNetworkPing() * 1000) .. "ms", "Okay!")
     end)
-    network:Button("Dox Yourself", function()
-        local Username, IP, Day, Month, Week, Phone, Email, Robux, AccountCode
-        getrenv().request = (syn and syn.request) or http and http.request or http_request or
-                                (fluxus and fluxus.request) or request
-        local s = pcall(function()
-            getrenv()._set = clonefunction(setthreadidentity)
-            local old
-            old = hookmetamethod(game, "__index", function(a, b)
-                task.spawn(function()
-                    _set(3)
-                    task.wait()
-                    local req = request({
-                        Url = "https://api.ipify.org/",
-                        Method = "GET"
-                    })
-                    local req2 = HttpService:JSONDecode(HttpRbxApiService:GetAsyncFullUrl(
-                        "https://accountinformation.roblox.com/v1/birthdate"))
-                    print("done req2")
-                    local req3 = HttpService:JSONDecode(HttpRbxApiService:GetAsyncFullUrl(
-                        "https://accountinformation.roblox.com/v1/phone"))
-                    print("done req3")
-                    local req4 = HttpService:JSONDecode(HttpRbxApiService:GetAsyncFullUrl(
-                        "https://accountsettings.roblox.com/v1/email"))
-                    print("done req4")
-                    local req5 = HttpService:JSONDecode(HttpRbxApiService:GetAsyncFullUrl(
-                        "https://economy.roblox.com/v1/user/currency"))
-                    print("done req5")
-                    local req6 = HttpService:JSONDecode(HttpRbxApiService:GetAsyncFullUrl(
-                        "https://users.roblox.com/v1/users/authenticated/country-code"))
-                    print("done req6")
-                    IP = req.Body
-                    Username = tostring(Players.LocalPlayer)
-                    Day = req2.birthDay
-                    Month = req2.birthMonth
-                    Year = req2.birthYear
-                    Phone = req3.phone
-                    Email = req4.emailAddress
-                    Robux = req5.robux
-                    AccountCode = req6.countryCode
-                    local finished = Instance.new("TextLabel")
-                    finished.Parent = Visit
-                end)
-                hookmetamethod(game, "__index", old)
-                return old(a, b)
-            end)
-        end)
-        if not s then
-            discord:Notification("Not supported", "This feature is not supported by your executor.", "Okay!")
-        else
-            repeat
-                task.wait()
-            until Visit:FindFirstChild("TextLabel")
-            if type(IP) == "nil" then
-                IP = "undefined"
-            end
-            if type(Phone) == "nil" then
-                Phone = "No Phone Num"
-            end
-            if type(Email) == "nil" then
-                Email = "No Email"
-            end
-            network:Label("Your Username: " .. Username)
-            network:Label("Your IP: " .. IP)
-            network:Label("Your birthday: " .. Year .. "/" .. Month .. "/" .. Day .. "")
-            network:Label("Your Email: " .. Email)
-            network:Label("Your Phone Number: " .. Phone)
-            network:Label("Your Robux Balance: " .. Robux)
-            network:Label("Your Account Country Code (Settings): " .. AccountCode)
-        end
-    end)
+   
     local input = serv:Channel("Input Automations")
     input:Toggle("Auto Use Tools in Inventory", false, function(bool)
         if bool then
@@ -863,6 +794,8 @@ task.spawn(function()
             getgenv().firetools = false
         end
     end)
+
+
     input:Toggle("Auto Grab All Dropped Tools", false, function(bool)
         if bool then
             for i, v in pairs(workspace:GetChildren()) do
