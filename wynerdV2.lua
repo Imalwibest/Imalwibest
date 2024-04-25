@@ -112,10 +112,10 @@ end
 
 task.spawn(function()
     local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Config%20wynerdV2.lua"))()
-    local win = discord:Window("Wyvern 1.269.3 - Redblue skided by Alwi hub")
+    local win = discord:Window("Wynerd 1.269.3 - Redblue skided by Alwi hub")
     local serv = win:Server("Wyvern", "http://www.roblox.com/asset/?id=6031075938")
     local main = serv:Channel("Home")
-    main:Label("\nThank you for using Wyvern!\nThe #2 UGC Games Penetration Testing Tool! (mine is still better)")
+    main:Label("\nThank you for using Wynerd wynred #2 UGC Games Penetration Testing Tool! (mine is still better)")
     main:Label("Check out the other Discord channels to see our available tools!")
     main:Seperator()
     -- main:Label("\n\nPlanned:\n- The Explorer you see at the left side of your screen\n- Move some stuff that doesn't belong in their category\n- More features\n- New techniques to get free UGC items from games")
