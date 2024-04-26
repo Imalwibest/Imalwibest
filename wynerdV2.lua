@@ -1,3 +1,4 @@
+-- skid by discord  https://discord.com/invite/uD72GttyxX
 skidmyway = Instance.new("BindableFunction")
 function skidmyway.OnInvoke(response)
 if response == "Execute" then
