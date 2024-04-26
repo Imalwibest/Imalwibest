@@ -15,7 +15,11 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 		Text = "Do u wanna executor protect guardian V2"
 
 	})
-
+game:FindService('StarterGui'):SetCore('SendNotification', {
+			Title = 'Alwi Hub Notice',
+			Text = 'Purchase exloiting Working On codex,trigon,Arceusx thanks',
+			Icon = 'http://www.roblox.com/asset/?id=13398032599',
+	}) 
 -- the code is extremely messy because something in the code editor fucked it up all at once and for some reason removed indents in some parts of the code while kept indents in some other parts of the code LOL
 local LOAD_TIME = tick()
 local queueonteleport = queue_on_teleport or queueonteleport
