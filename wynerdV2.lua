@@ -1100,3 +1100,6 @@ task.spawn(function()
         message:Destroy()
     end)
 end)
+
+-- discord
+setclipboard(tostring("https://discord.com/invite/uD72GttyxX"))
