@@ -129,8 +129,8 @@ end
 
 task.spawn(function()
     local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Config%20wynerdV2.lua"))()
-    local win = discord:Window("Wyvern 1.269.4 - redblues edition skided by Alwi hub")
-    local serv = win:Server("Wyvern", "http://www.roblox.com/asset/?id=6031075938")
+    local win = discord:Window("Wynerd 1.269.4 - redblues edition skided by Alwi hub")
+    local serv = win:Server("Wynerd", "http://www.roblox.com/asset/?id=6031075938")
     local main = serv:Channel("Home")
     main:Label("\nThank you for using Wyvned!\nThe #2 UGC Games Penetration Testing Tool! (mine is still better)")
     main:Label("Check out the other Discord channels to see our available tools!")
