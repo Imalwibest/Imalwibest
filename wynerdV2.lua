@@ -8,7 +8,7 @@ end
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "NOTICE!";
-        Duration = 18; 
+        Duration = 8; 
 	    Button1 = "Execute";
         	Callback = skidmyway1,
 
