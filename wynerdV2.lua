@@ -1,3 +1,20 @@
+skidmyway = Instance.new("BindableFunction")
+function skidmyway.OnInvoke(response)
+if response == "Execute" then
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/MainProd"),true))()
+end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "NOTICE!";
+        Duration = 18; 
+	    Button1 = "Execute";
+        	Callback = skidmyway,
+
+		Text = "Do u wanna executor protect guardian V2"
+
+	})
+
 -- the code is extremely messy because something in the code editor fucked it up all at once and for some reason removed indents in some parts of the code while kept indents in some other parts of the code LOL
 local LOAD_TIME = tick()
 local queueonteleport = queue_on_teleport or queueonteleport
