@@ -2,7 +2,7 @@
 skidmyway = Instance.new("BindableFunction")
 function skidmyway.OnInvoke(response)
 if response == "Execute" then
-    loadstring(game:HttpGet(("https://raw.githubusercontent.com/GalacticHypernova/Guardian/main/MainProd"),true))()
+    loadstring(game:HttpGet(("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Guardian%20v2.lua"),true))()
 end
 end
 
