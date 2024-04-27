@@ -1,6 +1,7 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
 local window = Lib:CreateWindow("                             ALWI HUB | Sonic Simulator Free UGC")
 local tab = window:CreateTab("Main")
+local w = window:CreateTab("Credit/info") 
 
 tab:CreateButton("Goto Event", function()
     game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-745.615906, 7.0711689, -15089.8271, -0.771730185, -2.88349984e-05, -0.635950089, -7.28238501e-06, 1, -3.65043779e-05, 0.635950089, -2.35402968e-05, -0.771730185))
@@ -34,3 +35,25 @@ end)
 tab:CreateButton("Goto Claim UGC [WHEN QUEST IS DONE]", function()
     game.Players.LocalPlayer.Character:PivotTo(CFrame.new(1141.39465, 2175.41748, -11684.8535, -0.932385087, -2.80364588e-06, -0.361466914, -2.7095391e-06, 1, -7.67185782e-07, 0.361466914, 2.64096286e-07, -0.932385087))
 end)
+
+w:CreateButton("Console", function() 
+    game:GetService("StarterGui"):SetCore("DevConsoleVisible",true)
+end)
+w:CreateButton("Join My discord", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
+end) 
+
+w:CreateButton("Click For credit", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Credit To Alwi";
+    Text = "Enjoy Script?"; 
+    Duration = 5;
+})
+
+end) 
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "♥️♥️♥️♥️";
+    Text = "Thanks You for executor my script"; 
+    Duration = 5;
+})
