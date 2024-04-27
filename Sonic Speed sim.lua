@@ -1,5 +1,5 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
-local window = Lib:CreateWindow("ALWI HUB | Sonic Simulator Free UGC")
+local window = Lib:CreateWindow("                             ALWI HUB | Sonic Simulator Free UGC")
 local tab = window:CreateTab("Main")
 
 tab:CreateButton("Goto Event", function()
