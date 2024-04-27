@@ -1,5 +1,5 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
-local window = Lib:CreateWindow("                                         ALWI HUB | Sonic Simulator [Free UGC])
+local window = Lib:CreateWindow("                                         ALWI HUB | Sonic Simulator Free UGC)
 local tab = window:CreateTab("Main")
 tab:CreateButton("Goto Event", function()
 game.Players.LocalPlayer.Character:PivotTo(CFrame.new(-745.615906, 7.0711689, -15089.8271, -0.771730185, -2.88349984e-05, -0.635950089, -7.28238501e-06, 1, -3.65043779e-05, 0.635950089, -2.35402968e-05, -0.771730185))
