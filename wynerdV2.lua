@@ -917,7 +917,7 @@ task.spawn(function()
     end)
     local purchase = serv:Channel("Purchase Exploits")
     local x_x = HttpService:JSONDecode(game:HttpGet(
-        "https://apis.roblox.com/developer-products/v1/developer-products/list?universeId=" .. game.GameId .. "&page=1"))
+        "https://apis.roproxy.com/developer-products/v1/developer-products/list?universeId=" .. game.GameId .. "&page=1"))
     local dnames = {}
     local dproductIds = {}
     if type(x_x.DeveloperProducts) == "nil" then
@@ -930,7 +930,7 @@ task.spawn(function()
 
         repeat
             local response = game:HttpGet(
-                "https://apis.roblox.com/developer-products/v1/developer-products/list?universeId=" ..
+                "https://apis.roproxy.com/developer-products/v1/developer-products/list?universeId=" ..
                     tostring(game.GameId) .. "&page=" .. tostring(currentPage))
             local decodedResponse = HttpService:JSONDecode(response)
             local developerProducts = decodedResponse.DeveloperProducts
@@ -1025,7 +1025,7 @@ task.spawn(function()
     purchase:Seperator()
     purchase:Label("Pretty much the same as the one above but for gamepass")
     local wyverngamepass = game.HttpService:JSONDecode(game:HttpGet(
-        "https://games.roblox.com/v1/games/" .. game.GameId .. "/game-passes?limit=100&sortOrder=1"))
+        "https://games.roproxy.com/v1/games/" .. game.GameId .. "/game-passes?limit=100&sortOrder=1"))
     local gnames = {}
     local gproductIds = {}
     for i, v in pairs(wyverngamepass.data) do
