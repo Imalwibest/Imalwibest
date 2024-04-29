@@ -7,6 +7,7 @@ _G.ImLoveRylu = cuminsidemerylu
 while _G.ImLoveRylu == true do
             wait() 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedEvents"):WaitForChild("ClaimDailySpin"):FireServer()
+ wait() 
 end
 end) 
 
