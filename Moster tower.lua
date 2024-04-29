@@ -5,10 +5,8 @@ local w = window:CreateTab("Credit/info")
 tab:CreateToggle("Auto Spin",false,function(cuminsidemerylu) 
 _G.ImLoveRylu = cuminsidemerylu
 while _G.ImLoveRylu == true do
-       spawn(function() 
             wait() 
 game:GetService("ReplicatedStorage"):WaitForChild("ReplicatedEvents"):WaitForChild("ClaimDailySpin"):FireServer()
-end) 
 end
 end) 
 
