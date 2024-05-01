@@ -1,4 +1,6 @@
 -- skid by discord  https://discord.com/invite/uD72GttyxX
+--- Adonis bypasser
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua", true))() 
 skidmyway1 = Instance.new("BindableFunction")
 function skidmyway1.OnInvoke(response)
 if response == "Execute" then
@@ -1102,4 +1104,4 @@ task.spawn(function()
 end)
 
 -- discord
-setclipboard(tostring("https://discord.com/invite/uD72GttyxX"))
+setclipboard(tostring("discord.gg/alwihub")) 
