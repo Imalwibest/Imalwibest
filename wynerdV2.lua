@@ -10,7 +10,7 @@ end
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "NOTICE!";
-        Duration = 8; 
+        Duration = 20; 
 	    Button1 = "Execute";
         	Callback = skidmyway1,
 
@@ -19,7 +19,7 @@ game:GetService("StarterGui"):SetCore("SendNotification", {
 	})
 game:FindService('StarterGui'):SetCore('SendNotification', {
 			Title = 'Alwi Hub Notice',
-			Text = 'Purchase exloiting Working On codex,trigon,Arceusx thanks',
+			Text = 'Purchase exloiting Working On codex,trigon,Arceusx,vega x thanks',
 			Icon = 'http://www.roblox.com/asset/?id=13398032599',
 	}) 
 -- the code is extremely messy because something in the code editor fucked it up all at once and for some reason removed indents in some parts of the code while kept indents in some other parts of the code LOL
