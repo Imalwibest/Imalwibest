@@ -1104,4 +1104,4 @@ task.spawn(function()
 end)
 
 -- discord
-setclipboard(tostring("discord.gg/alwihub")) 
+setclipboard(tostring("https://discord.com/invite/uD72GttyxX")) 
