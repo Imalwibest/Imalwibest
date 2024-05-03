@@ -11,7 +11,7 @@ while _G.HiMyRylu == true do
 game:GetService("ReplicatedStorage"):WaitForChild("SpinnerContents"):WaitForChild("RemoteFunction"):InvokeServer()
 end
 end)
-tab:CreateButton("spammer spin [duped]", function()
+tab:CreateButton("spammer spin", function()
 while wait(0.1) do
 game:GetService("ReplicatedStorage"):WaitForChild("SpinnerContents"):WaitForChild("RemoteFunction"):InvokeServer()
 end
@@ -25,6 +25,9 @@ local remotes = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):Wai
 for _, code in ipairs(codes) do
     remotes:FireServer(code)
 end
+end) 
+tab:CreateButton("Buy Product Gamepass Free", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/wynerdV2.lua",true))()
 end) 
 
 tab:CreateButton("AntiAFK", function()
@@ -40,7 +43,17 @@ game:GetService("Players").LocalPlayer.Idled:Connect(function()
     VirtualUser:CaptureController()VirtualUser:ClickButton2(Vector2.new())
 end)
 end)
+tabs:CreateToggle("[If you win the spin] Auto Sword Bat",false,function(claimV3) 
+_G.Getalife = claimV3
+while _G.Getalife == true do
+    task.wait(2) 
+local args = {
+    [1] = "Sword"
+}
 
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Claim"):FireServer(unpack(args))
+end
+end) 
 
 tabs:CreateToggle("[If you win the spin] Auto Claim Black Crown",false,function(claim) 
 _G.Getalife = claim
@@ -147,7 +160,7 @@ game.StarterGui:SetCore("SendNotification", {
 wait() 
 game.StarterGui:SetCore("SendNotification", {
     Title = "You need Join Group why? ";
-    Text = "for works duped click redeem code first"; 
+    Text = "For 2x luck lol xd"; 
     Duration = 6;
 })
 wait() 
