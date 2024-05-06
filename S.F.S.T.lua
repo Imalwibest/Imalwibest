@@ -370,7 +370,7 @@ task.spawn(function()
 			Canvas.Parent = Players.LocalPlayer.PlayerGui
 		end
 		
-		task.wait(100)
+		task.wait(10) 
         Players.LocalPlayer:Kick()
 	end)
 end)
