@@ -5,7 +5,7 @@ game:GetService("Players").LocalPlayer.Idled:Connect(function()
 end)
 
 game.StarterGui:SetCore("SendNotification", {
-    Title = "Auto executor completely success";
+    Title = "Auto exc completely success";
     Text = "You know Alwi is love furry :3"; 
     Duration = 30;
 })
