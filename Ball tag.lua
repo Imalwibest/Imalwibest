@@ -4,6 +4,7 @@ local tab = window:CreateTab("Main")
 tabs:CreateToggle("Auto Claim UGC QUEST 2",false,function(nega) 
 _G.gay = nega
 while _G.gay == true do
+     wait() 
 local args = {
     [1] = 15685228896
 }
@@ -16,6 +17,7 @@ end)
 tabs:CreateToggle("Auto Claim UGC QUEST 1",false,function(kys) 
 _G.gay = kys
 while _G.gay == true do
+    wait() 
 local args = {
     [1] = 15676593548
 }
