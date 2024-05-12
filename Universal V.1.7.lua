@@ -1,0 +1,7 @@
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
+local window = Lib:CreateWindow("                                                      Alwi Hub | Universal Script V.1.7")
+local my = window:CreateTab("Universal Script") 
+local tab = window:CreateTab("Admin Hub") 
+local broken = window:CreateTab("Alwi Hub Script") 
+local i = window:CreateTab("Others game") 
+local tab = window:CreateTab("Universal Script") 
