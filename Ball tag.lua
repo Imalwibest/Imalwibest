@@ -1,6 +1,6 @@
 local tabs = (game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
 local window = Lib:CreateWindow("                                         ALWI HUB | Ball Tag Auto Claim UGC! ")
-local tab = window:CreateTab("Main") 
+local tabs = window:CreateTab("Main") 
 tabs:CreateToggle("Auto Claim UGC QUEST 2",false,function(nega) 
 _G.gay = nega
 while _G.gay == true do
