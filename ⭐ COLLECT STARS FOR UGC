@@ -24,6 +24,20 @@ collectAllStars()
 end)
 
 
+tab:CreateButton("AntiAFK", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk";
+    Text = "Turn On"; 
+    Duration = 10;
+})
+
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+end)
+
 w:CreateButton("AntiLag", function() 
 local decalsyeeted = true 
 local g = game
