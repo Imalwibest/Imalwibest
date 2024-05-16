@@ -2,28 +2,40 @@ local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/R
 local window = Lib:CreateWindow("                                                 Alwi Hub | ⭐ COLLECT STARS FOR UGC")
 local tab = window:CreateTab("Main")
 local w = window:CreateTab("Info/credit")
-local collectButton = tab:CreateButton("Collect Star", function()
-    for _, star in pairs(workspace.ClaimableStars:GetChildren()) do
-        local args = { star }
-        local success, errorMessage = pcall(function()
-            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClaimStar"):InvokeServer(unpack(args))
-        end)
-        if not success then
-            game.StarterGui:SetCore("SendNotification", {
-                Title = "Error",
-                Text = "Failed to collect star: " .. errorMessage,
-                Duration = 5,
-            })
-        else
-            game.StarterGui:SetCore("SendNotification", {
-                Title = "Success",
-                Text = "Star collected successfully!",
-                Duration = 5,
-            })
+local autoCollecting = false
+
+local toggle = tab:CreateToggle("Auto Collect Star", false, function(isEnabled)
+autoCollecting = isEnabled
+end)
+
+spawn(function()
+    while true do
+        if autoCollecting then
+            for _, star in pairs(workspace.ClaimableStars:GetChildren()) do
+                local args = { star }
+                local success, errorMessage = pcall(function()
+                    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClaimStar"):InvokeServer(unpack(args))
+                end)
+                if not success then
+                    game.StarterGui:SetCore("SendNotification", {
+                        Title = "Error",
+                        Text = "Failed to collect star: " .. errorMessage,
+                        Duration = 3,
+                    })
+                else
+                    game.StarterGui:SetCore("SendNotification", {
+                        Title = "Success",
+                        Text = "Star collected successfully!",
+                        Duration = 1,
+                    })
+                end
+                wait()
+            end
         end
         wait()
     end
 end)
+
 
 tab:CreateButton("AntiAFK", function()
 game.StarterGui:SetCore("SendNotification", {
