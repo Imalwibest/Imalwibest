@@ -2,27 +2,18 @@ local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/R
 local window = Lib:CreateWindow("                                                 Alwi Hub | ⭐ COLLECT STARS FOR UGC")
 local tab = window:CreateTab("Main")
 local w = window:CreateTab("Info/credit")
-
--- Function to collect all stars
-function collectAllStars()
-    for _, star in pairs(workspace.ClaimableStars:GetChildren()) do
-        local args = { star }
-        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClaimStar"):InvokeServer(unpack(args))
-    end
-end
-
--- Automatically collect all stars periodically
+tab:CreateToggle("Auto Collect Star",false,function(Mysuckdick) 
+_G.Iloverylu = Mysuckdick
 spawn(function()
-    while wait() do
-        collectAllStars()
-    end
+    while _G.Iloverylu == true do
+        for _, star in pairs(workspace.ClaimableStars:GetChildren()) do
+            local args = { star }
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClaimStar"):InvokeServer(unpack(args))
+            wait() 
+            end
+        end
+    end) 
 end)
-
--- Create a button to manually collect stars
-local button = tab:CreateButton("Collect Stars", function()
-collectAllStars()
-end)
-
 
 tab:CreateButton("AntiAFK", function()
 game.StarterGui:SetCore("SendNotification", {
