@@ -1,5 +1,5 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
-local window = Lib:CreateWindow("                                                 Alwi Hub | ⭐ COLLECT STARS FOR UGC V.1.1")
+local window = Lib:CreateWindow("                                                       Alwi Hub | ⭐ COLLECT STARS FOR UGC V.1.1")
 local tab = window:CreateTab("Main")
 local tabs = window:CreateTab("Misc") 
 local w = window:CreateTab("Info/credit")
@@ -107,66 +107,136 @@ tabs:CreateToggle("Auto Buy when promted",false,function(value)
     end)
 end)
 
+
 tabs:CreateToggle("Auto Buy ♡ Kawaii Soft Flowy Twirls (Black & Blonde) [23.500 Star]", false, function(buyUGC2) 
-_G.Anya = buyUGC2
-while _G.Anya == true do
-       wait() 
-local args = {
-    [1] = "BuyFreeItem",
-    [2] = {
-        ["ItemID"] = 17487517390
-    }
-}
+    _G.Anya = buyUGC2
+    while _G.Anya == true do
+        wait(10) 
+        local success, errorMessage = pcall(function()
+            local args = {
+                [1] = "BuyFreeItem",
+                [2] = {
+                    ["ItemID"] = 17487517390
+                }
+            }
 
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+            wait() 
+            local args = {
+                [1] = "BuyFreeItem",
+                [2] = "{\"ItemID\":17487517390}"
+            }
 
-end
-end) 
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+        end)
+
+        if not success then
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Auto Buy Error",
+                Text = "Failed to auto buy item: " .. errorMessage,
+                Duration = 0.1,
+            })
+        end
+    end
+end)
+
 
 tabs:CreateToggle("Auo buy Two-One Cute Punk Low Pigtails with Buns [15,000 star]", false, function(myXLCare) 
 _G.OwO = myXLCare
 while _G.OwO == true do
-    wait() 
-local args = {
-    [1] = "BuyFreeItem",
-    [2] = {
-        ["ItemID"] = 17477971661
-    }
-}
+    wait(10) 
+    local success, errorMessage = pcall(function()
+            local args = {
+                [1] = "BuyFreeItem",
+                [2] = {
+                    ["ItemID"] = 17477971661
+                }
+            }
 
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
-end
-end) 
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+            wait() 
+            local args = {
+                [1] = "BuyFreeItem",
+                [2] = "{\"ItemID\":17477971661}"
+            }
+
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+        end)
+
+        if not success then
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Auto Buy Error",
+                Text = "Failed to auto buy item: " .. errorMessage,
+                Duration = 0.1,
+            })
+        end
+    end
+end)
 
 tabs:CreateToggle("Auto buy Fluffy Bob Panda Hair Clip Pigtail (Black & Pink) [27,000 star]", false, function(mental) 
 _G.Ow = mental
 while _G.Ow == true do
-    wait() 
-local args = {
-    [1] = "BuyFreeItem",
-    [2] = {
-        ["ItemID"] = 17487623009
-    }
-}
+    wait(10) 
+    local success, errorMessage = pcall(function()
+            local args = {
+                [1] = "BuyFreeItem",
+                [2] = {
+                    ["ItemID"] = 17487623009
+                }
+            }
 
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
-end
-end) 
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+            wait() 
+            local args = {
+                [1] = "BuyFreeItem",
+                [2] = "{\"ItemID\":17487623009}"
+            }
+
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+        end)
+
+        if not success then
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Auto Buy Error",
+                Text = "Failed to auto buy item: " .. errorMessage,
+                Duration = 0.1,
+            })
+        end
+    end
+end)
 
 tabs:CreateToggle("Auto buy Fairy Princess Preppy Low Braids (Blonde & Pink) [28,500 Star]", false, function(Sussy) 
 _G.Iam = Sussy
 while _G.Iam == true do
-    wait() 
-local args = {
-    [1] = "BuyFreeItem",
-    [2] = {
-        ["ItemID"] = 17520094851
-    }
-}
+    wait(10) 
+local success, errorMessage = pcall(function()
+            local args = {
+                [1] = "BuyFreeItem",
+                [2] = {
+                    ["ItemID"] = 17520094851
+                }
+            }
 
-game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
-end
-end) 
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+            wait() 
+            local args = {
+                [1] = "BuyFreeItem",
+                [2] = "{\"ItemID\":17520094851}"
+            }
+
+            game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+        end)
+
+        if not success then
+            game.StarterGui:SetCore("SendNotification", {
+                Title = "Auto Buy Error",
+                Text = "Failed to auto buy item: " .. errorMessage,
+                Duration = 0.1,
+            })
+        end
+    end
+end)
+
 w:CreateButton("AntiLag", function() 
 local decalsyeeted = true 
 local g = game
