@@ -19,7 +19,7 @@ local function toggleTeleport(bool)
                         v.Anchored = false
                     end
                 end
-                wait(0.9)
+                wait(0.1)
             end
         end)
     end
