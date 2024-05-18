@@ -1,6 +1,7 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
-local window = Lib:CreateWindow("                                                 Alwi Hub | ⭐ COLLECT STARS FOR UGC")
+local window = Lib:CreateWindow("                                                 Alwi Hub | ⭐ COLLECT STARS FOR UGC V.1.1")
 local tab = window:CreateTab("Main")
+local tabs = window:CreateTab("Misc") 
 local w = window:CreateTab("Info/credit")
 local autoCollecting = false
 
@@ -51,6 +52,121 @@ game:GetService("Players").LocalPlayer.Idled:Connect(function()
 end)
 end)
 
+tab:CreateButton("Link private server", function()
+setclipboard(tostring("https://www.roblox.com/share?code=7187a7e419e92f40923193461f8c211f&type=Server"))
+end) 
+
+-- credit by ikura thanks you arigato
+-- Define variables with default values
+local ClickingSpeed = 0
+local x, y, m = 55, 65.5, 1
+local loopActive = false
+
+-- Auto-close error function
+tabs:CreateToggle("Auto Close Error",false,function(value)
+    loopActive = value
+    spawn(function()
+        while loopActive do
+            local pp = game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator:FindFirstChild("Prompt")
+            if pp and pp.AlertContents and pp.AlertContents.Footer and pp.AlertContents.Footer.Buttons and not pp.AlertContents.Footer.Buttons:FindFirstChild("2") then
+                if pp.AlertContents.Footer.Buttons:FindFirstChild("1") then
+                    local b1 = pp.AlertContents.Footer.Buttons[1].AbsolutePosition
+                    game:GetService("VirtualInputManager"):SendMouseButtonEvent(b1.X + 55, b1.Y + 65.5, 0, true, game, 1)
+                    wait()
+                    game:GetService("VirtualInputManager"):SendMouseButtonEvent(b1.X + 55, b1.Y + 65.5, 0, false, game, 1)
+                end
+            end
+            wait()
+        end
+    end)
+end)
+
+-- Auto-buy function
+tabs:CreateToggle("Auto Buy when promted",false,function(value)
+    loopActive = value
+    spawn(function()
+        while loopActive do 
+            if game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator:FindFirstChild("Prompt") and
+                game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator.Prompt:FindFirstChild("AlertContents") and
+                game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator.Prompt.AlertContents:FindFirstChild("Footer") and
+                game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator.Prompt.AlertContents.Footer:FindFirstChild("Buttons") and
+                game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator.Prompt.AlertContents.Footer.Buttons:FindFirstChild("2") and
+                game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator.Prompt.AlertContents.Footer.Buttons[2]:FindFirstChild("ButtonContent").ButtonMiddleContent and
+                game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator.Prompt.AlertContents.Footer.Buttons[2]:FindFirstChild("ButtonContent").ButtonMiddleContent:FindFirstChildOfClass("TextLabel") and tonumber(
+                game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator.Prompt.AlertContents.Footer.Buttons[2]:FindFirstChild("ButtonContent").ButtonMiddleContent:FindFirstChildOfClass("TextLabel").Text) <= tonumber(m) then
+
+                local pos = game.CoreGui.PurchasePrompt.ProductPurchaseContainer.Animator.Prompt.AlertContents.Footer.Buttons[2].AbsolutePosition
+                game:GetService("VirtualInputManager"):SendMouseButtonEvent(pos.X + tonumber(x), pos.Y + tonumber(y), 0, true, game, 1)
+                wait()
+                game:GetService("VirtualInputManager"):SendMouseButtonEvent(pos.X + tonumber(x), pos.Y + tonumber(y), 0, false, game, 1)
+                wait(ClickingSpeed)
+            else
+                wait()
+            end
+        end
+    end)
+end)
+
+tabs:CreateToggle("Auto Buy ♡ Kawaii Soft Flowy Twirls (Black & Blonde) [23.500 Star]", false, function(buyUGC2) 
+_G.Anya = buyUGC2
+while _G.Anya == true do
+       wait() 
+local args = {
+    [1] = "BuyFreeItem",
+    [2] = {
+        ["ItemID"] = 17487517390
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+
+end
+end) 
+
+tabs:CreateToggle("Auo buy Two-One Cute Punk Low Pigtails with Buns [15,000 star]", false, function(myXLCare) 
+_G.OwO = myXLCare
+while _G.OwO == true do
+    wait() 
+local args = {
+    [1] = "BuyFreeItem",
+    [2] = {
+        ["ItemID"] = 17477971661
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+end
+end) 
+
+tabs:CreateToggle("Auto buy Fluffy Bob Panda Hair Clip Pigtail (Black & Pink) [27,000 star]", false, function(mental) 
+_G.Ow = mental
+while _G.Ow == true do
+    wait() 
+local args = {
+    [1] = "BuyFreeItem",
+    [2] = {
+        ["ItemID"] = 17487623009
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+end
+end) 
+
+tabs:CreateToggle("Auto buy Fairy Princess Preppy Low Braids (Blonde & Pink) [28,500 Star]", false, function(Sussy) 
+_G.Iam = Sussy
+while _G.Iam == true do
+    wait() 
+local args = {
+    [1] = "BuyFreeItem",
+    [2] = {
+        ["ItemID"] = 17520094851
+    }
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Catalog"):InvokeServer(unpack(args))
+end
+end) 
 w:CreateButton("AntiLag", function() 
 local decalsyeeted = true 
 local g = game
