@@ -37,6 +37,13 @@ spawn(function()
     end
 end)
 
+if not pcall(function() return syn.protect_gui end) then
+    syn = {}
+    syn.protect_gui = function(A_1)
+        A_1.Parent = CoreGui
+    end
+end
+
 
 tab:CreateButton("AntiAFK", function()
 game.StarterGui:SetCore("SendNotification", {
