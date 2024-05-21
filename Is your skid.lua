@@ -21,7 +21,7 @@ local function bringPartsToPlayer()
     for _, part in ipairs(parts) do
         if part:IsA("BasePart") and table.find(basePartNames, part.Name) then
             part.CFrame = humanoidRootPart.CFrame * CFrame.new(0, -3, 0)
-            wait(0.1)
+            wait()
         end
     end
 end
@@ -35,15 +35,14 @@ end
 wait(10)
 
 teleportToPosition(-239.234528, -4.55422115, 80.5513077)
-wait(3)
 bringPartsToPlayer()
 
 teleportToPosition(-239.216583, -4.53916168, 60.3398972)
-wait(3)
 bringPartsToPlayer()
 
 teleportToPosition(-238.621292, -4.15457821, 25.7049236)
-wait(3)
 bringPartsToPlayer()
 
+wait(5) 
 game:GetService("TeleportService"):Teleport(game.PlaceId, player)
+
