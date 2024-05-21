@@ -35,12 +35,15 @@ end
 wait(10)
 
 teleportToPosition(-239.234528, -4.55422115, 80.5513077)
+wait(3) 
 bringPartsToPlayer()
 
 teleportToPosition(-239.216583, -4.53916168, 60.3398972)
+wait(4) 
 bringPartsToPlayer()
 
 teleportToPosition(-238.621292, -4.15457821, 25.7049236)
+wait(3) 
 bringPartsToPlayer()
 
 wait(5) 
