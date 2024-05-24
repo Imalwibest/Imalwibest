@@ -20,14 +20,15 @@ Section:NewButton("Bedwars", "?", function()
 local Section = Tab:NewSection("Tix Esp")
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBedWars", true))()
 end)
+
 local Section = Tab:NewSection("Peguin Event For token")
+Section:NewButton("VapeV4", "?", function()
 local InfiniteJumpEnabled = true
 game:GetService("UserInputService").JumpRequest:connect(function()
     if InfiniteJumpEnabled then
         game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
     end
 end)
-
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
 end) 
