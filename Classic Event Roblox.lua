@@ -241,4 +241,12 @@ Section:NewButton("My discord", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Discord%20sex%20mom%20cum"))()
 end) 
 
+Section:NewButton("Teleport The classic", "?", function()
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
 
+local player = Players.LocalPlayer
+if player then
+    TeleportService:Teleport(17427651911, player)
+end
+end) 
