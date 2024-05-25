@@ -247,7 +247,7 @@ end
 end) 
 -- 16
 local Section = Tab:NewSection("TTD")
-Section:NewButton("Teleport The Tower defense sim", "?", function()
+Section:NewButton("The Tower defense sim", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicTowerDefense", true))()
 end) 
 Section:NewButton("Teleport The Tower defense sim", "?", function()
