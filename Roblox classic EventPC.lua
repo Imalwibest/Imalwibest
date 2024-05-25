@@ -17,8 +17,8 @@ end
 end) 
 -- 2
 local Section = Tab:NewSection("Bedwars")
-Section:NewButton("Bedwars", "?", function()
 local Section = Tab:NewSection("Tix Esp")
+Section:NewButton("Bedwars", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBedWars", true))()
 end)
 local Section = Tab:NewSection("Peguin Event For token")
@@ -245,6 +245,55 @@ if player then
     TeleportService:Teleport(13772394625, player)
 end
 end) 
+
+-- 16
+local Section = Tab:NewSection("TTD")
+Section:NewButton("Teleport The Tower defense sim", "?", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicTowerDefense", true))()
+end) 
+Section:NewButton("Teleport The Tower defense sim", "?", function()
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+
+local player = Players.LocalPlayer
+if player then
+    TeleportService:Teleport(3260590327, player)
+end
+end) 
+
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Universal script")
+Section:NewButton("Nofog", "?", function()
+    if game.Lighting then
+        game.Lighting.FogEnd = 100000
+        for _, v in pairs(game.Lighting:GetDescendants()) do
+            if v:IsA("Atmosphere") then
+                v:Destroy()
+            end
+        end
+    end
+end)
+
+Section:NewButton("Full bright", "?", function()
+game.Lighting.Brightness = 4
+    game.Lighting.FogEnd = 100000
+    game.Lighting.GlobalShadows = false
+    game.Lighting.ClockTime = 12
+    game.Lighting.FogColor = Color3.fromRGB(255, 255, 255)
+end) 
+Section:NewButton("AntiAFK", "?", function()
+game.StarterGui:SetCore("SendNotification", {
+    Title = "AntiAfk";
+    Text = "Turn On"; 
+    Duration = 3;
+})
+
+local VirtualUser = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
+end)
 
 local Tab = Window:NewTab("Credit")
 local Section = Tab:NewSection("Alwi/byeveryone")
