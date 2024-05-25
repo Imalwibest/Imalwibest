@@ -236,6 +236,15 @@ Section:NewButton("Blade Ball", "?", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ToraScript/Script/main/ClassicBladeBall", true))()
 end) 
 
+Section:NewButton("Teleport Blade ball", "?", function()
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+
+local player = Players.LocalPlayer
+if player then
+    TeleportService:Teleport(13772394625, player)
+end
+end) 
 -- 16
 local Section = Tab:NewSection("TTD")
 Section:NewButton("Teleport The Tower defense sim", "?", function()
@@ -251,15 +260,6 @@ if player then
 end
 end) 
 
-Section:NewButton("Teleport Blade ball", "?", function()
-local Players = game:GetService("Players")
-local TeleportService = game:GetService("TeleportService")
-
-local player = Players.LocalPlayer
-if player then
-    TeleportService:Teleport(13772394625, player)
-end
-end) 
 local Tab = Window:NewTab("Misc")
 local Section = Tab:NewSection("Universal script")
 Section:NewButton("Nofog", "?", function()
