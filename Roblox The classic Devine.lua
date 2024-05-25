@@ -1,13 +1,31 @@
 local function loadScript(choice)
+    local success = false
     if choice == "Mobile/Android" then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Classic%20Event%20Roblox.lua", true))()
+        success = pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Classic%20Event%20Roblox.lua", true))()
+        end)
     elseif choice == "Emulator/PC" then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Roblox%20classic%20EventPC.lua", true))()
+        success = pcall(function()
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Roblox%20classic%20EventPC.lua", true))()
+        end)
     else
         print("Invalid choice.")
     end
+    
+    if success then
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Script Loaded Successfully";
+            Text = "The selected script has been loaded successfully."; 
+            Duration = 5;
+        })
+    else
+        game.StarterGui:SetCore("SendNotification", {
+            Title = "Script Load Failed";
+            Text = "The selected script failed to load. Please try again later."; 
+            Duration = 5;
+        })
+    end
 end
-
 
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -51,6 +69,14 @@ toggleButton.Text = "X"
 toggleButton.Size = UDim2.new(0.1, 0, 0.1, 0)
 toggleButton.Position = UDim2.new(0.9, 0, 0, 0)
 toggleButton.Parent = frame
+toggleButton.TextColor3 = Color3.new(1, 0, 0) 
 toggleButton.MouseButton1Click:Connect(function()
     screenGui:Destroy() 
 end)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Local furry :3";
+    Text = "Please Use Executor Fluxus! Report Owner script no work"; 
+    Duration = 10;
+    Button1 = "Yes";
+})
