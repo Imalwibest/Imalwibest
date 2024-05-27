@@ -1,0 +1,46 @@
+local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/UI-th%20Library%20v0.1.2"))()
+local window = Lib:CreateWindow("                           Alwi Hub | Collect Stars For Ugc ")
+local tab = window:CreateTab("Main")
+local tab = window:CreateTab("Credit/info")
+tab:CreateToggle("Bringpart Star",false,function(alwiloverylu) 
+getgenv().Check = alwiloverylu
+
+spawn(function()
+    local player = game.Players.LocalPlayer
+    local character = player.Character
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    local parts = game.Workspace:GetDescendants()
+
+    while getgenv().Check do
+        pcall(function()
+            for _, part in ipairs(parts) do
+                if part:IsA("BasePart") and part.Name == "Checkpoint" then
+                    part.CFrame = CFrame.new(humanoidRootPart.Position)
+                end
+            end
+        end)
+        task.wait(0.2)
+    end
+end)
+end) 
+
+tab:CreateToggle("Gotopart Star",false,function(ismerylu) 
+getgenv().gotopart = ismerylu
+
+spawn(function()
+    while getgenv().gotopart and task.wait(0.1) do
+        pcall(function()
+            local player = game.Players.LocalPlayer
+            local character = player.Character
+            
+            local parts = game.Workspace:GetDescendants()
+            for _, part in ipairs(parts) do
+                if part:IsA("BasePart") and part.Name == "Checkpoint" then
+                    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+                    humanoidRootPart.CFrame = part.CFrame
+                end
+            end
+        end)
+    end
+end)
+end) 
