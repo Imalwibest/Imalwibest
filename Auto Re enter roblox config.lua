@@ -1,13 +1,13 @@
 -- Made By Byeveryone/alwi#3737 This source script For rejoin after kicked or lost connection join my discord https://discord.com/invite/RmKR5STDnG
 
-local function alwi()
+local function FallbackTeleport()
     local g = game
     pcall(function()
         g:GetService("TeleportService"):TeleportToPlaceInstance(g.PlaceId, g.JobId, g.Players.LocalPlayer)
     end)
 end
 
-local function rylu()
+local function TryRejoinIfPrompt()
     local s, d = pcall(function()
         return game:GetService("CoreGui"):WaitForChild("RobloxPromptGui"):WaitForChild("promptOverlay")
     end)
@@ -25,12 +25,12 @@ local function rylu()
     end
 end
 
-local function ikura(plr)
+local function OnPlayerExit(plr)
     if plr == game.Players.LocalPlayer then
         game:GetService('TeleportService'):Teleport(game.PlaceId)
     end
 end
 
-game.Players.LocalPlayer.CharacterRemoving:Connect(alwi)
-game.Players.PlayerRemoving:Connect(ikura)
-spawn(rylu)
+game.Players.LocalPlayer.CharacterRemoving:Connect(FallbackTeleport)
+game.Players.PlayerRemoving:Connect(OnPlayerExit)
+spawn(TryRejoinIfPrompt)
