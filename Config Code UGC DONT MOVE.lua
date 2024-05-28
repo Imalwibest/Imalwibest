@@ -6,7 +6,7 @@ game.StarterGui:SetCore("SendNotification", {
 
 
 local codes = {
-    " HoodDarkness", 
+    "HoodDarkness", 
     "codeinvideo",
     "RedLongHair", 
     "CinnamorollHat", 
@@ -72,4 +72,3 @@ for _, code in ipairs(codes) do
     claimCode(code)
     wait(1) 
 end
-end) 
