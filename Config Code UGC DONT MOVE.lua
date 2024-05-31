@@ -6,6 +6,7 @@ game.StarterGui:SetCore("SendNotification", {
 
 
 local codes = {
+    "novosugcschegando", 
     "LowPoints", 
     "HoodDarkness", 
     "codeinvideo",
