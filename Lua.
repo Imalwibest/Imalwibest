@@ -1,0 +1,10 @@
+
+while wait() do
+local j = " ꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰꙰"
+local args = {
+   [1] = j,
+   [2] = "All"
+}
+
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end
