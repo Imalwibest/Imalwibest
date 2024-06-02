@@ -135,7 +135,7 @@ for i, v in pairs(game.RobloxReplicatedStorage:GetDescendants()) do
 end
 
 task.spawn(function()
-    local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Config%20wynerdV2.lua"))()
+    local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Config%20wynerdV.lua"))()
     local win = discord:Window("Wynerd 1.269.4 - redblues edition skided by Alwi hub")
     local serv = win:Server("Wynerd", "http://www.roblox.com/asset/?id=6031075938")
     local main = serv:Channel("Home")
