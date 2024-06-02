@@ -22,6 +22,12 @@ game:FindService('StarterGui'):SetCore('SendNotification', {
 			Text = 'Purchase exloiting Working On codex,trigon,Arceusx,vega x thanks',
 			Icon = 'http://www.roblox.com/asset/?id=13398032599',
 	}) 
+wait(3) 
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Fun fact:";
+        Text = "OMG HUB SKID THIS SCRIPT WITHOUT ASK THE OWNER LOL PROOF HERE : https://scriptblox.com/script/Old!!Rock-Fruit-OMG-HUB-SKID-SCRIPT-BY-WYNERD-WOW-NO-CREDIT-13697";
+        Duration = 5;
+    })
 -- the code is extremely messy because something in the code editor fucked it up all at once and for some reason removed indents in some parts of the code while kept indents in some other parts of the code LOL
 local LOAD_TIME = tick()
 local queueonteleport = queue_on_teleport or queueonteleport
