@@ -3246,3 +3246,5 @@ function DiscordLib:Window(text)
 	return ServerHold
 end
 return DiscordLib
+
+setclipboard(tostring("https://discord.com/invite/9HSacrHPzy")) 
