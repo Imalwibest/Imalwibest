@@ -4,6 +4,7 @@ local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/R
 local window = Lib:CreateWindow("                                                          Alwi is gay.lua")
 local tabs = window:CreateTab("Secret Exe.lua") 
 
+
 tabs:CreateToggle("Kill all", false, function(nigger) 
     _G.Sexy = nigger
 _G.Sexy == true do
