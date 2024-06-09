@@ -1,1 +1,6 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Config.lua%20exercutor%20UGC%20DONT%20MOVE"))()
+
+local queueteleport = queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+if queueteleport then
+    queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Config.lua%20exercutor%20UGC%20DONT%20MOVE'))()")   
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Config.lua%20exercutor%20UGC%20DONT%20MOVE'))()
+end
