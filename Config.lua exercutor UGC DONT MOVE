@@ -1,0 +1,6 @@
+
+local queueteleport = queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+if queueteleport then
+    queueteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/My%20Avatar%20Shop%20GUI-MOBILE'))()")    
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/My%20Avatar%20Shop%20GUI-MOBILE'))()
+end
