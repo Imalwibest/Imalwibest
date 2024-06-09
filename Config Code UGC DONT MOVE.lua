@@ -6,6 +6,7 @@ game.StarterGui:SetCore("SendNotification", {
 
 
 local codes = {
+    "IloveYoucode", 
     "CodesForYous2", 
     "novosugcschegando", 
     "LowPoints", 
