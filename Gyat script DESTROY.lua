@@ -2,8 +2,8 @@ local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/R
 local window = Lib:CreateWindow("                                                          Alwi is gay.lua")
 local tabs = window:CreateTab("Secret Exe.lua") 
 
-tabs:CreateToggle("Kill all", false, function(value) 
-    _G.Sexy = value
+tabs:CreateToggle("Kill all", false, function(nigger) 
+    _G.Sexy = nigger
     if _G.Sexy then
         for _, player in ipairs(game.Players:GetPlayers()) do
             local args = {
