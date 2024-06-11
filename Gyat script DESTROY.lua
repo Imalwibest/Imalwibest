@@ -2,7 +2,7 @@ local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/R
 local window = Lib:CreateWindow("Alwi is gay.lua")
 local tabs = window:CreateTab("Secret Exe.lua") 
 
-tabs:CreateToggle("Kill all", false, function(isEnabled) 
+tabs:CreateToggle("Kill all [Patches] Maintance", false, function(isEnabled) 
     _G.KillAllEnabled = isEnabled
     if _G.KillAllEnabled then
         while _G.KillAllEnabled do
@@ -22,7 +22,7 @@ tabs:CreateToggle("Kill all", false, function(isEnabled)
     end
 end) 
 
-tabs:CreateButton("Kill all 1x", function()
+tabs:CreateButton("Kill all 1x [patched! don't click]", function()
     for _, player in ipairs(game.Players:GetPlayers()) do
         local args = {
             [1] = {
@@ -62,3 +62,9 @@ tabs:CreateToggle("inf money", false, function(isEnabled)
         end
     end
 end)
+
+game.StarterGui:SetCore("SendNotification", {
+    Title = "Fixing Issue__";
+    Text = "Maintance Auto kill [kill all patched]"; 
+    Duration = 10;
+})
