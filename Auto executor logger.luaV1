@@ -1,0 +1,30 @@
+if game.PlaceId == 8297832143 then
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Alwi hub";
+        Text = "Teleport The place!";
+        Duration = 5;
+    })
+    game:GetService("TeleportService"):Teleport(17053862753, game.Players.LocalPlayer)
+else
+    if game.PlaceId == 17053862753 then
+game.StarterGui:SetCore("SendNotification", {
+        Title = "Alwi hub";
+        Text = "Wait Auto Wins obby delay (54) or you alone in server u will get wins";
+        Duration = 5;
+    })
+    
+        wait(54) 
+        game.Players.LocalPlayer.Character:PivotTo(CFrame.new(385.51181, -17.8479233, -192.337326, -0.0205072556, -0.00132338447, -0.99978888, -2.48301705e-12, 0.999999225, -0.00132366281, 0.999789715, -2.71446897e-05, -0.0205072388))
+    end
+end
+
+
+local queueteleport = queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
+if queueteleport then
+    spawn(function()
+        pcall(function()
+            queueteleport("loadstring(game:HttpGet(''))()")
+            loadstring(game:HttpGet(''))()
+        end)
+    end)
+end
