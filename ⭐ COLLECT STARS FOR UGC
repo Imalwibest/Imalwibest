@@ -30,10 +30,10 @@ spawn(function()
                         Duration = 1,
                     })
                 end
-                wait()
+                task.wait()
             end
         end
-        wait()
+        task.wait()
     end
 end)
 
