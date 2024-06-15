@@ -59,10 +59,20 @@ game:GetService("Players").LocalPlayer.Idled:Connect(function()
 end)
 end)
 
-tab:CreateButton("Link private server", function()
+tab:CreateButton("Link private server [Update]", function()
 setclipboard(tostring("https://www.roblox.com/games/17399448126?privateServerLinkCode=29861807256016243292806496048568"))
 end) 
 
+tab:CreateButton("Redeem Code", function()
+wait(10) 
+local args = {
+    [1] = "4KLIKES"
+}
+
+for i = 1, 1000 do
+    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Codes"):InvokeServer(unpack(args))
+end
+end) 
 -- credit by ikura thanks you arigato
 -- Define variables with default values
 local ClickingSpeed = 0
