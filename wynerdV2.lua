@@ -375,7 +375,7 @@ task.spawn(function()
                     end
                 end
             end
-            discord:Notification("Wyvern Sniper Started!", "Information Grabbed:\n" .. tostring(output), "Close!")
+            discord:Notification("Wynerd Sniper Started!", "Information Grabbed:\n" .. tostring(output), "Close!")
         end
         while booleanbooby == true and not breakLoopp do
             info = game:GetService("MarketplaceService"):GetProductInfo(snipeid)
