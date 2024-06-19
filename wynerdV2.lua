@@ -10,7 +10,7 @@ end
 
 game:GetService("StarterGui"):SetCore("SendNotification", {
 		Title = "NOTICE!";
-        Duration = 20; 
+        Duration = 9; 
 	    Button1 = "Execute";
         	Callback = skidmyway1,
 
@@ -297,7 +297,7 @@ task.spawn(function()
                 task.spawn(function()
                     _set(7)
                     task.wait()
-                    -- MarketplaceService:PromptCollectiblesPurchase(Players.LocalPlayer, tt, CollectibleItemId, '', CollectibleProductId, Price)
+                    MarketplaceService:PromptCollectiblesPurchase(Players.LocalPlayer, tt, CollectibleItemId, '', CollectibleProductId, Price)
                     MarketplaceService:PromptPurchase(Players.LocalPlayer, tt)
                 end)
                 hookmetamethod(game, "__index", old)
