@@ -1109,4 +1109,4 @@ game.StarterGui:SetCore("SendNotification", {
         Duration = 5;
 })
 -- discord
-setclipboard(tostring("https://discord.com/invite/9HSacrHPzy")) 
+setclipboard(tostring("https://discord.com/invite/nz5Epqm6z2")) 
