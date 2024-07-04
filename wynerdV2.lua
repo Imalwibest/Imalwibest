@@ -143,9 +143,9 @@ task.spawn(function()
     main:Label("Check out the other Discord channels to see our available tools!")
     main:Seperator()
     -- main:Label("\n\nPlanned:\n- The Explorer you see at the left side of your screen\n- Move some stuff that doesn't belong in their category\n- More features\n- New techniques to get free UGC items from games")
-    main:Button("something was here but was removed", function()
+    main:Button("my discord", function()
         pcall(function()
-            setclipboard("something was here but got removed")
+            setclipboard("https://discord.com/invite/nz5Epqm6z2")
         end)
     end)
     main:Toggle("Anti Kick (Client)", false, function(bool)
@@ -1109,4 +1109,3 @@ game.StarterGui:SetCore("SendNotification", {
         Duration = 5;
 })
 -- discord
-setclipboard(tostring("https://discord.com/invite/nz5Epqm6z2")) 
