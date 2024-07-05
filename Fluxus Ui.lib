@@ -1,5 +1,4 @@
 
-
 local lib = {};
 local UIS = game:GetService("UserInputService");
 local TS = game:GetService("TweenService");
@@ -300,7 +299,7 @@ function lib:CreateWindow(title)
             }),
             Create("ImageLabel", {
                 Size = UDim2.new(0, 0, 1, -5),
-                Image = "http://www.roblox.com/asset/?id=11761733202",
+                Image = "http://www.roblox.com/asset/?id=6031094680",
                 ImageColor3 = window.AccentColor,
                 ScaleType = Enum.ScaleType.Fit,
                 BackgroundTransparency = 1
@@ -466,7 +465,7 @@ function lib:CreateWindow(title)
                         BackgroundTransparency = 1,
                         Position = UDim2.new(1, -30, 0.5, -12),
                         Size = UDim2.new(0, 24, 0, 24),
-                        Image = "http://www.roblox.com/asset/?id=11761733202",
+                        Image = "http://www.roblox.com/asset/?id=6023565895",
                         ImageTransparency = 0.7,
                         ScaleType = Enum.ScaleType.Stretch
                     })
