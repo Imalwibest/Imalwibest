@@ -59,8 +59,8 @@ game:GetService("Players").LocalPlayer.Idled:Connect(function()
 end)
 end)
 
-tab:CreateButton("Link private server [Update]", function()
-setclipboard(tostring("https://www.roblox.com/games/17399448126?privateServerLinkCode=29861807256016243292806496048568"))
+tab:CreateButton("Link private server [Update] New", function()
+setclipboard(tostring("https://www.roblox.com/share?code=741242dee16da141840a5fd5cf3cbf68&type=Server"))
 end) 
 
 tab:CreateButton("Redeem Code", function()
