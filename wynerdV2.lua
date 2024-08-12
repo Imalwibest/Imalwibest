@@ -318,14 +318,6 @@ task.spawn(
             end
         )
         ugc.Seperator()
-        getgenv().OpenConsole = false
-        ugc:Toggle(
-            "Auto Purchaser",
-            true,
-            function(bool)
-                getgenv().OpenConsole = bool
-            end
-        )
         local inputlink = loadstring(game:HttpGet(li12 .. li13))()
         ugc:Toggle(
             "Auto Purchaser",
