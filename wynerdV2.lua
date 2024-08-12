@@ -200,6 +200,7 @@ task.spawn(
                 TeleportService:Teleport(14056754882, Players.LocalPlayer)
             end
         )
+        ugc.Seperator()
         getgenv().AutoClickerPurchase = false
         ugc:Toggle(
             "Enable Auto Click Purchaser",
