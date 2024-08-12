@@ -130,7 +130,7 @@ task.spawn(
         main:Seperator()
         -- main:Label("\n\nPlanned:\n- The Explorer you see at the left side of your screen\n- Move some stuff that doesn't belong in their category\n- More features\n- New techniques to get free UGC items from games")
         main:Button(
-            "something was here but was removed",
+            "Discord",
             function()
                 pcall(
                     function()
