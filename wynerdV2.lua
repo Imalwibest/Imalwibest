@@ -318,7 +318,7 @@ task.spawn(
             end
         )
         ugc.Seperator()
-        getgenv().OpenConsole = true
+        getgenv().OpenConsole = false
         ugc:Toggle(
             "Auto Purchaser",
             true,
