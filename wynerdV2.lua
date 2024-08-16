@@ -134,7 +134,7 @@ task.spawn(
             function()
                 pcall(
                     function()
-                        setclipboard("something was here but got removed")
+                        setclipboard("https://discord.com/invite/rQc3QqRxpt")
                     end
                 )
             end
