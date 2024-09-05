@@ -1,13 +1,24 @@
+pcall(function() 
 local start = os.clock()
 
 --Why you stalk me code, I'm bad I know.
+
+-- this more protect :3
+local cloneref = cloneref or function(...) 
+	return ...
+end
+
+local clonefunction = clonefunction or function(...)
+	return ...
+end
+
 local BackDesign = "http://www.roblox.com/asset/?id=13398032599"
 local Shadow = "http://www.roblox.com/asset/?id=13398032599"
 local DotDesc = "http://www.roblox.com/asset/?id=13398032599"
 local InfLogo = "http://www.roblox.com/asset/?id=13398032599"
 local SearchI = "http://www.roblox.com/asset/?id=13398032599"
 local ColorIcon = "http://www.roblox.com/asset/?id=13398032599"
-local CProvider = game:GetService("ContentProvider")
+local CProvider = cloneref(game:GetService("ContentProvider")) 
 CProvider:PreloadAsync({
     BackDesign, Shadow, DotDesc, InfLogo, SearchI, ColorIcon
 })
@@ -25,15 +36,13 @@ getgenv().ToDels_ = {}
 local gui = script.Parent
 
 -- defining Services
-local TweenService = game:GetService("TweenService")
-
-local UserInputService = game:GetService("UserInputService")
-
-local RunService = game:GetService("RunService")
+local TweenService = cloneref(game:GetService("TweenService")) 
+local UserInputService = cloneref(game:GetService("UserInputService")) 
+local RunService = cloneref(game:GetService("RunService")) 
 
 -- Player
-local players = game:GetService("Players")
-local Players = game:GetService("Players")
+local players = cloneref(game:GetService("Players")) 
+local Players = cloneref(game:GetService("Players")) 
 local lplayer = players.LocalPlayer
 local lhum = lplayer.Character:FindFirstChildWhichIsA("Humanoid")
 local lhump = lplayer.Character:FindFirstChild("HumanoidRootPart")
@@ -377,8 +386,8 @@ ScreenGui.Parent = CoreGui
 
 ScreenGui.Enabled = true
 
-local UserInputService = game:GetService("UserInputService")
-local runService = (game:GetService("RunService"));
+local UserInputService = cloneref(game:GetService("UserInputService")) 
+local runService = cloneref((game:GetService("RunService")));
 
 local toDrag = topBar
 local gui = mainFrame
@@ -497,8 +506,8 @@ UICorner_3.CornerRadius = UDim.new(0,10)
 UICorner_3.Parent = BlackPart
 
 -- Scripts:
-local UserInputService = game:GetService("UserInputService")
-local runService = (game:GetService("RunService"));
+local UserInputService = cloneref(game:GetService("UserInputService")) 
+local runService = cloneref((game:GetService("RunService")));
 
 local gui = Draggablebtn
 
@@ -704,13 +713,13 @@ inTab.CanvasSize = UDim2.new(0,0,0,0)
 inTab.ScrollBarThickness = 0
 local inTabCanvas = Lib:UIList(inTab,8)
 bigChunk = 10
---[[
+        
 inTab.ChildAdded:Connect(function(child)
     if not string.find(child.ClassName,"UI") then
     inTab.CanvasSize = UDim2.new(0,0,0,inTabCanvas.AbsoluteContentSize.Y+inTabCanvas.Padding.Offset+bigChunk)
     end
     end)
-    ]]
+    
 
 if tabsCreated >= 2 then
 inTab.Visible = false
@@ -1039,7 +1048,7 @@ end
 task.spawn(function()
     while not descr[6]() do wait() end
     if descr[6] then
-    local UIS = game:GetService('UserInputService') --Gets the UserInputService
+    local UIS = cloneref(game:GetService('UserInputService')) --Gets the UserInputService
     UIS.InputBegan:Connect(function(input)
         local En = Enum.KeyCode
         if descr[6]() ~= En.Unknown then
@@ -1606,7 +1615,7 @@ end
 task.spawn(function()
     while not descr[6]() do wait() end
     if descr[6] then
-    local UIS = game:GetService('UserInputService') --Gets the UserInputService
+    local UIS = cloneref(game:GetService('UserInputService')) --Gets the UserInputService
     UIS.InputBegan:Connect(function(input)
         local En = Enum.KeyCode
         if descr[6]() ~= En.Unknown then
@@ -2027,7 +2036,7 @@ end
 task.spawn(function()
     while not descr[6]() do wait() end
     if descr[6] then
-    local UIS = game:GetService('UserInputService') --Gets the UserInputService
+    local UIS = cloneref(game:GetService('UserInputService')) --Gets the UserInputService
     UIS.InputBegan:Connect(function(input)
         local En = Enum.KeyCode
         if descr[6]() ~= En.Unknown then
@@ -2326,7 +2335,7 @@ end
 task.spawn(function()
     while not descr[6]() do wait() end
     if descr[6] then
-    local UIS = game:GetService('UserInputService') --Gets the UserInputService
+    local UIS = cloneref(game:GetService('UserInputService')) --Gets the UserInputService
     UIS.InputBegan:Connect(function(input)
         local En = Enum.KeyCode
         if descr[6]() ~= En.Unknown then
@@ -2660,8 +2669,8 @@ end
 task.spawn(function()
     while not descr[6]() do wait() end
     if descr[6] then
-    local UIS = game:GetService('UserInputService') --Gets the UserInputService
-    UIS.InputBegan:Connect(function(input)
+    local UIS = cloneref(game:GetService('UserInputService')) --Gets the UserInputService
+    UIS.InputBegan:Connent(function(input)
         local En = Enum.KeyCode
         if descr[6]() ~= En.Unknown then
         if input.KeyCode == descr[6]() then
@@ -3149,3 +3158,4 @@ return Tab
 end
 print(os.clock()-start)
 return Lib
+end) 
