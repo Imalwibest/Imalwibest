@@ -140,7 +140,7 @@ local function fadeInAndMove()
 end
 
 fadeInAndMove()
-wait(3) 
+wait(5) 
 local BackDesign = "http://www.roblox.com/asset/?id=13398032599"
 local Shadow = "http://www.roblox.com/asset/?id=13398032599"
 local DotDesc = "http://www.roblox.com/asset/?id=13398032599"
