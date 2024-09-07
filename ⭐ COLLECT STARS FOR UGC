@@ -1,6 +1,9 @@
 if game.PlaceId == 17399448126 or if game.PlaceId == 139460379361923 then
+local cloneref = cloneref or function(...) return ... end
+local MarketplaceService = cloneref(game:GetService("MarketplaceService")) 
+local ID = MarketplaceService:GetProductInfo(game.PlaceId).Name
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Infinix.lib%20Remade.lua"))()
-local window = Lib:CreateWindow("Alwi Hub | " .. tostring(game.PlaceId))
+local window = Lib:CreateWindow("                                                Alwi Hub |" .. ID)
 local tab = window:CreateTab("Main")
 local w = window:CreateTab("Info/credit")
 local autoCollecting = false
