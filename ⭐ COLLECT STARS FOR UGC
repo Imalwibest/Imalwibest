@@ -64,12 +64,19 @@ end)
 
 tab:CreateButton("Redeem Code", function()
 wait(10) 
-local args = {
-    [1] = "4KLIKES"
+local codes = {
+    "4KLIKES",
+    "N3WGAM3"
 }
 
-for i = 1, 1000 do
-    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Codes"):InvokeServer(unpack(args))
+for _, code in pairs(codes) do
+    local args = {
+        [1] = code
+    }
+
+    for i = 1, 1000 do
+        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Codes"):InvokeServer(unpack(args))
+    end
 end
 end) 
 
