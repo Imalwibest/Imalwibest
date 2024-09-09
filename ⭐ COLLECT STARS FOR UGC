@@ -33,7 +33,6 @@ spawn(function()
                         Duration = 1,
                     })
                 end
-                task.wait()
             end
         end
         task.wait()
