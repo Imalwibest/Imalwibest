@@ -1,83 +1,97 @@
+-- Update 1.6v Date | 26 | 9 | 2024 | Made By alwi Hub 😉
+-- This Script Open source! 
+
 if game.PlaceId == 17399448126 or game.PlaceId == 139460379361923 or game.PlaceId == 116442374657834 then
-local cloneref = cloneref or function(...) return ... end
-local MarketplaceService = cloneref(game:GetService("MarketplaceService")) 
-local ID = MarketplaceService:GetProductInfo(game.PlaceId).Name
-local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Infinix.lib%20Remade.lua"))()
-local window = Lib:CreateWindow("                                                Alwi Hub | " .. ID)
-local tab = window:CreateTab("Main")
-local w = window:CreateTab("Info/credit")
-local autoCollecting = false
+    local cloneref = cloneref or function(...) return ... end
+    local MarketplaceService = cloneref(game:GetService("MarketplaceService")) 
+    local ID = MarketplaceService:GetProductInfo(game.PlaceId).Name
+    local ReplicatedStorage = cloneref(game:GetService("ReplicatedStorage"))
+    local VirtualUser = cloneref(game:GetService("VirtualUser"))
+    local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Imalwibest/Imalwibest/main/Infinix.lib%20Remade.lua"))()
 
-local toggle = tab:CreateToggle("Auto Collect Star", false, function(isEnabled)
-autoCollecting = isEnabled
-end)
+    local window = Lib:CreateWindow("                                                Alwi Hub | " .. ID)
+    local tab = window:CreateTab("Main")
+    local w = window:CreateTab("Info/credit")
+    local autoCollecting = false
 
-spawn(function()
-    while true do
-        if autoCollecting then
-            for _, star in pairs(workspace.ClaimableStars:GetChildren()) do
-                local args = { star }
-                local success, errorMessage = pcall(function()
-                    game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("ClaimStar"):InvokeServer(unpack(args))
-                end)
-                if not success then
-                    game.StarterGui:SetCore("SendNotification", {
-                        Title = "Error",
-                        Text = "Failed to collect star: " .. errorMessage,
-                        Duration = 3,
-                    })
-                else
-                    game.StarterGui:SetCore("SendNotification", {
-                        Title = "Success",
-                        Text = "Star collected successfully!",
-                        Duration = 1,
-                    })
+    local function sendNotification(title, text, duration)
+        game.StarterGui:SetCore("SendNotification", {
+            Title = title,
+            Text = text,
+            Duration = duration or 3,
+        })
+    end
+
+    local function invokeRemoteEvent(eventPath, args)
+        local success, errorMessage = pcall(function()
+            ReplicatedStorage:WaitForChild("Events"):WaitForChild(eventPath):InvokeServer(unpack(args))
+        end)
+        return success, errorMessage
+    end
+
+    tab:CreateToggle("Auto Collect Star", false, function(isEnabled)
+        autoCollecting = isEnabled
+    end)
+
+    spawn(function()
+        while true do
+            if autoCollecting then
+                local stars = workspace.ClaimableStars:GetChildren()
+                local collected = 0
+
+                for _, star in pairs(stars) do
+                    spawn(function()
+                        local args = { star }
+                        local success, errorMessage = invokeRemoteEvent("ClaimStar", args)
+
+                        if success then
+                            collected = collected + 1
+                        else
+                            sendNotification("Error", "Failed to collect star: " .. errorMessage)
+                        end
+                    end)
+                end
+
+                if collected > 0 then
+                    sendNotification("Success", collected .. " stars collected!", 1)
                 end
             end
+            task.wait(0.01) 
         end
-        task.wait()
-    end
-end)
+    end)
 
-if not pcall(function() return syn.protect_gui end) then
-    syn = {}
-    syn.protect_gui = function(A_1)
-        A_1.Parent = CoreGui
+    if not pcall(function() return syn.protect_gui end) then
+        syn = {}
+        syn.protect_gui = function(gui)
+            gui.Parent = CoreGui
+        end
     end
+
+    tab:CreateButton("AntiAFK", function()
+        sendNotification("AntiAfk", "Turned On", 10)
+
+        game:GetService("Players").LocalPlayer.Idled:Connect(function()
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2.new())
+        end)
+    end)
+
+    tab:CreateButton("Redeem Code", function()
+        local codes = {
+            "4KLIKES",
+            "N3WGAM3"
+        }
+
+        wait(10)
+        for _, code in pairs(codes) do
+            local args = { code }
+
+            for i = 1, 1000 do
+                invokeRemoteEvent("Codes", args)
+            end
+        end
+    end)
 end
-
-
-tab:CreateButton("AntiAFK", function()
-game.StarterGui:SetCore("SendNotification", {
-    Title = "AntiAfk";
-    Text = "Turn On"; 
-    Duration = 10;
-})
-
-local VirtualUser = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:Connect(function()
-    VirtualUser:CaptureController()
-    VirtualUser:ClickButton2(Vector2.new())
-end)
-end)
-
-tab:CreateButton("Redeem Code", function()
-wait(10) 
-local codes = {
-    "4KLIKES",
-    "N3WGAM3"
-}
-
-for _, code in pairs(codes) do
-    local args = {
-        [1] = code
-    }
-
-    for i = 1, 1000 do
-        game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Codes"):InvokeServer(unpack(args))
-    end
-end
-end) 
 
 w:CreateButton("AntiLag", function() 
 local decalsyeeted = true 
