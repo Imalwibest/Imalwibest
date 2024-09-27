@@ -91,7 +91,6 @@ if game.PlaceId == 17399448126 or game.PlaceId == 139460379361923 or game.PlaceI
             end
         end
     end)
-end
 
 w:CreateButton("AntiLag", function() 
 local decalsyeeted = true 
