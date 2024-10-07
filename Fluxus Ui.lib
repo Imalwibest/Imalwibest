@@ -7,6 +7,14 @@ local RS = cloneref(game:GetService("RunService"));
 local LP = cloneref(game:GetService("Players")).LocalPlayer;
 local Mouse = LP:GetMouse();
 local TextService = cloneref(game:GetService("TextService")) 
+local startTime = tick()
+local endTime = tick()
+local elapsedTime = endTime - startTime
+
+local TweenService = cloneref(game:GetService("TweenService")) 
+local Players = cloneref(game:GetService("Players")) 
+local player = Players.LocalPlayer
+
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = player:WaitForChild("PlayerGui")
 screenGui.Name = "ImageFadeGui"
