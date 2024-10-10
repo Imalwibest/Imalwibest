@@ -124,6 +124,7 @@ local function fadeInAndMove()
         )
     end
 end
+fadeInAndMove()
 
 -- UI Fluxus V.1 Made By Unknown
 local GUI = Instance.new("ScreenGui");
