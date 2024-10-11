@@ -1,0 +1,110 @@
+-- Hey User Unknow If you see this sources u mean skid this script works to fluxus appleware and Delta old version
+
+local cloneref = cloneref or function(...) return ... end
+
+local TweenService = cloneref(game:GetService("TweenService")) 
+local Players = cloneref(game:GetService("Players")) 
+local player = Players.LocalPlayer
+
+local function playNotificationSound()
+    local soundService = game:GetService("SoundService")
+    local notificationSound = Instance.new("Sound")
+    
+    notificationSound.SoundId = "rbxas7setid://8745692251"
+    notificationSound.Volume = 0.5
+    notificationSound.Parent = soundService
+
+    notificationSound:Play()
+end
+
+local function createNotification(message)
+    local screenGui = Instance.new("ScreenGui")
+    screenGui.Parent = player:WaitForChild("PlayerGui")
+
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Parent = screenGui
+    textLabel.Size = UDim2.new(0.5, 0, 0.1, 0)
+    textLabel.Position = UDim2.new(0.25, 0, 0.9, 0)
+    textLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    textLabel.Text = message
+    textLabel.TextScaled = true
+    textLabel.TextStrokeTransparency = 0.8
+    textLabel.TextTransparency = 1
+
+    local tweenInfo = TweenInfo.new(1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut)
+    local tweenIn = TweenService:Create(textLabel, tweenInfo, {TextTransparency = 0})
+    local tweenOut = TweenService:Create(textLabel, tweenInfo, {TextTransparency = 1})
+
+    tweenIn:Play()
+    tweenIn.Completed:Connect(function()
+        wait(5) 
+        tweenOut:Play()
+    
+        tweenOut.Completed:Connect(function()
+            screenGui:Destroy()
+        end)
+    end)
+end
+
+getrenv().Visit = cloneref(game:GetService("Visit"))
+getrenv().MarketplaceService = cloneref(game:GetService("MarketplaceService"))
+getrenv().HttpRbxApiService = cloneref(game:GetService("HttpRbxApiService"))
+getrenv().HttpService = cloneref(game:GetService("HttpService"))
+local ContentProvider = cloneref(game:GetService("ContentProvider"))
+local RunService = cloneref(game:GetService("RunService"))
+local Stats = cloneref(game:GetService("Stats"))
+local Players = cloneref(game:GetService("Players"))
+local NetworkClient = cloneref(game:GetService("NetworkClient"))
+
+local function autoPurchaseUGCItem()
+    getrenv()._set = clonefunction(setthreadidentity)
+    local old
+    old = hookmetamethod(game, "__index", function(a, b)
+        task.spawn(function()
+            _set(7)
+            task.wait()
+            getgenv().promptpurchaserequestedv2 = MarketplaceService.PromptPurchaseRequestedV2:Connect(function(...)
+                createNotification("Prompt Detected: Attempting to purchase the UGC item...")
+                local startTime = tick()
+                local t = {...}
+                local assetId = t[2]
+                local idempotencyKey = t[5]
+                local purchaseAuthToken = t[6]
+                local info = MarketplaceService:GetProductInfo(assetId)
+                local productId = info.ProductId
+                local price = info.PriceInRobux
+                local collectibleItemId = info.CollectibleItemId
+                local collectibleProductId = info.CollectibleProductId
+
+                createNotification("PurchaseAuthToken: " .. purchaseAuthToken)
+                createNotification("IdempotencyKey: " .. idempotencyKey)
+                createNotification("CollectibleItemId: " .. collectibleItemId)
+                createNotification("CollectibleProductId: " .. collectibleProductId)
+                createNotification("ProductId (should be 0): " .. productId)
+                createNotification("Price: " .. price)
+                playNotificationSound()
+                local success, result = pcall(function()
+                    return MarketplaceService:PerformPurchase(Enum.InfoType.Asset, productId, price,
+                        tostring(game:GetService("HttpService"):GenerateGUID(false)), true, collectibleItemId,
+                        collectibleProductId, idempotencyKey, tostring(purchaseAuthToken))
+                end)
+
+                if success then
+                    createNotification("First Purchase Attempt")
+                    for i, v in pairs(result) do
+                        createNotification(i .. ": " .. v)
+                    end
+                    local endTime = tick()
+                    local duration = endTime - startTime
+                    createNotification("Bought Item! Took " .. tostring(duration) .. " seconds")
+                else
+                    createNotification("Failed to Purchase Item: " .. result)
+                end
+            end)
+        end)
+        hookmetamethod(game, "__index", old)
+        return old(a, b)
+    end)
+end
+autoPurchaseUGCItem()
