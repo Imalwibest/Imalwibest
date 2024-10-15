@@ -1,4 +1,4 @@
-
+-- Last Updated 04/02/2022
 
 local lib = {};
 local UIS = game:GetService("UserInputService");
@@ -879,7 +879,137 @@ function lib:CreateWindow(title)
                 return ee;
             end
 
-            function components:AddSlider(boxTitle, tooltip, minValue, maxValue, default, precise, callback)
+            
+function components:AddSlider(boxTitle, tooltip, minValue, maxValue, default, precise, callback)
+    local t1 = {}
+    precise = precise or false
+    tooltip = tooltip or nil
+    minValue = minValue or 0
+    maxValue = maxValue or 1
+    default = default or 0
+    callback = callback or function() end
+    local valuee = 0;
+
+    -- Slider Background
+    local b1 = Create("Frame", {
+        BackgroundColor3 = Color3.fromRGB(13, 14, 16),
+        Size = UDim2.new(1, 0, 0, 30),
+        Parent = container,
+        LayoutOrder = order
+    }, {
+        Create("UIStroke", {
+            ApplyStrokeMode = 1,
+            Color = Color3.fromRGB(24, 25, 30)
+        }),
+        Create("UICorner", {
+            CornerRadius = UDim.new(0, 4)
+        }),
+        Create("TextLabel", {
+            BackgroundTransparency = 1,
+            Position = UDim2.new(0, 10, 0.5, -8),
+            Size = UDim2.new(1, -10, 0, 14),
+            Font = window.Font,
+            Text = boxTitle,
+            TextColor3 = Color3.new(1, 1, 1),
+            TextSize = 14,
+            TextXAlignment = Enum.TextXAlignment.Left
+        })
+    })
+
+    -- Slider Handle
+    local sliderBg = Create("Frame", {
+        BackgroundColor3 = Color3.fromRGB(13, 14, 16),
+        Size = UDim2.new(0, 150, 0, 12),
+        Position = UDim2.new(1, -155, 0.5, -6),
+        Parent = b1,
+        ClipsDescendants = true
+    }, {
+        Create("UIStroke", {
+            ApplyStrokeMode = 1,
+            Color = Color3.fromRGB(24, 25, 30)
+        }),
+        Create("UICorner", {
+            CornerRadius = UDim.new(1, 0)
+        })
+    })
+
+    local sliderVal = Create("Frame", {
+        BackgroundColor3 = window.AccentColor,
+        Size = UDim2.new(default / maxValue, 0, 1, 0),
+        Parent = sliderBg
+    }, {
+        Create("UICorner", {
+            CornerRadius = UDim.new(1, 0)
+        })
+    })
+
+    -- Slider Movement Logic
+    local draggingg = false;
+    local function move(input)
+        local pos = UDim2.new(math.clamp((input.Position.X - sliderBg.AbsolutePosition.X) / sliderBg.AbsoluteSize.X, 0, 1), 0, 1, 0)
+        sliderVal.Size = pos
+        local SliderPrecise = ((pos.X.Scale * maxValue) / maxValue) * (maxValue - minValue) + minValue
+        local SliderNotPrecise = math.floor(((pos.X.Scale * maxValue) / maxValue) * (maxValue - minValue) + minValue)
+        local Value = precise and SliderNotPrecise or SliderPrecise
+        valuee = tonumber(string.format("%.2f", Value))
+        showTooltip(string.format("[%.2f/%.2f]", valuee, maxValue))
+        callback(valuee)
+    end
+
+    function t1:SetValue(Value)
+        sliderVal.Size = UDim2.new(Value / maxValue, 0, 1, 0)
+        valuee = Value
+        callback(valuee)
+    end
+
+    function t1:GetValue()
+        return valuee
+    end
+
+    -- Mouse Interaction
+    sliderBg.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            move(input)
+            draggingg = true
+        end
+    end)
+    
+    sliderBg.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            draggingg = false
+            hideTooltip()
+        end
+    end)
+
+    UIS.InputChanged:Connect(function(input)
+        if draggingg and input.UserInputType == Enum.UserInputType.MouseMovement then
+            move(input)
+        end
+    end)
+
+    sliderBg.MouseEnter:Connect(function()
+        showTooltip(string.format("[%f/%f]", valuee, maxValue))
+    end)
+
+    sliderBg.MouseLeave:Connect(function()
+        hideTooltip()
+    end)
+
+    b1.MouseEnter:Connect(function()
+        showTooltip(tooltip)
+    end)
+    b1.MouseLeave:Connect(function()
+        hideTooltip()
+    end)
+
+    -- Adjust size
+    container.Size = UDim2.new(1, 0, 0, sectionSize(bg))
+    bg.Size = UDim2.new(1, 0, 0, sectionSize(bg) + 30)
+    order = order + 1
+
+    return t1
+end
+
                 local t1 = {}
                 precise = precise or false
                 tooltip = tooltip or nil
