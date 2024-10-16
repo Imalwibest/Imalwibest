@@ -1,3 +1,4 @@
+while wait() do
 for nigga = 1,10 do
 while wait() do
 for i = string.byte("a"), string.byte("z") do
@@ -8,5 +9,6 @@ end
 setclipboard("nigga ur read this ur gay") 
 setclipboard("xaxaxXXX") 
 setclipboard("xaxaxXXX") 
+end
 end
 end
