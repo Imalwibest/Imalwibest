@@ -1,1 +1,1 @@
-setclipboard("") 
+setclipboard("How to Become Goblin") 
