@@ -27,7 +27,7 @@ titleLabel.Parent = frame
 
 messageLabel.Size = UDim2.new(1, 0, 0.4, 0)
 messageLabel.Position = UDim2.new(0, 0, 0.3, 0)
-messageLabel.Text = "We've disconnected. Feel free to check out Alwi Hub > Reblues > Chelpus. [Reminder: true]"
+messageLabel.Text = "We've disconnected. Feel free to check out [Alwi Hub Leakers Wynerd] > Redblues [Remake Version Wyvern] > [Chelpus Offcial Real Credit]. [Reminder This Script Paid But Free]"
 messageLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
 messageLabel.TextScaled = true
 messageLabel.BackgroundTransparency = 1
