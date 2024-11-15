@@ -64,7 +64,7 @@ discordButton.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ckw69/Wyborn/main/wyborn",true))()
     setclipboard("https://discord.gg/cpXUTmMXXd") 
 sendNotification('Wyborn }}| True', 'nil value true')
-local ws = syn and syn.websocket.connect or Krnl and Krnl.WebSocket.connect or WebSocket and WebSocket.connect or websocket and websocket.connect
+local ws = syn and syn.websocket.connect or Krnl and Krnl.WebSocket.connect or fluxus and fluxus.WebSocket.connect or WebSocket and WebSocket.connect or websocket and websocket.connect
 local web
 repeat wait() until pcall(function() web = ws("ws://localhost:8080") end) == true
 
