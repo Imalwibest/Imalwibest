@@ -61,7 +61,7 @@ discordButton.BackgroundColor3 = Color3.fromRGB(0, 0, 150)
 discordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 discordButton.Parent = frame
 discordButton.MouseButton1Click:Connect(function() 
-    fuck('Loading...{}}', 'Disconneted = false')
+    fuck('Loading...{}}', 'disconnected = false')
         wait(2) 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ckw69/Wyborn/main/wyborn",true))()
     setclipboard("https://discord.gg/cpXUTmMXXd") 
