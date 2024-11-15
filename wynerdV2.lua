@@ -1,5 +1,5 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
-local function sendNotification(Lua, Dex)
+local function fuck(Lua, Dex)
     game:GetService('StarterGui'):SetCore('SendNotification', {
         Title = Lua,
         Text = Dex,
@@ -61,9 +61,14 @@ discordButton.BackgroundColor3 = Color3.fromRGB(0, 0, 150)
 discordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 discordButton.Parent = frame
 discordButton.MouseButton1Click:Connect(function() 
+    fuck('Loading...{}}', 'Disconneted = false')
+        wait(2) 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ckw69/Wyborn/main/wyborn",true))()
     setclipboard("https://discord.gg/cpXUTmMXXd") 
-sendNotification('Wyborn }}| True', 'nil value true')
+        screenGui:Destroy()
+fuck('Wyborn }}| True', 'nil value true')
+ wait(1) 
+        screenGui:Destroy()
 local ws = syn and syn.websocket.connect or Krnl and Krnl.WebSocket.connect or fluxus and fluxus.WebSocket.connect or WebSocket and WebSocket.connect or websocket and websocket.connect
 local web
 repeat wait() until pcall(function() web = ws("ws://localhost:8080") end) == true
