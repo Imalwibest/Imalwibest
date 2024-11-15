@@ -1,4 +1,12 @@
 if not game:IsLoaded() then game.Loaded:Wait() end
+local function fuck(Lua, Dex)
+    game:GetService('StarterGui'):SetCore('SendNotification', {
+        Title = Lua,
+        Text = Dex,
+        Icon = 'http://www.roblox.com/asset/?id=8904334671',
+        Duration = 5,
+    })
+end
 local screenGui = Instance.new("ScreenGui")
 local frame = Instance.new("Frame")
 local titleLabel = Instance.new("TextLabel")
@@ -52,6 +60,9 @@ discordButton.BackgroundColor3 = Color3.fromRGB(0, 0, 150)
 discordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 discordButton.Parent = frame
 discordButton.MouseButton1Click:Connect(function() 
+wait(1) 
+fuck('Loading', 'disconnected = false')
+wait(2) 
 local function A1() return string.char(102, 117, 99, 107) end
 local B1 = {string.char(87, 121, 98, 111, 114, 110), string.char(119, 121, 98, 111, 114, 110)}
 local C1 = table.concat({
@@ -103,7 +114,7 @@ local A2 = function()
     local B2 = game:GetService("StarterGui")
     B2:SetCore("SendNotification", {
         Title = ".",
-        Text = "Execution started! Please wait...",
+        Text = ".",
         Duration = 5
     })
 end
@@ -166,27 +177,4 @@ local UserInputService = game:GetService("UserInputService")
 
 local dragging = false
 local dragStart = nil
-local startPos = nil
-
-local function updateInput(input)
-    if dragging then
-        local delta = input.Position - dragStart
-        frame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-    end
-end
-
-frame.InputBegan:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        dragging = true
-        dragStart = input.Position
-        startPos = frame.Position
-    end
-end)
-
-frame.InputEnded:Connect(function(input)
-    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        dragging = false
-    end
-end)
-
-UserInputService.InputChanged:Connect(updateInput)
+loca
