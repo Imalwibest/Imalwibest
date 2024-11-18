@@ -2,6 +2,24 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
 end
 
+local function adonis()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Pixeluted/adoniscries/main/Source.lua"))() -- Adonis bypass
+
+local badFunctions = {"Crash", "HardCrash", "GPUCrash", "RAMCrash", "KillClient", "SetFPS"} 
+
+for i,v in pairs(getgc()) do 
+    if type(v) == "function" then
+        local info = debug.getinfo(v)
+        local functionName = info.name
+        if info.source:find('=.Core.Functions') and table.find(badFunctions, functionName) then
+            print("Hooked \"" .. functionName .. "\"")
+            hookfunction(v, function()
+                print("Stopped \"" .. functionName .. "\" from running")
+            end)
+        end
+    end
+    end
+end
 local function executor()
     local v0 = string.char
     local v1 = string.byte
@@ -109,6 +127,7 @@ discordButton.BackgroundColor3 = Color3.fromRGB(0, 0, 150)
 discordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 discordButton.Parent = frame
 discordButton.MouseButton1Click:Connect(function()
+    adonis()
     sendNotification('Loading...', 'Welcome User ' .. game.Players.LocalPlayer.Name)
     wait(3.5) 
     if true then 
