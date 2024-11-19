@@ -1,4 +1,19 @@
+local function YEAHWHY() 
+game.Lighting.Brightness = 4
+    game.Lighting.FogEnd = 100000
+    game.Lighting.GlobalShadows = false
+    game.Lighting.ClockTime = 12
+    game.Lighting.FogColor = Color3.fromRGB(255, 255, 255)
 
+    if game.Lighting then
+        game.Lighting.FogEnd = 100000
+        for i, v in pairs(game.Lighting:GetDescendants()) do
+            if v:IsA("Atmosphere") then
+                v:Destroy()
+            end
+        end
+    end
+end
 
 local itemNames = {
     "Taco", "Chicken Leg", "Poison Cake", "Cake", "Sandwich", "Chocolate Milk", 
@@ -124,4 +139,5 @@ game.Players.LocalPlayer.CharacterAdded:Connect(function()
     handleItems()
 end)
 
+YEAHWHY() 
 handleItems()
