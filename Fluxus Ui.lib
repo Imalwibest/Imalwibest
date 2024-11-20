@@ -962,25 +962,26 @@ function lib:CreateWindow(title)
                     return valuee;
                 end
 
-                sliderBg.InputBegan:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                        move(input)
-                        draggingg = true
-                    end
-                end)
-                
-                sliderBg.InputEnded:Connect(function(input)
-                    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-                        draggingg = false
-                        hideTooltip()
-                    end
-                end)
+    sliderBg.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        move(input)
+        draggingg = true
+    end
+end)
 
-                UIS.InputChanged:Connect(function(input)
-                    if draggingg and input.UserInputType == Enum.UserInputType.MouseMovement then
-                        move(input)
-                    end
-                end)
+sliderBg.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingg = false
+        hideTooltip()
+    end
+end)
+
+UIS.InputChanged:Connect(function(input)
+    if draggingg and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        move(input)
+    end
+end)
+
 
                 sliderBg.MouseEnter:Connect(function()
                     showTooltip(string.format("[%f/%f]", valuee, maxValue))
