@@ -24,6 +24,16 @@ function Create(instance, properties, children)
     end
     return obj;
 end
+
+function tween(instance, time, properties, callback)
+    callback = callback or function() end
+    local tween = TS:Create(instance, TweenInfo.new(time, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), properties)
+    tween:Play()
+    tween.Completed:Connect(function()
+        callback()
+    end)
+end
+
 local GUI = game:GetService("CoreGui"):FindFirstChild("Fluxus_NofiticationRemake")
 if not GUI then
     local Fluxus_NofiticationRemake = Instance.new("ScreenGui")
