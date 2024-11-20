@@ -24,21 +24,6 @@ function Create(instance, properties, children)
     end
     return obj;
 end
-function Create(className, properties, children)
-    local obj = Instance.new(className)
-    for prop, value in pairs(properties or {}) do
-        obj[prop] = value
-    end
-
-    if children then
-        for _, child in ipairs(children) do
-            child.Parent = obj
-        end
-    end
-
-    return obj
-end
-
 
 function tween(instance, time, properties, callback)
     callback = callback or function() end
@@ -48,36 +33,6 @@ function tween(instance, time, properties, callback)
         callback()
     end)
 end
-
-function lib:TextLabel(parent, text)
-    local deskripsiLabel = Create("TextLabel", {
-        BackgroundColor3 = Color3.fromRGB(13, 14, 16),
-        Text = text or "nil", 
-        Font = Enum.Font.RobotoMono,
-        TextColor3 = Color3.fromRGB(255, 255, 255),
-        TextSize = 14,
-        TextXAlignment = Enum.TextXAlignment.Left,
-        AutomaticSize = Enum.AutomaticSize.XY,
-        Parent = parent 
-    }, {
-        Create("UICorner", { CornerRadius = UDim.new(0, 4) }),
-        Create("UIPadding", {
-            PaddingLeft = UDim.new(0, 10),
-            PaddingRight = UDim.new(0, 10),
-            PaddingTop = UDim.new(0, 5),
-            PaddingBottom = UDim.new(0, 5)
-        }),
-        Create("UIStroke", {
-            ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
-            Color = Color3.fromRGB(24, 25, 30),
-            Thickness = 1
-        })
-    })
-
-    return TextLabel
-end
-
-
 
 function lib:CreateWindow(title)
     local window = {
