@@ -34,6 +34,37 @@ function tween(instance, time, properties, callback)
     end)
 end
 
+function lib:Labeltext(parent, text)
+    local deskripsiLabel = Create("TextLabel", {
+        BackgroundColor3 = Color3.fromRGB(13, 14, 16),
+        Text = text or "nil", -- Default text if none is provided
+        Font = Enum.Font.RobotoMono,
+        TextColor3 = Color3.fromRGB(255, 255, 255),
+        TextSize = 14,
+        TextXAlignment = Enum.TextXAlignment.Left,
+        AutomaticSize = Enum.AutomaticSize.XY,
+        Parent = parent 
+    }, {
+        Create("UICorner", {
+            CornerRadius = UDim.new(0, 4)
+        }),
+        Create("UIPadding", {
+            PaddingLeft = UDim.new(0, 10),
+            PaddingRight = UDim.new(0, 10),
+            PaddingTop = UDim.new(0, 5),
+            PaddingBottom = UDim.new(0, 5)
+        }),
+        Create("UIStroke", {
+            ApplyStrokeMode = 1,
+            Color = Color3.fromRGB(24, 25, 30),
+            Thickness = 1
+        })
+    })
+
+    return Labeltext
+end
+
+
 function lib:CreateWindow(title)
     local window = {
         Font = Enum.Font.RobotoMono,
