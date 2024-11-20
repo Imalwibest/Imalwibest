@@ -25,6 +25,67 @@ function Create(instance, properties, children)
     return obj;
 end
 
+
+local GUI = game:GetService("CoreGui"):FindFirstChild("Fluxus_NofiticationRemake")
+if not GUI then
+    local Fluxus_NofiticationRemake = Instance.new("ScreenGui")
+    Fluxus_NofiticationRemake.Name = "Fluxus_NofiticationRemake"
+    Fluxus_NofiticationRemake.Parent = game.CoreGui
+    Fluxus_NofiticationRemake.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    Fluxus_NofiticationRemake.ResetOnSpawn = false
+
+    local Fluxus_NofiticationUIListLayout = Instance.new("UIListLayout")
+    Fluxus_NofiticationUIListLayout.Name = "Fluxus_NofiticationUIListLayout"
+    Fluxus_NofiticationUIListLayout.Parent = Fluxus_NofiticationRemake
+    Fluxus_NofiticationUIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+    Fluxus_NofiticationUIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    Fluxus_NofiticationUIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+
+    GUI = Fluxus_NofiticationRemake
+end
+
+function lib:Notify(title, description, duration)
+    local notifyFrame = Create("Frame", {
+        BackgroundColor3 = Color3.fromRGB(30, 30, 30),
+        Size = UDim2.new(0, 300, 0, 80),
+        Position = UDim2.new(1, -310, 1, -90),
+        AnchorPoint = Vector2.new(1, 1),
+        Parent = GUI
+    }, {
+        Create("UICorner", { CornerRadius = UDim.new(0, 8) }),
+        Create("TextLabel", {
+            Text = title,
+            Font = Enum.Font.SourceSansBold,
+            TextSize = 18,
+            TextColor3 = Color3.fromRGB(255, 255, 255),
+            BackgroundTransparency = 1,
+            Position = UDim2.new(0, 10, 0, 10),
+            Size = UDim2.new(1, -20, 0, 30),
+            TextXAlignment = Enum.TextXAlignment.Left
+        }),
+        Create("TextLabel", {
+            Text = description,
+            Font = Enum.Font.SourceSans,
+            TextSize = 14,
+            TextColor3 = Color3.fromRGB(200, 200, 200),
+            BackgroundTransparency = 1,
+            Position = UDim2.new(0, 10, 0, 40),
+            Size = UDim2.new(1, -20, 0, 30),
+            TextWrapped = true,
+            TextXAlignment = Enum.TextXAlignment.Left
+        })
+    })
+
+    tween(notifyFrame, 0.3, { Position = UDim2.new(1, -310, 1, -90 - ((#GUI:GetChildren() - 1) * 90)) })
+
+    task.delay(duration or 5, function()
+        tween(notifyFrame, 0.3, { Position = UDim2.new(1, 310, 1, -90 - ((#GUI:GetChildren() - 1) * 90)) }, function()
+            notifyFrame:Destroy()
+        end)
+    end)
+end
+
+
 function tween(instance, time, properties, callback)
     callback = callback or function() end
     local tween = TS:Create(instance, TweenInfo.new(time, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), properties)
