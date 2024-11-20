@@ -24,7 +24,6 @@ function Create(instance, properties, children)
     end
     return obj;
 end
-
 local GUI = game:GetService("CoreGui"):FindFirstChild("Fluxus_NofiticationRemake")
 if not GUI then
     local Fluxus_NofiticationRemake = Instance.new("ScreenGui")
@@ -42,6 +41,35 @@ if not GUI then
 
     GUI = Fluxus_NofiticationRemake
 end
+
+-- Draggable UI code
+local dragging = false
+local dragInput, dragStart, startPos
+
+local function update(input)
+    local delta = input.Position - dragStart
+    GUI.Position = UDim2.new(0, startPos.X.Offset + delta.X, 0, startPos.Y.Offset + delta.Y)
+end
+
+GUI.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPos = GUI.Position
+
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then
+                dragging = false
+            end
+        end)
+    end
+end)
+
+GUI.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement and dragging then
+        update(input)
+    end
+end)
 
 function lib:Notify(title, description, duration)
     local notifyFrame = Create("Frame", {
