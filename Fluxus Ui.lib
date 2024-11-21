@@ -1,5 +1,4 @@
 -- Last Updated 04/02/2022
-local Notify = {} 
 local lib = {};
 local UIS = game:GetService("UserInputService");
 local TS = game:GetService("TweenService");
@@ -31,40 +30,6 @@ function tween(instance, time, properties, callback)
     tween:Play()
     tween.Completed:Connect(function()
         callback()
-    end)
-end
-
-
-local NotificationGUI = game:GetService("CoreGui"):FindFirstChild("Fluxus_Notification") or Instance.new("ScreenGui", game.CoreGui)
-NotificationGUI.Name = "Fluxus_Notification"
-
-function Notify:Create(title, description, duration)
-    local frame = Instance.new("Frame", NotificationGUI)
-    frame.Size = UDim2.new(0, 250, 0, 70)
-    frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-    frame.BackgroundTransparency = 0.1
-
-    local titleLabel = Instance.new("TextLabel", frame)
-    titleLabel.Text = title
-    titleLabel.Size = UDim2.new(1, -20, 0, 30)
-    titleLabel.Position = UDim2.new(0, 10, 0, 5)
-    titleLabel.Font = Enum.Font.SourceSansBold
-    titleLabel.TextSize = 16
-    titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-    titleLabel.BackgroundTransparency = 1
-
-    local descriptionLabel = Instance.new("TextLabel", frame)
-    descriptionLabel.Text = description
-    descriptionLabel.Size = UDim2.new(1, -20, 0, 30)
-    descriptionLabel.Position = UDim2.new(0, 10, 0, 35)
-    descriptionLabel.Font = Enum.Font.SourceSans
-    descriptionLabel.TextSize = 14
-    descriptionLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
-    descriptionLabel.BackgroundTransparency = 1
-
-    
-    task.delay(duration or 5, function()
-        frame:Destroy()
     end)
 end
 
