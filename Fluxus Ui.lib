@@ -84,6 +84,69 @@ function lib:CreateWindow(title)
         TS:Create(ToolTip.UIStroke, TweenInfo.new(0.4, Enum.EasingStyle.Sine, Enum.EasingDirection.Out), {Transparency = 0.2}):Play()
     end
 
+local HI = {}
+
+local GUI = game:GetService("CoreGui"):FindFirstChild("Fluxus_Notification") or Instance.new("ScreenGui", game.CoreGui)
+GUI.Name = "Fluxus_Notification"
+GUI.ResetOnSpawn = false
+GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+local UIListLayout = GUI:FindFirstChild("UIListLayout") or Instance.new("UIListLayout", GUI)
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 10)
+
+local function tween(obj, time, props, callback)
+    local tweenService = game:GetService("TweenService")
+    local tween = tweenService:Create(obj, TweenInfo.new(time, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), props)
+    tween:Play()
+    if callback then
+        tween.Completed:Connect(callback)
+    end
+end
+
+function HI:Notify(title, description, duration)
+    local notifyFrame = Instance.new("Frame", GUI)
+    notifyFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    notifyFrame.Size = UDim2.new(0, 250, 0, 70)
+    notifyFrame.BackgroundTransparency = 1 -- Start fully transparent
+    notifyFrame.Position = UDim2.new(1, 300, 1, 0) -- Start off-screen
+
+    local corner = Instance.new("UICorner", notifyFrame)
+    corner.CornerRadius = UDim.new(0, 8)
+
+    local titleLabel = Instance.new("TextLabel", notifyFrame)
+    titleLabel.Text = title
+    titleLabel.Font = Enum.Font.SourceSansBold
+    titleLabel.TextSize = 16
+    titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    titleLabel.BackgroundTransparency = 1
+    titleLabel.Size = UDim2.new(1, -20, 0, 30)
+    titleLabel.Position = UDim2.new(0, 10, 0, 5)
+    titleLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+    local descriptionLabel = Instance.new("TextLabel", notifyFrame)
+    descriptionLabel.Text = description
+    descriptionLabel.Font = Enum.Font.SourceSans
+    descriptionLabel.TextSize = 14
+    descriptionLabel.TextColor3 = Color3.fromRGB(200, 200, 200)
+    descriptionLabel.BackgroundTransparency = 1
+    descriptionLabel.Size = UDim2.new(1, -20, 0, 30)
+    descriptionLabel.Position = UDim2.new(0, 10, 0, 35)
+    descriptionLabel.TextWrapped = true
+    descriptionLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+    tween(notifyFrame, 1, { Position = UDim2.new(1, -10, 1, -10 - (#GUI:GetChildren() - 1) * 80), BackgroundTransparency = 0.1 })
+
+    task.delay(duration or 5, function()
+        tween(notifyFrame, 1, { Position = UDim2.new(1, 300, 1, notifyFrame.Position.Y.Offset), BackgroundTransparency = 1 }, function()
+            notifyFrame:Destroy()
+        end)
+    end)
+end
+
+
     function hideTooltip()
         tween(ToolTip, 0.4, {BackgroundTransparency = 1, TextTransparency = 1})
         tween(ToolTip.UIStroke, 0.4, {Transparency = 1})
