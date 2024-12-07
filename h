@@ -1,4 +1,3 @@
-
 setclipboard("https://discord.gg/vscePW7v") 
 local VirtualUser = game:GetService("VirtualUser")
 
