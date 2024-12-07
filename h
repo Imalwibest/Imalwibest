@@ -1,11 +1,5 @@
-getgenv().AlwiHub = {
-    ["AntiAFK"] = true, 
-    ["Auto Candy"] = true, 
-    ["Delay"] = 1.0,
-    ["Auto Multi Candy Increase"] = true, 
-    ["Delay Multi Candy Increase"] = 1
-}
 
+setclipboard("https://discord.gg/vscePW7v") 
 local VirtualUser = game:GetService("VirtualUser")
 
 if getgenv().AlwiHub["AntiAFK"] then
