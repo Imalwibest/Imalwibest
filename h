@@ -1,4 +1,10 @@
--- h
+getgenv().AlwiHub = {
+    ["AntiAFK"] = true, 
+    ["Auto Candy"] = true, 
+    ["Delay"] = 1.0,
+    ["Auto Multi Candy Increase"] = true, 
+    ["Delay Multi Candy Increase"] = 1
+}
 
 local VirtualUser = game:GetService("VirtualUser")
 
