@@ -1,3 +1,5 @@
+-- h
+
 local VirtualUser = game:GetService("VirtualUser")
 
 if getgenv().AlwiHub["AntiAFK"] then
@@ -28,4 +30,12 @@ while getgenv().AlwiHub["Auto Candy"] and task.wait(getgenv().AlwiHub["Delay"]) 
         character:SetPrimaryPartCFrame(v.CFrame)
         visitedCoins[v] = true
     end
+end
+
+if getgenv().AlwiHub["Auto Multi Candy Increase"] then
+    task.spawn(function()
+        while task.wait(getgenv().AlwiHub["Delay Multi Candy Increase"]) do
+            game:GetService("ReplicatedStorage").Events.BuyHalloweenItem:FireServer("1Rebirth", 1)
+        end
+    end)
 end
