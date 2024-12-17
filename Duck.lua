@@ -27,6 +27,7 @@ for i = 1, 50 do
 end
 
 playNotificationSound()
+wait(2)
 game.Players.LocalPlayer.Character:PivotTo(CFrame.new(Vector3.new(-170, 3, 14)))
 sendNotification("Alwi Hub Nituve", "If duck didn't collect executor again", 3)
 
