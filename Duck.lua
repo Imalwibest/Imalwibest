@@ -29,7 +29,7 @@ end
 playNotificationSound()
 wait(2)
 game.Players.LocalPlayer.Character:PivotTo(CFrame.new(Vector3.new(-170, 3, 14)))
-sendNotification("Alwi Hub Nituve", "If duck didn't collect executor again", 3)
+sendNotification("Alwi Hub Notive", "If duck didn't collect executor again", 3)
 
 setclipboard("https://discord.gg/UzcCfYky")
 sendNotification("Alwi Hub Notive", "You have been sent the Discord link in clipboard", 3)
